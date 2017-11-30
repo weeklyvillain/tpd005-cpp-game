@@ -1,5 +1,4 @@
-#ifndef KEY_HANDLING_H
-#define KEY_HANDLING_H
+#pragma once
 
 #include <SFML/Graphics.hpp>
 
@@ -9,16 +8,17 @@ public:
 	bool left{false}; 
 	bool right{false};
 	bool shoot{false};
-	sf::Keyboard::Key const jump_key{sf::Keyboard::Up};
-	sf::Keyboard::Key const left_key{sf::Keyboard::Left};
-	sf::Keyboard::Key const right_key{sf::Keyboard::Right};
-	sf::Keyboard::Key const shoot_key{sf::Keyboard::Space};
+	sf::Keyboard::Key jump_key{};
+	sf::Keyboard::Key left_key{};
+	sf::Keyboard::Key right_key{};
+	sf::Keyboard::Key shoot_key{};
 
     Key_Handling(): jump{}, left{}, right{}, shoot{}, 
-        jump_key{}, left_key{}, right_key{}, shoot_key{}{};
-    Key_Handling(sf::Keyboard::Key j, sf::Keyboard::Key i, 
+		jump_key{sf::Keyboard::Up}, left_key{sf::Keyboard::Left}, right_key{sf::Keyboard::Right}, shoot_key{sf::Keyboard::Space}{};
+		
+    Key_Handling(sf::Keyboard::Key j, sf::Keyboard::Key l, 
         sf::Keyboard::Key r, sf::Keyboard::Key s) 
-		: jump{}, left{}, right{}, shoot{}, jump_key{j}, left_key{i}, right_key{r}, shoot_key{s}{}
+		: jump{}, left{}, right{}, shoot{}, jump_key{j}, left_key{l}, right_key{r}, shoot_key{s}{}
 
 	void onKey(bool pressed, sf::Keyboard::Key const& key) {
 		if(key == jump_key){
@@ -44,4 +44,3 @@ public:
 	}
 };
 
-#endif

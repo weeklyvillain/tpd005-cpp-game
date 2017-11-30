@@ -1,4 +1,5 @@
 #include "World.h"
+#include <iostream>
 
 World::World(sf::RenderWindow &w, float g)
     :window(w), gravity{g}, entities{}{}
@@ -14,14 +15,21 @@ void World::add_entity(Ptr<Entity> e){
 }
 
 void World::update_all(){
+    for(Ptr<Entity> it : entities){
+        it->update(*this);
+    }
+}
 
-
+void World::render_all(){
+    for(Ptr<Entity> it : entities){
+        window.draw(*it);
+    }
 }
 
 void World::on_Key_Press(sf::Keyboard::Key k){
-    player.onKey(true, k);
+    player1.onKey(true, k);
 }
 
 void World::on_Key_Release(sf::Keyboard::Key k){
-    player.onKey(false, k);
+    player1.onKey(false, k);
 }

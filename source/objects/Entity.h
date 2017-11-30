@@ -1,16 +1,18 @@
-#ifndef ENTITY_H
-#define ENTITY_H
+#pragma once
 
 #include <SFML/Graphics.hpp>
+#include "Behaviour.h"
+class World;
+
 
 class Entity : public sf::Sprite{
 public:
-    Entity():sf::Sprite(), killed{}{}
+    Entity(Behaviour* b) : sf::Sprite(),behaviour_ptr{b}, killed{}{}
     virtual ~Entity() = default;
-    virtual bool update() = 0;
+    virtual bool update(World&) = 0;
 
 protected:
+    Ptr<Behaviour> behaviour_ptr;
     bool killed{false};
 };
 
-#endif

@@ -1,13 +1,15 @@
-#ifndef BEHAVIOUR_H
-#define BEHAVIOUR_H
+#pragma once
 
-#include "World.h"
-
+class World;
+class Entity;
+template <class T>
+using Ptr = std::shared_ptr<T>;
 
 class Behaviour {
 public:
+    Behaviour() = default;
 	virtual ~Behaviour() {}
-	virtual bool tick(World &world, Entity &owner) = 0;
+    virtual bool process(World &world, Entity &owner) = 0;
+    sf::Vector2f gravity {0, 5};
+    bool falling{false};
 };
-
-#endif

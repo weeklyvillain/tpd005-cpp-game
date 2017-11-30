@@ -7,7 +7,6 @@ int Game::run(){
     World world{window, 0.5};
     Player1_Behaviour* pl1{new Player1_Behaviour()};
     Player* player1{new Player(pl1)};
-
     world.add_entity(player1);
     
     sf::Clock clock;

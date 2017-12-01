@@ -1,12 +1,31 @@
 #include "Game.h"
-#include "Player1_Behaviour.h"
+
 
 int Game::run(){
 
     sf::RenderWindow window{sf::VideoMode(1600, 900), "Bubble Bobble"};
+    window.setVerticalSyncEnabled(true);
     World world{window, 0.5};
+    
     Player1_Behaviour* pl1{new Player1_Behaviour()};
-    Player* player1{new Player(pl1)};
+    Player* player1{new Player("player1", pl1)};
+    Platform_Behaviour* p{new Platform_Behaviour()};
+    for(float x{0}; x < 144; x = x + 12){
+        Platform* plat{new Platform("plat1", p, sf::Vector2f{100+x, 600})};
+        world.add_entity(plat); 
+    }
+
+    Platform* plat{new Platform("plat1", p, sf::Vector2f{288, 400})};
+    plat->setColor(sf::Color::Black);
+    world.add_entity(plat);
+
+
+    for(float x{0}; x < 576; x = x + 12){
+        Platform* plat{new Platform("plat1", p, sf::Vector2f{300+x, 400})};
+        world.add_entity(plat); 
+    }
+
+    
     world.add_entity(player1);
     
     sf::Clock clock;

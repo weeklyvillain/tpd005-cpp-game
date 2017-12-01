@@ -20,7 +20,9 @@ class World{
         void render_all();
         void on_Key_Press(sf::Keyboard::Key);
         void on_Key_Release(sf::Keyboard::Key);
-        
+        bool am_I_Colliding(Entity const&) const;
+        void print_all();
+
         Key_Handling player1{};
         bool run{true};
     

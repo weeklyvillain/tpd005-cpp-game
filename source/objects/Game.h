@@ -1,9 +1,13 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <string>
 #include "World.h"
 #include "Player.h"
 #include "Player1_Behaviour.h"
+#include "Platform.h"
+#include "Platform_Behaviour.h"
+
 
 
 class Game{

@@ -1,8 +1,7 @@
 #pragma once
 
-class Entity;
-class World;
-
+#include "World.h"
+#include "Entity.h"
 
 template <class T>
 using Ptr = std::shared_ptr<T>;

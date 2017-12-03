@@ -3,12 +3,12 @@
 #include "Entity.h"
 
 class Platform: public Entity{
-public:    
+public:
     Platform(std::string n, Behaviour* b, sf::Vector2f pos):Entity(n, b){
             texture.loadFromFile("../assets/Art_Tileset.png");
             this->setTexture(texture);
-            this->setOrigin(6.0f,6.0f);
-            this->setTextureRect(sf::IntRect(0, 238, 12, 12));
+            //this->setOrigin(40.0f,40.0f);
+            this->setTextureRect(sf::IntRect(0, 238, 80, 80));
             this->setPosition(pos);
         }
         bool update(World& w) override {
@@ -18,4 +18,4 @@ public:
 
 private:
     sf::Texture texture{};
-};  
+};

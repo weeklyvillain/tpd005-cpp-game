@@ -6,31 +6,21 @@ int Game::run(){
     sf::RenderWindow window{sf::VideoMode(1600, 900), "Bubble Bobble"};
     window.setVerticalSyncEnabled(true);
     World world{window, 0.5};
-    
+
     Player1_Behaviour* pl1{new Player1_Behaviour()};
     Player* player1{new Player("player1", pl1)};
-    Platform_Behaviour* p{new Platform_Behaviour()};
-    for(float x{0}; x < 144; x = x + 12){
-        Platform* plat{new Platform("plat1", p, sf::Vector2f{100+x, 600})};
-        world.add_entity(plat); 
+
+    Level* lvl{new Level("../assets/test_map.txt", 80, 80)};
+    for(auto it = begin(lvl->platforms); it != end(lvl->platforms); ++it){
+
+        world.add_entity(*it);
     }
-
-    Platform* plat{new Platform("plat1", p, sf::Vector2f{288, 400})};
-    plat->setColor(sf::Color::Black);
-    world.add_entity(plat);
-
-
-    for(float x{0}; x < 576; x = x + 12){
-        Platform* plat{new Platform("plat1", p, sf::Vector2f{300+x, 400})};
-        world.add_entity(plat); 
-    }
-
     
     world.add_entity(player1);
-    
+
     sf::Clock clock;
     sf::Time targetFrameDelay {sf::milliseconds(10)};
-    
+
     while (world.run){
         clock.restart();
         sf::Event event;

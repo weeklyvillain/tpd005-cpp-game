@@ -7,7 +7,8 @@
 #include "Player1_Behaviour.h"
 #include "Platform.h"
 #include "Platform_Behaviour.h"
-
+#include "Level.h"
+#include <iostream>
 
 
 class Game{
@@ -16,4 +17,3 @@ public:
     ~Game() = default;
     int run();
 };
-

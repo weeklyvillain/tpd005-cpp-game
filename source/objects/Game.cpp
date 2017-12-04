@@ -7,16 +7,12 @@ int Game::run(){
     window.setVerticalSyncEnabled(true);
     World world{window, 0.5};
 
-    Player1_Behaviour* pl1{new Player1_Behaviour()};
-    Player* player1{new Player("player1", pl1)};
-
-    Level* lvl{new Level("../assets/test_map.txt", 80, 80)};
-    for(auto it = begin(lvl->platforms); it != end(lvl->platforms); ++it){
-
-        world.add_entity(*it);
-    }
     
-    world.add_entity(player1);
+
+    Level("../assets/test_map.txt", 80, 80, world);
+   
+    
+
 
     sf::Clock clock;
     sf::Time targetFrameDelay {sf::milliseconds(10)};

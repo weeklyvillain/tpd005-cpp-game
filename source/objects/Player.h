@@ -7,12 +7,13 @@
 
 class Player : public Entity{
 public:
-    Player(std::string n, Behaviour* b):Entity(n, b), idle_state{0}{
+    Player(std::string n, Behaviour* b, float x, float y):Entity(n, b), idle_state{0}{
             texture.loadFromFile("../assets/wizard_idle.png");
             this->setTexture(texture);
+            this->setPosition(x, y);
             this->setOrigin(40.0f,40.0f);
             this->setTextureRect(sf::IntRect(0, 0, 80, 80));
-            this->setPosition(900, 450);
+            
         }
 
         bool update(World& w) override {

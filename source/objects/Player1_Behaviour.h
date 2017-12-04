@@ -44,12 +44,12 @@ public:
 			owner.setPosition(sf::Vector2f(owner.getPosition().x, 860));
 			velocity.y = 0;
 		}
-		if (owner.getPosition().x <= 40) {
-			owner.setPosition(sf::Vector2f(40, owner.getPosition().y));
+		if (owner.getPosition().x <= 120) {
+			owner.setPosition(sf::Vector2f(120, owner.getPosition().y));
 			velocity.x = 0;
 		}
-		if (owner.getPosition().x >= 1560) {
-			owner.setPosition(sf::Vector2f(1560, owner.getPosition().y));
+		if (owner.getPosition().x >= 1480) {
+			owner.setPosition(sf::Vector2f(1480, owner.getPosition().y));
 			velocity.x = 0;
 		}
 		

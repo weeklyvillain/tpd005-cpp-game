@@ -3,26 +3,28 @@
 
 #include "Platform.h"
 #include "Platform_Behaviour.h"
+#include "Player1_Behaviour.h"
+#include "Player.h"
+#include "World.h"
 #include <vector>
 #include <fstream>
-#include <iostream>
 
 class Level {
 public:
-    std::vector<Platform*> platforms{};
-    Level(std::string filename, int w, int h): ifs{filename}, tile_width{w}, tile_height{h} {
+    Level(std::string filename, int w, int h, World & world): ifs{filename}, tile_width{w}, tile_height{h} {
         if(ifs.is_open()) {
             for( std::string line; getline( ifs, line ); )
             {
                 for_each(begin(line), end(line), [&](char c){
                     if(c == 'x'){
-                        platforms.push_back(new Platform("Platform", new Platform_Behaviour(), pos));
-
+                        world.add_entity(new Platform("Platform",new Platform_Behaviour(), pos));
+                    }
+                    if(c == 'p'){
+                        world.add_entity(new Player("Player1", new Player1_Behaviour(), pos.x, pos.y));                    
                     }
                     pos.x += tile_width;
-
                 });
-                pos.x = 0;
+                pos.x = 0.0f;
                 pos.y +=tile_height;
             }
         }

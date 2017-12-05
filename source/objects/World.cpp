@@ -24,7 +24,7 @@ void World::render_all(){
     for(Ptr<Entity> it : entities){
         window.draw(*it);
     }
-    
+
 }
 
 void World::on_Key_Press(sf::Keyboard::Key k){
@@ -37,9 +37,9 @@ void World::on_Key_Release(sf::Keyboard::Key k){
 
 bool World::am_I_Colliding(Entity const& e) const{
     for(auto it : entities){
-        if(it->get_name() != e.get_name()){ 
+        if(it->get_name() != e.get_name()){
             sf::FloatRect bounding_box = e.getGlobalBounds();
-            sf::FloatRect other_box = it->getGlobalBounds(); 
+            sf::FloatRect other_box = it->getGlobalBounds();
             if(bounding_box.intersects(other_box)){
                 return true;
             }

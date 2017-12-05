@@ -13,7 +13,7 @@ public:
             this->setPosition(x, y);
             this->setOrigin(40.0f,40.0f);
             this->setTextureRect(sf::IntRect(0, 0, 80, 80));
-            
+
         }
 
         bool update(World& w) override {

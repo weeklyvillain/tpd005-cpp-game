@@ -12,11 +12,10 @@ public:
     virtual ~Entity() = default;
     virtual bool update(World&) = 0;
     std::string get_name()const{return name;}
-
+    
 protected:
     std::string name;
     Ptr<Behaviour> behaviour_ptr;
     bool killed;
-    
-};
 
+};

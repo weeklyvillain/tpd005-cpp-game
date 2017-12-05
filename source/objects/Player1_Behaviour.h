@@ -7,10 +7,12 @@
 
 
 class Player1_Behaviour : public Behaviour {
+int i{0};
+int frame{0};
 public:
 	Player1_Behaviour():Behaviour{}{}
 	bool process(World &world, Entity &owner) override{
-		sf::Vector2f dir = world.player1.direction();		
+		sf::Vector2f dir = world.player1.direction();
 		if (world.player1.shoot){
 			std::cout << "Pang!" << std::endl;
 		}
@@ -27,6 +29,19 @@ public:
 		}else if (dir.x == -1.0f && owner.getScale().x == -1.0f ){
 			owner.setScale(1.0f, 1.0f);
 		}
+
+		owner.setTextureRect(sf::IntRect(frame * 80, 0, 80, 80));
+		if(i > 5){
+			if(frame < 9){
+				frame++;
+			} else {
+				frame = 0;
+			}
+			i = 0;
+		} else {
+			i++;
+		}
+
 
 		//Moving sprite
 		owner.setPosition(owner.getPosition() + velocity);
@@ -52,11 +67,7 @@ public:
 			owner.setPosition(sf::Vector2f(1480, owner.getPosition().y));
 			velocity.x = 0;
 		}
-		
+
 		return false;
 	}
 };
-
-
-
-

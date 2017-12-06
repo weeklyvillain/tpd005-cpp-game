@@ -15,7 +15,7 @@ public:
     
 protected:
     std::string name;
-    Ptr<Behaviour> behaviour_ptr;
+    std::unique_ptr<Behaviour> behaviour_ptr;
     bool killed;
 
 };

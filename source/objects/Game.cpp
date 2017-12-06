@@ -5,39 +5,41 @@ int Game::run(){
 
     sf::RenderWindow window{sf::VideoMode(1600, 900), "Bubble Bobble"};
     window.setVerticalSyncEnabled(true);
-    World world{window, 0.5};
+    World* world{new World(window, 0.5)};
 
     
 
-    Level("../assets/test_map.txt", 80, 80, world);
+    Level("../assets/test_map.txt", 80, 80, *world);
    
+    
     
 
 
     sf::Clock clock;
     sf::Time targetFrameDelay {sf::milliseconds(10)};
 
-    while (world.run){
+    while (world->run){
         clock.restart();
         sf::Event event;
         while (window.pollEvent(event)){
             switch (event.type) {
                 case sf::Event::Closed:
-                    world.run = false;
+                    world->run = false;
+                    delete world;
                     break;
                 case sf::Event::KeyPressed:
-                    world.on_Key_Press(event.key.code);
+                    world->on_Key_Press(event.key.code);
                     break;
                 case sf::Event::KeyReleased:
-                    world.on_Key_Release(event.key.code);
+                    world->on_Key_Release(event.key.code);
                     break;
                 default:
                     break;
 			}
         }
         window.clear(sf::Color::White);
-        world.update_all();
-        world.render_all();
+        world->update_all();
+        world->render_all();
         window.display();
         //Vänta tills nästa bildruta innan du ritar
         auto frameDelay = clock.getElapsedTime();

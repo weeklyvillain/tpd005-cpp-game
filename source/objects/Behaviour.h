@@ -1,11 +1,9 @@
 #pragma once
 
+#include "tool_chain.h"
 class Entity;
 class World;
 
-
-template <class T>
-using Ptr = std::shared_ptr<T>;
 
 class Behaviour {
 public:

@@ -8,6 +8,7 @@
 #include "Platform.h"
 #include "Platform_Behaviour.h"
 #include "Level.h"
+#include "Projectile.h"
 #include <iostream>
 
 

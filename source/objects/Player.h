@@ -3,8 +3,6 @@
 
 #include "Entity.h"
 
-
-
 class Player : public Entity{
 public:
     Player(std::string n, Behaviour* b, float x, float y):Entity(n, b), idle_state{0}{

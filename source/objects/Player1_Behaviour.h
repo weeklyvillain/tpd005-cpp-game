@@ -3,6 +3,8 @@
 #include <SFML/Graphics.hpp>
 
 #include "Behaviour.h"
+#include "Projectile_Behaviour.h"
+#include "Projectile.h"
 #include <iostream>
 
 
@@ -13,9 +15,7 @@ public:
 	Player1_Behaviour():Behaviour{}{}
 	bool process(World &world, Entity &owner) override{
 		sf::Vector2f dir = world.player1.direction();
-		if (world.player1.shoot){
-			std::cout << "Pang!" << std::endl;
-		}
+
 
 		velocity.x = dir.x*5;
 		if (velocity.y == 0.0f){
@@ -68,6 +68,11 @@ public:
 			velocity.x = 0;
 		}
 
+		if (world.player1.shoot){
+			world.add_entity(new Projectile("proj", new Projectile_Behaviour(owner.getScale().x, owner.getPosition().x), owner.getPosition().x+(-30.0f*owner.getScale().x),owner.getPosition().y));
+			world.player1.shoot = false;
+			
+		}
 		return false;
 	}
 };

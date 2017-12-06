@@ -10,7 +10,7 @@ class Entity : public sf::Sprite{
 public:
     Entity(std::string n, Behaviour* b) : sf::Sprite(), name{n}, behaviour_ptr{b}, killed{false}{}
     virtual ~Entity() = default;
-    virtual bool update(World&) = 0;
+    virtual bool update(World&, Entity&) = 0;
     std::string get_name()const{return name;}
     
 protected:

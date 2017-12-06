@@ -15,8 +15,9 @@ class World{
         void render_all();
         void on_Key_Press(sf::Keyboard::Key);
         void on_Key_Release(sf::Keyboard::Key);
-        bool am_I_Colliding(Entity const&) const;
-        void kill_me_now(Entity const&);
+        bool am_I_Colliding(Entity const&, bool&, bool&) const;
+        bool ADVBoxCollision(sf::FloatRect const& FirstRect, sf::FloatRect const& SecondRect, bool& pTop, bool& pSide) const;
+        void kill_me_now(Entity&);
 
         Key_Handling player1{};
         bool run{true};

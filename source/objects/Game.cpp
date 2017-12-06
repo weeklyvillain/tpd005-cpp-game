@@ -10,10 +10,6 @@ int Game::run(){
     
 
     Level("../assets/test_map.txt", 80, 80, *world);
-   
-    
-    
-
 
     sf::Clock clock;
     sf::Time targetFrameDelay {sf::milliseconds(10)};
@@ -34,6 +30,11 @@ int Game::run(){
                     world->on_Key_Release(event.key.code);
                     break;
                 default:
+                    if (world->player1.quit){
+                        window.close();
+                        world->run = false; 
+                        delete world;   
+                    }
                     break;
 			}
         }

@@ -13,8 +13,8 @@ public:
             this->setOrigin(8.0f, 8.0f);
             this->setTextureRect(sf::IntRect(0, 0, 16, 16));
         }
-        bool update(World& w) override {
-            killed = behaviour_ptr->process(w, *this);
+        bool update(World& w, Entity& e) override {
+            killed = behaviour_ptr->process(w, e);
             return killed;
         }
 

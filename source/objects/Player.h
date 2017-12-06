@@ -14,8 +14,9 @@ public:
 
         }
 
-        bool update(World& w) override {
-            killed = behaviour_ptr->process(w, *this);
+        bool update(World& w, Entity& e) override {
+            killed = behaviour_ptr->process(w, e);
+            
             return killed;
         }
 

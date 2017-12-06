@@ -8,6 +8,7 @@ public:
 	bool left{false}; 
 	bool right{false};
 	bool shoot{false};
+	bool quit{false};
 	sf::Keyboard::Key jump_key{};
 	sf::Keyboard::Key left_key{};
 	sf::Keyboard::Key right_key{};
@@ -29,6 +30,8 @@ public:
 			right = pressed;			
 		}else if(key == shoot_key){
 			shoot = pressed;
+		}else if(key == sf::Keyboard::Q || key == sf::Keyboard::Escape){
+			quit = true;
 		}
 	}
 

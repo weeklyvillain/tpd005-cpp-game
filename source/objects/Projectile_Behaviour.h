@@ -13,14 +13,13 @@ public:
 		if (( direction < 0 && owner.getPosition().x > init_pos+500.0f) || ( direction > 0 && owner.getPosition().x < init_pos-500.0f)){
 			world.kill_me_now(owner);
 		}
+		if(world.am_I_Colliding(owner)){
+			world.kill_me_now(owner);
+		}
 		return false;
 	}
-	
+
 private:
 	float direction{};
 	float init_pos{};
 };
-
-
-
-

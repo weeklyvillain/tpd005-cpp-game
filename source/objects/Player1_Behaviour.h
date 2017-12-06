@@ -69,9 +69,8 @@ public:
 		}
 
 		if (world.player1.shoot){
-			world.add_entity(new Projectile("proj", new Projectile_Behaviour(owner.getScale().x, owner.getPosition().x), owner.getPosition().x+(-30.0f*owner.getScale().x),owner.getPosition().y));
+			world.add_entity(new Projectile("proj", new Projectile_Behaviour(owner.getScale().x, owner.getPosition().x), owner.getPosition().x+(-45.0f*owner.getScale().x),owner.getPosition().y));
 			world.player1.shoot = false;
-			
 		}
 		return false;
 	}

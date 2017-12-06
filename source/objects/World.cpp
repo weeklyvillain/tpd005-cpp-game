@@ -39,7 +39,7 @@ void World::on_Key_Release(sf::Keyboard::Key k){
 
 bool World::am_I_Colliding(Entity const& e) const{
     for(auto& it : entities){
-        if(it->get_name() != e.get_name()){
+        if(it->get_name() != e.get_name() && it->get_name() != "proj"){
             sf::FloatRect bounding_box = e.getGlobalBounds();
             sf::FloatRect other_box = it->getGlobalBounds();
             if(bounding_box.intersects(other_box)){
@@ -51,7 +51,7 @@ bool World::am_I_Colliding(Entity const& e) const{
 }
 
 void World::kill_me_now(Entity const& e){
-    for (int indx{0}; indx < entities.size(); indx++){
+    for (size_t indx{0}; indx < entities.size(); indx++){
         if(entities.at(indx)->get_name() == e.get_name()){
             entities.erase(entities.begin()+indx);
             break;

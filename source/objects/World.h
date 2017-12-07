@@ -18,6 +18,7 @@ class World{
         bool am_I_Colliding(Entity const&, bool&, bool&) const;
         bool ADVBoxCollision(sf::FloatRect const& FirstRect, sf::FloatRect const& SecondRect, bool& pTop, bool& pSide) const;
         void kill_me_now(Entity&);
+        Entity& get_player() const;
 
         Key_Handling player1{};
         bool run{true};

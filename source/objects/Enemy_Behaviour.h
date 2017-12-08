@@ -18,6 +18,7 @@ public:
 
 		Entity & player = world.get_player();
 		sf::Vector2f player_pos = player.getPosition();
+
 		if(owner.getPosition().x > player_pos.x){
 			dir.x = -1.0f;
 		} else if(owner.getPosition().x < player_pos.x){
@@ -30,7 +31,7 @@ public:
 		} else {
 			dir.y = 1.0f;
 		}
-
+        
 		//Flipping sprite based on movement
 		if (dir.x == 1.0f && owner.getScale().x == 1.0f){
 			owner.setScale(-1.0f, 1.0f);
@@ -55,7 +56,12 @@ public:
 
 		//Movement
 		velocity.x = dir.x*2;
-		velocity.y = dir.y*2;
+        if(velocity.y == 0 && !jumped){
+           velocity.y = dir.y*42;
+           jumped = true;    
+        } else {
+            jumped = false;
+        }
 
 
 

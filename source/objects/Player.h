@@ -9,8 +9,8 @@ public:
             texture.loadFromFile("../assets/wizard_idle.png");
             this->setTexture(texture);
             this->setPosition(x, y);
-            this->setOrigin(40.0f,40.0f);
-            this->setTextureRect(sf::IntRect(0, 0, 80, 80));
+            this->setOrigin(40.0f, 40.0f);
+            this->setTextureRect(sf::IntRect(0, 0, 79, 79));
 
         }
 

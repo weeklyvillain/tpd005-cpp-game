@@ -26,7 +26,7 @@ public:
 		}
 
 		//Animation
-		owner.setTextureRect(sf::IntRect(frame * 80, 0, 80, 80));
+		owner.setTextureRect(sf::IntRect(frame * 80, 0, 79, 79));
 		if(i > 5){
 			if(frame < 9){
 				frame++;
@@ -61,12 +61,12 @@ public:
 		bool p_top{false};
 		bool p_side{false};
 		if (world.am_I_Colliding(owner, p_top, p_side)){
-			sf::Vector2f pos = owner.getPosition();
-			owner.setPosition(pos.x-1.0f*velocity.x, pos.y-1.0f*velocity.y);
 			if(p_top){
+				owner.setPosition(owner.getPosition().x, owner.getPosition().y-velocity.y);
 				velocity.y = 0.0f;			
 			}
 			if(p_side){
+				owner.setPosition(owner.getPosition().x-velocity.x, owner.getPosition().y);
 				velocity.x = 0.0f;
 			}
 		}else{

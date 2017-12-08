@@ -13,7 +13,7 @@ int i{0};
 int frame{0};
 public:
 	Player1_Behaviour():Behaviour{}{}
-	bool process(World &world, Entity& owner) override{
+	bool process(World &world, Entity& owner, sf::Time const& t)  override{
 		
 		sf::Vector2f dir = world.player1.direction();
 
@@ -38,6 +38,7 @@ public:
 			i++;
 		}
 
+
 		//Shooting
 		if (world.player1.shoot){
 			world.add_entity(new Projectile("proj", 
@@ -48,31 +49,39 @@ public:
 		}
 		
 		//Movement
-		velocity.x = dir.x*10;
+		velocity.x = dir.x* 80 * t.asSeconds();
 		if (velocity.y == 0.0f){
-			velocity.y = dir.y*42;
+			velocity.y = dir.y* 500 * t.asSeconds();
 		}
+
 
 		//Moving sprite
 		owner.setPosition(owner.getPosition() + velocity);
 
-
-		//Checking for collisions
-		bool p_top{false};
-		bool p_side{false};
-		if (world.am_I_Colliding(owner, p_top, p_side)){
-			if(p_top){
-				owner.setPosition(owner.getPosition().x, owner.getPosition().y-velocity.y);
-				velocity.y = 0.0f;			
-			}
-			if(p_side){
-				owner.setPosition(owner.getPosition().x-velocity.x, owner.getPosition().y);
-				velocity.x = 0.0f;
-			}
-		}else{
-			//Applying gravity
-			velocity += acceleration;
+		//Applying gravity
+		velocity += acceleration;
+		Entity* now = world.am_I_Colliding(owner);
+		if (now && velocity.y > 0 && now->get_name() == "Platform"){
+			owner.setPosition(owner.getPosition().x, now->getPosition().y -81);
+			velocity.y = 0.0f;
+		}else if(now && velocity.y < 0 && now->get_name() == "Platform"){
+			owner.setPosition(owner.getPosition().x, now->getPosition().y +81);
+			velocity.y = 0.0f;
 		}
+		//     p_top,
+		//     owner.setPosition(old_x, now.top)
+		if (now && velocity.x > 0){
+			owner.setPosition(now->getPosition().x + 81, owner.getPosition().y);
+			velocity.x = 0.0f;
+		}else if(now && velocity.x < 0){
+			owner.setPosition(now->getPosition().x -81, owner.getPosition().y);
+			velocity.x = 0.0f;
+		}
+		//     p_side,
+		//     owner.setPosition(now.left eller now.right, old_y)
+
+		// Antagande: world.collides?(owner) = false
+
 		return false;
 
 	}

@@ -42,10 +42,11 @@ bool World::ADVBoxCollision(sf::FloatRect const& FirstRect, sf::FloatRect const&
     bool Firsttotheright = false;
     bool Firstabove = false;
     bool Firstbelow = false;
- 
+    //ToS stands for Top or side. It tells whether the sprite collided with the top/bottom part or the side part.
+    //0 = top/bottom, 1 = sides
     if(FirstRect.intersects(SecondRect)){
-        if((FirstRect.left - 10) <= (SecondRect.left - FirstRect.width)){
-            Firsttotheleft = true;            
+        if((FirstRect.left - 20) <= (SecondRect.left - FirstRect.width)){
+            Firsttotheleft = true;
         }
         if(((FirstRect.left + FirstRect.width) + 10) >= ((SecondRect.left + SecondRect.width) + FirstRect.width)){
             Firsttotheright = true;
@@ -65,7 +66,7 @@ bool World::ADVBoxCollision(sf::FloatRect const& FirstRect, sf::FloatRect const&
         return FirstRect.intersects(SecondRect);
     }else{
         return false;
-    } 
+    }
 }
 
 
@@ -87,6 +88,14 @@ void World::kill_me_now(Entity& e){
         if(entities.at(indx)->get_name() == e.get_name()){
             entities.erase(entities.begin()+indx);
             break;
+        }
+    }
+}
+
+Entity& World::get_player() const{
+    for(auto& it : entities){
+        if(it->get_name() == "Player1"){
+            return *it;
         }
     }
 }

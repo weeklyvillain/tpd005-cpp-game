@@ -12,7 +12,7 @@ int frame{0};
 bool jumped{false};
 public:
 	Enemy_Behaviour():Behaviour{}{}
-	bool process(World &world, Entity& owner, sf::Time const& t) override{
+	bool process(World& world, Entity& owner, sf::Time const& t) override{
 
 
 
@@ -29,48 +29,57 @@ public:
 		} else {
 			dir.x = 0.0f;
 		}
-		if(owner.getPosition().y >= player_pos.y){
+		if(owner.getPosition().y > player_pos.y){
 			dir.y = -1.0f;
 		} else {
 			dir.y = 1.0f;
 		}
 
-		//Flipping sprite based on movement
-		if (dir.x == 1.0f && owner.getScale().x == 1.0f){
-			owner.setScale(-1.0f, 1.0f);
-		}else if (dir.x == -1.0f && owner.getScale().x == -1.0f ){
-			owner.setScale(1.0f, 1.0f);
-		}
-/*
-		//Animation
-		owner.setTextureRect(sf::IntRect(frame * 80, 0, 80, 80));
-		if(i > 5){
-			if(frame < 9){
-				frame++;
-			} else {
-				frame = 0;
-			}
-			i = 0;
-		} else {
-			i++;
-		}
-*/
-
-
-		//Movement
-		velocity.x = dir.x*2;
-        if(velocity.y == 0 && !jumped){
-           velocity.y = dir.y*42;
-           jumped = true;
-        } else {
-            jumped = false;
-        }
 
 
 
-		//Moving sprite
-		owner.setPosition(owner.getPosition() + velocity);
+				//Flipping sprite based on movement
+				if (dir.x == 1.0f && owner.getScale().x == 1.0f){
+					owner.setScale(-1.0f, 1.0f);
+				}else if (dir.x == -1.0f && owner.getScale().x == -1.0f ){
+					owner.setScale(1.0f, 1.0f);
+				}
 
+
+
+
+
+
+				//Moving sprite
+				owner.setPosition(owner.getPosition() + velocity);
+
+				//Movement
+				velocity.x = dir.x* 80 * t.asSeconds();
+				if (velocity.y == 0.0f){
+					velocity.y = dir.y* 500 * t.asSeconds();
+				}
+
+
+				//Applying gravity
+				velocity.y += acceleration.y;
+
+				std::cout << velocity.x << std::endl;
+
+				Entity* now = world.am_I_Colliding(owner);
+				if (now && velocity.y >= 0.0f && now->get_name() == "Platform" && (owner.getPosition().x  >= now->getPosition().x - 78.0f && owner.getPosition().x <= now->getPosition().x + 78.0f)){
+					owner.setPosition(owner.getPosition().x, now->getPosition().y -80.0f);
+					velocity.y = 0.0f;
+				}else if(now && velocity.y < 0.0f && now->get_name() == "Platform" && (owner.getPosition().x  >= now->getPosition().x - 78.0f && owner.getPosition().x <= now->getPosition().x + 78.0f)){
+					owner.setPosition(owner.getPosition().x, now->getPosition().y +80.0f);
+					velocity.y = acceleration.y;
+				}
+				else if (now && velocity.x > 0.0f && (owner.getPosition().y  >= now->getPosition().y - 79.0f && owner.getPosition().x <= now->getPosition().x + 79.0f)){
+					owner.setPosition(now->getPosition().x - 81.0f, owner.getPosition().y);
+					velocity.x = -velocity.x;
+				}else if(now && velocity.x < 0.0f && (owner.getPosition().y  >= now->getPosition().y - 79.0f && owner.getPosition().x <= now->getPosition().x + 79.0f)){
+					owner.setPosition(now->getPosition().x + 81.0f , owner.getPosition().y);
+					velocity.x = -velocity.x;
+				}
 
 
 		return false;

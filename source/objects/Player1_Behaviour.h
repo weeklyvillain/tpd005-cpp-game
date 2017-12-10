@@ -5,6 +5,7 @@
 #include "Behaviour.h"
 #include "Projectile_Behaviour.h"
 #include "Projectile.h"
+#include <cmath>
 #include <iostream>
 
 
@@ -63,21 +64,22 @@ public:
 		//Applying gravity
 		velocity.y += acceleration.y;
 
-
+		
 
 		Entity* now = world.am_I_Colliding(owner);
-		if (now && velocity.y >= 0 && now->get_name() == "Platform" && (owner.getPosition().x >= now->getPosition().x && owner.getPosition().x <= now->getPosition().x + 80)){
-			owner.setPosition(owner.getPosition().x, now->getPosition().y -80);
+		if (now && velocity.y >= 0.0f && now->get_name() == "Platform" && (owner.getPosition().x  >= now->getPosition().x - 78.0f && owner.getPosition().x <= now->getPosition().x + 78.0f)){
+			owner.setPosition(owner.getPosition().x, now->getPosition().y -80.0f);
 			velocity.y = 0.0f;
-		}else if(now && velocity.y < 0 && now->get_name() == "Platform" && (owner.getPosition().x >= now->getPosition().x && owner.getPosition().x <= now->getPosition().x + 80)){
-			owner.setPosition(owner.getPosition().x, now->getPosition().y +80);
+		}else if(now && velocity.y < 0.0f && now->get_name() == "Platform" && (owner.getPosition().x  >= now->getPosition().x - 78.0f && owner.getPosition().x <= now->getPosition().x + 78.0f)){
+			owner.setPosition(owner.getPosition().x, now->getPosition().y +80.0f);
 			velocity.y = acceleration.y;
-		} else if (now && velocity.x > 0){
-			owner.setPosition(now->getPosition().x - 80, owner.getPosition().y);
-			velocity.x = 0.0f;
-		}else if(now && velocity.x < 0){
-			owner.setPosition(now->getPosition().x + 80, owner.getPosition().y);
-			velocity.x = 0.0f;
+		}
+		else if (now && velocity.x > 0.0f && (owner.getPosition().y  >= now->getPosition().y - 79.0f && owner.getPosition().x <= now->getPosition().x + 79.0f)){
+			owner.setPosition(now->getPosition().x - 81.0f, owner.getPosition().y);
+			velocity.x = -velocity.x;
+		}else if(now && velocity.x < 0.0f && (owner.getPosition().y  >= now->getPosition().y - 79.0f && owner.getPosition().x <= now->getPosition().x + 79.0f)){
+			owner.setPosition(now->getPosition().x + 81.0f , owner.getPosition().y);
+			velocity.x = -velocity.x;
 		}
 		return false;
 

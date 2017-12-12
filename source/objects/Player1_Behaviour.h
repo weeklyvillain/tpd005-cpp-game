@@ -81,14 +81,14 @@ public:
 			velocity.y = acceleration.y;
 		}
 		else if (now && velocity.x > 0.0f && now->get_name() == "Platform" 
-				&& (owner.getPosition().y  >= now->getPosition().y - 79.0f 
-				&& owner.getPosition().x <= now->getPosition().x + 79.0f)){
+				&& (owner.getPosition().y  >= now->getPosition().y - 78.0f 
+				&& owner.getPosition().y <= now->getPosition().y + 78.0f)){
 
 			owner.setPosition(now->getPosition().x - 81.0f, owner.getPosition().y);
 			velocity.x = -velocity.x;
 		}else if(now && velocity.x < 0.0f && now->get_name() == "Platform" 
-				&& (owner.getPosition().y  >= now->getPosition().y - 79.0f 
-				&& owner.getPosition().x <= now->getPosition().x + 79.0f)){
+				&& (owner.getPosition().y  >= now->getPosition().y - 78.0f 
+				&& owner.getPosition().y <= now->getPosition().y + 78.0f)){
 					
 			owner.setPosition(now->getPosition().x + 81.0f , owner.getPosition().y);
 			velocity.x = -velocity.x;

@@ -7,12 +7,12 @@ int Game::run(){
     window.setVerticalSyncEnabled(true);
     World world{window, 0.5};
 
-    
 
-    Level("../assets/test_map.txt", 80, 80, world);
+
+    Level("../assets/test_map.lvl", 80, 80, world);
 
     sf::Clock clock;
-    sf::Time targetFrameDelay {sf::milliseconds(10)};
+    sf::Time targetFrameDelay {sf::milliseconds(1.67)};
 
     while (world.run){
         sf::Event event;
@@ -30,7 +30,7 @@ int Game::run(){
                 default:
                     if (world.player1.quit){
                         window.close();
-                        world.run = false;  
+                        world.run = false;
                     }
                     break;
 			}

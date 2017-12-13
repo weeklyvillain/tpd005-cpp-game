@@ -5,9 +5,6 @@
 #include "Behaviour.h"
 #include "Projectile_Behaviour.h"
 #include "Projectile.h"
-#include <cmath>
-#include <iostream>
-
 
 class Player1_Behaviour : public Behaviour {
 int i{0};
@@ -18,7 +15,6 @@ public:
 	void process(World &world, Entity& owner, sf::Time const& t)  override{
 
 		sf::Vector2f dir = world.player1.direction();
-
 
 		//Flipping sprite based on movement
 		if (dir.x == 1.0f && owner.getScale().x == 1.0f){
@@ -40,17 +36,14 @@ public:
 			i++;
 		}
 
-
 		//Shooting
 		if (world.player1.shoot){
-			world.add_entity(new Projectile("proj",
+			world.add_entity(new Projectile("proj", "Projectile",
 				new Projectile_Behaviour(owner.getScale().x,
 				owner.getPosition().x),
 				owner.getPosition().x+(-50.0f*owner.getScale().x),owner.getPosition().y));
 			world.player1.shoot = false;
 		}
-
-
 
 		//Moving sprite
 		owner.setPosition(owner.getPosition() + velocity);
@@ -61,11 +54,8 @@ public:
 			velocity.y = dir.y* 500 * t.asSeconds();
 		}
 
-
 		//Applying gravity
 		velocity.y += acceleration.y;
-
-		
 
 		Entity* now = world.am_I_Colliding(owner);
 		if (now && velocity.y >= 0.0f && now->get_name() == "Platform" 
@@ -81,15 +71,11 @@ public:
 			owner.setPosition(owner.getPosition().x, now->getPosition().y +80.0f);
 			velocity.y = acceleration.y;
 		}
-		else if (now && velocity.x > 0.0f && now->get_name() == "Platform" 
-				&& (owner.getPosition().y  >= now->getPosition().y - 78.0f 
-				&& owner.getPosition().y <= now->getPosition().y + 78.0f)){
+		else if (now && velocity.x > 0.0f && now->get_name() == "Platform"){
 
 			owner.setPosition(now->getPosition().x - 81.0f, owner.getPosition().y);
 			velocity.x = -velocity.x;
-		}else if(now && velocity.x < 0.0f && now->get_name() == "Platform" 
-				&& (owner.getPosition().y  >= now->getPosition().y - 78.0f 
-				&& owner.getPosition().y <= now->getPosition().y + 78.0f)){
+		}else if(now && velocity.x < 0.0f && now->get_name() == "Platform"){
 					
 			owner.setPosition(now->getPosition().x + 81.0f , owner.getPosition().y);
 			velocity.x = -velocity.x;

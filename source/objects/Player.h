@@ -16,6 +16,7 @@ public:
         void update(World& w, sf::Time const& t) override {
             behaviour_ptr->process(w, *this, t);
         }
+        
 
 private:
     sf::Texture texture{};

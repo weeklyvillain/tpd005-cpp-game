@@ -16,7 +16,6 @@ public:
 
 		sf::Vector2f dir{0.0f, 0.0f};
 
-
 		Entity* player = world.get_player();
 		sf::Vector2f player_pos = player->getPosition();
 
@@ -33,20 +32,12 @@ public:
 			dir.y = 1.0f;
 		}
 
-
-
-
 		//Flipping sprite based on movement
 		if (dir.x == 1.0f && owner.getScale().x == 1.0f){
 			owner.setScale(-1.0f, 1.0f);
 		}else if (dir.x == -1.0f && owner.getScale().x == -1.0f ){
 			owner.setScale(1.0f, 1.0f);
 		}
-
-
-
-
-
 
 		//Moving sprite
 		owner.setPosition(owner.getPosition() + velocity);
@@ -56,7 +47,6 @@ public:
 		if (velocity.y == 0.0f){
 			velocity.y = dir.y* 500 * t.asSeconds();
 		}
-
 
 		//Applying gravity
 		velocity.y += acceleration.y;
@@ -95,9 +85,5 @@ public:
 				owner.setPosition(now->getPosition().x + 81.0f , owner.getPosition().y);
 				velocity.x = -velocity.x;
 		}
-
-
-		return false;
-
 	}
 };

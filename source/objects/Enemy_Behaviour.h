@@ -63,14 +63,14 @@ public:
 		//Applying gravity
 		velocity.y += acceleration.y;
 
-		std::cout << velocity.x << std::endl;
+		
 
 		Entity* now = world.am_I_Colliding(owner);
-		if(now->get_name() == "Player"){
+	/*	if(now->get_name() == "Player"){
 
 		}
 		if(now->get_name() == "proj") {
-		}
+		}*/
 		if (now && velocity.y >= 0.0f && now->get_name() == "Platform"
 			&& (owner.getPosition().x  >= now->getPosition().x - 78.0f
 			&& owner.getPosition().x <= now->getPosition().x + 78.0f)){

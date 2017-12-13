@@ -17,16 +17,20 @@ public:
 		sf::Vector2f dir{0.0f, 0.0f};
 
 		Entity* player = world.get_player();
-		sf::Vector2f player_pos = player->getPosition();
+		sf::Vector2f player_pos;
+		if (player){
+			player_pos = player->getPosition();
+		}
 
-		if(owner.getPosition().x > player_pos.x){
+
+		if(player && owner.getPosition().x > player_pos.x){
 			dir.x = -1.0f;
-		} else if(owner.getPosition().x < player_pos.x){
+		} else if(player && owner.getPosition().x < player_pos.x){
 			dir.x = 1.0f;
 		} else {
 			dir.x = 0.0f;
 		}
-		if(owner.getPosition().y > player_pos.y){
+		if(player && owner.getPosition().y > player_pos.y){
 			dir.y = -1.0f;
 		} else {
 			dir.y = 1.0f;
@@ -51,14 +55,12 @@ public:
 		//Applying gravity
 		velocity.y += acceleration.y;
 
-		std::cout << velocity.x << std::endl;
-
 		Entity* now = world.am_I_Colliding(owner);
-		if(now->get_name() == "Player"){
-
+		if(now && now->get_type() == "Player"){
+			now->kill(world);
+			now = nullptr;
 		}
-		if(now->get_name() == "proj") {
-		}
+		
 		if (now && velocity.y >= 0.0f && now->get_name() == "Platform"
 			&& (owner.getPosition().x  >= now->getPosition().x - 78.0f
 			&& owner.getPosition().x <= now->getPosition().x + 78.0f)){

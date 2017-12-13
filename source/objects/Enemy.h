@@ -5,7 +5,7 @@
 
 class Enemy : public Entity{
 public:
-    Enemy(std::string n, Behaviour* b, float x, float y):Entity(n, b) {
+    Enemy(std::string n, std::string t, Behaviour* b, float x, float y):Entity(n, t, b) {
             texture.loadFromFile("../assets/wizard_idle.png");
             this->setTexture(texture);
             this->setPosition(x, y);
@@ -14,10 +14,8 @@ public:
 
         }
 
-        bool update(World& w, sf::Time const& t) override {
-            killed = behaviour_ptr->process(w, *this, t);
-
-            return killed;
+        void update(World& w, sf::Time const& t) override {
+            behaviour_ptr->process(w, *this, t);
         }
 
 private:

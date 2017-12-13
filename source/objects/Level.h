@@ -29,7 +29,7 @@ public:
                     }
                     pos.x += tile_width;
                 });
-                pos.x = (tile_width / 2);
+                pos.x = tile_width / 2;
                 pos.y +=tile_height;
             }
         }

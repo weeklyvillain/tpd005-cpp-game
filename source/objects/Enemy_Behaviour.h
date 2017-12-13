@@ -12,9 +12,7 @@ class Enemy_Behaviour : public Behaviour {
 	bool jumped{false};
 public:
 	Enemy_Behaviour():Behaviour{}{}
-	bool process(World& world, Entity& owner, sf::Time const& t) override{
-
-
+	void process(World& world, Entity& owner, sf::Time const& t) override{
 
 		sf::Vector2f dir{0.0f, 0.0f};
 
@@ -63,14 +61,14 @@ public:
 		//Applying gravity
 		velocity.y += acceleration.y;
 
-		
+		std::cout << velocity.x << std::endl;
 
 		Entity* now = world.am_I_Colliding(owner);
-	/*	if(now->get_name() == "Player"){
+		if(now->get_name() == "Player"){
 
 		}
 		if(now->get_name() == "proj") {
-		}*/
+		}
 		if (now && velocity.y >= 0.0f && now->get_name() == "Platform"
 			&& (owner.getPosition().x  >= now->getPosition().x - 78.0f
 			&& owner.getPosition().x <= now->getPosition().x + 78.0f)){

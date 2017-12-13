@@ -4,7 +4,7 @@
 
 class Platform: public Entity{
 public:
-    Platform(std::string n, Behaviour* b, sf::Vector2f pos):Entity(n, b){
+    Platform(std::string n, std::string t, Behaviour* b, sf::Vector2f pos):Entity(n, t, b){
             texture.loadFromFile("../assets/Art_Tileset.png");
             this->setTexture(texture);
             this->setOrigin(40.0f, 40.0f);
@@ -12,12 +12,10 @@ public:
             this->setPosition(pos);
         }
 
-        bool update(World& w, sf::Time const& t) override {
-            killed = behaviour_ptr->process(w, *this, t);
-            return killed;
+        void update(World& w, sf::Time const& t) override {
+            behaviour_ptr->process(w, *this, t);
         }
 
 private:
     sf::Texture texture{};
-
 };

@@ -8,14 +8,15 @@
 
 class Entity : public sf::Sprite{
 public:
-    Entity(std::string n, Behaviour* b) : sf::Sprite(), name{n}, behaviour_ptr{b}, killed{false}{}
+    Entity(std::string n, std::string t, Behaviour* b) : sf::Sprite(), name{n}, type{t}, behaviour_ptr{b}{}
     virtual ~Entity() = default;
-    virtual bool update(World&, sf::Time const&) = 0;
+    virtual void update(World&, sf::Time const&) = 0;
     std::string get_name()const{return name;}
-    
+    std::string get_type()const{return type;}
+
 protected:
     std::string name;
+    std::string type;
     std::unique_ptr<Behaviour> behaviour_ptr;
-    bool killed;
-
+    
 };

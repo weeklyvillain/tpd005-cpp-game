@@ -9,9 +9,7 @@
 class Platform_Behaviour : public Behaviour {
 public:
 	Platform_Behaviour():Behaviour{}{}
-	bool process(World&, Entity&, sf::Time const&) override{
-        return false;
-	}
+	void process(World&, Entity&, sf::Time const&) override{}
 	
 };
 

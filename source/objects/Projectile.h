@@ -6,16 +6,15 @@
 
 class Projectile : public Entity{
 public:
-    Projectile(std::string n, Behaviour* b, float x, float y):Entity(n, b), idle_state{0}{
+    Projectile(std::string n, std::string t, Behaviour* b, float x, float y):Entity(n, t, b), idle_state{0}{
             texture.loadFromFile("../assets/projectile.png");
             this->setTexture(texture);
             this->setPosition(x, y);
             this->setOrigin(8.0f, 8.0f);
             this->setTextureRect(sf::IntRect(0, 0, 16, 16));
         }
-        bool update(World& w, sf::Time const& t) override {
-            killed = behaviour_ptr->process(w, *this, t);
-            return killed;
+        void update(World& w, sf::Time const& t) override {
+            behaviour_ptr->process(w, *this, t);
         }
 
 private:

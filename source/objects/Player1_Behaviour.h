@@ -14,7 +14,8 @@ int i{0};
 int frame{0};
 public:
 	Player1_Behaviour():Behaviour{}{}
-	bool process(World &world, Entity& owner, sf::Time const& t)  override{
+	
+	void process(World &world, Entity& owner, sf::Time const& t)  override{
 
 		sf::Vector2f dir = world.player1.direction();
 
@@ -93,7 +94,5 @@ public:
 			owner.setPosition(now->getPosition().x + 81.0f , owner.getPosition().y);
 			velocity.x = -velocity.x;
 		}
-		return false;
-
 	}
 };

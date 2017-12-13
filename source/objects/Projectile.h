@@ -17,6 +17,10 @@ public:
             behaviour_ptr->process(w, *this, t);
         }
 
+        void kill(World& w) override{
+            w.kill_me_now(*this);
+        }
+
 private:
     sf::Texture texture{};
     int idle_state{0};

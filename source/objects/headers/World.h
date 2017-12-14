@@ -3,7 +3,7 @@
 #include "tool_chain.h"
 #include "Key_Handling.h"
 #include "Entity.h"
-
+#include "Texture_Container.h"
 
 class World{
     public:
@@ -19,12 +19,30 @@ class World{
         void kill_me_now(Entity&);
         Entity* get_player() const;
 
-        Key_Handling player1{};
+        int get_lives();
+        void add_life();
+        void remove_life();
+
+        Key_Handling player1{
+            sf::Keyboard::Up, 
+            sf::Keyboard::Left, 
+            sf::Keyboard::Right, 
+            sf::Keyboard::Space
+        };
+        
+        Key_Handling player2{
+            sf::Keyboard::W, 
+            sf::Keyboard::A, 
+            sf::Keyboard::D, 
+            sf::Keyboard::F
+        };
         bool run{true};
 
     private:
         sf::RenderWindow& window;
         float gravity;
         std::vector<std::unique_ptr<Entity>> entities;
+        int lives{3};
+        Texture_Container texture_list{};
 
 };

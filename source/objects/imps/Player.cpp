@@ -8,9 +8,16 @@ Player::Player(std::string n, std::string t, Behaviour* b, float x, float y):Ent
         this->setTextureRect(sf::IntRect(0, 0, 79, 79));
 
     }
-    void Player::update(World& w, sf::Time const& t){
-        behaviour_ptr->process(w, *this, t);
-    }
-    void Player::kill(World& w){
+void Player::update(World& w, sf::Time const& t){
+    behaviour_ptr->process(w, *this, t);
+}
+
+void Player::kill(World& w){
+    if(w.get_lives() > 0){
+        w.remove_life();
+        setPosition(800, 100);
+    }else{
         w.kill_me_now(*this);
     }
+
+}

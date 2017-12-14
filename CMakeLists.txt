@@ -18,6 +18,7 @@ source/objects/headers/Player.h
 source/objects/headers/Player1_Behaviour.h
 source/objects/headers/Projectile_Behaviour.h
 source/objects/headers/Projectile.h
+source/objects/headers/Texture_Container.h
 source/objects/headers/tool_chain.h
 source/objects/headers/World.h
 source/objects/imps/Enemy_Behaviour.cpp
@@ -31,6 +32,7 @@ source/objects/imps/Player.cpp
 source/objects/imps/Player1_Behaviour.cpp
 source/objects/imps/Projectile_Behaviour.cpp
 source/objects/imps/Projectile.cpp
+source/objects/imps/Texture_Container.cpp
 source/objects/imps/World.cpp
 source/main.cpp) 
 

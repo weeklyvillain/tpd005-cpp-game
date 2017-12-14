@@ -3,7 +3,7 @@
 
 int Game::run(){
 
-    sf::RenderWindow window{sf::VideoMode(1600, 900), "Bubble Bobble"};
+    sf::RenderWindow window{sf::VideoMode(1900, 900), "Bubble Bobble"};
     window.setVerticalSyncEnabled(true);
     World world{window, 0.5};
 

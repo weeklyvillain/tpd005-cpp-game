@@ -3,11 +3,9 @@
 World::World(sf::RenderWindow &w, float g)
     :window(w), gravity{g}, entities{}{}
 
-
 void World::add_entity(Entity* e){
     entities.push_back(std::unique_ptr<Entity>{e});
 }
-
 
 void World::update_all(sf::Time const& t){
     for(auto& it : entities){
@@ -34,7 +32,6 @@ void World::on_Key_Release(sf::Keyboard::Key k){
     player1.onKey(false, k);
 
 }
-
 
 Entity* World::am_I_Colliding(Entity const& e) const{
     for(auto& it : entities){
@@ -66,4 +63,16 @@ Entity* World::get_player() const{
         }
     }
     return nullptr;
+}
+
+int World::get_lives(){
+    return lives; 
+}
+
+void World::add_life(){
+    lives++;
+}
+
+void World::remove_life(){
+    lives--;
 }

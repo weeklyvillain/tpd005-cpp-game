@@ -3,7 +3,7 @@
 
 Menu::Menu(float width, float height) : selectedItemIndex{0}, font{}
 {
-	if (!font.loadFromFile("../assets/Font.ttf"))
+	if (!font.loadFromFile("assets/Font.ttf"))
 	{
 		// handle error
 	}

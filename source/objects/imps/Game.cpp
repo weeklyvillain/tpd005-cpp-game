@@ -10,7 +10,7 @@ int Game::run(){
 
 
 
-    Level("../assets/test_map.lvl", 80, 80, world);
+    Level("assets/test_map.lvl", 80, 80, world);
 
     sf::Clock clock;
     sf::Time targetFrameDelay {sf::milliseconds(1.67)};

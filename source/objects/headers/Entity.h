@@ -14,8 +14,7 @@ public:
     virtual void kill(World&) = 0;
     std::string get_name()const{return name;}
     std::string get_type()const{return type;}
-
-    float time_since_last_shot{0};
+    
 protected:
     std::string name;
     std::string type;

@@ -4,7 +4,6 @@
 class Entity;
 class World;
 
-
 class Behaviour {
 public:
     Behaviour() = default;

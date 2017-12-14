@@ -1,7 +1,7 @@
 #include "SFML/Graphics.hpp"
 #include <iostream>
-#include "objects/Menu.h"
-#include "objects/Game.h"
+#include "objects/headers/Menu.h"
+#include "objects/headers/Game.h"
 
 int main()
 {

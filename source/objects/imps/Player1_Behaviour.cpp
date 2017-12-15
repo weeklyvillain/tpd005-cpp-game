@@ -9,7 +9,7 @@ void Player1_Behaviour::process(World &world, Entity& owner, sf::Time const& t){
     flip(o, dir);
 
     //Animation
-    animate(o);
+    //animate(o);
 
     //Shooting
     shoot(world, o, t);
@@ -19,9 +19,6 @@ void Player1_Behaviour::process(World &world, Entity& owner, sf::Time const& t){
 
     //Movement
     move(o, dir, t);
-
-
-    std::cout << owner.getPosition().x << ":" << owner.getPosition().y << std::endl;
 }
 
 void Player1_Behaviour::flip(Entity& owner, sf::Vector2f const& dir){
@@ -48,6 +45,9 @@ void Player1_Behaviour::animate(Entity& owner){
 
 void Player1_Behaviour::shoot(World& world, Player& owner, sf::Time t)const{
     if (world.player1.shoot && owner.time_since_last_shot + t.asSeconds() > 0.5f){	
+        sf::IntRect old_rect = owner.getTextureRect();
+        owner.setTexture(world.get_texture("wizard_attack"));
+
         world.add_entity(
             new Projectile("proj", "Projectile",
                 new Projectile_Behaviour(owner.getScale().x, owner.getPosition().x),
@@ -74,7 +74,6 @@ void Player1_Behaviour::move(Entity& owner, sf::Vector2f const& dir, sf::Time t)
 }
 
 void Player1_Behaviour::collisions(World& world, Entity& owner){
-    
     Entity* now = world.am_I_Colliding(owner);
     if (now && velocity.y >= 0.0f && now->get_name() == "Platform" 
             && owner.getPosition().y + 40 >= now->getPosition().y - 40

@@ -23,4 +23,5 @@ public:
 private:
 	int i{0};
 	int frame{0};
+	int attack_frame;
 };

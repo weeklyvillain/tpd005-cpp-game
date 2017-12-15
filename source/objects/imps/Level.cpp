@@ -6,7 +6,6 @@ Level::Level(std::string filename, int w, int h, World & world): ifs{filename}, 
         for( std::string line; getline( ifs, line ); )
         {
             for_each(begin(line), end(line), [&](char c){
-                std::cout << c;
                 if(c == 'x'){
                     world.add_entity(new Platform("Platform", "Platform", 
                         new Platform_Behaviour(), pos, world.get_texture("platform"), 
@@ -25,7 +24,6 @@ Level::Level(std::string filename, int w, int h, World & world): ifs{filename}, 
                 }
                 pos.x += tile_width;
             });
-            std::cout << std::endl;
             pos.x = tile_width / 2;
             pos.y +=tile_height;
         }

@@ -15,7 +15,7 @@ int Game::run(){
      "assets/levels/level7.lvl",
      "assets/levels/level8.lvl"
     };
-    int level_index{0};
+    int level_index{2};
 
     Level(lvls.at(level_index), 80, 80, world);
 

@@ -6,7 +6,7 @@
 
 class Projectile : public Entity{
 public:
-    Projectile(std::string n, std::string t, Behaviour* b, float x, float y, sf::Texture, sf::IntRect);
+    Projectile(std::string n, std::string t, Behaviour* b, float x, float y, sf::Texture const&, sf::IntRect);
     void update(World& w, sf::Time const& t) override;
     void kill(World& w) override;
 

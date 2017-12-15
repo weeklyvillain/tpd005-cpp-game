@@ -3,7 +3,6 @@
 
 void Player1_Behaviour::process(World &world, Entity& owner, sf::Time const& t){
     Player& o = dynamic_cast<Player&>(owner);
-    owner.setTexture(world.get_texture("wizard_idle"));
     sf::Vector2f dir = world.player1.direction();
 
     //Flipping sprite based on movement

@@ -5,7 +5,7 @@
 
 class Enemy : public Entity{
 public:
-    Enemy(std::string, std::string, Behaviour*, float, float, sf::Texture, sf::IntRect);
+    Enemy(std::string, std::string, Behaviour*, float, float, sf::Texture const&, sf::IntRect);
     void update(World&, sf::Time const&) override;
     void kill(World&) override;
 

@@ -1,4 +1,3 @@
-cmake_minimum_required(VERSION 3.5)
 project(bubble)
 
 set(CMAKE_CXX_STANDARD 14)
@@ -39,7 +38,7 @@ source/main.cpp)
 
 # På skolans Linux -system finns det två versioner av SFML. Se efter vilken som används:
 if (DEFINED ENV{LOADEDMODULES} AND ("$ENV{LOADEDMODULES}" MATCHES ".*prog/gcc/6.1.0.*"))
-    set(CMAKE_CXX_COMPILER /sw/gcc -6.1.0/bin/g++)
+    set(CMAKE_CXX_COMPILER /sw/gcc-6.1.0/bin/g++)
     if (DEFINED ENV{SFML_ROOT})
         list(APPEND CMAKE_MODULE_PATH "$ENV{SFML_ROOT}/share/SFML/cmake/Modules")
     endif()

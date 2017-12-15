@@ -1,6 +1,6 @@
 #pragma once
 #include "SFML/Graphics.hpp"
-#include <vector>
+#include <memory>
 #include <map>
 
 class Texture_Container{
@@ -9,5 +9,5 @@ public:
     sf::Texture const& get_texture(std::string) const;
 
 private:
-    std::map<std::string, sf::Texture> textures;
+    std::map<std::string, std::unique_ptr<sf::Texture>> textures;
 };

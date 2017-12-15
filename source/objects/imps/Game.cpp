@@ -5,13 +5,9 @@ int Game::run(){
 
     sf::RenderWindow window{sf::VideoMode(1900, 900), "Bubble Bobble"};
     window.setVerticalSyncEnabled(true);
-    World world{window, 0.5};
+    World world{window, 0.5};    
 
-    world.add_entity(new Player("Player1", "Player", 
-        new Player1_Behaviour(), 0, 0, world.get_texture("wizard_idle"), 
-        sf::IntRect(0,0,80,80)));
-
-    //Level("assets/test_map.lvl", 80, 80, world);
+    Level("assets/test_map.lvl", 80, 80, world);
 
 
     sf::Clock clock;
@@ -40,6 +36,7 @@ int Game::run(){
         }
         //Vänta tills nästa bildruta innan du ritar
         auto frameDelay = clock.restart();
+        window.clear(sf::Color::White);
         world.update_all(frameDelay);
         world.render_all();
 

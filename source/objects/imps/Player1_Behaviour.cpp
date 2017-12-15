@@ -3,14 +3,14 @@
 
 void Player1_Behaviour::process(World &world, Entity& owner, sf::Time const& t){
     Player& o = dynamic_cast<Player&>(owner);
-
+    owner.setTexture(world.get_texture("wizard_idle"));
     sf::Vector2f dir = world.player1.direction();
 
     //Flipping sprite based on movement
     flip(o, dir);
 
     //Animation
-    //animate(o);
+    animate(o);
 
     //Shooting
     shoot(world, o, t);
@@ -20,7 +20,7 @@ void Player1_Behaviour::process(World &world, Entity& owner, sf::Time const& t){
 
     //Movement
     move(o, dir, t);
-    owner.setTexture(world.get_texture("wizard_idle"));
+
 
     std::cout << owner.getPosition().x << ":" << owner.getPosition().y << std::endl;
 }
@@ -53,7 +53,7 @@ void Player1_Behaviour::shoot(World& world, Player& owner, sf::Time t)const{
             new Projectile("proj", "Projectile",
                 new Projectile_Behaviour(owner.getScale().x, owner.getPosition().x),
                 owner.getPosition().x+(-50.0f*owner.getScale().x), owner.getPosition().y,
-                world.get_texture("Projectile"),
+                world.get_texture("projectile"),
                 sf::IntRect(0, 0, 16, 16)
             )
         );

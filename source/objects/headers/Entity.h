@@ -10,9 +10,7 @@ class Entity : public sf::Sprite{
 public:
     Entity(std::string n, std::string t, Behaviour* b,
         sf::Texture texture, sf::IntRect size) 
-        :sf::Sprite(texture), name{n}, type{t}, behaviour_ptr{b}{
-            setTexture(texture);
-        }
+        :sf::Sprite(texture, size), name{n}, type{t}, behaviour_ptr{b}{}
     virtual ~Entity() = default;
     virtual void update(World&, sf::Time const&) = 0;
     virtual void kill(World&) = 0;

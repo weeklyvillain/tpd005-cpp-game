@@ -64,9 +64,23 @@ Entity* World::get_player() const{
     }
     return nullptr;
 }
+void World::clear(){
+    for(auto& it : entities){
+        kill_me_now(*it);
+    }
+}
+
+bool World::win(){
+    for(auto& it : entities){
+        if(it->get_name() == "Enemy"){
+            return false;
+        }
+    }
+    return true;
+}
 
 int World::get_lives(){
-    return lives; 
+    return lives;
 }
 
 void World::add_life(){

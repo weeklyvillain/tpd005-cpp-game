@@ -12,13 +12,16 @@ class Player1_Behaviour : public Behaviour {
 
 public:
 	Player1_Behaviour():Behaviour{}{}
-	
+
 	void process(World&, Entity&, sf::Time const& ) override;
 	void flip(Entity&, sf::Vector2f const&);
 	void animate(Entity&);
 	void shoot(World&, Player&, sf::Time) const;
-	void move(Entity&, sf::Vector2f const&, sf::Time);
-	void collisions(World&, Entity&);
+	void move_y(Entity&, sf::Vector2f const&, sf::Time);
+	void move_x(Entity&, sf::Vector2f const&, sf::Time);
+	void collision_y(World&, Entity&);
+	void collision_x(World&, Entity&);
+
 
 private:
 	int i{0};

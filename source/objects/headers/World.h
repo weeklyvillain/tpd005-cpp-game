@@ -18,23 +18,24 @@ class World{
         Entity* am_I_Colliding(Entity const&) const;
         void kill_me_now(Entity&);
         Entity* get_player() const;
-
+        void clear();
+        bool win();
         int get_lives();
         void add_life();
         void remove_life();
 
         sf::Texture const& get_texture(std::string name)const{return texture_list.get_texture(name);}
         Key_Handling player1{
-            sf::Keyboard::Up, 
-            sf::Keyboard::Left, 
-            sf::Keyboard::Right, 
+            sf::Keyboard::Up,
+            sf::Keyboard::Left,
+            sf::Keyboard::Right,
             sf::Keyboard::Space
         };
-        
+
         Key_Handling player2{
-            sf::Keyboard::W, 
-            sf::Keyboard::A, 
-            sf::Keyboard::D, 
+            sf::Keyboard::W,
+            sf::Keyboard::A,
+            sf::Keyboard::D,
             sf::Keyboard::F
         };
         bool run{true};

@@ -1,5 +1,5 @@
 #include "../headers/Player1_Behaviour.h"
-
+#include <iostream>
 
 void Player1_Behaviour::process(World &world, Entity& owner, sf::Time const& t){
     Player& o = dynamic_cast<Player&>(owner);
@@ -10,16 +10,19 @@ void Player1_Behaviour::process(World &world, Entity& owner, sf::Time const& t){
     flip(o, dir);
 
     //Animation
-    animate(o);
+    //animate(o);
 
     //Shooting
     shoot(world, o, t);
 
-    //Movement
-    move(o, dir, t);
-
     //Collisons
     collisions(world, o);
+
+    //Movement
+    move(o, dir, t);
+    owner.setTexture(world.get_texture("wizard_idle"));
+
+    std::cout << owner.getPosition().x << ":" << owner.getPosition().y << std::endl;
 }
 
 void Player1_Behaviour::flip(Entity& owner, sf::Vector2f const& dir){
@@ -31,7 +34,7 @@ void Player1_Behaviour::flip(Entity& owner, sf::Vector2f const& dir){
 }
 
 void Player1_Behaviour::animate(Entity& owner){
-    owner.setTextureRect(sf::IntRect(frame * 80, 0, 79, 79));
+    owner.setTextureRect(sf::IntRect(frame * 80, 0, 80, 80));
     if(i > 10){
         if(frame < 9){
             frame++;
@@ -46,10 +49,14 @@ void Player1_Behaviour::animate(Entity& owner){
 
 void Player1_Behaviour::shoot(World& world, Player& owner, sf::Time t)const{
     if (world.player1.shoot && owner.time_since_last_shot + t.asSeconds() > 0.5f){	
-        world.add_entity(new Projectile("proj", "Projectile",
-            new Projectile_Behaviour(owner.getScale().x,
-            owner.getPosition().x),
-            owner.getPosition().x+(-50.0f*owner.getScale().x),owner.getPosition().y));
+        world.add_entity(
+            new Projectile("proj", "Projectile",
+                new Projectile_Behaviour(owner.getScale().x, owner.getPosition().x),
+                owner.getPosition().x+(-50.0f*owner.getScale().x), owner.getPosition().y,
+                world.get_texture("Projectile"),
+                sf::IntRect(0, 0, 16, 16)
+            )
+        );
         owner.time_since_last_shot = 0.0f;
     }else{
         owner.time_since_last_shot += t.asSeconds();
@@ -68,6 +75,7 @@ void Player1_Behaviour::move(Entity& owner, sf::Vector2f const& dir, sf::Time t)
 }
 
 void Player1_Behaviour::collisions(World& world, Entity& owner){
+    
     Entity* now = world.am_I_Colliding(owner);
     if (now && velocity.y >= 0.0f && now->get_name() == "Platform" 
             && owner.getPosition().y + 40 >= now->getPosition().y - 40

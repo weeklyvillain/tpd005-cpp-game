@@ -6,7 +6,7 @@
 class Texture_Container{
 public:
     Texture_Container();
-    sf::Texture const& get_texture(std::string, int) const;
+    sf::Texture const& get_texture(std::string) const;
 
 private:
     std::map<std::string, sf::Texture> textures;

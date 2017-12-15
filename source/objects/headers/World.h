@@ -23,6 +23,7 @@ class World{
         void add_life();
         void remove_life();
 
+        sf::Texture get_texture(std::string name){return texture_list.get_texture(name);}
         Key_Handling player1{
             sf::Keyboard::Up, 
             sf::Keyboard::Left, 

@@ -4,7 +4,7 @@
 
 class Platform: public Entity{
 public:
-    Platform(std::string, std::string, Behaviour*, sf::Vector2f);
+    Platform(std::string, std::string, Behaviour*, sf::Vector2f, sf::Texture, sf::IntRect);
     void update(World& w, sf::Time const& t) override;
     void kill(World& w) override;
 

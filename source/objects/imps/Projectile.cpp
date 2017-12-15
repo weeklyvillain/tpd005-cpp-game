@@ -1,11 +1,11 @@
 #include "../headers/Projectile.h"
 
-Projectile::Projectile(std::string n, std::string t, Behaviour* b, float x, float y):Entity(n, t, b), idle_state{0}{
-        texture.loadFromFile("assets/projectile.png");
-        this->setTexture(texture);
-        this->setPosition(x, y);
-        this->setOrigin(8.0f, 8.0f);
-        this->setTextureRect(sf::IntRect(0, 0, 16, 16));
+Projectile::Projectile(std::string n, std::string t, 
+    Behaviour* b, float x, float y, sf::Texture texture, sf::IntRect size)
+    :Entity(n, t, b, texture, size), idle_state{0}{
+    setOrigin(getLocalBounds().width/2, getLocalBounds().height/2);
+    setPosition(x, y);
+    
 }
     
 void Projectile::update(World& w, sf::Time const& t){

@@ -2,6 +2,7 @@ project(bubble)
 
 set(CMAKE_BUILD_TYPE Debug)
 
+set(CMAKE_CXX_STANDARD 17)
 #Lägger till alla source filer
 set(SOURCE_FILES
     source/objects/headers/Behaviour.h

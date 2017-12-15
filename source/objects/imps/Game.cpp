@@ -1,13 +1,23 @@
 #include "../headers/Game.h"
 
-
 int Game::run(){
 
     sf::RenderWindow window{sf::VideoMode(1900, 900), "Bubble Bobble"};
     window.setVerticalSyncEnabled(true);
-    World world{window, 0.5};    
+    World world{window, 0.5};
+    std::vector<std::string> lvls
+    {"assets/levels/level1.lvl" ,
+     "assets/levels/level2.lvl",
+     "assets/levels/level3.lvl",
+     "assets/levels/level4.lvl",
+     "assets/levels/level5.lvl",
+     "assets/levels/level6.lvl",
+     "assets/levels/level7.lvl",
+     "assets/levels/level8.lvl"
+    };
+    int level_index{2};
 
-    Level("assets/test_map.lvl", 80, 80, world);
+    Level(lvls.at(level_index), 80, 80, world);
 
 
     sf::Clock clock;
@@ -45,6 +55,11 @@ int Game::run(){
             //Vänta bara om du verkligen behöver
             auto sleepTime = targetFrameDelay - frameDelay;
             sf::sleep(sleepTime);
+        }
+        if(world.win()) {
+            world.clear();
+            level_index++;
+            Level(lvls.at(level_index), 80, 80, world);
         }
         window.display();
     }

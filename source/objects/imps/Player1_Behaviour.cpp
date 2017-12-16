@@ -58,7 +58,8 @@ void Player1_Behaviour::shoot(World& world, Player& owner, sf::Time t)const{
                 new Projectile_Behaviour(owner.getScale().x, owner.getPosition().x),
                 owner.getPosition().x+(-50.0f*owner.getScale().x), owner.getPosition().y,
                 world.get_texture("projectile"),
-                sf::IntRect(0, 0, 16, 16)
+                sf::IntRect(0, 0, 16, 16),
+                world
             )
         );
         owner.time_since_last_shot = 0.0f;

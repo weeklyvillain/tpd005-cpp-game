@@ -10,7 +10,7 @@ void World::add_entity(Entity* e){
 void World::update_all(sf::Time const& t){
     for(auto& it : entities){
         if (it != nullptr){
-            it.get()->update(*this, t);
+            it.get()->update(t);
         }
     }
 }

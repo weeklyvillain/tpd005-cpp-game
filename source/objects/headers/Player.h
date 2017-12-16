@@ -6,10 +6,10 @@
 class Player : public Entity{
 
 public:
-    Player(std::string, std::string, Behaviour*, float, float, sf::Texture const&, sf::IntRect);
-        void update(World&, sf::Time const&) override;
+    Player(std::string, std::string, Behaviour*, float, float, sf::Texture const&, sf::IntRect, World&);
+        void update(sf::Time const&) override;
         void kill(World&) override;
-        
+
         float time_since_last_shot{0};
 
 private:

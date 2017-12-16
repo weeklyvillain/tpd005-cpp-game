@@ -22,6 +22,9 @@ set(SOURCE_FILES
     source/objects/headers/Texture_Container.h
     source/objects/headers/tool_chain.h
     source/objects/headers/World.h
+    source/objects/headers/Drop_Behaviour_heart.h
+    source/objects/headers/Drop_Behaviour_points.h
+    source/objects/headers/Drop.h
 
     source/objects/imps/Enemy_Behaviour.cpp
     source/objects/imps/Enemy.cpp
@@ -36,6 +39,9 @@ set(SOURCE_FILES
     source/objects/imps/Projectile.cpp
     source/objects/imps/Texture_Container.cpp
     source/objects/imps/World.cpp
+    source/objects/imps/Drop_Behaviour_heart.cpp
+    source/objects/imps/Drop_Behaviour_points.cpp
+    source/objects/imps/Drop.cpp
     source/main.cpp
 ) 
 

@@ -1,9 +1,11 @@
-#include "../headers/Player1_Behaviour.h"
+#include "../headers/Player_Behaviour.h"
 #include <iostream>
 
-void Player1_Behaviour::process(World &world, Entity& owner, sf::Time const& t){
+Player_Behaviour::Player_Behaviour(Key_Handling& key_handler):Behaviour(), handler{key_handler}{}
+
+void Player_Behaviour::process(World &world, Entity& owner, sf::Time const& t){
     Player& o = dynamic_cast<Player&>(owner);
-    sf::Vector2f dir = world.player1.direction();
+    sf::Vector2f dir = handler.direction();
 
     //Flipping sprite based on movement
     flip(o, dir);
@@ -26,10 +28,9 @@ void Player1_Behaviour::process(World &world, Entity& owner, sf::Time const& t){
     //Collisons
     collision_x(world, o);
 
-    std::cout << owner.getPosition().x << ":" << owner.getPosition().y << std::endl;
 }
 
-void Player1_Behaviour::flip(Entity& owner, sf::Vector2f const& dir){
+void Player_Behaviour::flip(Entity& owner, sf::Vector2f const& dir){
     if (dir.x == 1.0f && owner.getScale().x == 1.0f){
         owner.setScale(-1.0f, 1.0f);
     }else if (dir.x == -1.0f && owner.getScale().x == -1.0f ){
@@ -37,7 +38,7 @@ void Player1_Behaviour::flip(Entity& owner, sf::Vector2f const& dir){
     }
 }
 
-void Player1_Behaviour::animate(Entity& owner){
+void Player_Behaviour::animate(Entity& owner){
     owner.setTextureRect(sf::IntRect(frame * 80, 0, 80, 80));
     if(i > 10){
         if(frame < 9){
@@ -51,8 +52,8 @@ void Player1_Behaviour::animate(Entity& owner){
     }
 }
 
-void Player1_Behaviour::shoot(World& world, Player& owner, sf::Time t)const{
-    if (world.player1.shoot && owner.time_since_last_shot + t.asSeconds() > 0.5f){
+void Player_Behaviour::shoot(World& world, Player& owner, sf::Time t)const{
+    if (handler.shoot && owner.time_since_last_shot + t.asSeconds() > 0.5f){
         world.add_entity(
             new Projectile("proj", "Projectile",
                 new Projectile_Behaviour(owner.getScale().x, owner.getPosition().x),
@@ -68,23 +69,23 @@ void Player1_Behaviour::shoot(World& world, Player& owner, sf::Time t)const{
     }
 }
 
-void Player1_Behaviour::move_y(Entity& owner, sf::Vector2f const& dir, sf::Time t){
+void Player_Behaviour::move_y(Entity& owner, sf::Vector2f const& dir, sf::Time t){
     if (velocity.y == 0.0f){
         velocity.y = dir.y * 500 * t.asSeconds();
     }
-    owner.setPosition(owner.getPosition() + velocity);
+    owner.setPosition(owner.getPosition().x, owner.getPosition().y + velocity.y);
 
     //Applying gravity
     velocity.y += acceleration.y;
 }
-void Player1_Behaviour::move_x(Entity& owner, sf::Vector2f const& dir, sf::Time t){
+void Player_Behaviour::move_x(Entity& owner, sf::Vector2f const& dir, sf::Time t){
     velocity.x = dir.x * 80 * t.asSeconds();
 
     owner.setPosition(owner.getPosition().x + velocity.x, owner.getPosition().y);
 
 
 }
-void Player1_Behaviour::collision_y(World& world, Entity& owner){
+void Player_Behaviour::collision_y(World& world, Entity& owner){
 
     Entity* now = world.am_I_Colliding(owner);
     if (now && velocity.y >= 0.0f && now->get_name() == "Platform"
@@ -109,7 +110,7 @@ void Player1_Behaviour::collision_y(World& world, Entity& owner){
         velocity.y = acceleration.y;
     }
 }
-void Player1_Behaviour::collision_x(World& world, Entity& owner){
+void Player_Behaviour::collision_x(World& world, Entity& owner){
 
     Entity* now = world.am_I_Colliding(owner);
 
@@ -121,5 +122,4 @@ void Player1_Behaviour::collision_x(World& world, Entity& owner){
         owner.setPosition(now->getPosition().x - 81, owner.getPosition().y);
 
     }
-
 }

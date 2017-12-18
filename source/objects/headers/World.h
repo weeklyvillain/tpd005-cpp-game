@@ -23,6 +23,9 @@ class World{
         int get_lives();
         void add_life();
         void remove_life();
+        unsigned int get_score();
+        void add_score(unsigned int);
+        void remove_score(unsigned int);
 
         sf::Texture const& get_texture(std::string name)const{return texture_list.get_texture(name);}
         Key_Handling player1{
@@ -45,6 +48,7 @@ class World{
         float gravity;
         std::vector<std::unique_ptr<Entity>> entities;
         int lives{3};
+        unsigned int score{0};
         Texture_Container texture_list{};
 
 };

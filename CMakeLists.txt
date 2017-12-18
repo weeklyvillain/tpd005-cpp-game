@@ -16,7 +16,7 @@ set(SOURCE_FILES
     source/objects/headers/Platform_Behaviour.h
     source/objects/headers/Platform.h
     source/objects/headers/Player.h
-    source/objects/headers/Player1_Behaviour.h
+    source/objects/headers/Player_Behaviour.h
     source/objects/headers/Projectile_Behaviour.h
     source/objects/headers/Projectile.h
     source/objects/headers/Texture_Container.h
@@ -34,7 +34,7 @@ set(SOURCE_FILES
     source/objects/imps/Menu.cpp
     source/objects/imps/Platform.cpp
     source/objects/imps/Player.cpp
-    source/objects/imps/Player1_Behaviour.cpp
+    source/objects/imps/Player_Behaviour.cpp
     source/objects/imps/Projectile_Behaviour.cpp
     source/objects/imps/Projectile.cpp
     source/objects/imps/Texture_Container.cpp

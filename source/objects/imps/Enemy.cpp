@@ -1,4 +1,5 @@
 #include "../headers/Enemy.h"
+#include <iostream>
 
 Enemy::Enemy(std::string n, std::string t,
     Behaviour* b, float x, float y, sf::Texture const& texture, sf::IntRect size, World& w)
@@ -12,14 +13,15 @@ void Enemy::update(sf::Time const& t){
 }
 
 void Enemy::kill(World& w){
-    std::default_random_engine generator;
-    std::uniform_int_distribution<int> drop_chance(1,2);
-    int will_drop = drop_chance(generator);  // generates number in the range 1..6
+    std::random_device rd;  //Will be used to obtain a seed for the random number engine
+    std::mt19937 gen(rd()); //Standard mersenne_twister_engine seeded with rd()
+    std::uniform_int_distribution<> dis(1, 10);
+    int will_drop = dis(rd);  // generates number in the range 1..2
+    int drop = dis(rd);
 
-    std::uniform_int_distribution<int> wich_drop(1,2);
-    int drop = wich_drop(generator);
-    if(will_drop == 1) {
-        if(drop == 1) {
+    std::cout << "will_drop: " << will_drop << std::endl << "drop: " << drop << std::endl;
+    if(will_drop % 2 == 0) {
+        if(drop == 10) {
             world.add_entity(new Drop("Heart", "Drop",
                 new Drop_Behaviour_heart(), getPosition().x, getPosition().y, world.get_texture("projectile"),
                 sf::IntRect(0,0,16,16), world));
@@ -29,5 +31,6 @@ void Enemy::kill(World& w){
                 sf::IntRect(0,0,16,16), world));
         }
     }
+    w.add_score(100);
     w.kill_me_now(*this);
 }

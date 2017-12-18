@@ -1,4 +1,5 @@
 #include "../headers/World.h"
+#include <iostream>
 
 World::World(sf::RenderWindow &w, float g)
     :window(w), gravity{g}, entities{}{}
@@ -90,4 +91,16 @@ void World::add_life(){
 
 void World::remove_life(){
     lives--;
+}
+
+unsigned int World::get_score(){
+    return score;    
+}
+
+void World::add_score(unsigned int i){
+    score += i;
+}
+
+void World::remove_score(unsigned int i){
+    score -= i;
 }

@@ -6,18 +6,17 @@ Level::Level(std::string filename, int w, int h, World & world): ifs{filename}, 
         for( std::string line; getline( ifs, line ); )
         {
             for_each(begin(line), end(line), [&](char c){
-                std::cout << c;
                 if(c == 'p'){
                     world.add_entity(new Platform("Platform", "Platform",
                         new Platform_Behaviour(), pos, world.get_texture("platform"),
                         sf::IntRect(0,238,80,80), world));
                 } else if(c == '1'){
                     world.add_entity(new Player("Player1", "Player",
-                        new Player1_Behaviour(), pos.x, pos.y, world.get_texture("wizard_idle"),
+                        new Player_Behaviour(world.player1), pos.x, pos.y, world.get_texture("wizard_idle"),
                         sf::IntRect(0,0,80,80), world));
                 } else if (c == '2') {
                     world.add_entity(new Player("Player2", "Player",
-                        new P2_be(), pos.x, pos.y, world.get_texture("wizard_idle"),
+                        new Player_Behaviour(world.player2), pos.x, pos.y, world.get_texture("wizard_idle"),
                         sf::IntRect(0,0,80,80), world));
 
                 } else if(c == 'e'){

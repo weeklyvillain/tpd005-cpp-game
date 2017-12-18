@@ -18,7 +18,7 @@ void Drop_Behaviour_points::process(World& world, Entity& owner, sf::Time const&
    now = world.am_I_Colliding(owner);
    if(now && now->get_type() == "Player"){
        owner.kill(world);
-     //  world.add_life();
+       world.add_score(50);
        now = nullptr;
    }
 

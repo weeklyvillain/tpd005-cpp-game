@@ -20,12 +20,8 @@ int Game::run(){
 
     int level_index{0};
     Level(lvls.at(level_index), 80, 80, world);
-
-
     sf::Clock clock;
-
     sf::Time targetFrameDelay {sf::milliseconds(16.7)};
-
 
     while (world.run){
         sf::Event event;
@@ -53,8 +49,10 @@ int Game::run(){
         }
         //Vänta tills nästa bildruta innan du ritar
         auto frameDelay = clock.restart();
-        window.clear(sf::Color::White);
-        world.update_all(frameDelay);
+        window.clear(sf::Color::Black);
+        if(!world.player1.pause){
+            world.update_all(frameDelay);                
+        }
         world.render_all();
         sf::Font font{};
         sf::Text hp;
@@ -72,7 +70,7 @@ int Game::run(){
         	score.setPosition(sf::Vector2f((1600 / 2) - (item.width / 2) + 900, 900 / 2));
     		score.setFont(font);
         	score.setColor(sf::Color::Red);
-        	score.setString("Score: ");
+        	score.setString("Score: " + std::to_string(world.get_score()));
             window.draw(score);
     	}
 

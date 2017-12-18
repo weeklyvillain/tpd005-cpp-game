@@ -48,7 +48,7 @@ void Enemy_Behaviour::process(World& world, Entity& owner, sf::Time const& t){
         now->kill(world);
         now = nullptr;
     }
-
+    
     if (now && velocity.y >= 0.0f && now->get_name() == "Platform"
         && (owner.getPosition().x  >= now->getPosition().x - 80.0f
         && owner.getPosition().x <= now->getPosition().x + 80.0f)){

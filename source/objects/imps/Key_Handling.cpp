@@ -16,9 +16,15 @@ void Key_Handling::onKey(bool pressed, sf::Keyboard::Key const& key) {
         right = pressed;
     }else if(key == shoot_key){
         shoot = pressed;
-    }else if(key == sf::Keyboard::Q || key == sf::Keyboard::Escape){
-        quit = true;
-    } 
+    }else if(key == sf::Keyboard::Q){
+        quit = pressed;
+    }else if(key == sf::Keyboard::Escape){
+        if(pressed){
+            pause = !pause;
+        }else{
+            pause = pause;
+        }
+    }
 }
 
 sf::Vector2f Key_Handling::direction() const {

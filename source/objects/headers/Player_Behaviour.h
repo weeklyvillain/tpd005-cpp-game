@@ -8,10 +8,10 @@
 #include "Player.h"
 #include <iostream>
 
-class Player1_Behaviour : public Behaviour {
+class Player_Behaviour : public Behaviour {
 
 public:
-	Player1_Behaviour():Behaviour{}{}
+	Player_Behaviour(Key_Handling&);
 
 	void process(World&, Entity&, sf::Time const& ) override;
 	void flip(Entity&, sf::Vector2f const&);
@@ -24,6 +24,7 @@ public:
 
 
 private:
+	Key_Handling& handler;
 	int i{0};
 	int frame{0};
 	int attack_frame;

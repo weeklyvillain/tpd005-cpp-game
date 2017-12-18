@@ -9,6 +9,7 @@ public:
 	bool right{false};
 	bool shoot{false};
 	bool quit{false};
+	bool pause{false};
 	sf::Keyboard::Key jump_key{};
 	sf::Keyboard::Key left_key{};
 	sf::Keyboard::Key right_key{};

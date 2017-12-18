@@ -28,6 +28,5 @@ Texture_Container::Texture_Container():textures{}{
     }
 }
 sf::Texture const& Texture_Container::get_texture(std::string name) const{
-    std::cout << name << std::endl;
     return *textures.at(name);
 }

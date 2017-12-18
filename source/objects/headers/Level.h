@@ -5,6 +5,7 @@
 #include "Platform_Behaviour.h"
 #include "Player1_Behaviour.h"
 #include "Enemy_Behaviour.h"
+#include "p2_be.h"
 #include "Enemy.h"
 #include "Player.h"
 #include "World.h"

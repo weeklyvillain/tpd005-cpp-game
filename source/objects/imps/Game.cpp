@@ -40,6 +40,9 @@ int Game::run(){
                 case sf::Event::KeyReleased:
                     world.on_Key_Release(event.key.code);
                     break;
+                case sf::Event::Resized:
+                    //world.MaintainAspectRatio();
+                    break;
                 default:
                     if (world.player1.quit){
                         window.close();
@@ -88,4 +91,5 @@ int Game::run(){
         window.display();
     }
     return 0;
+
 }

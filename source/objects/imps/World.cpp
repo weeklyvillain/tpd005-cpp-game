@@ -26,10 +26,12 @@ void World::render_all(){
 
 void World::on_Key_Press(sf::Keyboard::Key k){
     player1.onKey(true, k);
+    player2.onKey(true, k);
 }
 
 void World::on_Key_Release(sf::Keyboard::Key k){
     player1.onKey(false, k);
+    player2.onKey(false, k);
 
 }
 

@@ -15,6 +15,10 @@ Level::Level(std::string filename, int w, int h, World & world): ifs{filename}, 
                     world.add_entity(new Player("Player1", "Player",
                         new Player1_Behaviour(), pos.x, pos.y, world.get_texture("wizard_idle"),
                         sf::IntRect(0,0,80,80), world));
+                } else if (c == '2') {
+                    world.add_entity(new Player("Player2", "Player",
+                        new P2_be(), pos.x, pos.y, world.get_texture("wizard_idle"),
+                        sf::IntRect(0,0,80,80), world));
 
                 } else if(c == 'e'){
                     world.add_entity(new Enemy("Enemy", "Enemy",

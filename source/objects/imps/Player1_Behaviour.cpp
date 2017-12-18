@@ -89,7 +89,7 @@ void Player1_Behaviour::collision_y(World& world, Entity& owner){
     Entity* now = world.am_I_Colliding(owner);
     if (now && velocity.y >= 0.0f && now->get_name() == "Platform"
             && owner.getPosition().y + 40 >= now->getPosition().y - 40
-            && owner.getPosition().y + 40 <=now->getPosition().y - 20){
+            && owner.getPosition().y + 40 <= now->getPosition().y - 20){
 
         owner.setPosition(owner.getPosition().x, now->getPosition().y -80.0f);
         velocity.y = 0.0f;

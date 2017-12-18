@@ -53,6 +53,26 @@ int Game::run(){
         window.clear(sf::Color::White);
         world.update_all(frameDelay);
         world.render_all();
+        sf::Font font{};
+        sf::Text hp;
+        sf::Text score;
+        if (font.loadFromFile("assets/ScoreFont.ttf"))
+    	{
+            sf::FloatRect item = hp.getGlobalBounds();
+        	hp.setPosition(sf::Vector2f((1600 / 2) - (item.width / 2) + 900, 900 / 3));
+    		hp.setFont(font);
+        	hp.setColor(sf::Color::Red);
+        	hp.setString("HP: " + std::to_string(world.get_lives()));
+            window.draw(hp);
+
+            item = score.getGlobalBounds();
+        	score.setPosition(sf::Vector2f((1600 / 2) - (item.width / 2) + 900, 900 / 2));
+    		score.setFont(font);
+        	score.setColor(sf::Color::Red);
+        	score.setString("Score: ");
+            window.draw(score);
+    	}
+
 
         if ( targetFrameDelay > frameDelay )
         {

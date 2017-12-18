@@ -82,6 +82,7 @@ void Player1_Behaviour::move_x(Entity& owner, sf::Vector2f const& dir, sf::Time 
 
     owner.setPosition(owner.getPosition().x + velocity.x, owner.getPosition().y);
 
+
 }
 void Player1_Behaviour::collision_y(World& world, Entity& owner){
 
@@ -118,6 +119,7 @@ void Player1_Behaviour::collision_x(World& world, Entity& owner){
     } else if(now && now->get_name() == "Wall" && velocity.x > 0) {
         velocity.x = -velocity.x;
         owner.setPosition(now->getPosition().x - 81, owner.getPosition().y);
+
     }
 
 }

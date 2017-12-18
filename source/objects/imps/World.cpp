@@ -65,6 +65,7 @@ Entity* World::get_player() const{
     return nullptr;
 }
 void World::clear(){
+
     entities.erase(begin(entities), end(entities));
 }
 

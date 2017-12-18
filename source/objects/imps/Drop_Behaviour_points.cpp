@@ -10,6 +10,7 @@ void Drop_Behaviour_points::process(World& world, Entity& owner, sf::Time const&
     owner.setPosition(owner.getPosition() + velocity);
 
     Entity* now = world.am_I_Colliding(owner);
+
    if (now && now->get_name() == "Platform"){
        owner.setPosition(owner.getPosition().x, now->getPosition().y - 48.0f);
        velocity.y = 0;
@@ -20,5 +21,7 @@ void Drop_Behaviour_points::process(World& world, Entity& owner, sf::Time const&
      //  world.add_life();
        now = nullptr;
    }
+
+
 
 }

@@ -2,7 +2,9 @@
 
 int Game::run(){
 
+
     sf::RenderWindow window{sf::VideoMode(1900, 900), "Bubble Bobble", sf::Style::Titlebar | sf::Style::Close};
+
     window.setVerticalSyncEnabled(true);
     World world{window, 0.5};
     std::vector<std::string> lvls
@@ -15,13 +17,15 @@ int Game::run(){
      "assets/levels/level7.lvl",
      "assets/levels/level8.lvl"
     };
-    int level_index{0};
 
+    int level_index{0};
     Level(lvls.at(level_index), 80, 80, world);
 
 
     sf::Clock clock;
+
     sf::Time targetFrameDelay {sf::milliseconds(16.7)};
+
 
     while (world.run){
         sf::Event event;

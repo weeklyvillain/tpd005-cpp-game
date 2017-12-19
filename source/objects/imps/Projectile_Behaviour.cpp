@@ -8,7 +8,7 @@ void Projectile_Behaviour::process(World& world, Entity& owner, sf::Time const& 
     if(auto now = world.am_I_Colliding(owner)){
         if (now->get_type() != "Player" && now->get_type() != "Projectile"){
             world.kill_me_now(owner);
-            if (now->get_type() != "Platform"){
+            if (now->get_type() != "Platform" && now->get_type() != "Wall" && now->get_type() != "Roof"){
                 now->kill(world);
             }
         }

@@ -8,7 +8,7 @@
 /**
  * \brief Menu har hand om menyer innan man börjar spela spelet.
  *
- * 
+ *
  */
 
 
@@ -49,4 +49,5 @@ private:
 	std::vector<sf::Text> menu;
 	///
 	Game game{};
+	std::string ip;
 };

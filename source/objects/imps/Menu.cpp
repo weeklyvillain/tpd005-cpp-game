@@ -77,13 +77,18 @@ void Menu::onKey(sf::Keyboard::Key const& key, sf::RenderWindow & w){
 		}else if(menu_depth == 1){
 			switch (GetPressedItem()){
 				case 0:{
-					w.close();					
+					w.close();
 					game.run(1);
 					break;
 				}
 				case 1:{
-					w.close();
-					game.run(2);
+					menu.erase(menu.begin(), menu.end());
+					add_option("Local/Host");
+					add_option("Join");
+					add_option("Back");
+					selectedItemIndex = 0;
+					menu_depth = 3;
+					menu.at(selectedItemIndex).setColor(sf::Color::White);
 					break;
 				}
 				case 2:{
@@ -106,6 +111,29 @@ void Menu::onKey(sf::Keyboard::Key const& key, sf::RenderWindow & w){
 				selectedItemIndex = 0;
 				menu_depth = 0;
 				menu.at(selectedItemIndex).setColor(sf::Color::White);
+			}
+		} else if(menu_depth == 3){
+			switch (GetPressedItem()){
+				case 0:{
+					w.close();
+					game.run_lan(2);
+					break;
+				}
+				case 1:{
+					w.close();
+					game.join("192.168.0.103");
+					break;
+				}
+				case 2:{
+					menu.erase(menu.begin(), menu.end());
+					add_option("Singleplayer");
+					add_option("Multiplayer");
+					add_option("Back");
+					selectedItemIndex = 0;
+					menu_depth = 1;
+					menu.at(selectedItemIndex).setColor(sf::Color::White);
+					break;
+				}
 			}
 		}
 	}

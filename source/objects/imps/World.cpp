@@ -93,7 +93,7 @@ void World::remove_life(){
 }
 
 unsigned int World::get_score(){
-    return score;    
+    return score;
 }
 
 void World::add_score(unsigned int i){
@@ -103,3 +103,31 @@ void World::add_score(unsigned int i){
 void World::remove_score(unsigned int i){
     score -= i;
 }
+
+void World::send_packet(sf::IpAddress ip, unsigned short port) {
+    sf::Packet packet;
+	packet << lives << score;
+    sf::TcpSocket socket;
+    socket.connect(ip, port);
+    socket.send(packet);
+};
+void World::receive_packet(unsigned short port) {
+    sf::Packet packet;
+    
+    sf::TcpListener listener;
+	listener.listen(port);
+	listener.accept(socket);
+    socket.receive(packet);
+    packet >> lives >> score;
+};
+/*
+sf::Packet& operator <<(sf::Packet& packet, World& w)
+{
+    return packet << w.get_lives() << w.get_score();
+}
+
+sf::Packet& operator >>(sf::Packet& packet, World& w)
+{
+    return packet >> p_lives >> p_score;
+}
+*/

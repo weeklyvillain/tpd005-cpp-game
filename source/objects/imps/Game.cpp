@@ -21,7 +21,7 @@ int Game::run(int player_amount){
     if(t.loadFromFile("assets/background.png")){
         bkg.setTexture(t);
     }
-    
+
 
     int level_index{0};
     Level(lvls.at(level_index), 80, 80, world, player_amount);
@@ -56,13 +56,22 @@ int Game::run(int player_amount){
 
         //Vänta tills nästa bildruta innan du ritar
         auto frameDelay = clock.restart();
+
+
         window.clear(sf::Color::White);
         window.draw(bkg);
         if(!world.player1.pause){
-            world.update_all(frameDelay);                
+            world.update_all(frameDelay);
         }
         world.render_all();
-
+        if(!world.get_player()) {
+            sf::Texture t{};
+            sf::Sprite screen{};
+            if(t.loadFromFile("assets/game_over.png")){
+                screen.setTexture(t);
+                window.draw(screen);
+            }
+        }
         sf::Font font{};
         sf::Text hp;
         sf::Text score;
@@ -82,9 +91,9 @@ int Game::run(int player_amount){
         	score.setColor(sf::Color::Red);
         	score.setString("Score: " + std::to_string(world.get_score()));
             window.draw(score);
-            
+
             if(world.player1.pause){
-                item = paused.getGlobalBounds();  
+                item = paused.getGlobalBounds();
                 paused.setPosition(sf::Vector2f((1600 / 2) - (item.width / 2), (900 / 2) - (item.height / 2)));
                 paused.setFont(font);
                 paused.setColor(sf::Color::Red);

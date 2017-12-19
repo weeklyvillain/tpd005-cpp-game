@@ -22,12 +22,12 @@ void Enemy::kill(World& world){
     if(will_drop % 2 == 0) {
         if(drop == 10) {
             world.add_entity(new Drop("Heart", "Drop",
-                new Drop_Behaviour_heart(), getPosition().x, getPosition().y, world.get_texture("projectile"), sf::IntRect(0,0,16,16)));
-
+                new Drop_Behaviour_heart(), getPosition().x, getPosition().y, world.get_texture("projectile"), 
+                    sf::IntRect(0,0,16,16)));
         } else {
             world.add_entity(new Drop("Points", "Drop",
-                new Drop_Behaviour_points(), getPosition().x, getPosition().y, world.get_texture("projectile"),
-                sf::IntRect(0,0,16,16)));
+                new Drop_Behaviour_points(), getPosition().x, getPosition().y, world.get_texture("coin"),
+                    sf::IntRect(0,0,16,16)));
         }
     }
     world.add_score(100);

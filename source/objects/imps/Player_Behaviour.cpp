@@ -92,7 +92,7 @@ void Player_Behaviour::move_x(Entity& owner, sf::Vector2f const& dir, sf::Time t
 void Player_Behaviour::collision_y(World& world, Entity& owner){
 
     Entity* now = world.am_I_Colliding(owner);
-    if (now && velocity.y >= 0.0f && now->get_name() == "Platform"
+    if (now && velocity.y >= 0.0f && now->get_type() == "Platform"
             && owner.getPosition().y + 40 >= now->getPosition().y - 40
             && owner.getPosition().y + 40 <= now->getPosition().y - 20){
 
@@ -100,7 +100,7 @@ void Player_Behaviour::collision_y(World& world, Entity& owner){
         velocity.y = 0.0f;
     }
 
-    if(now && now->get_name() == "Roof") {
+    if(now && now->get_type() == "Roof") {
         owner.setPosition(owner.getPosition().x, now->getPosition().y + 80.0f);
         velocity.y = acceleration.y;
     }
@@ -118,10 +118,10 @@ void Player_Behaviour::collision_x(World& world, Entity& owner){
 
     Entity* now = world.am_I_Colliding(owner);
 
-    if(now && now->get_name() == "Wall" && velocity.x < 0) {
+    if(now && now->get_type() == "Wall" && velocity.x < 0) {
         velocity.x = -velocity.x;
         owner.setPosition(now->getPosition().x + 81, owner.getPosition().y);
-    } else if(now && now->get_name() == "Wall" && velocity.x > 0) {
+    } else if(now && now->get_type() == "Wall" && velocity.x > 0) {
         velocity.x = -velocity.x;
         owner.setPosition(now->getPosition().x - 81, owner.getPosition().y);
 

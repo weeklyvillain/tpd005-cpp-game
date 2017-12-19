@@ -11,7 +11,9 @@
 
 class Platform_Behaviour : public Behaviour {
 public:
+	///
 	Platform_Behaviour():Behaviour{}{}
+	///
 	void process(World&, Entity&, sf::Time const&) override{}
 	
 };

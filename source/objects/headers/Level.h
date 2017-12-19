@@ -31,12 +31,12 @@ public:
 private:
     ///En input file stream för att kunna läsa från en fil.
     std::ifstream ifs;
-    //Variabler för att spara undan bredd och höjd.
+    //Variabel för att spara undan bredd
     int tile_width;
+    ///Variabel för att spara undan höjd
     int tile_height;
     //Vilken position vi just nu arbetar på.
     sf::Vector2f pos;
-
 };
 
 #endif

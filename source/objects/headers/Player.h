@@ -11,16 +11,17 @@
 
 class Player : public Entity{
 public:
+    ///Player konstruktor som tar in ett namn, en typ, en Behaviour pekare, 
+    /// en texture, vilken kvadrat som ska ritas ut och vilken färg den ska ha.
     Player(std::string, std::string, Behaviour*, float, float, sf::Texture const&, sf::IntRect, sf::Color);
-        void update(World&, sf::Time const&) override;
-        void kill(World&) override;
-
-        float time_since_last_shot{0};
-
-private:
-    sf::Texture texture{};
-    int idle_state{0};
-
+    ///Entity#update() override
+    /// Funktion som kallas av world när det här specifika objektet ska uppdatera sig.
+    /// Det gör sedan detta genom att t.ex. flytta på sig och kolla kollisioner.
+    void update(World&, sf::Time const&) override;
+    ///Om det här objektet har dödats så kommer kill att göra det genom att informera World om det.
+    void kill(World&) override;
+    ///En float för att se hur lång tid det var sen spelare senast sköt.
+    float time_since_last_shot{0};
 };
 
 #endif

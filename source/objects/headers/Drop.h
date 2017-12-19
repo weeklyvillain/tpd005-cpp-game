@@ -16,7 +16,8 @@ public:
     /// x och y värdet där objektet ska finnas, 
     /// en texture från Texture_Container och vilken del av texturen som ska visas
     Drop(std::string, std::string, Behaviour*, float, float, sf::Texture const&, sf::IntRect);
-    ///Funktion som kallas av world när det här specifika objektet ska uppdatera sig.
+    ///Entity#update() override
+    /// Funktion som kallas av world när det här specifika objektet ska uppdatera sig.
     /// Det gör sedan detta genom att t.ex. flytta på sig och kolla kollisioner.
     void update(World&, sf::Time const&) override;
     ///Om det här objektet har dödats så kommer kill att göra det genom att informera World om det.

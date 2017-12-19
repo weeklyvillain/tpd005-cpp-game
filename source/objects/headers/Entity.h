@@ -9,6 +9,7 @@
  * \brief Entity ärver från sf::Sprite och är grundklassen för alla entiteter i spelvärlden.
  *
  * 
+ * 
  */
 
 class Entity : public sf::Sprite{
@@ -21,6 +22,7 @@ public:
     ///Default konstruktor.
     virtual ~Entity() = default;
     ///Funktionen som world kallar på för att få varje entitet att uppdatera sig.
+    /// Den kallar i sin tur på Behaviour#Process()
     virtual void update(World&, sf::Time const&) = 0;
     ///Om entiteten ska dö så signalerar denna funktion det till world.
     virtual void kill(World&) = 0;

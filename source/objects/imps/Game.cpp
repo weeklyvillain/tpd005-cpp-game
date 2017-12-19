@@ -4,7 +4,7 @@ int Game::run(int player_amount){
 
     sf::RenderWindow window{sf::VideoMode(1900, 900), "Bubble Bobble", sf::Style::Titlebar | sf::Style::Close};
     window.setVerticalSyncEnabled(true);
-    World world{window, 0.5};
+    World world{window};
 
     std::vector<std::string> lvls
     {"assets/levels/level1.lvl" ,
@@ -99,7 +99,7 @@ int Game::run(int player_amount){
         if(!world.get_player()){
             sf::sleep(sf::seconds(4));
             set_score(world);
-            draw_new_item("What's your name?", sf::Vector2f(1600/2, 400), font);
+            draw_new_item("What's your name?", sf::Vector2f(1600/2, 400), font, window);
             window.close();
             return 0;
         }

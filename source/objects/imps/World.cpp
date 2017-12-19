@@ -1,8 +1,8 @@
 #include "../headers/World.h"
 #include <iostream>
 
-World::World(sf::RenderWindow &w, float g)
-    :window(w), gravity{g}, entities{}{}
+World::World(sf::RenderWindow &w)
+    :window(w), entities{}{}
 
 void World::add_entity(Entity* e){
     entities.push_back(std::unique_ptr<Entity>{e});
@@ -33,7 +33,6 @@ void World::on_Key_Press(sf::Keyboard::Key k){
 void World::on_Key_Release(sf::Keyboard::Key k){
     player1.onKey(false, k);
     player2.onKey(false, k);
-
 }
 
 Entity* World::am_I_Colliding(Entity const& e) const{
@@ -67,8 +66,8 @@ Entity* World::get_player() const{
     }
     return nullptr;
 }
-void World::clear(){
 
+void World::clear(){
     entities.erase(begin(entities), end(entities));
 }
 

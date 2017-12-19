@@ -13,12 +13,12 @@ Level::Level(std::string filename, int w, int h, World & world, int player_amoun
                 } else if(c == '1'){
                     world.add_entity(new Player("Player1", "Player",
                         new Player_Behaviour(world.player1), pos.x, pos.y, world.get_texture("wizard_idle"),
-                        sf::IntRect(0,0,80,80), world));
+                        sf::IntRect(0,0,80,80), sf::Color::White, world));
                 } else if (c == '2') {
                     if(player_amount == 2){
                         world.add_entity(new Player("Player2", "Player",
                             new Player_Behaviour(world.player2), pos.x, pos.y, world.get_texture("wizard_idle"),
-                            sf::IntRect(0,0,80,80), world));
+                            sf::IntRect(0,0,80,80), sf::Color::Blue, world));
                     }
 
                 } else if(c == 'e'){

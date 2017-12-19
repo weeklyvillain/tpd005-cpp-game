@@ -60,7 +60,7 @@ void World::kill_me_now(Entity& e){
 
 Entity* World::get_player() const{
     for(auto& it : entities){
-        if(it->get_name() == "Player1"){
+        if(it->get_type() == "Player"){
             return it.get();
 
         }

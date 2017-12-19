@@ -21,8 +21,6 @@ void Key_Handling::onKey(bool pressed, sf::Keyboard::Key const& key) {
     }else if(key == sf::Keyboard::Escape){
         if(pressed){
             pause = !pause;
-        }else{
-            pause = pause;
         }
     }
 }

@@ -1,110 +1,72 @@
 #include "../headers/Menu.h"
 
-
 Menu::Menu(float width, float height) : item_width{width}, item_height{height}, menu_depth{0}, selectedItemIndex{0}, font{}{
-	if (!font.loadFromFile("assets/Font.ttf"))
-	{
-		// handle error
-	}
-
-	menu[0].setFont(font);
-	menu[0].setColor(sf::Color::Red);
-	menu[0].setString("Play");
-	sf::FloatRect item = menu[0].getGlobalBounds();
-	menu[0].setPosition(sf::Vector2f((item_width / 2) - (item.width / 2), item_height / (MAX_NUMBER_OF_ITEMS + 1) * 1));
-
-	menu[1].setFont(font);
-	menu[1].setColor(sf::Color::White);
-	menu[1].setString("Options");
-	item = menu[1].getGlobalBounds();
-	menu[1].setPosition(sf::Vector2f((item_width / 2) - (item.width / 2), item_height / (MAX_NUMBER_OF_ITEMS + 1) * 2));
-
-	menu[2].setFont(font);
-	menu[2].setColor(sf::Color::White);
-	menu[2].setString("Exit");
-	item = menu[2].getGlobalBounds();
-	menu[2].setPosition(sf::Vector2f((item_width / 2) - (item.width / 2), item_height / (MAX_NUMBER_OF_ITEMS + 1) * 3));
+	font.loadFromFile("assets/Font.ttf");
+	add_option("Play");
+	add_option("High Score");
+	add_option("Exit");
+	selectedItemIndex = 0;
+	menu_depth = 0;
+	menu.at(selectedItemIndex).setColor(sf::Color::White);
 }
 
-Menu::~Menu()
-{
-}
-
-void Menu::draw(sf::RenderWindow &window)
-{
-	for (int i = 0; i < MAX_NUMBER_OF_ITEMS; i++)
+void Menu::draw(sf::RenderWindow &window){
+	for (int i = 0; i < menu.size(); i++)
 	{
-		window.draw(menu[i]);
+		window.draw(menu.at(i));
 	}
 }
 
-void Menu::MoveUp()
-{
+void Menu::MoveUp(){
 	if (selectedItemIndex - 1 >= 0)
 	{
-		menu[selectedItemIndex].setColor(sf::Color::White);
+		menu.at(selectedItemIndex).setColor(sf::Color::Red);
 		selectedItemIndex--;
-		menu[selectedItemIndex].setColor(sf::Color::Red);
+		menu.at(selectedItemIndex).setColor(sf::Color::White);
 	} else {
-		menu[selectedItemIndex].setColor(sf::Color::White);
-		selectedItemIndex = 2;
-		menu[selectedItemIndex].setColor(sf::Color::Red);
+		menu.at(selectedItemIndex).setColor(sf::Color::Red);
+		selectedItemIndex = menu.size()-1;
+		menu.at(selectedItemIndex).setColor(sf::Color::White);
 	}
 }
 
-void Menu::MoveDown()
-{
-	if (selectedItemIndex + 1 < MAX_NUMBER_OF_ITEMS)
-	{
-		menu[selectedItemIndex].setColor(sf::Color::White);
+void Menu::MoveDown(){
+	if (selectedItemIndex + 1 < menu.size()){
+		menu.at(selectedItemIndex).setColor(sf::Color::Red);
 		selectedItemIndex++;
-		menu[selectedItemIndex].setColor(sf::Color::Red);
-	} else {
-		menu[selectedItemIndex].setColor(sf::Color::White);
+		menu.at(selectedItemIndex).setColor(sf::Color::White);
+	}else{
+		menu.at(selectedItemIndex).setColor(sf::Color::Red);
 		selectedItemIndex = 0;
-		menu[selectedItemIndex].setColor(sf::Color::Red);
+		menu.at(selectedItemIndex).setColor(sf::Color::White);
 	}
 }
 
-void Menu::onKey(sf::Keyboard::Key const& key, sf::RenderWindow & w) {
+void Menu::onKey(sf::Keyboard::Key const& key, sf::RenderWindow & w){
 	if(key == sf::Keyboard::Up){
 		MoveUp();
 	}
+
 	if(key == sf::Keyboard::Down){
 		MoveDown();
 	}
-
 
 	if(key == sf::Keyboard::Return ){
 		if (menu_depth == 0){
 			switch (GetPressedItem()){
 				case 0:{
-					menu[0].setFont(font);
-					menu[0].setColor(sf::Color::Red);
-					menu[0].setString("Singeplayer");
-					sf::FloatRect item = menu[0].getGlobalBounds();
-					menu[0].setPosition(sf::Vector2f((item_width / 2) - (item.width / 2), item_height / (MAX_NUMBER_OF_ITEMS + 1) * 1));
-
-					menu[1].setFont(font);
-					menu[1].setColor(sf::Color::White);
-					menu[1].setString("Multiplayer");
-					item = menu[1].getGlobalBounds();
-					menu[1].setPosition(sf::Vector2f((item_width / 2) - (item.width / 2), item_height / (MAX_NUMBER_OF_ITEMS + 1) * 2));
-
-					menu[2].setFont(font);
-					menu[2].setColor(sf::Color::White);
-					menu[2].setString("Back");
-					item = menu[2].getGlobalBounds();
-					menu[2].setPosition(sf::Vector2f((item_width / 2) - (item.width / 2), item_height / (MAX_NUMBER_OF_ITEMS + 1) * 3));
-
+					menu.erase(menu.begin(), menu.end());
+					add_option("Singleplayer");
+					add_option("Multiplayer");
+					add_option("Back");
 					selectedItemIndex = 0;
 					menu_depth = 1;
+					menu.at(selectedItemIndex).setColor(sf::Color::White);
 					break;
 				}
 				case 1:{
-					{
-						read_score(w);
-					}
+					read_score(w);
+					add_option("Back");
 					break;
 				}
 				case 2:{
@@ -115,59 +77,65 @@ void Menu::onKey(sf::Keyboard::Key const& key, sf::RenderWindow & w) {
 		}else if(menu_depth == 1){
 			switch (GetPressedItem()){
 				case 0:{
+					w.close();					
 					game.run(1);
-					w.close();
 					break;
 				}
 				case 1:{
-					game.run(2);
 					w.close();
+					game.run(2);
 					break;
 				}
 				case 2:{
-					menu[0].setFont(font);
-					menu[0].setColor(sf::Color::Red);
-					menu[0].setString("Play");
-					sf::FloatRect item = menu[0].getGlobalBounds();
-					menu[0].setPosition(sf::Vector2f((item_width / 2) - (item.width / 2), item_height / (MAX_NUMBER_OF_ITEMS + 1) * 1));
-
-					menu[1].setFont(font);
-					menu[1].setColor(sf::Color::White);
-					menu[1].setString("Options");
-					item = menu[1].getGlobalBounds();
-					menu[1].setPosition(sf::Vector2f((item_width / 2) - (item.width / 2), item_height / (MAX_NUMBER_OF_ITEMS + 1) * 2));
-
-					menu[2].setFont(font);
-					menu[2].setColor(sf::Color::White);
-					menu[2].setString("Exit");
-					item = menu[2].getGlobalBounds();
-					menu[2].setPosition(sf::Vector2f((item_width / 2) - (item.width / 2), item_height / (MAX_NUMBER_OF_ITEMS + 1) * 3));
+					menu.erase(menu.begin(), menu.end());
+					add_option("Play");
+					add_option("High Score");
+					add_option("Exit 1");
 					selectedItemIndex = 0;
 					menu_depth = 0;
+					menu.at(selectedItemIndex).setColor(sf::Color::White);
 					break;
 				}
 			}
-		}else if(menu_depth == 3){
-
+		}else if(menu_depth == 2){
+			if(GetPressedItem() == menu.size()-1){
+				menu.erase(menu.begin(), menu.end());
+				add_option("Play");
+				add_option("High Score");
+				add_option("Exit");
+				selectedItemIndex = 0;
+				menu_depth = 0;
+				menu.at(selectedItemIndex).setColor(sf::Color::White);
+			}
 		}
 	}
 }
 
 void Menu::read_score(sf::RenderWindow &window) {
 	std::ifstream ifs{"assets/score"};
-	std::vector<sf::Text> text;
+	menu.erase(menu.begin(), menu.end());
+
 	if(ifs.is_open()) {
-        for( std::string line; getline( ifs, line ); )
+        for(std::string line; getline( ifs, line );)
         {
-            text.push_back(sf::Text{line, font});
-			std::cout << line << '\n';
+            add_option(line);
         }
     }
-    ifs.close();
-	for(int i = 0; i < text.size(); i++){
-		text[i].setColor(sf::Color::Red);
-		sf::FloatRect item = text[i].getGlobalBounds();
-		text[i].setPosition(sf::Vector2f(900, 100 * i));
-		window.draw(text[i]);
+	ifs.close();
+	if(menu.size() == 0){
+		add_option("There doesn't seem to be anything here");
 	}
+	selectedItemIndex = 0;
+	menu_depth = 2;
+	menu.at(selectedItemIndex).setColor(sf::Color::White);
+}
+
+void Menu::add_option(std::string s){
+	sf::Text option;
+	option.setFont(font);
+	option.setColor(sf::Color::Red);
+	option.setString(s);
+	sf::FloatRect item = option.getGlobalBounds();
+	option.setPosition(sf::Vector2f((item_width / 2) - (item.width / 2), item_height / (menu.size() + 3) * (menu.size() + 1)));
+	menu.push_back(option);
 }

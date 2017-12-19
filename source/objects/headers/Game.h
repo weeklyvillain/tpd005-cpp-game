@@ -28,6 +28,7 @@ public:
     int run(int);
     void set_name(std::string);
     void set_score(World&);
+    void draw_new_item(std::string const&, sf::Vector2f const&, sf::Font const&, sf::RenderWindow&);
 private:
-    std::string name{"hejj"};
+    std::string name{"   "};
 };

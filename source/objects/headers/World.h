@@ -1,6 +1,7 @@
 #pragma once
 
-#include "tool_chain.h"
+#include <SFML/Graphics.hpp>
+#include <vector>
 #include "Key_Handling.h"
 #include "Entity.h"
 #include "Texture_Container.h"

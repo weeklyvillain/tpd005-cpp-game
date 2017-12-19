@@ -96,13 +96,15 @@ void Menu::onKey(sf::Keyboard::Key const& key, sf::RenderWindow & w) {
 					menu[2].setString("Back");
 					item = menu[2].getGlobalBounds();
 					menu[2].setPosition(sf::Vector2f((item_width / 2) - (item.width / 2), item_height / (MAX_NUMBER_OF_ITEMS + 1) * 3));
-					
+
 					selectedItemIndex = 0;
-					menu_depth = 1;	
+					menu_depth = 1;
 					break;
 				}
 				case 1:{
-					std::cout << "Option button has been pressed" << std::endl;
+					{
+						read_score(w);
+					}
 					break;
 				}
 				case 2:{
@@ -142,11 +144,30 @@ void Menu::onKey(sf::Keyboard::Key const& key, sf::RenderWindow & w) {
 					menu[2].setPosition(sf::Vector2f((item_width / 2) - (item.width / 2), item_height / (MAX_NUMBER_OF_ITEMS + 1) * 3));
 					selectedItemIndex = 0;
 					menu_depth = 0;
-					break;	
+					break;
 				}
 			}
 		}else if(menu_depth == 3){
-			
+
 		}
-	} 
+	}
+}
+
+void Menu::read_score(sf::RenderWindow &window) {
+	std::ifstream ifs{"assets/score"};
+	std::vector<sf::Text> text;
+	if(ifs.is_open()) {
+        for( std::string line; getline( ifs, line ); )
+        {
+            text.push_back(sf::Text{line, font});
+			std::cout << line << '\n';
+        }
+    }
+    ifs.close();
+	for(int i = 0; i < text.size(); i++){
+		text[i].setColor(sf::Color::Red);
+		sf::FloatRect item = text[i].getGlobalBounds();
+		text[i].setPosition(sf::Vector2f(900, 100 * i));
+		window.draw(text[i]);
+	}
 }

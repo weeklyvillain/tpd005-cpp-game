@@ -1,6 +1,7 @@
 #pragma once
 #include "SFML/Graphics.hpp"
 #include <iostream>
+#include <fstream>
 #include "Game.h"
 
 #define MAX_NUMBER_OF_ITEMS 3
@@ -14,6 +15,7 @@ public:
 	void MoveUp();
 	void MoveDown();
 	int GetPressedItem() { return selectedItemIndex; }
+	void read_score(sf::RenderWindow &window);
 	void onKey(sf::Keyboard::Key const& key, sf::RenderWindow &);
 
 private:

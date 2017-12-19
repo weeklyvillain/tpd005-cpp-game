@@ -10,6 +10,9 @@
 #include "Level.h"
 #include "Projectile.h"
 #include <iostream>
+#include <fstream>
+#include <utility>
+
 
 
 
@@ -18,4 +21,8 @@ public:
     Game() = default;
     ~Game() = default;
     int run(int);
+    void set_name(std::string);
+    void set_score(World&);
+private:
+    std::string name{"hejj"};
 };

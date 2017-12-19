@@ -40,4 +40,5 @@ Level::Level(std::string filename, int w, int h, World & world, int player_amoun
             pos.y +=tile_height;
         }
     }
+    ifs.close();
 }

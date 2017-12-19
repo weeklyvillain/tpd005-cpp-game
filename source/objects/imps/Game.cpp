@@ -115,7 +115,40 @@ int Game::run(int player_amount){
             Level(lvls.at(level_index), 80, 80, world, player_amount);
         }
         window.display();
+        if(!world.get_player()){
+            sf::sleep(sf::seconds(4));
+            set_score(world);
+            window.close();
+        }
     }
     return 0;
 
 }
+
+void Game::set_name(std::string n) {
+    name = n;
+};
+void Game::set_score(World& w) {
+    std::ifstream ifs{"assets/score"};
+    std::vector<std::pair<std::string, int>> score_list;
+    if(ifs.is_open()) {
+        for( std::string line; getline( ifs, line ); )
+        {
+            size_t middle_index{line.find(' ')};
+            std::string user{line.substr(0, middle_index)};
+            int score{stoi(line.substr(middle_index))};
+            score_list.push_back(std::make_pair(user, score));
+        }
+    }
+    ifs.close();
+    score_list.push_back(std::make_pair(name, w.get_score()));
+    sort(score_list.begin(), score_list.end(), [](auto &left, auto &right) {
+               return right.second < left.second;
+           });
+    std::ofstream ofs{"assets/score", std::ofstream::out};
+    for(auto item : score_list) {
+        ofs << item.first << " " << item.second << '\n';
+    }
+    ofs.close();
+
+};

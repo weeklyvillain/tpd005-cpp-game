@@ -6,6 +6,13 @@
 
 #define MAX_NUMBER_OF_ITEMS 3
 
+/**
+ * \brief Menu har hand om menyer innan man börjar spela spelet.
+ *
+ * 
+ */
+
+
 class Menu{
 public:
 	Menu(float width, float height);

@@ -2,6 +2,12 @@
 
 #include <SFML/Graphics.hpp>
 
+/**
+ * \brief Key_Handling har hand om input från spelaren.
+ *
+ * 
+ */
+
 class Key_Handling {
 public:
 	bool jump{false};

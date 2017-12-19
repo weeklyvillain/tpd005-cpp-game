@@ -3,6 +3,13 @@
 #include <memory>
 #include <map>
 
+/**
+ * \brief Texture_Container tillhandahåller texturer till alla entiteter.
+ *
+ * 
+ */
+
+
 class Texture_Container{
 public:
     Texture_Container();

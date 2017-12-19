@@ -15,6 +15,11 @@
 
 
 
+/**
+ * \brief Game som kör spelvärlden och har hand om main loopen.
+ *
+ *
+ */
 
 class Game{
 public:

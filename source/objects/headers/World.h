@@ -5,6 +5,13 @@
 #include "Entity.h"
 #include "Texture_Container.h"
 
+/**
+ * \brief World simulerar spelvärlden.
+ *
+ * 
+ */
+
+
 class World{
     public:
         World(sf::RenderWindow&, float);

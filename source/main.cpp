@@ -3,6 +3,19 @@
 #include "objects/headers/Menu.h"
 #include "objects/headers/Game.h"
 
+/** \mainpage My Personal Index Page
+ *
+ * \section intro_sec Introduction
+ *
+ * This is the introduction.
+ *
+ * \section install_sec Installation
+ *
+ * \subsection step1 Step 1: Opening the box
+ *
+ * etc...
+ */
+
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1600, 900), "Menu!");

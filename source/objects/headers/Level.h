@@ -1,6 +1,8 @@
 #ifndef LEVEL_H
 #define LEVEL_H
 
+#include <vector>
+#include <fstream>
 #include "Platform.h"
 #include "Platform_Behaviour.h"
 #include "Player_Behaviour.h"
@@ -8,8 +10,13 @@
 #include "Enemy.h"
 #include "Player.h"
 #include "World.h"
-#include <vector>
-#include <fstream>
+
+/**
+ * \brief Level läser in från .lvl filer och skapar entiteter till World.
+ *
+ * 
+ */
+
 
 class Level {
 public:

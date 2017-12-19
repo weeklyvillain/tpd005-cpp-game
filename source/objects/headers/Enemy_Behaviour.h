@@ -9,7 +9,12 @@
 class Enemy_Behaviour : public Behaviour {
 public:
 	Enemy_Behaviour():Behaviour{}{}
-	void process(World&, Entity&, sf::Time const&) override;
+	void process(World&, Entity&, sf::Time const& ) override;
+	void flip(Entity&, sf::Vector2f const&);
+	void move_y(Entity&, sf::Vector2f const&, sf::Time);
+	void move_x(Entity&, sf::Vector2f const&, sf::Time);
+	void collision_y(World&, Entity&);
+	void collision_x(World&, Entity&);
 	
 private:
 	int i{0};

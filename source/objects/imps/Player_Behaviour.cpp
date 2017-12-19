@@ -75,7 +75,7 @@ void Player_Behaviour::shoot(World& world, Player& owner, sf::Time t){
 
 void Player_Behaviour::move_y(Entity& owner, sf::Vector2f const& dir, sf::Time t){
     if (velocity.y == 0.0f){
-        velocity.y = dir.y * 500 * t.asSeconds();
+        velocity.y = dir.y * 7;
     }
     owner.setPosition(owner.getPosition().x, owner.getPosition().y + velocity.y);
 
@@ -83,7 +83,7 @@ void Player_Behaviour::move_y(Entity& owner, sf::Vector2f const& dir, sf::Time t
     velocity.y += acceleration.y;
 }
 void Player_Behaviour::move_x(Entity& owner, sf::Vector2f const& dir, sf::Time t){
-    velocity.x = dir.x * 80 * t.asSeconds();
+    velocity.x = dir.x * 160 * t.asSeconds();
 
     owner.setPosition(owner.getPosition().x + velocity.x, owner.getPosition().y);
 

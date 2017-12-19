@@ -17,5 +17,5 @@ class Game{
 public:
     Game() = default;
     ~Game() = default;
-    int run();
+    int run(int);
 };

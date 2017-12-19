@@ -15,8 +15,8 @@ public:
 
 	void process(World&, Entity&, sf::Time const& ) override;
 	void flip(Entity&, sf::Vector2f const&);
-	void animate(Entity&);
-	void shoot(World&, Player&, sf::Time) const;
+	void animate(World&, Entity&);
+	void shoot(World&, Player&, sf::Time);
 	void move_y(Entity&, sf::Vector2f const&, sf::Time);
 	void move_x(Entity&, sf::Vector2f const&, sf::Time);
 	void collision_y(World&, Entity&);

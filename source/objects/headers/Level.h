@@ -5,7 +5,6 @@
 #include "Platform_Behaviour.h"
 #include "Player_Behaviour.h"
 #include "Enemy_Behaviour.h"
-#include "p2_be.h"
 #include "Enemy.h"
 #include "Player.h"
 #include "World.h"
@@ -14,7 +13,7 @@
 
 class Level {
 public:
-    Level(std::string, int, int, World&);
+    Level(std::string, int, int, World&, int);
 
 private:
     std::ifstream ifs;

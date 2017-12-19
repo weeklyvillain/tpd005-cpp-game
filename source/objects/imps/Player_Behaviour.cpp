@@ -11,7 +11,7 @@ void Player_Behaviour::process(World &world, Entity& owner, sf::Time const& t){
     flip(o, dir);
 
     //Animation
-    //animate(o);
+    animate(world, o);
 
     //Shooting
     shoot(world, o, t);
@@ -38,13 +38,14 @@ void Player_Behaviour::flip(Entity& owner, sf::Vector2f const& dir){
     }
 }
 
-void Player_Behaviour::animate(Entity& owner){
+void Player_Behaviour::animate(World& world, Entity& owner){
     owner.setTextureRect(sf::IntRect(frame * 80, 0, 80, 80));
     if(i > 10){
         if(frame < 9){
             frame++;
         } else {
             frame = 0;
+            owner.setTexture(world.get_texture("wizard_idle"));
         }
         i = 0;
     } else {
@@ -52,8 +53,11 @@ void Player_Behaviour::animate(Entity& owner){
     }
 }
 
-void Player_Behaviour::shoot(World& world, Player& owner, sf::Time t)const{
+void Player_Behaviour::shoot(World& world, Player& owner, sf::Time t){
     if (handler.shoot && owner.time_since_last_shot + t.asSeconds() > 0.5f){
+        owner.setTexture(world.get_texture("wizard_attack"));
+        i = 0;
+        frame = 6;
         world.add_entity(
             new Projectile("proj", "Projectile",
                 new Projectile_Behaviour(owner.getScale().x, owner.getPosition().x),

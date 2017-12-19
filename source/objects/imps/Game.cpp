@@ -1,12 +1,11 @@
 #include "../headers/Game.h"
 
-int Game::run(){
-
+int Game::run(int player_amount){
 
     sf::RenderWindow window{sf::VideoMode(1900, 900), "Bubble Bobble", sf::Style::Titlebar | sf::Style::Close};
-
     window.setVerticalSyncEnabled(true);
     World world{window, 0.5};
+
     std::vector<std::string> lvls
     {"assets/levels/level1.lvl" ,
      "assets/levels/level2.lvl",
@@ -19,7 +18,8 @@ int Game::run(){
     };
 
     int level_index{0};
-    Level(lvls.at(level_index), 80, 80, world);
+    Level(lvls.at(level_index), 80, 80, world, player_amount);
+
     sf::Clock clock;
     sf::Time targetFrameDelay {sf::milliseconds(16.7)};
 
@@ -47,16 +47,19 @@ int Game::run(){
                     break;
 			}
         }
+
         //Vänta tills nästa bildruta innan du ritar
         auto frameDelay = clock.restart();
-        window.clear(sf::Color::Black);
+        window.clear(sf::Color::White);
         if(!world.player1.pause){
             world.update_all(frameDelay);                
         }
         world.render_all();
+
         sf::Font font{};
         sf::Text hp;
         sf::Text score;
+        sf::Text paused;
         if (font.loadFromFile("assets/ScoreFont.ttf"))
     	{
             sf::FloatRect item = hp.getGlobalBounds();
@@ -72,8 +75,16 @@ int Game::run(){
         	score.setColor(sf::Color::Red);
         	score.setString("Score: " + std::to_string(world.get_score()));
             window.draw(score);
-    	}
-
+            
+            if(world.player1.pause){
+                item = paused.getGlobalBounds();  
+                paused.setPosition(sf::Vector2f((1600 / 2) - (item.width / 2), (900 / 2) - (item.height / 2)));
+                paused.setFont(font);
+                paused.setColor(sf::Color::Red);
+                paused.setString("PAUSED");
+                window.draw(paused);
+            }
+        }
 
         if ( targetFrameDelay > frameDelay )
         {
@@ -81,10 +92,11 @@ int Game::run(){
             auto sleepTime = targetFrameDelay - frameDelay;
             sf::sleep(sleepTime);
         }
+
         if(world.win()) {
             world.clear();
             level_index++;
-            Level(lvls.at(level_index), 80, 80, world);
+            Level(lvls.at(level_index), 80, 80, world, player_amount);
         }
         window.display();
     }

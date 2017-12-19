@@ -1,7 +1,7 @@
 #include "../headers/Level.h"
 #include <iostream>
 
-Level::Level(std::string filename, int w, int h, World & world): ifs{filename}, tile_width{w}, tile_height{h}, pos{w / 2.0f, h / 2.0f} {
+Level::Level(std::string filename, int w, int h, World & world, int player_amount): ifs{filename}, tile_width{w}, tile_height{h}, pos{w / 2.0f, h / 2.0f} {
     if(ifs.is_open()) {
         for( std::string line; getline( ifs, line ); )
         {
@@ -15,9 +15,11 @@ Level::Level(std::string filename, int w, int h, World & world): ifs{filename}, 
                         new Player_Behaviour(world.player1), pos.x, pos.y, world.get_texture("wizard_idle"),
                         sf::IntRect(0,0,80,80), world));
                 } else if (c == '2') {
-                    world.add_entity(new Player("Player2", "Player",
-                        new Player_Behaviour(world.player2), pos.x, pos.y, world.get_texture("wizard_idle"),
-                        sf::IntRect(0,0,80,80), world));
+                    if(player_amount == 2){
+                        world.add_entity(new Player("Player2", "Player",
+                            new Player_Behaviour(world.player2), pos.x, pos.y, world.get_texture("wizard_idle"),
+                            sf::IntRect(0,0,80,80), world));
+                    }
 
                 } else if(c == 'e'){
                     world.add_entity(new Enemy("Enemy", "Enemy",

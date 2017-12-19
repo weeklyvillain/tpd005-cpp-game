@@ -16,6 +16,12 @@ int Game::run(int player_amount){
      "assets/levels/level7.lvl",
      "assets/levels/level8.lvl"
     };
+    sf::Texture t{};
+    sf::Sprite bkg{};
+    if(t.loadFromFile("assets/background.png")){
+        bkg.setTexture(t);
+    }
+    
 
     int level_index{0};
     Level(lvls.at(level_index), 80, 80, world, player_amount);
@@ -51,6 +57,7 @@ int Game::run(int player_amount){
         //Vänta tills nästa bildruta innan du ritar
         auto frameDelay = clock.restart();
         window.clear(sf::Color::White);
+        window.draw(bkg);
         if(!world.player1.pause){
             world.update_all(frameDelay);                
         }

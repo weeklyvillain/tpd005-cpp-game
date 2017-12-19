@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Network.hpp>
 #include <vector>
 #include "Key_Handling.h"
 #include "Entity.h"
@@ -9,7 +10,7 @@
 /**
  * \brief World simulerar spelvärlden.
  *
- * 
+ *
  */
 
 
@@ -34,6 +35,8 @@ class World{
         unsigned int get_score();
         void add_score(unsigned int);
         void remove_score(unsigned int);
+        void send_packet(sf::IpAddress, unsigned short);
+        void receive_packet(unsigned short);
 
         sf::Texture const& get_texture(std::string name)const{return texture_list.get_texture(name);}
         Key_Handling player1{
@@ -50,7 +53,7 @@ class World{
             sf::Keyboard::F
         };
         bool run{true};
-
+        sf::TcpSocket socket;
     private:
         sf::RenderWindow& window;
         float gravity;

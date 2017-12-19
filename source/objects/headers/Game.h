@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Network.hpp>
 #include <string>
 #include "World.h"
 #include "Player.h"
@@ -26,9 +27,13 @@ public:
     Game() = default;
     ~Game() = default;
     int run(int);
+    void run_lan(int);
+    void join(std::string);
     void set_name(std::string);
     void set_score(World&);
     void draw_new_item(std::string const&, sf::Vector2f const&, sf::Font const&, sf::RenderWindow&);
+
+        sf::TcpSocket socket;
 private:
     std::string name{"   "};
 };

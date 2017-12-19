@@ -7,6 +7,12 @@
 #include "Drop_Behaviour_points.h"
 #include <random>
 
+/**
+ * \brief Enemy ärver från Entity och innehåller all information för en entitet av fiendetyp.
+ *
+ * 
+ */
+
 class Enemy : public Entity{
 public:
     Enemy(std::string, std::string, Behaviour*, float, float, sf::Texture const&, sf::IntRect);

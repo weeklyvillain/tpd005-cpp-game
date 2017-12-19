@@ -1,10 +1,13 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-
 #include "Behaviour.h"
-#include <iostream>
 
+/**
+ * \brief Drop_Behaviour_points ärver från Behaviour och tillhandahåller beteendet för poäng-drops.
+ *
+ * 
+ */
 
 class Drop_Behaviour_points : public Behaviour {
 public:

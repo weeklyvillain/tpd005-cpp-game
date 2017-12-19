@@ -6,7 +6,12 @@
 #include "Projectile_Behaviour.h"
 #include "Projectile.h"
 #include "Player.h"
-#include <iostream>
+
+/**
+ * \brief Player_Behaviour ärver från Behaviour och tillhandahåller beteendet för spelare.
+ *
+ * 
+ */
 
 class Player_Behaviour : public Behaviour {
 

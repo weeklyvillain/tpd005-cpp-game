@@ -1,10 +1,13 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-
 #include "Behaviour.h"
-#include <iostream>
 
+/**
+ * \brief Enemy_Behaviour ärver från Behaviour och tillhandahåller beteende för fiender.
+ *
+ * 
+ */
 
 class Enemy_Behaviour : public Behaviour {
 public:

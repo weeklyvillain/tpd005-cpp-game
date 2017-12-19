@@ -5,6 +5,11 @@
 #include "Behaviour.h"
 #include <iostream>
 
+/**
+ * \brief Drop_Behaviour_heart ärver från Behaviour och tillhandahåller beteendet för hjärt-drops.
+ *
+ * 
+ */
 
 class Drop_Behaviour_heart : public Behaviour {
 public:

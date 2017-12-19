@@ -3,6 +3,11 @@
 
 #include "Entity.h"
 
+/**
+ * \brief Projectile ärver från Entity och innehåller all information för en entitet av projektil typ.
+ *
+ * 
+ */
 
 class Projectile : public Entity{
 public:

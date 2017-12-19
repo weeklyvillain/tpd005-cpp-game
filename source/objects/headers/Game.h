@@ -9,9 +9,12 @@
 #include "Platform_Behaviour.h"
 #include "Level.h"
 #include "Projectile.h"
-#include <iostream>
 
-
+/**
+ * \brief Game som kör spelvärlden och har hand om main loopen.
+ *
+ * 
+ */
 
 class Game{
 public:

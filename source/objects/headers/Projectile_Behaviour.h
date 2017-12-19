@@ -1,8 +1,13 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-
 #include "Behaviour.h"
+
+/**
+ * \brief Projectile_Behaviour ärver från Behaviour och tillhandahåller beteendet för projektiler.
+ *
+ * 
+ */
 
 class Projectile_Behaviour : public Behaviour {
 public:

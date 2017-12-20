@@ -72,6 +72,6 @@ private:
 	std::vector<sf::Text> menu;
 	///En instans av Game. Sparas så att den inte går utanför scope.
 	Game game{};
-	///Filip fixar
+	///Variabel som sparar din ip. Används för 
 	std::string ip;
 };

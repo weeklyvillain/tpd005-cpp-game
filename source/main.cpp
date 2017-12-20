@@ -7,13 +7,18 @@
  *
  * \section intro_sec Introduction
  *
- * This is the introduction.
+ * Det här är ett projekt där vi ville skapa en 
+ * Bubble Bobble klon med networking som fokus. 
+ * Vi lyckades skapa en fungerande klon men 
+ * lyckades ej skapa networking.
  *
  * \section install_sec Installation
  *
- * \subsection step1 Step 1: Opening the box
+ * \subsection step1 Steg 1: Ladda ner .tar filen.
+ * \subsection step2 Steg 2: Kör cmake . i ...\\projekt\\
+ * \subsection step3 Steg 3: Kör make bubble
+ * \subsection step4 Steg 4: Kör ./bubble
  *
- * etc...
  */
 
 int main(){

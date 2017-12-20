@@ -10,7 +10,9 @@
 /**
  * \brief Player_Behaviour ärver från Behaviour och tillhandahåller beteendet för spelare.
  *
- * Player_Behaviour 
+ * Player_Behaviour ärver allting från Behaviour och låter spelaren interagera med spelvärlden.
+ * Detta genom att flytta spelare, kollidera med objekt, skjuta projektiler, animera spelaren och
+ * flippa spelarens sprite baserat på var spelaren går.
  * 
  */
 
@@ -29,13 +31,14 @@ public:
 	Player_Behaviour& operator=(Player_Behaviour && rhs) = delete;
 	///Default Destruktor
 	~Player_Behaviour() = default;
-	///
+	///Funktionen som låter player utföra sina actions.
 	void process(World&, Entity&, sf::Time const& ) override;
 	///Funktionen flipar spriten för enemy baserat på vilket håll den rör sig.
 	void flip(Entity&, sf::Vector2f const&);
-	///
+	///En animeringsklocka som ändrar på texturens visningskvadrat
 	void animate(World&, Entity&);
-	///
+	///Funktionen som låter spelare skjuta.
+	/// Den ändrar på spelarens textur för att kunna animera skjutande.
 	void shoot(World&, Player&, sf::Time);
 	///Förflyttning i x-led.
 	void move_x(Entity&, sf::Vector2f const&, sf::Time);

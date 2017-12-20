@@ -4,12 +4,15 @@
 #include "Behaviour.h"
 
 /**
- * \brief Enemy_Behaviour ärver från Behaviour och tillhandahåller beteende för fiender.
+ * \brief Enemy_Behaviour2 ärver från Behaviour och tillhandahåller beteende för fiender.
  *
- * Enemy_Behaviour definerar beteendet för ett Enemy objekt i spelet.
+ * Enemy_Behaviour2 definerar beteendet för ett Enemy objekt i spelet.
  * Enemy rör sig som Player_Behaviour men följer spelaren istället
  * för att följa vad användaren anger. Den flipar också Enemy spriten om det behövs
  * och har koll på kollisioner för enemy. Enemy dödar spelaren om de kommer i kontakt med denne.
+ * 
+ * Enemy nummer 2 rör sig från sin startplats till en ny plats och tillbaka.
+ * Detta är det enda den gör.
  *
  */
 
@@ -40,6 +43,8 @@ public:
 	///Kollisionshantering i y-led.
 	void collision_y(World&, Entity&);
 private:
+	///Start positionen
 	sf::Vector2f start_pos;
+	///Slut positionen
 	sf::Vector2f end_pos;
 };

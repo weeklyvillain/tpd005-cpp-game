@@ -11,6 +11,8 @@
  * för att följa vad användaren anger. Den flipar också Enemy spriten om det behövs
  * och har koll på kollisioner för enemy. Enemy dödar spelaren om de kommer i kontakt med denne.
  *
+ * Enemy nummer 1 följer spelarens movement och försöker anfalla den.
+ * 
  */
 
 class Enemy_Behaviour : public Behaviour {

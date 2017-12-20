@@ -34,17 +34,19 @@ public:
     ~Game() = default;
     ///Funktionen som kör själva spelet.
     int run(int);
-    ///Sätter spelarens namn
+    ///Filip fixar
     void run_lan(int);
+    ///Filip fixar
     void join(std::string);
+    ///Sätter spelarens namn
     void set_name(std::string);
     ///Skriver spelarens score till en .txt fil.
     void set_score(World&);
     ///Funktion som ritar ut ett objekt på spelplanen som inte är en del av spelet.
     ///T.ex. antal liv, score och pausskärmen.
     void draw_new_item(std::string const&, sf::Vector2f const&, sf::Font const&, sf::RenderWindow&);
-
-        sf::TcpSocket socket;
+    ///Filip fixar
+    sf::TcpSocket socket;
 private:
     ///Variabel för spelarens namn.
     std::string name{"   "};

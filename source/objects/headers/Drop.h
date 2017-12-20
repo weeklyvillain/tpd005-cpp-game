@@ -6,7 +6,8 @@
 /**
  * \brief Drop ärver från Entity och innehåller all information för en entitet av droptyp.
  *
- * Drop ärver från den abstrakta klassen Entity och däför behöver den köra override på update() och Kill()
+ * Drop ärver från den abstrakta klassen Entity och däför behöver den köra override på update() och Kill().
+ * Den innehåller information om drop objekten och agerar bro mellan World och Behaviours.
  *
  */
 

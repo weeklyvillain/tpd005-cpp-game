@@ -10,14 +10,11 @@
 /**
  * \brief World simulerar spelvärlden.
  *
-<<<<<<< HEAD
  * World utför simulation av spelvärlden. 
  * Den baserar sig på SFMLs inbyggda positions system och uppdaterar entiteter varje gång
- *  update_all() kallas på. Klassen håller också koll på input från användaren,
- *  hur många extraliv en spelare har och hur många poäng denne har.
-=======
+ * update_all() kallas på. Klassen håller också koll på input från användaren,
+ * hur många extraliv en spelare har och hur många poäng denne har.
  *
->>>>>>> refs/remotes/origin/master
  */
 
 
@@ -70,6 +67,10 @@ public:
     void add_score(unsigned int);
     ///tar bort n på score.
     void remove_score(unsigned int);
+    ///Filip fixar
+    void send_packet(sf::IpAddress, unsigned short);
+    ///Filip fixar
+    void receive_packet(unsigned short);
     ///Hämtar en texture från World#texture_list.
     sf::Texture const& get_texture(std::string name)const{return texture_list.get_texture(name);}
     ///Tangent hanterare för spelare 1.
@@ -88,8 +89,8 @@ public:
     };
     ///Bool som används för att avsluta spelet.
     bool run{true};
-
-<<<<<<< HEAD
+    //Filip fixar
+    sf::TcpSocket socket;
 private:
     ///Fönstret som illustrerar spelet
     sf::RenderWindow& window;
@@ -101,49 +102,5 @@ private:
     unsigned int score{0};
     ///En Texture_Container som innehåller alla grafiska delar av spelet.
     Texture_Container texture_list{};
-=======
-        void add_entity(Entity*);
-        void update_all(sf::Time const&);
-        void render_all();
-        void on_Key_Press(sf::Keyboard::Key);
-        void on_Key_Release(sf::Keyboard::Key);
-        Entity* am_I_Colliding(Entity const&) const;
-        void kill_me_now(Entity&);
-        Entity* get_player() const;
-        void clear();
-        bool win();
-        int get_lives();
-        void add_life();
-        void remove_life();
-        unsigned int get_score();
-        void add_score(unsigned int);
-        void remove_score(unsigned int);
-        void send_packet(sf::IpAddress, unsigned short);
-        void receive_packet(unsigned short);
-
-        sf::Texture const& get_texture(std::string name)const{return texture_list.get_texture(name);}
-        Key_Handling player1{
-            sf::Keyboard::Up,
-            sf::Keyboard::Left,
-            sf::Keyboard::Right,
-            sf::Keyboard::Space
-        };
-
-        Key_Handling player2{
-            sf::Keyboard::W,
-            sf::Keyboard::A,
-            sf::Keyboard::D,
-            sf::Keyboard::F
-        };
-        bool run{true};
-        sf::TcpSocket socket;
-    private:
-        sf::RenderWindow& window;
-        float gravity;
-        std::vector<std::unique_ptr<Entity>> entities;
-        int lives{3};
-        unsigned int score{0};
-        Texture_Container texture_list{};
->>>>>>> refs/remotes/origin/master
 
 };

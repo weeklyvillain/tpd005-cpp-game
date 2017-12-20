@@ -21,7 +21,6 @@
  *
  */
 
-
 class Level {
 public:
     ///Allting händer här i konstruktorn.

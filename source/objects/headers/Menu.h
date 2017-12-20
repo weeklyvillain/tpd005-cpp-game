@@ -15,7 +15,6 @@
  * 
  */
 
-
 class Menu{
 public:
 	///Konstruktor som tar in 2 floats.

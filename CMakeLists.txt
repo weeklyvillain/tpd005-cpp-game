@@ -7,6 +7,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(SOURCE_FILES
     source/objects/headers/Behaviour.h
     source/objects/headers/Enemy_Behaviour.h
+    source/objects/headers/Enemy2_Behaviour.h
     source/objects/headers/Enemy.h
     source/objects/headers/Entity.h
     source/objects/headers/Game.h
@@ -26,6 +27,7 @@ set(SOURCE_FILES
     source/objects/headers/Drop.h
 
     source/objects/imps/Enemy_Behaviour.cpp
+    source/objects/imps/Enemy2_Behaviour.cpp
     source/objects/imps/Enemy.cpp
     source/objects/imps/Game.cpp
     source/objects/imps/Key_Handling.cpp

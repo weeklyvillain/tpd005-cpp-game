@@ -25,6 +25,10 @@ Level::Level(std::string filename, int w, int h, World & world, int player_amoun
                     world.add_entity(new Enemy("Enemy", "Enemy",
                         new Enemy_Behaviour(), pos.x, pos.y, world.get_texture("enemy"),
                         sf::IntRect(0,0,80,80)));
+                }else if(c == 'f'){
+                    world.add_entity(new Enemy("Enemy", "Enemy",
+                        new Enemy2_Behaviour(pos, pos.x + 100, pos.y), pos.x, pos.y, world.get_texture("enemy2"),
+                        sf::IntRect(0,0,80,80)));
                 } else if(c == 'w') {
                     world.add_entity(new Platform("Wall", "Wall",
                         new Platform_Behaviour(), pos, world.get_texture("platform"),

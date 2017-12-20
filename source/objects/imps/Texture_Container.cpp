@@ -26,15 +26,19 @@ Texture_Container::Texture_Container():textures{}{
     if(t6.loadFromFile("assets/Art_Tileset.png")){
         textures["platform"] = std::make_unique<sf::Texture>(t6);
     }
-    
+
     sf::Texture t7;
     if(t7.loadFromFile("assets/heart.png")){
         textures["heart"] = std::make_unique<sf::Texture>(t7);
     }
-    
+
     sf::Texture t8;
     if(t8.loadFromFile("assets/coin.png")){
         textures["coin"] = std::make_unique<sf::Texture>(t8);
+    }
+    sf::Texture t9;
+    if(t9.loadFromFile("assets/Flame_Demon.png")){
+        textures["enemy2"] = std::make_unique<sf::Texture>(t9);
     }
 }
 sf::Texture const& Texture_Container::get_texture(std::string name) const{

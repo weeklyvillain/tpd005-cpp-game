@@ -13,20 +13,20 @@
  *
  */
 
-class Enemy_Behaviour : public Behaviour {
+class Enemy2_Behaviour : public Behaviour {
 public:
 	///Vanlig Behaviour#Behaviour konstruktor.
-	Enemy_Behaviour():Behaviour{}{}
+	Enemy2_Behaviour(sf::Vector2f v, float x, float y):Behaviour{}, start_pos{v}, end_pos{x, y}{}
 	///Copy konstruktor
-    Enemy_Behaviour(Enemy_Behaviour const & other) = delete;
+    Enemy2_Behaviour(Enemy2_Behaviour const & other) = delete;
     ///Move konstruktor
-    Enemy_Behaviour(Enemy_Behaviour && other) = delete;
+    Enemy2_Behaviour(Enemy2_Behaviour && other) = delete;
     ///Copy operator
-    Enemy_Behaviour& operator=(Enemy_Behaviour const & rhs) & = delete;
+    Enemy2_Behaviour& operator=(Enemy2_Behaviour const & rhs) & = delete;
     ///Move operator
-	Enemy_Behaviour& operator=(Enemy_Behaviour && rhs) = delete;
+	Enemy2_Behaviour& operator=(Enemy2_Behaviour && rhs) = delete;
 	///Default destruktor
-	~Enemy_Behaviour() = default;
+	~Enemy2_Behaviour() = default;
 	///Funktionen som låter fienden göra allting.
 	void process(World&, Entity&, sf::Time const& ) override;
 	///Funktionen flipar spriten för enemy baserat på vilket håll den rör sig.
@@ -39,4 +39,7 @@ public:
 	void collision_x(World&, Entity&);
 	///Kollisionshantering i y-led.
 	void collision_y(World&, Entity&);
+private:
+	sf::Vector2f start_pos;
+	sf::Vector2f end_pos;
 };

@@ -19,7 +19,15 @@ public:
     Entity(std::string n, std::string t, Behaviour* b,
         sf::Texture const& texture, sf::IntRect size)
         :sf::Sprite(texture, size), name{n}, type{t}, behaviour_ptr{b}{}
-    ///Default konstruktor.
+    ///Copy konstruktor
+    Entity(Entity const & other) = delete;
+    ///Move konstruktor
+    Entity(Entity && other) = delete;
+    ///Copy operator
+    Entity& operator=(Entity const & rhs) & = delete;
+    ///Move operator
+	Entity& operator=(Entity && rhs) = delete;
+    ///Default destruktor.
     virtual ~Entity() = default;
     ///Funktionen som world kallar på för att få varje entitet att uppdatera sig.
     /// Den kallar i sin tur på Behaviour#Process()

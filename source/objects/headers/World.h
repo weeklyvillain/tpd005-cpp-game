@@ -17,12 +17,19 @@
  *
  */
 
-
 class World{
 public:
     ///World's konstruktor tar in ett sf::RenderWindow och sparar detta i en variabel.
     World(sf::RenderWindow&);
-    ///En default destruktor.
+    ///Copy konstruktor
+    World(World const & other) = delete;
+    ///Move konstruktor
+    World(World && other) = delete;
+    ///Copy operator
+    World& operator=(World const & rhs) & = delete;
+    ///Move operator
+	World& operator=(World && rhs) = delete;
+    ///Default destruktor.
     ~World() = default;
     ///Lägger till en Entity objekt pekare i World#Entities. 
     /// Använder unika smart pekare för att undvika memory leaks.
@@ -30,7 +37,7 @@ public:
     ///Går igenom World#Entities och kör deras Entity#Update().
     void update_all(sf::Time const&);
     ///Går igenom World#Entities och ritar dessa till window.
-    void render_all();
+    void render_all() const;
     ///Tar hand om tangenttryckningar genom att skicka true när den trycks ner.
     void on_Key_Press(sf::Keyboard::Key);
     ///Tar hand om tangenttryckningar genom att skicka false när den släpps upp.
@@ -53,26 +60,23 @@ public:
     /// Detta används för att kunna skapa nya nivåer utan att de gamla stör.
     void clear();
     ///Om spelaren har dödat alla enemy objekt så returnerar denna true.
-    ///Då körs World#clear() och sedan används Level för att skapa den nya nivån.
-    bool win();
+    bool win() const;
     ///Getter för World#lives.
-    int get_lives();
+    int get_lives() const;
     ///Lägger till 1 life.
     void add_life();
     ///Tar bort 1 life.
     void remove_life();
     ///Getter för World#score.
-    unsigned int get_score();
+    unsigned int get_score() const;
     ///Lägger till n på score.
     void add_score(unsigned int);
     ///tar bort n på score.
     void remove_score(unsigned int);
-    ///Filip fixar
-    void send_packet(sf::IpAddress, unsigned short);
-    ///Filip fixar
-    void receive_packet(unsigned short);
     ///Hämtar en texture från World#texture_list.
-    sf::Texture const& get_texture(std::string name)const{return texture_list.get_texture(name);}
+    sf::Texture const& get_texture(std::string name)const{
+        return texture_list.get_texture(name);
+    }
     ///Tangent hanterare för spelare 1.
     Key_Handling player1{
         sf::Keyboard::Up,
@@ -89,8 +93,6 @@ public:
     };
     ///Bool som används för att avsluta spelet.
     bool run{true};
-    //Filip fixar
-    sf::TcpSocket socket;
 private:
     ///Fönstret som illustrerar spelet
     sf::RenderWindow& window;

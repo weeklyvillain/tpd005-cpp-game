@@ -10,6 +10,8 @@
 /**
  * \brief Enemy ärver från Entity och innehåller all information för en entitet av fiendetyp.
  *
+ * Enemy ärver från den abstrakta klassen Entity och 
+ * innehåller informationen för den instans av fiender i spelet den representerar.
  * 
  */
 
@@ -18,6 +20,16 @@ public:
     ///Enemy konstruktorn som tar in ett namn, en typ, en beteende pekare,
     ///2 floats för position, en textur och vilken kvadrat som ska visas.
     Enemy(std::string, std::string, Behaviour*, float, float, sf::Texture const&, sf::IntRect);
+    ///Copy konstruktor
+    Enemy(Enemy const & other) = delete;
+    ///Move konstruktor
+    Enemy(Enemy && other) = delete;
+    ///Copy operator
+    Enemy& operator=(Enemy const & rhs) & = delete;
+    ///Move operator
+	Enemy& operator=(Enemy && rhs) = delete;
+	///Default destruktor
+	~Enemy() = default;
     ///Entity#update() override
     /// Funktion som kallas av world när det här specifika objektet ska uppdatera sig.
     /// Det gör sedan detta genom att t.ex. flytta på sig och kolla kollisioner.

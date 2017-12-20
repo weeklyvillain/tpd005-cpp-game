@@ -16,6 +16,16 @@ public:
     ///Projectile Kontruktor som tar in ett namn, en typ,
     /// 2 floats för x och y koordinater, en textur referens och vilken kvadrat i texturen som är relevant
     Projectile(std::string n, std::string t, Behaviour* b, float x, float y, sf::Texture const&, sf::IntRect);
+    ///Copy konstruktor
+    Projectile(Projectile const & other) = delete;
+    ///Move konstruktor
+    Projectile(Projectile && other) = delete;
+    ///Copy operator
+    Projectile& operator=(Projectile const & rhs) & = delete;
+    ///Move operator
+	Projectile& operator=(Projectile && rhs) = delete;
+	///Default Destruktor
+	~Projectile() = default;
     ///Entity#update() override
     /// Funktion som kallas av world när det här specifika objektet ska uppdatera sig.
     /// Det gör sedan detta genom att t.ex. flytta på sig och kolla kollisioner.

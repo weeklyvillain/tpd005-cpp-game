@@ -17,6 +17,16 @@ public:
     /// x och y värdet där objektet ska finnas, 
     /// en texture från Texture_Container och vilken del av texturen som ska visas
     Drop(std::string, std::string, Behaviour*, float, float, sf::Texture const&, sf::IntRect);
+    ///Copy konstruktor
+    Drop(Drop const & other) = delete;
+    ///Move konstruktor
+    Drop(Drop && other) = delete;
+    ///Copy operator
+    Drop& operator=(Drop const & rhs) & = delete;
+    ///Move operator
+	Drop& operator=(Drop && rhs) = delete;
+	///Default destruktor
+	~Drop() = default;
     ///Entity#update() override
     /// Funktion som kallas av world när det här specifika objektet ska uppdatera sig.
     /// Det gör sedan detta genom att t.ex. flytta på sig och kolla kollisioner.

@@ -30,14 +30,18 @@ class Game{
 public:
     ///Default konstruktor
     Game() = default;
-    //////Default destruktor
+    ///Copy konstruktor
+    Game(Game const & other) = delete;
+    ///Move konstruktor
+    Game(Game && other) = delete;
+    ///Copy operator
+    Game& operator=(Game const & rhs) & = delete;
+    ///Move operator
+	Game& operator=(Game && rhs) = delete;
+    ///Default destruktor
     ~Game() = default;
     ///Funktionen som kör själva spelet.
     int run(int);
-    ///Filip fixar
-    void run_lan(int);
-    ///Filip fixar
-    void join(std::string);
     ///Sätter spelarens namn
     void set_name(std::string);
     ///Skriver spelarens score till en .txt fil.
@@ -45,8 +49,6 @@ public:
     ///Funktion som ritar ut ett objekt på spelplanen som inte är en del av spelet.
     ///T.ex. antal liv, score och pausskärmen.
     void draw_new_item(std::string const&, sf::Vector2f const&, sf::Font const&, sf::RenderWindow&);
-    ///Filip fixar
-    sf::TcpSocket socket;
 private:
     ///Variabel för spelarens namn.
     std::string name{"   "};

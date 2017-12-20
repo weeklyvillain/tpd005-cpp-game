@@ -16,12 +16,11 @@ void World::update_all(sf::Time const& t){
     }
 }
 
-void World::render_all(){
+void World::render_all() const{
     for(auto& it : entities){
         if (it != nullptr){
             window.draw(*it);
         }
-
     }
 }
 
@@ -71,7 +70,7 @@ void World::clear(){
     entities.erase(begin(entities), end(entities));
 }
 
-bool World::win(){
+bool World::win() const{
     for(auto& it : entities){
         if(it->get_name() == "Enemy"){
             return false;
@@ -80,7 +79,7 @@ bool World::win(){
     return true;
 }
 
-int World::get_lives(){
+int World::get_lives() const{
     return lives;
 }
 
@@ -92,7 +91,7 @@ void World::remove_life(){
     lives--;
 }
 
-unsigned int World::get_score(){
+unsigned int World::get_score() const{
     return score;
 }
 
@@ -103,32 +102,3 @@ void World::add_score(unsigned int i){
 void World::remove_score(unsigned int i){
     score -= i;
 }
-
-void World::send_packet(sf::IpAddress ip, unsigned short port) {
-    sf::Packet packet;
-	packet << lives << score;
-    sf::TcpSocket socket;
-    socket.connect(ip, port);
-    socket.send(packet);
-};
-void World::receive_packet(unsigned short port) {
-    sf::Packet packet;
-    
-    sf::TcpListener listener;
-	listener.listen(port);
-	listener.accept(socket);
-    socket.receive(packet);
-    packet >> lives >> score;
-};
-/*
-sf::Packet& operator <<(sf::Packet& packet, World& w)
-{
-    return packet << w.get_lives() << w.get_score();
-}
-
-sf::Packet& operator >>(sf::Packet& packet, World& w)
-{
-    return packet >> p_lives >> p_score;
-}
-*/
-

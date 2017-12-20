@@ -16,6 +16,16 @@ public:
     /// Tar in ett namn, en typ, en Behaviour pekare, en sf::Vector2f för position,
     /// ett textur referens och vilken kvadrat som ska ritas ut.
     Platform(std::string, std::string, Behaviour*, sf::Vector2f, sf::Texture const&, sf::IntRect);
+    ///Copy konstruktor
+    Platform(Platform const & other) = delete;
+    ///Move konstruktor
+    Platform(Platform && other) = delete;
+    ///Copy operator
+    Platform& operator=(Platform const & rhs) & = delete;
+    ///Move operator
+	Platform& operator=(Platform && rhs) = delete;
+	///Default Destruktor
+	~Platform() = default;
     ///Entity#update() override
     /// Funktion som kallas av world när det här specifika objektet ska uppdatera sig.
     /// Det gör sedan detta genom att t.ex. flytta på sig och kolla kollisioner.

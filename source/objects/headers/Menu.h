@@ -21,6 +21,14 @@ public:
 	///Konstruktor som tar in 2 floats.
 	/// 1 för bredd och 1 för höjd på fönstret.
 	Menu(float width, float height);
+	///Copy konstruktor
+    Menu(Menu const & other) = delete;
+    ///Move konstruktor
+    Menu(Menu && other) = delete;
+    ///Copy operator
+    Menu& operator=(Menu const & rhs) & = delete;
+    ///Move operator
+	Menu& operator=(Menu && rhs) = delete;
 	///Default Destruktor
 	~Menu() = default;
 

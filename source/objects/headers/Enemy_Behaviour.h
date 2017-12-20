@@ -17,6 +17,16 @@ class Enemy_Behaviour : public Behaviour {
 public:
 	///Vanlig Behaviour#Behaviour konstruktor.
 	Enemy_Behaviour():Behaviour{}{}
+	///Copy konstruktor
+    Enemy_Behaviour(Enemy_Behaviour const & other) = delete;
+    ///Move konstruktor
+    Enemy_Behaviour(Enemy_Behaviour && other) = delete;
+    ///Copy operator
+    Enemy_Behaviour& operator=(Enemy_Behaviour const & rhs) & = delete;
+    ///Move operator
+	Enemy_Behaviour& operator=(Enemy_Behaviour && rhs) = delete;
+	///Default destruktor
+	~Enemy_Behaviour() = default;
 	///Funktionen som låter fienden göra allting.
 	void process(World&, Entity&, sf::Time const& ) override;
 	///Funktionen flipar spriten för enemy baserat på vilket håll den rör sig.
@@ -31,8 +41,8 @@ public:
 	void collision_y(World&, Entity&);
 
 private:
-	///Filip fixa
+	///Variabel för att simulera en klocka.
 	int i{0};
-	///Filip fixa
+	///Vilken frame som ska ritas ut.
 	int frame{0};
 };

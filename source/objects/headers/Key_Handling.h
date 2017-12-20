@@ -42,6 +42,16 @@ public:
 	///Konstruktor som tar emot 4 tangenter.
 	Key_Handling(sf::Keyboard::Key, sf::Keyboard::Key, 
 		sf::Keyboard::Key, sf::Keyboard::Key);
+	///Copy konstruktor
+    Key_Handling(Key_Handling const & other) = delete;
+    ///Move konstruktor
+    Key_Handling(Key_Handling && other) = delete;
+    ///Copy operator
+    Key_Handling& operator=(Key_Handling const & rhs) & = delete;
+    ///Move operator
+	Key_Handling& operator=(Key_Handling && rhs) = delete;
+    ///Default destruktor
+    ~Key_Handling() = default;
 	///Funktion som körs från main-loopen. Den tar emot huruvida tangenten släpptes eller trycktes ner
 	/// och vilken tangent det var som triggrade eventet.
 	void onKey(bool, sf::Keyboard::Key const&);

@@ -27,6 +27,16 @@ public:
     /// Konstruktorn tar in en sökväg, bredd och höjd på varje tile, 
     /// en värld som den ska skriva till och antalet spelare i världen.
     Level(std::string, int, int, World&, int);
+    ///Copy konstruktor
+    Level(Level const & other) = delete;
+    ///Move konstruktor
+    Level(Level && other) = delete;
+    ///Copy operator
+    Level& operator=(Level const & rhs) & = delete;
+    ///Move operator
+	Level& operator=(Level && rhs) = delete;
+    ///Default destruktor
+    ~Level() = default;
 
 private:
     ///En input file stream för att kunna läsa från en fil.

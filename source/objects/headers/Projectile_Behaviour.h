@@ -17,6 +17,16 @@ public:
 	///En konstruktor som tar emot vilket håll projektilen ska åka åt och 
 	/// var den startar.
 	Projectile_Behaviour(float, float);
+	///Copy konstruktor
+    Projectile_Behaviour(Projectile_Behaviour const & other) = delete;
+    ///Move konstruktor
+    Projectile_Behaviour(Projectile_Behaviour && other) = delete;
+    ///Copy operator
+    Projectile_Behaviour& operator=(Projectile_Behaviour const & rhs) & = delete;
+    ///Move operator
+	Projectile_Behaviour& operator=(Projectile_Behaviour && rhs) = delete;
+	///Default Destruktor
+	~Projectile_Behaviour() = default;
 	///Process som låter projektilen flyga iväg, kollidera med fiender och väggar.
 	void process(World&, Entity&, sf::Time const&) override;
 

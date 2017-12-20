@@ -20,7 +20,6 @@ set(SOURCE_FILES
     source/objects/headers/Projectile_Behaviour.h
     source/objects/headers/Projectile.h
     source/objects/headers/Texture_Container.h
-    source/objects/headers/tool_chain.h
     source/objects/headers/World.h
     source/objects/headers/Drop_Behaviour_heart.h
     source/objects/headers/Drop_Behaviour_points.h

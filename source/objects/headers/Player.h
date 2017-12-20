@@ -14,6 +14,16 @@ public:
     ///Player konstruktor som tar in ett namn, en typ, en Behaviour pekare, 
     /// en texture, vilken kvadrat som ska ritas ut och vilken färg den ska ha.
     Player(std::string, std::string, Behaviour*, float, float, sf::Texture const&, sf::IntRect, sf::Color);
+    ///Copy konstruktor
+    Player(Player const & other) = delete;
+    ///Move konstruktor
+    Player(Player && other) = delete;
+    ///Copy operator
+    Player& operator=(Player const & rhs) & = delete;
+    ///Move operator
+	Player& operator=(Player && rhs) = delete;
+	///Default Destruktor
+	~Player() = default;
     ///Entity#update() override
     /// Funktion som kallas av world när det här specifika objektet ska uppdatera sig.
     /// Det gör sedan detta genom att t.ex. flytta på sig och kolla kollisioner.

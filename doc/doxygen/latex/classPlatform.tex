@@ -1,0 +1,219 @@
+\hypertarget{classPlatform}{\section{Platform Class Reference}
+\label{classPlatform}\index{Platform@{Platform}}
+}
+
+
+\hyperlink{classPlatform}{Platform} ärver från \hyperlink{classEntity}{Entity} och innehåller all information för en entitet av platformstyp.  
+
+
+
+
+{\ttfamily \#include $<$Platform.\+h$>$}
+
+
+
+Inheritance diagram for Platform\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=162pt]{classPlatform__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Platform\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{classPlatform__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPlatform_a87ebc22e56d673fede211c6824f015f6}{Platform} (std\+::string, std\+::string, \hyperlink{classBehaviour}{Behaviour} $\ast$, sf\+::\+Vector2f, sf\+::\+Texture const \&, sf\+::\+Int\+Rect)
+\item 
+\hyperlink{classPlatform_a187acbd90dbed1c028d640d19d69fedd}{Platform} (\hyperlink{classPlatform}{Platform} const \&other)=delete
+\begin{DoxyCompactList}\small\item\em Copy konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classPlatform_a62adfd45ef427798c713064cd54b926b}{Platform} (\hyperlink{classPlatform}{Platform} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Move konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classPlatform}{Platform} \& \hyperlink{classPlatform_a80d5d52e630409f5ae9a1cd98720faf2}{operator=} (\hyperlink{classPlatform}{Platform} const \&rhs)\&=delete
+\begin{DoxyCompactList}\small\item\em Copy operator. \end{DoxyCompactList}\item 
+\hyperlink{classPlatform}{Platform} \& \hyperlink{classPlatform_af57a590654b1c1c2432e79237de854f9}{operator=} (\hyperlink{classPlatform}{Platform} \&\&rhs)=delete
+\begin{DoxyCompactList}\small\item\em Move operator. \end{DoxyCompactList}\item 
+\hyperlink{classPlatform_ab1def8463428a10d2fe399fd695118f9}{$\sim$\+Platform} ()=default
+\begin{DoxyCompactList}\small\item\em Default Destruktor. \end{DoxyCompactList}\item 
+void \hyperlink{classPlatform_ad756e0494312cdd8956af8bee6afbb0f}{update} (\hyperlink{classWorld}{World} \&, sf\+::\+Time const \&) override
+\item 
+void \hyperlink{classPlatform_a6dd2fe10f6de044db339c5050bdb7ef0}{kill} (\hyperlink{classWorld}{World} \&w) override
+\begin{DoxyCompactList}\small\item\em Om det här objektet har dödats så kommer kill att göra det genom att informera \hyperlink{classWorld}{World} om det. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classEntity_a75c7e4aad3df2e053ee5b43169509534}{get\+\_\+name} () const 
+\begin{DoxyCompactList}\small\item\em Returnerar namnet på entititen. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classEntity_a0e9ef479c1147e21e5bcb338cb858df2}{get\+\_\+type} () const 
+\begin{DoxyCompactList}\small\item\em Returnerar typen på entititen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{classEntity_a931b21fbdebb1a5963b4bcab5df128f5}{name}
+\begin{DoxyCompactList}\small\item\em Namn. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classEntity_a298a9ebf2474bb00874b5ff6a0d637ef}{type}
+\begin{DoxyCompactList}\small\item\em Typ. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{classBehaviour}{Behaviour} $>$ \hyperlink{classEntity_adb6e36848db24e6d48e6d295e19d3972}{behaviour\+\_\+ptr}
+\begin{DoxyCompactList}\small\item\em Unik smart-\/pekare till ett objekt av \hyperlink{classBehaviour}{Behaviour} klassen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classPlatform}{Platform} ärver från \hyperlink{classEntity}{Entity} och innehåller all information för en entitet av platformstyp. 
+
+\hyperlink{classPlatform}{Platform} ärver från den abstrakta grundklassen \hyperlink{classEntity}{Entity} och innehåller information om platformar i spelet. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPlatform_a87ebc22e56d673fede211c6824f015f6}{\index{Platform@{Platform}!Platform@{Platform}}
+\index{Platform@{Platform}!Platform@{Platform}}
+\subsubsection[{Platform}]{\setlength{\rightskip}{0pt plus 5cm}Platform\+::\+Platform (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{n, }
+\item[{std\+::string}]{t, }
+\item[{{\bf Behaviour} $\ast$}]{b, }
+\item[{sf\+::\+Vector2f}]{pos, }
+\item[{sf\+::\+Texture const \&}]{texture, }
+\item[{sf\+::\+Int\+Rect}]{size}
+\end{DoxyParamCaption}
+)}}\label{classPlatform_a87ebc22e56d673fede211c6824f015f6}
+Platforms konstruktor Tar in ett namn, en typ, en \hyperlink{classBehaviour}{Behaviour} pekare, en sf\+::\+Vector2f för position, ett textur referens och vilken kvadrat som ska ritas ut. \hypertarget{classPlatform_a187acbd90dbed1c028d640d19d69fedd}{\index{Platform@{Platform}!Platform@{Platform}}
+\index{Platform@{Platform}!Platform@{Platform}}
+\subsubsection[{Platform}]{\setlength{\rightskip}{0pt plus 5cm}Platform\+::\+Platform (
+\begin{DoxyParamCaption}
+\item[{{\bf Platform} const \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classPlatform_a187acbd90dbed1c028d640d19d69fedd}
+
+
+Copy konstruktor. 
+
+\hypertarget{classPlatform_a62adfd45ef427798c713064cd54b926b}{\index{Platform@{Platform}!Platform@{Platform}}
+\index{Platform@{Platform}!Platform@{Platform}}
+\subsubsection[{Platform}]{\setlength{\rightskip}{0pt plus 5cm}Platform\+::\+Platform (
+\begin{DoxyParamCaption}
+\item[{{\bf Platform} \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classPlatform_a62adfd45ef427798c713064cd54b926b}
+
+
+Move konstruktor. 
+
+\hypertarget{classPlatform_ab1def8463428a10d2fe399fd695118f9}{\index{Platform@{Platform}!````~Platform@{$\sim$\+Platform}}
+\index{````~Platform@{$\sim$\+Platform}!Platform@{Platform}}
+\subsubsection[{$\sim$\+Platform}]{\setlength{\rightskip}{0pt plus 5cm}Platform\+::$\sim$\+Platform (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}}\label{classPlatform_ab1def8463428a10d2fe399fd695118f9}
+
+
+Default Destruktor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classEntity_a75c7e4aad3df2e053ee5b43169509534}{\index{Platform@{Platform}!get\+\_\+name@{get\+\_\+name}}
+\index{get\+\_\+name@{get\+\_\+name}!Platform@{Platform}}
+\subsubsection[{get\+\_\+name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Entity\+::get\+\_\+name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}}\label{classEntity_a75c7e4aad3df2e053ee5b43169509534}
+
+
+Returnerar namnet på entititen. 
+
+\hypertarget{classEntity_a0e9ef479c1147e21e5bcb338cb858df2}{\index{Platform@{Platform}!get\+\_\+type@{get\+\_\+type}}
+\index{get\+\_\+type@{get\+\_\+type}!Platform@{Platform}}
+\subsubsection[{get\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Entity\+::get\+\_\+type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}}\label{classEntity_a0e9ef479c1147e21e5bcb338cb858df2}
+
+
+Returnerar typen på entititen. 
+
+\hypertarget{classPlatform_a6dd2fe10f6de044db339c5050bdb7ef0}{\index{Platform@{Platform}!kill@{kill}}
+\index{kill@{kill}!Platform@{Platform}}
+\subsubsection[{kill}]{\setlength{\rightskip}{0pt plus 5cm}void Platform\+::kill (
+\begin{DoxyParamCaption}
+\item[{{\bf World} \&}]{w}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classPlatform_a6dd2fe10f6de044db339c5050bdb7ef0}
+
+
+Om det här objektet har dödats så kommer kill att göra det genom att informera \hyperlink{classWorld}{World} om det. 
+
+
+
+Implements \hyperlink{classEntity_a3d585a30d7f07c50911485825f5496cd}{Entity}.
+
+\hypertarget{classPlatform_a80d5d52e630409f5ae9a1cd98720faf2}{\index{Platform@{Platform}!operator=@{operator=}}
+\index{operator=@{operator=}!Platform@{Platform}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Platform}\& Platform\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Platform} const \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classPlatform_a80d5d52e630409f5ae9a1cd98720faf2}
+
+
+Copy operator. 
+
+\hypertarget{classPlatform_af57a590654b1c1c2432e79237de854f9}{\index{Platform@{Platform}!operator=@{operator=}}
+\index{operator=@{operator=}!Platform@{Platform}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Platform}\& Platform\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Platform} \&\&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classPlatform_af57a590654b1c1c2432e79237de854f9}
+
+
+Move operator. 
+
+\hypertarget{classPlatform_ad756e0494312cdd8956af8bee6afbb0f}{\index{Platform@{Platform}!update@{update}}
+\index{update@{update}!Platform@{Platform}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Platform\+::update (
+\begin{DoxyParamCaption}
+\item[{{\bf World} \&}]{world, }
+\item[{sf\+::\+Time const \&}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classPlatform_ad756e0494312cdd8956af8bee6afbb0f}
+\hyperlink{classEntity_a180102ac6695559b1f8fcf0aee747802}{Entity\+::update()} override Funktion som kallas av world när det här specifika objektet ska uppdatera sig. Det gör sedan detta genom att t.\+ex. flytta på sig och kolla kollisioner. 
+
+Implements \hyperlink{classEntity_a180102ac6695559b1f8fcf0aee747802}{Entity}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classEntity_adb6e36848db24e6d48e6d295e19d3972}{\index{Platform@{Platform}!behaviour\+\_\+ptr@{behaviour\+\_\+ptr}}
+\index{behaviour\+\_\+ptr@{behaviour\+\_\+ptr}!Platform@{Platform}}
+\subsubsection[{behaviour\+\_\+ptr}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<${\bf Behaviour}$>$ Entity\+::behaviour\+\_\+ptr\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classEntity_adb6e36848db24e6d48e6d295e19d3972}
+
+
+Unik smart-\/pekare till ett objekt av \hyperlink{classBehaviour}{Behaviour} klassen. 
+
+\hypertarget{classEntity_a931b21fbdebb1a5963b4bcab5df128f5}{\index{Platform@{Platform}!name@{name}}
+\index{name@{name}!Platform@{Platform}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Entity\+::name\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classEntity_a931b21fbdebb1a5963b4bcab5df128f5}
+
+
+Namn. 
+
+\hypertarget{classEntity_a298a9ebf2474bb00874b5ff6a0d637ef}{\index{Platform@{Platform}!type@{type}}
+\index{type@{type}!Platform@{Platform}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Entity\+::type\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classEntity_a298a9ebf2474bb00874b5ff6a0d637ef}
+
+
+Typ. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/objects/headers/Platform.\+h\item 
+source/objects/imps/Platform.\+cpp\end{DoxyCompactItemize}

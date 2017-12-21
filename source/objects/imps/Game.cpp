@@ -6,16 +6,18 @@ int Game::run(int player_amount){
     window.setVerticalSyncEnabled(true);
     World world{window};
 
-    std::vector<std::string> lvls
-    {"assets/levels/level1.lvl" ,
+    std::vector<std::string> lvls{
+    "assets/levels/level1.lvl",
      "assets/levels/level2.lvl",
      "assets/levels/level3.lvl",
      "assets/levels/level4.lvl",
      "assets/levels/level5.lvl",
      "assets/levels/level6.lvl",
      "assets/levels/level7.lvl",
-     "assets/levels/level8.lvl"
+     "assets/levels/level8.lvl",
+     "assets/levels/level9.lvl"
     };
+    
     sf::Texture t{};
     sf::Sprite bkg{};
     if(t.loadFromFile("assets/background.png")){

@@ -1,0 +1,185 @@
+\hypertarget{classGame}{\section{Game Class Reference}
+\label{classGame}\index{Game@{Game}}
+}
+
+
+\hyperlink{classGame}{Game} som kör spelvärlden och har hand om main loopen.  
+
+
+
+
+{\ttfamily \#include $<$Game.\+h$>$}
+
+
+
+Collaboration diagram for Game\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classGame__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGame_a4735989677c1cab18866f3ae4ee0aa1c}{Game} ()=default
+\begin{DoxyCompactList}\small\item\em Default konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classGame_a09c8ffcbf57e2e60f86a4c6071c73df1}{Game} (\hyperlink{classGame}{Game} const \&other)=delete
+\begin{DoxyCompactList}\small\item\em Copy konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classGame_af6029629f9ebfc665b355daa0ba5702b}{Game} (\hyperlink{classGame}{Game} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Move konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classGame}{Game} \& \hyperlink{classGame_a3679df3694806d8d8580d7ac8a351300}{operator=} (\hyperlink{classGame}{Game} const \&rhs)\&=delete
+\begin{DoxyCompactList}\small\item\em Copy operator. \end{DoxyCompactList}\item 
+\hyperlink{classGame}{Game} \& \hyperlink{classGame_a059b8ac540d33c882ae792f9590cc93c}{operator=} (\hyperlink{classGame}{Game} \&\&rhs)=delete
+\begin{DoxyCompactList}\small\item\em Move operator. \end{DoxyCompactList}\item 
+\hyperlink{classGame_a3d09cd0b68ef69107d36360ca903e023}{$\sim$\+Game} ()=default
+\begin{DoxyCompactList}\small\item\em Default destruktor. \end{DoxyCompactList}\item 
+int \hyperlink{classGame_aedc2d87ef2e375e019c4c6f3d47da429}{run} (int)
+\begin{DoxyCompactList}\small\item\em Funktionen som kör själva spelet. \end{DoxyCompactList}\item 
+void \hyperlink{classGame_a7dd41abdb2a4d0c72f328e1035b2cd06}{set\+\_\+name} (std\+::string)
+\begin{DoxyCompactList}\small\item\em Sätter spelarens namn. \end{DoxyCompactList}\item 
+void \hyperlink{classGame_a0626eca623682fa3f6b925656e790214}{set\+\_\+score} (\hyperlink{classWorld}{World} \&)
+\begin{DoxyCompactList}\small\item\em Skriver spelarens score till en .txt fil. \end{DoxyCompactList}\item 
+void \hyperlink{classGame_ad0c6cacf0ac2063f5e0e169a46adcdb7}{draw\+\_\+new\+\_\+item} (std\+::string const \&, sf\+::\+Vector2f const \&, sf\+::\+Font const \&, sf\+::\+Render\+Window \&)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{classGame_a7f9c64d3f7fd7694c544b4c68d72569d}{name} \{\char`\"{}Player\char`\"{}\}
+\begin{DoxyCompactList}\small\item\em Variabel för spelarens namn. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classGame}{Game} som kör spelvärlden och har hand om main loopen. 
+
+\hyperlink{classGame}{Game} hanterar main loopen i sin \hyperlink{classGame_aedc2d87ef2e375e019c4c6f3d47da429}{Game\+::run()} och skapar där \hyperlink{classWorld}{World} objektet och \hyperlink{classLevel}{Level} Objektet. Sedan håller den koll på när \hyperlink{classKey__Handling}{Key\+\_\+\+Handling} ska få knapptryckningar, när allt ska uppdateras genom \hyperlink{classWorld_abe8efb7955edd02cfdae5f99f2e5a346}{World\+::update\+\_\+all()} och när allt ska ritas ut med \hyperlink{classWorld_a56d3640e46fef8b3e62538f067e2fbd2}{World\+::render\+\_\+all()} och sfml sf\+::\+Render\+Window.\+display(). Den skapar också dödsskärmen och skriver in high score efter att spelaren har dött. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGame_a4735989677c1cab18866f3ae4ee0aa1c}{\index{Game@{Game}!Game@{Game}}
+\index{Game@{Game}!Game@{Game}}
+\subsubsection[{Game}]{\setlength{\rightskip}{0pt plus 5cm}Game\+::\+Game (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}}\label{classGame_a4735989677c1cab18866f3ae4ee0aa1c}
+
+
+Default konstruktor. 
+
+\hypertarget{classGame_a09c8ffcbf57e2e60f86a4c6071c73df1}{\index{Game@{Game}!Game@{Game}}
+\index{Game@{Game}!Game@{Game}}
+\subsubsection[{Game}]{\setlength{\rightskip}{0pt plus 5cm}Game\+::\+Game (
+\begin{DoxyParamCaption}
+\item[{{\bf Game} const \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classGame_a09c8ffcbf57e2e60f86a4c6071c73df1}
+
+
+Copy konstruktor. 
+
+\hypertarget{classGame_af6029629f9ebfc665b355daa0ba5702b}{\index{Game@{Game}!Game@{Game}}
+\index{Game@{Game}!Game@{Game}}
+\subsubsection[{Game}]{\setlength{\rightskip}{0pt plus 5cm}Game\+::\+Game (
+\begin{DoxyParamCaption}
+\item[{{\bf Game} \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classGame_af6029629f9ebfc665b355daa0ba5702b}
+
+
+Move konstruktor. 
+
+\hypertarget{classGame_a3d09cd0b68ef69107d36360ca903e023}{\index{Game@{Game}!````~Game@{$\sim$\+Game}}
+\index{````~Game@{$\sim$\+Game}!Game@{Game}}
+\subsubsection[{$\sim$\+Game}]{\setlength{\rightskip}{0pt plus 5cm}Game\+::$\sim$\+Game (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}}\label{classGame_a3d09cd0b68ef69107d36360ca903e023}
+
+
+Default destruktor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classGame_ad0c6cacf0ac2063f5e0e169a46adcdb7}{\index{Game@{Game}!draw\+\_\+new\+\_\+item@{draw\+\_\+new\+\_\+item}}
+\index{draw\+\_\+new\+\_\+item@{draw\+\_\+new\+\_\+item}!Game@{Game}}
+\subsubsection[{draw\+\_\+new\+\_\+item}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+::draw\+\_\+new\+\_\+item (
+\begin{DoxyParamCaption}
+\item[{std\+::string const \&}]{s, }
+\item[{sf\+::\+Vector2f const \&}]{v, }
+\item[{sf\+::\+Font const \&}]{f, }
+\item[{sf\+::\+Render\+Window \&}]{window}
+\end{DoxyParamCaption}
+)}}\label{classGame_ad0c6cacf0ac2063f5e0e169a46adcdb7}
+Funktion som ritar ut ett objekt på spelplanen som inte är en del av spelet. T.\+ex. antal liv, score och pausskärmen. \hypertarget{classGame_a3679df3694806d8d8580d7ac8a351300}{\index{Game@{Game}!operator=@{operator=}}
+\index{operator=@{operator=}!Game@{Game}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Game}\& Game\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Game} const \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classGame_a3679df3694806d8d8580d7ac8a351300}
+
+
+Copy operator. 
+
+\hypertarget{classGame_a059b8ac540d33c882ae792f9590cc93c}{\index{Game@{Game}!operator=@{operator=}}
+\index{operator=@{operator=}!Game@{Game}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Game}\& Game\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Game} \&\&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classGame_a059b8ac540d33c882ae792f9590cc93c}
+
+
+Move operator. 
+
+\hypertarget{classGame_aedc2d87ef2e375e019c4c6f3d47da429}{\index{Game@{Game}!run@{run}}
+\index{run@{run}!Game@{Game}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}int Game\+::run (
+\begin{DoxyParamCaption}
+\item[{int}]{player\+\_\+amount}
+\end{DoxyParamCaption}
+)}}\label{classGame_aedc2d87ef2e375e019c4c6f3d47da429}
+
+
+Funktionen som kör själva spelet. 
+
+\hypertarget{classGame_a7dd41abdb2a4d0c72f328e1035b2cd06}{\index{Game@{Game}!set\+\_\+name@{set\+\_\+name}}
+\index{set\+\_\+name@{set\+\_\+name}!Game@{Game}}
+\subsubsection[{set\+\_\+name}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+::set\+\_\+name (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{n}
+\end{DoxyParamCaption}
+)}}\label{classGame_a7dd41abdb2a4d0c72f328e1035b2cd06}
+
+
+Sätter spelarens namn. 
+
+\hypertarget{classGame_a0626eca623682fa3f6b925656e790214}{\index{Game@{Game}!set\+\_\+score@{set\+\_\+score}}
+\index{set\+\_\+score@{set\+\_\+score}!Game@{Game}}
+\subsubsection[{set\+\_\+score}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+::set\+\_\+score (
+\begin{DoxyParamCaption}
+\item[{{\bf World} \&}]{w}
+\end{DoxyParamCaption}
+)}}\label{classGame_a0626eca623682fa3f6b925656e790214}
+
+
+Skriver spelarens score till en .txt fil. 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classGame_a7f9c64d3f7fd7694c544b4c68d72569d}{\index{Game@{Game}!name@{name}}
+\index{name@{name}!Game@{Game}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Game\+::name \{\char`\"{}Player\char`\"{}\}\hspace{0.3cm}{\ttfamily [private]}}}\label{classGame_a7f9c64d3f7fd7694c544b4c68d72569d}
+
+
+Variabel för spelarens namn. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/objects/headers/Game.\+h\item 
+source/objects/imps/Game.\+cpp\end{DoxyCompactItemize}

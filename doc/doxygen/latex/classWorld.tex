@@ -1,0 +1,420 @@
+\hypertarget{classWorld}{\section{World Class Reference}
+\label{classWorld}\index{World@{World}}
+}
+
+
+\hyperlink{classWorld}{World} simulerar spelvärlden.  
+
+
+
+
+{\ttfamily \#include $<$World.\+h$>$}
+
+
+
+Collaboration diagram for World\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classWorld__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classWorld_a64c31c6063dddddaa69ff078fcfaac3f}{World} (sf\+::\+Render\+Window \&)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classWorld}{World}'s konstruktor tar in ett sf\+::\+Render\+Window och sparar detta i en variabel. \end{DoxyCompactList}\item 
+\hyperlink{classWorld_a69eeaec5442964e520c638fbbba5ad29}{World} (\hyperlink{classWorld}{World} const \&other)=delete
+\begin{DoxyCompactList}\small\item\em Copy konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classWorld_a9319f9fe52db6162be2269479d76100d}{World} (\hyperlink{classWorld}{World} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Move konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classWorld}{World} \& \hyperlink{classWorld_a93bf098ff19ca834e40b011a03a25ed8}{operator=} (\hyperlink{classWorld}{World} const \&rhs)\&=delete
+\begin{DoxyCompactList}\small\item\em Copy operator. \end{DoxyCompactList}\item 
+\hyperlink{classWorld}{World} \& \hyperlink{classWorld_a81066ed30db54ae9060f9394d6f2c01e}{operator=} (\hyperlink{classWorld}{World} \&\&rhs)=delete
+\begin{DoxyCompactList}\small\item\em Move operator. \end{DoxyCompactList}\item 
+\hyperlink{classWorld_a3d07ed2f713c3946fbbaa3a1b7b7f8c0}{$\sim$\+World} ()=default
+\begin{DoxyCompactList}\small\item\em Default destruktor. \end{DoxyCompactList}\item 
+void \hyperlink{classWorld_ae6af4b63e388f6dde1ccaa5afe2592be}{add\+\_\+entity} (\hyperlink{classEntity}{Entity} $\ast$)
+\item 
+void \hyperlink{classWorld_abe8efb7955edd02cfdae5f99f2e5a346}{update\+\_\+all} (sf\+::\+Time const \&)
+\begin{DoxyCompactList}\small\item\em Går igenom World\+::\+Entities och kör deras Entity\+::\+Update(). \end{DoxyCompactList}\item 
+void \hyperlink{classWorld_a56d3640e46fef8b3e62538f067e2fbd2}{render\+\_\+all} () const 
+\begin{DoxyCompactList}\small\item\em Går igenom World\+::\+Entities och ritar dessa till window. \end{DoxyCompactList}\item 
+void \hyperlink{classWorld_adfa428160c22b1e420048bdcacc93733}{on\+\_\+\+Key\+\_\+\+Press} (sf\+::\+Keyboard\+::\+Key)
+\begin{DoxyCompactList}\small\item\em Tar hand om tangenttryckningar genom att skicka true när den trycks ner. \end{DoxyCompactList}\item 
+void \hyperlink{classWorld_a2162e66648702260f49e0bece2ea67df}{on\+\_\+\+Key\+\_\+\+Release} (sf\+::\+Keyboard\+::\+Key)
+\begin{DoxyCompactList}\small\item\em Tar hand om tangenttryckningar genom att skicka false när den släpps upp. \end{DoxyCompactList}\item 
+\hyperlink{classEntity}{Entity} $\ast$ \hyperlink{classWorld_a6f3662fed56503455d176e85c2e45292}{am\+\_\+\+I\+\_\+\+Colliding} (\hyperlink{classEntity}{Entity} const \&) const 
+\item 
+void \hyperlink{classWorld_aba7ebab445704a4db31e9407e894cb3e}{kill\+\_\+me\+\_\+now} (\hyperlink{classEntity}{Entity} \&)
+\item 
+\hyperlink{classEntity}{Entity} $\ast$ \hyperlink{classWorld_a0b4bf20ce8e70ec398fb40d6366cb222}{get\+\_\+player} () const 
+\item 
+void \hyperlink{classWorld_a24f6906f2e4f0c761653a8f9e42588a6}{clear} ()
+\item 
+bool \hyperlink{classWorld_afe79848202c75c3b9e86fc336ba60a2d}{win} () const 
+\begin{DoxyCompactList}\small\item\em Om spelaren har dödat alla enemy objekt så returnerar denna true. \end{DoxyCompactList}\item 
+int \hyperlink{classWorld_a6500dacbd84084f8ac056eaf04aa603b}{get\+\_\+lives} () const 
+\begin{DoxyCompactList}\small\item\em Getter för \hyperlink{classWorld_af7d5c3e3405e2efaadf6cd76745440c6}{World\+::lives}. \end{DoxyCompactList}\item 
+void \hyperlink{classWorld_ac7b43593b36fb380c433eddd3d075613}{add\+\_\+life} ()
+\begin{DoxyCompactList}\small\item\em Lägger till 1 life. \end{DoxyCompactList}\item 
+void \hyperlink{classWorld_aef42373ac6cd2f6bdacc22b7c1b14055}{remove\+\_\+life} ()
+\begin{DoxyCompactList}\small\item\em Tar bort 1 life. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classWorld_a999f330b74ecf28c164dcaf71423cbcb}{get\+\_\+score} () const 
+\begin{DoxyCompactList}\small\item\em Getter för \hyperlink{classWorld_a8e0d399d947596356b65e8bcb5d4cad8}{World\+::score}. \end{DoxyCompactList}\item 
+void \hyperlink{classWorld_ac5c27ebafb5832cd2aeac24afda475f6}{add\+\_\+score} (unsigned int)
+\begin{DoxyCompactList}\small\item\em Lägger till n på score. \end{DoxyCompactList}\item 
+void \hyperlink{classWorld_a697e8f216b1fa06d1b708e7847662d3a}{remove\+\_\+score} (unsigned int)
+\begin{DoxyCompactList}\small\item\em tar bort n på score. \end{DoxyCompactList}\item 
+sf\+::\+Texture const \& \hyperlink{classWorld_a5c35a088979ebddf7365eb3707400d2e}{get\+\_\+texture} (std\+::string name) const 
+\begin{DoxyCompactList}\small\item\em Hämtar en texture från \hyperlink{classWorld_a77cc00620c137bb0b8b2620912b4dddc}{World\+::texture\+\_\+list}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKey__Handling}{Key\+\_\+\+Handling} \hyperlink{classWorld_a9607cd0034a5a2b9638598c64d03091e}{player1}
+\begin{DoxyCompactList}\small\item\em Tangent hanterare för spelare 1. \end{DoxyCompactList}\item 
+\hyperlink{classKey__Handling}{Key\+\_\+\+Handling} \hyperlink{classWorld_acbb895c03359b30548afdceeba0903e6}{player2}
+\begin{DoxyCompactList}\small\item\em Tangent hanterare för spelare 2. \end{DoxyCompactList}\item 
+bool \hyperlink{classWorld_a3bc8666629d71e77057927b14687407b}{run} \{true\}
+\begin{DoxyCompactList}\small\item\em Bool som används för att avsluta spelet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Render\+Window \& \hyperlink{classWorld_a81c4b706c899cd5cf8598ed79a691934}{window}
+\begin{DoxyCompactList}\small\item\em Fönstret som illustrerar spelet. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::unique\+\_\+ptr\\*
+$<$ \hyperlink{classEntity}{Entity} $>$ $>$ \hyperlink{classWorld_a74d706a3a47afe52b70f5e2dd3bf612b}{entities}
+\begin{DoxyCompactList}\small\item\em En vektor av unika smart pekare som innehåller alla Entitys i världen. \end{DoxyCompactList}\item 
+int \hyperlink{classWorld_af7d5c3e3405e2efaadf6cd76745440c6}{lives} \{3\}
+\begin{DoxyCompactList}\small\item\em Antal liv för spelarna. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classWorld_a8e0d399d947596356b65e8bcb5d4cad8}{score} \{0\}
+\begin{DoxyCompactList}\small\item\em Spelarnas poäng. \end{DoxyCompactList}\item 
+\hyperlink{classTexture__Container}{Texture\+\_\+\+Container} \hyperlink{classWorld_a77cc00620c137bb0b8b2620912b4dddc}{texture\+\_\+list} \{\}
+\begin{DoxyCompactList}\small\item\em En \hyperlink{classTexture__Container}{Texture\+\_\+\+Container} som innehåller alla grafiska delar av spelet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classWorld}{World} simulerar spelvärlden. 
+
+\hyperlink{classWorld}{World} utför simulation av spelvärlden. Den baserar sig på S\+F\+M\+Ls inbyggda positions system och uppdaterar entiteter varje gång \hyperlink{classWorld_abe8efb7955edd02cfdae5f99f2e5a346}{update\+\_\+all()} kallas på. Klassen håller också koll på input från användaren, hur många extraliv en spelare har och hur många poäng denne har. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classWorld_a64c31c6063dddddaa69ff078fcfaac3f}{\index{World@{World}!World@{World}}
+\index{World@{World}!World@{World}}
+\subsubsection[{World}]{\setlength{\rightskip}{0pt plus 5cm}World\+::\+World (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Render\+Window \&}]{w}
+\end{DoxyParamCaption}
+)}}\label{classWorld_a64c31c6063dddddaa69ff078fcfaac3f}
+
+
+\hyperlink{classWorld}{World}'s konstruktor tar in ett sf\+::\+Render\+Window och sparar detta i en variabel. 
+
+\hypertarget{classWorld_a69eeaec5442964e520c638fbbba5ad29}{\index{World@{World}!World@{World}}
+\index{World@{World}!World@{World}}
+\subsubsection[{World}]{\setlength{\rightskip}{0pt plus 5cm}World\+::\+World (
+\begin{DoxyParamCaption}
+\item[{{\bf World} const \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classWorld_a69eeaec5442964e520c638fbbba5ad29}
+
+
+Copy konstruktor. 
+
+\hypertarget{classWorld_a9319f9fe52db6162be2269479d76100d}{\index{World@{World}!World@{World}}
+\index{World@{World}!World@{World}}
+\subsubsection[{World}]{\setlength{\rightskip}{0pt plus 5cm}World\+::\+World (
+\begin{DoxyParamCaption}
+\item[{{\bf World} \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classWorld_a9319f9fe52db6162be2269479d76100d}
+
+
+Move konstruktor. 
+
+\hypertarget{classWorld_a3d07ed2f713c3946fbbaa3a1b7b7f8c0}{\index{World@{World}!````~World@{$\sim$\+World}}
+\index{````~World@{$\sim$\+World}!World@{World}}
+\subsubsection[{$\sim$\+World}]{\setlength{\rightskip}{0pt plus 5cm}World\+::$\sim$\+World (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}}\label{classWorld_a3d07ed2f713c3946fbbaa3a1b7b7f8c0}
+
+
+Default destruktor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classWorld_ae6af4b63e388f6dde1ccaa5afe2592be}{\index{World@{World}!add\+\_\+entity@{add\+\_\+entity}}
+\index{add\+\_\+entity@{add\+\_\+entity}!World@{World}}
+\subsubsection[{add\+\_\+entity}]{\setlength{\rightskip}{0pt plus 5cm}void World\+::add\+\_\+entity (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} $\ast$}]{e}
+\end{DoxyParamCaption}
+)}}\label{classWorld_ae6af4b63e388f6dde1ccaa5afe2592be}
+Lägger till en \hyperlink{classEntity}{Entity} objekt pekare i World\+::\+Entities. Använder unika smart pekare för att undvika memory leaks. \hypertarget{classWorld_ac7b43593b36fb380c433eddd3d075613}{\index{World@{World}!add\+\_\+life@{add\+\_\+life}}
+\index{add\+\_\+life@{add\+\_\+life}!World@{World}}
+\subsubsection[{add\+\_\+life}]{\setlength{\rightskip}{0pt plus 5cm}void World\+::add\+\_\+life (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classWorld_ac7b43593b36fb380c433eddd3d075613}
+
+
+Lägger till 1 life. 
+
+\hypertarget{classWorld_ac5c27ebafb5832cd2aeac24afda475f6}{\index{World@{World}!add\+\_\+score@{add\+\_\+score}}
+\index{add\+\_\+score@{add\+\_\+score}!World@{World}}
+\subsubsection[{add\+\_\+score}]{\setlength{\rightskip}{0pt plus 5cm}void World\+::add\+\_\+score (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{i}
+\end{DoxyParamCaption}
+)}}\label{classWorld_ac5c27ebafb5832cd2aeac24afda475f6}
+
+
+Lägger till n på score. 
+
+\hypertarget{classWorld_a6f3662fed56503455d176e85c2e45292}{\index{World@{World}!am\+\_\+\+I\+\_\+\+Colliding@{am\+\_\+\+I\+\_\+\+Colliding}}
+\index{am\+\_\+\+I\+\_\+\+Colliding@{am\+\_\+\+I\+\_\+\+Colliding}!World@{World}}
+\subsubsection[{am\+\_\+\+I\+\_\+\+Colliding}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Entity} $\ast$ World\+::am\+\_\+\+I\+\_\+\+Colliding (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} const \&}]{e}
+\end{DoxyParamCaption}
+) const}}\label{classWorld_a6f3662fed56503455d176e85c2e45292}
+En funktion som returnerar ett referens till ett \hyperlink{classEntity}{Entity} objekt om det kolliderar med det objekt som tillhandahålls. Den kollar detta med hjälp av S\+F\+M\+Ls egna intersect(). Dock returnerar den bara det första objektet som kolliderar. Detta kan skapa problem. \hypertarget{classWorld_a24f6906f2e4f0c761653a8f9e42588a6}{\index{World@{World}!clear@{clear}}
+\index{clear@{clear}!World@{World}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void World\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classWorld_a24f6906f2e4f0c761653a8f9e42588a6}
+Tar bort alla objekt i World\+::\+Entities. Detta används för att kunna skapa nya nivåer utan att de gamla stör. \hypertarget{classWorld_a6500dacbd84084f8ac056eaf04aa603b}{\index{World@{World}!get\+\_\+lives@{get\+\_\+lives}}
+\index{get\+\_\+lives@{get\+\_\+lives}!World@{World}}
+\subsubsection[{get\+\_\+lives}]{\setlength{\rightskip}{0pt plus 5cm}int World\+::get\+\_\+lives (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classWorld_a6500dacbd84084f8ac056eaf04aa603b}
+
+
+Getter för \hyperlink{classWorld_af7d5c3e3405e2efaadf6cd76745440c6}{World\+::lives}. 
+
+\hypertarget{classWorld_a0b4bf20ce8e70ec398fb40d6366cb222}{\index{World@{World}!get\+\_\+player@{get\+\_\+player}}
+\index{get\+\_\+player@{get\+\_\+player}!World@{World}}
+\subsubsection[{get\+\_\+player}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Entity} $\ast$ World\+::get\+\_\+player (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classWorld_a0b4bf20ce8e70ec398fb40d6366cb222}
+Returnerar den första spelaren i World\+::\+Entities. Används för att avgöra huruvida alla spelare har dött. \hypertarget{classWorld_a999f330b74ecf28c164dcaf71423cbcb}{\index{World@{World}!get\+\_\+score@{get\+\_\+score}}
+\index{get\+\_\+score@{get\+\_\+score}!World@{World}}
+\subsubsection[{get\+\_\+score}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int World\+::get\+\_\+score (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classWorld_a999f330b74ecf28c164dcaf71423cbcb}
+
+
+Getter för \hyperlink{classWorld_a8e0d399d947596356b65e8bcb5d4cad8}{World\+::score}. 
+
+\hypertarget{classWorld_a5c35a088979ebddf7365eb3707400d2e}{\index{World@{World}!get\+\_\+texture@{get\+\_\+texture}}
+\index{get\+\_\+texture@{get\+\_\+texture}!World@{World}}
+\subsubsection[{get\+\_\+texture}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture const\& World\+::get\+\_\+texture (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classWorld_a5c35a088979ebddf7365eb3707400d2e}
+
+
+Hämtar en texture från \hyperlink{classWorld_a77cc00620c137bb0b8b2620912b4dddc}{World\+::texture\+\_\+list}. 
+
+\hypertarget{classWorld_aba7ebab445704a4db31e9407e894cb3e}{\index{World@{World}!kill\+\_\+me\+\_\+now@{kill\+\_\+me\+\_\+now}}
+\index{kill\+\_\+me\+\_\+now@{kill\+\_\+me\+\_\+now}!World@{World}}
+\subsubsection[{kill\+\_\+me\+\_\+now}]{\setlength{\rightskip}{0pt plus 5cm}void World\+::kill\+\_\+me\+\_\+now (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} \&}]{e}
+\end{DoxyParamCaption}
+)}}\label{classWorld_aba7ebab445704a4db31e9407e894cb3e}
+Tar bort det objekt som tillhandahålls från World\+::\+Entities. Detta genom att gå igenom och hitta den pekare i World\+::\+Entities som pekar på samma minnesaddress som objektet som tillhandahålls. Sedan tas den bort. \hypertarget{classWorld_adfa428160c22b1e420048bdcacc93733}{\index{World@{World}!on\+\_\+\+Key\+\_\+\+Press@{on\+\_\+\+Key\+\_\+\+Press}}
+\index{on\+\_\+\+Key\+\_\+\+Press@{on\+\_\+\+Key\+\_\+\+Press}!World@{World}}
+\subsubsection[{on\+\_\+\+Key\+\_\+\+Press}]{\setlength{\rightskip}{0pt plus 5cm}void World\+::on\+\_\+\+Key\+\_\+\+Press (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Keyboard\+::\+Key}]{k}
+\end{DoxyParamCaption}
+)}}\label{classWorld_adfa428160c22b1e420048bdcacc93733}
+
+
+Tar hand om tangenttryckningar genom att skicka true när den trycks ner. 
+
+\hypertarget{classWorld_a2162e66648702260f49e0bece2ea67df}{\index{World@{World}!on\+\_\+\+Key\+\_\+\+Release@{on\+\_\+\+Key\+\_\+\+Release}}
+\index{on\+\_\+\+Key\+\_\+\+Release@{on\+\_\+\+Key\+\_\+\+Release}!World@{World}}
+\subsubsection[{on\+\_\+\+Key\+\_\+\+Release}]{\setlength{\rightskip}{0pt plus 5cm}void World\+::on\+\_\+\+Key\+\_\+\+Release (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Keyboard\+::\+Key}]{k}
+\end{DoxyParamCaption}
+)}}\label{classWorld_a2162e66648702260f49e0bece2ea67df}
+
+
+Tar hand om tangenttryckningar genom att skicka false när den släpps upp. 
+
+\hypertarget{classWorld_a93bf098ff19ca834e40b011a03a25ed8}{\index{World@{World}!operator=@{operator=}}
+\index{operator=@{operator=}!World@{World}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf World}\& World\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf World} const \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classWorld_a93bf098ff19ca834e40b011a03a25ed8}
+
+
+Copy operator. 
+
+\hypertarget{classWorld_a81066ed30db54ae9060f9394d6f2c01e}{\index{World@{World}!operator=@{operator=}}
+\index{operator=@{operator=}!World@{World}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf World}\& World\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf World} \&\&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classWorld_a81066ed30db54ae9060f9394d6f2c01e}
+
+
+Move operator. 
+
+\hypertarget{classWorld_aef42373ac6cd2f6bdacc22b7c1b14055}{\index{World@{World}!remove\+\_\+life@{remove\+\_\+life}}
+\index{remove\+\_\+life@{remove\+\_\+life}!World@{World}}
+\subsubsection[{remove\+\_\+life}]{\setlength{\rightskip}{0pt plus 5cm}void World\+::remove\+\_\+life (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classWorld_aef42373ac6cd2f6bdacc22b7c1b14055}
+
+
+Tar bort 1 life. 
+
+\hypertarget{classWorld_a697e8f216b1fa06d1b708e7847662d3a}{\index{World@{World}!remove\+\_\+score@{remove\+\_\+score}}
+\index{remove\+\_\+score@{remove\+\_\+score}!World@{World}}
+\subsubsection[{remove\+\_\+score}]{\setlength{\rightskip}{0pt plus 5cm}void World\+::remove\+\_\+score (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{i}
+\end{DoxyParamCaption}
+)}}\label{classWorld_a697e8f216b1fa06d1b708e7847662d3a}
+
+
+tar bort n på score. 
+
+\hypertarget{classWorld_a56d3640e46fef8b3e62538f067e2fbd2}{\index{World@{World}!render\+\_\+all@{render\+\_\+all}}
+\index{render\+\_\+all@{render\+\_\+all}!World@{World}}
+\subsubsection[{render\+\_\+all}]{\setlength{\rightskip}{0pt plus 5cm}void World\+::render\+\_\+all (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classWorld_a56d3640e46fef8b3e62538f067e2fbd2}
+
+
+Går igenom World\+::\+Entities och ritar dessa till window. 
+
+\hypertarget{classWorld_abe8efb7955edd02cfdae5f99f2e5a346}{\index{World@{World}!update\+\_\+all@{update\+\_\+all}}
+\index{update\+\_\+all@{update\+\_\+all}!World@{World}}
+\subsubsection[{update\+\_\+all}]{\setlength{\rightskip}{0pt plus 5cm}void World\+::update\+\_\+all (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Time const \&}]{t}
+\end{DoxyParamCaption}
+)}}\label{classWorld_abe8efb7955edd02cfdae5f99f2e5a346}
+
+
+Går igenom World\+::\+Entities och kör deras Entity\+::\+Update(). 
+
+\hypertarget{classWorld_afe79848202c75c3b9e86fc336ba60a2d}{\index{World@{World}!win@{win}}
+\index{win@{win}!World@{World}}
+\subsubsection[{win}]{\setlength{\rightskip}{0pt plus 5cm}bool World\+::win (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classWorld_afe79848202c75c3b9e86fc336ba60a2d}
+
+
+Om spelaren har dödat alla enemy objekt så returnerar denna true. 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classWorld_a74d706a3a47afe52b70f5e2dd3bf612b}{\index{World@{World}!entities@{entities}}
+\index{entities@{entities}!World@{World}}
+\subsubsection[{entities}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$std\+::unique\+\_\+ptr$<${\bf Entity}$>$ $>$ World\+::entities\hspace{0.3cm}{\ttfamily [private]}}}\label{classWorld_a74d706a3a47afe52b70f5e2dd3bf612b}
+
+
+En vektor av unika smart pekare som innehåller alla Entitys i världen. 
+
+\hypertarget{classWorld_af7d5c3e3405e2efaadf6cd76745440c6}{\index{World@{World}!lives@{lives}}
+\index{lives@{lives}!World@{World}}
+\subsubsection[{lives}]{\setlength{\rightskip}{0pt plus 5cm}int World\+::lives \{3\}\hspace{0.3cm}{\ttfamily [private]}}}\label{classWorld_af7d5c3e3405e2efaadf6cd76745440c6}
+
+
+Antal liv för spelarna. 
+
+\hypertarget{classWorld_a9607cd0034a5a2b9638598c64d03091e}{\index{World@{World}!player1@{player1}}
+\index{player1@{player1}!World@{World}}
+\subsubsection[{player1}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Key\+\_\+\+Handling} World\+::player1}}\label{classWorld_a9607cd0034a5a2b9638598c64d03091e}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+\{
+        sf::Keyboard::Up,
+        sf::Keyboard::Left,
+        sf::Keyboard::Right,
+        sf::Keyboard::Space
+    \}
+\end{DoxyCode}
+
+
+Tangent hanterare för spelare 1. 
+
+\hypertarget{classWorld_acbb895c03359b30548afdceeba0903e6}{\index{World@{World}!player2@{player2}}
+\index{player2@{player2}!World@{World}}
+\subsubsection[{player2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Key\+\_\+\+Handling} World\+::player2}}\label{classWorld_acbb895c03359b30548afdceeba0903e6}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+\{
+        sf::Keyboard::W,
+        sf::Keyboard::A,
+        sf::Keyboard::D,
+        sf::Keyboard::F
+    \}
+\end{DoxyCode}
+
+
+Tangent hanterare för spelare 2. 
+
+\hypertarget{classWorld_a3bc8666629d71e77057927b14687407b}{\index{World@{World}!run@{run}}
+\index{run@{run}!World@{World}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}bool World\+::run \{true\}}}\label{classWorld_a3bc8666629d71e77057927b14687407b}
+
+
+Bool som används för att avsluta spelet. 
+
+\hypertarget{classWorld_a8e0d399d947596356b65e8bcb5d4cad8}{\index{World@{World}!score@{score}}
+\index{score@{score}!World@{World}}
+\subsubsection[{score}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int World\+::score \{0\}\hspace{0.3cm}{\ttfamily [private]}}}\label{classWorld_a8e0d399d947596356b65e8bcb5d4cad8}
+
+
+Spelarnas poäng. 
+
+\hypertarget{classWorld_a77cc00620c137bb0b8b2620912b4dddc}{\index{World@{World}!texture\+\_\+list@{texture\+\_\+list}}
+\index{texture\+\_\+list@{texture\+\_\+list}!World@{World}}
+\subsubsection[{texture\+\_\+list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Texture\+\_\+\+Container} World\+::texture\+\_\+list \{\}\hspace{0.3cm}{\ttfamily [private]}}}\label{classWorld_a77cc00620c137bb0b8b2620912b4dddc}
+
+
+En \hyperlink{classTexture__Container}{Texture\+\_\+\+Container} som innehåller alla grafiska delar av spelet. 
+
+\hypertarget{classWorld_a81c4b706c899cd5cf8598ed79a691934}{\index{World@{World}!window@{window}}
+\index{window@{window}!World@{World}}
+\subsubsection[{window}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Render\+Window\& World\+::window\hspace{0.3cm}{\ttfamily [private]}}}\label{classWorld_a81c4b706c899cd5cf8598ed79a691934}
+
+
+Fönstret som illustrerar spelet. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/objects/headers/World.\+h\item 
+source/objects/imps/World.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,171 @@
+\hypertarget{classDrop__Behaviour__points}{\section{Drop\+\_\+\+Behaviour\+\_\+points Class Reference}
+\label{classDrop__Behaviour__points}\index{Drop\+\_\+\+Behaviour\+\_\+points@{Drop\+\_\+\+Behaviour\+\_\+points}}
+}
+
+
+\hyperlink{classDrop__Behaviour__points}{Drop\+\_\+\+Behaviour\+\_\+points} ärver från \hyperlink{classBehaviour}{Behaviour} och tillhandahåller beteendet för poäng-\/drops.  
+
+
+
+
+{\ttfamily \#include $<$Drop\+\_\+\+Behaviour\+\_\+points.\+h$>$}
+
+
+
+Inheritance diagram for Drop\+\_\+\+Behaviour\+\_\+points\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classDrop__Behaviour__points__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Drop\+\_\+\+Behaviour\+\_\+points\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classDrop__Behaviour__points__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDrop__Behaviour__points_ae0b8b577c979496468672b00605d7793}{Drop\+\_\+\+Behaviour\+\_\+points} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor som bara använder Behaviours konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classDrop__Behaviour__points_a17e6caa1f56c5d86db89dbfeed049b3d}{Drop\+\_\+\+Behaviour\+\_\+points} (\hyperlink{classDrop__Behaviour__points}{Drop\+\_\+\+Behaviour\+\_\+points} const \&other)=delete
+\begin{DoxyCompactList}\small\item\em Copy konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classDrop__Behaviour__points_a90b77f3562e551e7784eb4c11867757e}{Drop\+\_\+\+Behaviour\+\_\+points} (\hyperlink{classDrop__Behaviour__points}{Drop\+\_\+\+Behaviour\+\_\+points} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Move konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classDrop__Behaviour__points}{Drop\+\_\+\+Behaviour\+\_\+points} \& \hyperlink{classDrop__Behaviour__points_a016d4fc804706e2230985db16a883d57}{operator=} (\hyperlink{classDrop__Behaviour__points}{Drop\+\_\+\+Behaviour\+\_\+points} const \&rhs)\&=delete
+\begin{DoxyCompactList}\small\item\em Copy operator. \end{DoxyCompactList}\item 
+\hyperlink{classDrop__Behaviour__points}{Drop\+\_\+\+Behaviour\+\_\+points} \& \hyperlink{classDrop__Behaviour__points_ac8de5ddd7d5e51b56bc133ef1068673f}{operator=} (\hyperlink{classDrop__Behaviour__points}{Drop\+\_\+\+Behaviour\+\_\+points} \&\&rhs)=delete
+\begin{DoxyCompactList}\small\item\em Move operator. \end{DoxyCompactList}\item 
+\hyperlink{classDrop__Behaviour__points_a8522792b10aebe9d01dd84e87d42baad}{$\sim$\+Drop\+\_\+\+Behaviour\+\_\+points} ()=default
+\begin{DoxyCompactList}\small\item\em Default destruktor. \end{DoxyCompactList}\item 
+void \hyperlink{classDrop__Behaviour__points_a37b589ed4fe56c64b1c1b0bf3605e4ba}{process} (\hyperlink{classWorld}{World} \&, \hyperlink{classEntity}{Entity} \&, sf\+::\+Time const \&) override
+\begin{DoxyCompactList}\small\item\em Process som låter hjärtat ramla ner, kollidera med platformar och sedan försvinna när det kolliderar med en spelare. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \hyperlink{classBehaviour_ac17cf81ceee6a44e8a8ec6ee810c9fd3}{acceleration} \{0.\+0f, 0.\+1f\}
+\begin{DoxyCompactList}\small\item\em Variabel för gravitation. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \hyperlink{classBehaviour_a1d52096cf20a59890f7705acbaccf88a}{velocity} \{0.\+0f,0.\+0f\}
+\begin{DoxyCompactList}\small\item\em Variabel for hastigheten för entiteten. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classDrop__Behaviour__points}{Drop\+\_\+\+Behaviour\+\_\+points} ärver från \hyperlink{classBehaviour}{Behaviour} och tillhandahåller beteendet för poäng-\/drops. 
+
+\hyperlink{classDrop__Behaviour__heart}{Drop\+\_\+\+Behaviour\+\_\+heart} ärver från de abstrakta klassen \hyperlink{classBehaviour}{Behaviour} och däför behöver den köra override på \hyperlink{classDrop__Behaviour__points_a37b589ed4fe56c64b1c1b0bf3605e4ba}{process()} 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDrop__Behaviour__points_ae0b8b577c979496468672b00605d7793}{\index{Drop\+\_\+\+Behaviour\+\_\+points@{Drop\+\_\+\+Behaviour\+\_\+points}!Drop\+\_\+\+Behaviour\+\_\+points@{Drop\+\_\+\+Behaviour\+\_\+points}}
+\index{Drop\+\_\+\+Behaviour\+\_\+points@{Drop\+\_\+\+Behaviour\+\_\+points}!Drop\+\_\+\+Behaviour\+\_\+points@{Drop\+\_\+\+Behaviour\+\_\+points}}
+\subsubsection[{Drop\+\_\+\+Behaviour\+\_\+points}]{\setlength{\rightskip}{0pt plus 5cm}Drop\+\_\+\+Behaviour\+\_\+points\+::\+Drop\+\_\+\+Behaviour\+\_\+points (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classDrop__Behaviour__points_ae0b8b577c979496468672b00605d7793}
+
+
+Konstruktor som bara använder Behaviours konstruktor. 
+
+\hypertarget{classDrop__Behaviour__points_a17e6caa1f56c5d86db89dbfeed049b3d}{\index{Drop\+\_\+\+Behaviour\+\_\+points@{Drop\+\_\+\+Behaviour\+\_\+points}!Drop\+\_\+\+Behaviour\+\_\+points@{Drop\+\_\+\+Behaviour\+\_\+points}}
+\index{Drop\+\_\+\+Behaviour\+\_\+points@{Drop\+\_\+\+Behaviour\+\_\+points}!Drop\+\_\+\+Behaviour\+\_\+points@{Drop\+\_\+\+Behaviour\+\_\+points}}
+\subsubsection[{Drop\+\_\+\+Behaviour\+\_\+points}]{\setlength{\rightskip}{0pt plus 5cm}Drop\+\_\+\+Behaviour\+\_\+points\+::\+Drop\+\_\+\+Behaviour\+\_\+points (
+\begin{DoxyParamCaption}
+\item[{{\bf Drop\+\_\+\+Behaviour\+\_\+points} const \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classDrop__Behaviour__points_a17e6caa1f56c5d86db89dbfeed049b3d}
+
+
+Copy konstruktor. 
+
+\hypertarget{classDrop__Behaviour__points_a90b77f3562e551e7784eb4c11867757e}{\index{Drop\+\_\+\+Behaviour\+\_\+points@{Drop\+\_\+\+Behaviour\+\_\+points}!Drop\+\_\+\+Behaviour\+\_\+points@{Drop\+\_\+\+Behaviour\+\_\+points}}
+\index{Drop\+\_\+\+Behaviour\+\_\+points@{Drop\+\_\+\+Behaviour\+\_\+points}!Drop\+\_\+\+Behaviour\+\_\+points@{Drop\+\_\+\+Behaviour\+\_\+points}}
+\subsubsection[{Drop\+\_\+\+Behaviour\+\_\+points}]{\setlength{\rightskip}{0pt plus 5cm}Drop\+\_\+\+Behaviour\+\_\+points\+::\+Drop\+\_\+\+Behaviour\+\_\+points (
+\begin{DoxyParamCaption}
+\item[{{\bf Drop\+\_\+\+Behaviour\+\_\+points} \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classDrop__Behaviour__points_a90b77f3562e551e7784eb4c11867757e}
+
+
+Move konstruktor. 
+
+\hypertarget{classDrop__Behaviour__points_a8522792b10aebe9d01dd84e87d42baad}{\index{Drop\+\_\+\+Behaviour\+\_\+points@{Drop\+\_\+\+Behaviour\+\_\+points}!````~Drop\+\_\+\+Behaviour\+\_\+points@{$\sim$\+Drop\+\_\+\+Behaviour\+\_\+points}}
+\index{````~Drop\+\_\+\+Behaviour\+\_\+points@{$\sim$\+Drop\+\_\+\+Behaviour\+\_\+points}!Drop\+\_\+\+Behaviour\+\_\+points@{Drop\+\_\+\+Behaviour\+\_\+points}}
+\subsubsection[{$\sim$\+Drop\+\_\+\+Behaviour\+\_\+points}]{\setlength{\rightskip}{0pt plus 5cm}Drop\+\_\+\+Behaviour\+\_\+points\+::$\sim$\+Drop\+\_\+\+Behaviour\+\_\+points (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}}\label{classDrop__Behaviour__points_a8522792b10aebe9d01dd84e87d42baad}
+
+
+Default destruktor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classDrop__Behaviour__points_a016d4fc804706e2230985db16a883d57}{\index{Drop\+\_\+\+Behaviour\+\_\+points@{Drop\+\_\+\+Behaviour\+\_\+points}!operator=@{operator=}}
+\index{operator=@{operator=}!Drop\+\_\+\+Behaviour\+\_\+points@{Drop\+\_\+\+Behaviour\+\_\+points}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Drop\+\_\+\+Behaviour\+\_\+points}\& Drop\+\_\+\+Behaviour\+\_\+points\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Drop\+\_\+\+Behaviour\+\_\+points} const \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classDrop__Behaviour__points_a016d4fc804706e2230985db16a883d57}
+
+
+Copy operator. 
+
+\hypertarget{classDrop__Behaviour__points_ac8de5ddd7d5e51b56bc133ef1068673f}{\index{Drop\+\_\+\+Behaviour\+\_\+points@{Drop\+\_\+\+Behaviour\+\_\+points}!operator=@{operator=}}
+\index{operator=@{operator=}!Drop\+\_\+\+Behaviour\+\_\+points@{Drop\+\_\+\+Behaviour\+\_\+points}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Drop\+\_\+\+Behaviour\+\_\+points}\& Drop\+\_\+\+Behaviour\+\_\+points\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Drop\+\_\+\+Behaviour\+\_\+points} \&\&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classDrop__Behaviour__points_ac8de5ddd7d5e51b56bc133ef1068673f}
+
+
+Move operator. 
+
+\hypertarget{classDrop__Behaviour__points_a37b589ed4fe56c64b1c1b0bf3605e4ba}{\index{Drop\+\_\+\+Behaviour\+\_\+points@{Drop\+\_\+\+Behaviour\+\_\+points}!process@{process}}
+\index{process@{process}!Drop\+\_\+\+Behaviour\+\_\+points@{Drop\+\_\+\+Behaviour\+\_\+points}}
+\subsubsection[{process}]{\setlength{\rightskip}{0pt plus 5cm}void Drop\+\_\+\+Behaviour\+\_\+points\+::process (
+\begin{DoxyParamCaption}
+\item[{{\bf World} \&}]{world, }
+\item[{{\bf Entity} \&}]{owner, }
+\item[{sf\+::\+Time const \&}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classDrop__Behaviour__points_a37b589ed4fe56c64b1c1b0bf3605e4ba}
+
+
+Process som låter hjärtat ramla ner, kollidera med platformar och sedan försvinna när det kolliderar med en spelare. 
+
+
+
+Implements \hyperlink{classBehaviour_aaa6b4ee24dc3cc546fa4dbb7ba4d20da}{Behaviour}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classBehaviour_ac17cf81ceee6a44e8a8ec6ee810c9fd3}{\index{Drop\+\_\+\+Behaviour\+\_\+points@{Drop\+\_\+\+Behaviour\+\_\+points}!acceleration@{acceleration}}
+\index{acceleration@{acceleration}!Drop\+\_\+\+Behaviour\+\_\+points@{Drop\+\_\+\+Behaviour\+\_\+points}}
+\subsubsection[{acceleration}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vector2f Behaviour\+::acceleration \{0.\+0f, 0.\+1f\}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classBehaviour_ac17cf81ceee6a44e8a8ec6ee810c9fd3}
+
+
+Variabel för gravitation. 
+
+\hypertarget{classBehaviour_a1d52096cf20a59890f7705acbaccf88a}{\index{Drop\+\_\+\+Behaviour\+\_\+points@{Drop\+\_\+\+Behaviour\+\_\+points}!velocity@{velocity}}
+\index{velocity@{velocity}!Drop\+\_\+\+Behaviour\+\_\+points@{Drop\+\_\+\+Behaviour\+\_\+points}}
+\subsubsection[{velocity}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vector2f Behaviour\+::velocity \{0.\+0f,0.\+0f\}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classBehaviour_a1d52096cf20a59890f7705acbaccf88a}
+
+
+Variabel for hastigheten för entiteten. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/objects/headers/Drop\+\_\+\+Behaviour\+\_\+points.\+h\item 
+source/objects/imps/Drop\+\_\+\+Behaviour\+\_\+points.\+cpp\end{DoxyCompactItemize}

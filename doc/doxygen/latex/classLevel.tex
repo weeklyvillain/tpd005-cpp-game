@@ -1,0 +1,161 @@
+\hypertarget{classLevel}{\section{Level Class Reference}
+\label{classLevel}\index{Level@{Level}}
+}
+
+
+\hyperlink{classLevel}{Level} läser in från .lvl filer och skapar entiteter till \hyperlink{classWorld}{World}.  
+
+
+
+
+{\ttfamily \#include $<$Level.\+h$>$}
+
+
+
+Collaboration diagram for Level\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{classLevel__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLevel_a9c1885f00f43c9b88eed9d103dd87408}{Level} (std\+::string, int, int, \hyperlink{classWorld}{World} \&, int)
+\item 
+\hyperlink{classLevel_acaeb0c9b638c74795b6608635af5b338}{Level} (\hyperlink{classLevel}{Level} const \&other)=delete
+\begin{DoxyCompactList}\small\item\em Copy konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classLevel_a5535d562f2ec6c4e08b65fa216933127}{Level} (\hyperlink{classLevel}{Level} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Move konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classLevel}{Level} \& \hyperlink{classLevel_a182dd33b1b7821359aee3600351d4778}{operator=} (\hyperlink{classLevel}{Level} const \&rhs)\&=delete
+\begin{DoxyCompactList}\small\item\em Copy operator. \end{DoxyCompactList}\item 
+\hyperlink{classLevel}{Level} \& \hyperlink{classLevel_a89cfea51f0b0f91bbd1e33839c9dc211}{operator=} (\hyperlink{classLevel}{Level} \&\&rhs)=delete
+\begin{DoxyCompactList}\small\item\em Move operator. \end{DoxyCompactList}\item 
+\hyperlink{classLevel_ac6cdb61bec67832b3db9e5874b479c0d}{$\sim$\+Level} ()=default
+\begin{DoxyCompactList}\small\item\em Default destruktor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ifstream \hyperlink{classLevel_aa1a8e3b1ba0606c3c461624b5af8172c}{ifs}
+\begin{DoxyCompactList}\small\item\em En input file stream för att kunna läsa från en fil. \end{DoxyCompactList}\item 
+int \hyperlink{classLevel_ac846cb2f8b1bd0f92a60a484ce1e50ef}{tile\+\_\+width}
+\begin{DoxyCompactList}\small\item\em Variabel för att spara undan bredd. \end{DoxyCompactList}\item 
+int \hyperlink{classLevel_a75ae0539332f57c52edac380fa0fc0c3}{tile\+\_\+height}
+\begin{DoxyCompactList}\small\item\em Variabel för att spara undan höjd. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \hyperlink{classLevel_a23a51431287bd8692a998de1b1fdf884}{pos}
+\begin{DoxyCompactList}\small\item\em Vilken position vi just nu arbetar på. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classLevel}{Level} läser in från .lvl filer och skapar entiteter till \hyperlink{classWorld}{World}. 
+
+\hyperlink{classLevel}{Level} läser in en fil som har skapats specifikt för det här projektet. Den innehåller information om hur spelvärlden ska se ut, var fiender ska finnas och var spelaren ska starta. Den skapar sedan dessa entititer och lägger till dem i \hyperlink{classWorld_a74d706a3a47afe52b70f5e2dd3bf612b}{World.\+entities}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classLevel_a9c1885f00f43c9b88eed9d103dd87408}{\index{Level@{Level}!Level@{Level}}
+\index{Level@{Level}!Level@{Level}}
+\subsubsection[{Level}]{\setlength{\rightskip}{0pt plus 5cm}Level\+::\+Level (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{filename, }
+\item[{int}]{w, }
+\item[{int}]{h, }
+\item[{{\bf World} \&}]{world, }
+\item[{int}]{player\+\_\+amount}
+\end{DoxyParamCaption}
+)}}\label{classLevel_a9c1885f00f43c9b88eed9d103dd87408}
+Allting händer här i konstruktorn. Konstruktorn tar in en sökväg, bredd och höjd på varje tile, en värld som den ska skriva till och antalet spelare i världen. \hypertarget{classLevel_acaeb0c9b638c74795b6608635af5b338}{\index{Level@{Level}!Level@{Level}}
+\index{Level@{Level}!Level@{Level}}
+\subsubsection[{Level}]{\setlength{\rightskip}{0pt plus 5cm}Level\+::\+Level (
+\begin{DoxyParamCaption}
+\item[{{\bf Level} const \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classLevel_acaeb0c9b638c74795b6608635af5b338}
+
+
+Copy konstruktor. 
+
+\hypertarget{classLevel_a5535d562f2ec6c4e08b65fa216933127}{\index{Level@{Level}!Level@{Level}}
+\index{Level@{Level}!Level@{Level}}
+\subsubsection[{Level}]{\setlength{\rightskip}{0pt plus 5cm}Level\+::\+Level (
+\begin{DoxyParamCaption}
+\item[{{\bf Level} \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classLevel_a5535d562f2ec6c4e08b65fa216933127}
+
+
+Move konstruktor. 
+
+\hypertarget{classLevel_ac6cdb61bec67832b3db9e5874b479c0d}{\index{Level@{Level}!````~Level@{$\sim$\+Level}}
+\index{````~Level@{$\sim$\+Level}!Level@{Level}}
+\subsubsection[{$\sim$\+Level}]{\setlength{\rightskip}{0pt plus 5cm}Level\+::$\sim$\+Level (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}}\label{classLevel_ac6cdb61bec67832b3db9e5874b479c0d}
+
+
+Default destruktor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classLevel_a182dd33b1b7821359aee3600351d4778}{\index{Level@{Level}!operator=@{operator=}}
+\index{operator=@{operator=}!Level@{Level}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Level}\& Level\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Level} const \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classLevel_a182dd33b1b7821359aee3600351d4778}
+
+
+Copy operator. 
+
+\hypertarget{classLevel_a89cfea51f0b0f91bbd1e33839c9dc211}{\index{Level@{Level}!operator=@{operator=}}
+\index{operator=@{operator=}!Level@{Level}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Level}\& Level\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Level} \&\&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classLevel_a89cfea51f0b0f91bbd1e33839c9dc211}
+
+
+Move operator. 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classLevel_aa1a8e3b1ba0606c3c461624b5af8172c}{\index{Level@{Level}!ifs@{ifs}}
+\index{ifs@{ifs}!Level@{Level}}
+\subsubsection[{ifs}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ifstream Level\+::ifs\hspace{0.3cm}{\ttfamily [private]}}}\label{classLevel_aa1a8e3b1ba0606c3c461624b5af8172c}
+
+
+En input file stream för att kunna läsa från en fil. 
+
+\hypertarget{classLevel_a23a51431287bd8692a998de1b1fdf884}{\index{Level@{Level}!pos@{pos}}
+\index{pos@{pos}!Level@{Level}}
+\subsubsection[{pos}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vector2f Level\+::pos\hspace{0.3cm}{\ttfamily [private]}}}\label{classLevel_a23a51431287bd8692a998de1b1fdf884}
+
+
+Vilken position vi just nu arbetar på. 
+
+\hypertarget{classLevel_a75ae0539332f57c52edac380fa0fc0c3}{\index{Level@{Level}!tile\+\_\+height@{tile\+\_\+height}}
+\index{tile\+\_\+height@{tile\+\_\+height}!Level@{Level}}
+\subsubsection[{tile\+\_\+height}]{\setlength{\rightskip}{0pt plus 5cm}int Level\+::tile\+\_\+height\hspace{0.3cm}{\ttfamily [private]}}}\label{classLevel_a75ae0539332f57c52edac380fa0fc0c3}
+
+
+Variabel för att spara undan höjd. 
+
+\hypertarget{classLevel_ac846cb2f8b1bd0f92a60a484ce1e50ef}{\index{Level@{Level}!tile\+\_\+width@{tile\+\_\+width}}
+\index{tile\+\_\+width@{tile\+\_\+width}!Level@{Level}}
+\subsubsection[{tile\+\_\+width}]{\setlength{\rightskip}{0pt plus 5cm}int Level\+::tile\+\_\+width\hspace{0.3cm}{\ttfamily [private]}}}\label{classLevel_ac846cb2f8b1bd0f92a60a484ce1e50ef}
+
+
+Variabel för att spara undan bredd. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/objects/headers/Level.\+h\item 
+source/objects/imps/Level.\+cpp\end{DoxyCompactItemize}

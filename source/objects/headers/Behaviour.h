@@ -4,6 +4,8 @@
 #include <vector>
 #include <memory>
 
+
+//Föredefinering pga cirkulära beroenden
 class Entity;
 class World;
 

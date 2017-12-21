@@ -8,7 +8,7 @@
  *
  * Platformars behaviour, de gör ingenting i i dagsläget men måste ha ett behaviour.
  * Detta öppnar också upp möjligheten att skapa mobila platformar om man skulle vilja det.
- * 
+ *
  */
 
 class Platform_Behaviour : public Behaviour {
@@ -27,9 +27,4 @@ public:
 	~Platform_Behaviour() = default;
 	///Funktionen som låter plaformen göra allting.
 	void process(World&, Entity&, sf::Time const&) override{}
-	
 };
-
-
-
-

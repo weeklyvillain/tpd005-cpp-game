@@ -1,0 +1,251 @@
+\hypertarget{classMenu}{\section{Menu Class Reference}
+\label{classMenu}\index{Menu@{Menu}}
+}
+
+
+\hyperlink{classMenu}{Menu} har hand om menyer innan man börjar spela spelet.  
+
+
+
+
+{\ttfamily \#include $<$Menu.\+h$>$}
+
+
+
+Collaboration diagram for Menu\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMenu__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMenu_a8caa6100506d4b8e0d782e550dbc470e}{Menu} (float width, float height)
+\item 
+\hyperlink{classMenu_a3c4832a05323c234e6bb9b949b768bcd}{Menu} (\hyperlink{classMenu}{Menu} const \&other)=delete
+\begin{DoxyCompactList}\small\item\em Copy konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classMenu_a31b3412d1fa95e0acb0dd931add9df44}{Menu} (\hyperlink{classMenu}{Menu} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Move konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classMenu}{Menu} \& \hyperlink{classMenu_ac388d81e62249a18c2ba186a25c5f5b0}{operator=} (\hyperlink{classMenu}{Menu} const \&rhs)\&=delete
+\begin{DoxyCompactList}\small\item\em Copy operator. \end{DoxyCompactList}\item 
+\hyperlink{classMenu}{Menu} \& \hyperlink{classMenu_aa14291c8988294534bae31188a0aa70b}{operator=} (\hyperlink{classMenu}{Menu} \&\&rhs)=delete
+\begin{DoxyCompactList}\small\item\em Move operator. \end{DoxyCompactList}\item 
+\hyperlink{classMenu_aec66e8695cecd5e88732d20ffd027921}{$\sim$\+Menu} ()=default
+\begin{DoxyCompactList}\small\item\em Default Destruktor. \end{DoxyCompactList}\item 
+void \hyperlink{classMenu_a1443dcfd1c1c9844c40658d752c1fbab}{draw} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Ritar ut alla meny objekt. \end{DoxyCompactList}\item 
+void \hyperlink{classMenu_acfb038bbd1050d6c55c86eec1f35dbdb}{Move\+Up} ()
+\item 
+void \hyperlink{classMenu_a804da9a381bb6c633d5d2bc4f839ec62}{Move\+Down} ()
+\item 
+int \hyperlink{classMenu_a81b2029bf7783f38be26000969e99e30}{Get\+Pressed\+Item} ()
+\begin{DoxyCompactList}\small\item\em Tar fram vilken del av menyn som tryckts på. \end{DoxyCompactList}\item 
+void \hyperlink{classMenu_acd0c45fbf5c84d5de059c8b1b2d33bfa}{read\+\_\+score} (sf\+::\+Render\+Window \&window)
+\item 
+void \hyperlink{classMenu_a6cfb83fb8f947ab6e1b4c101a5326814}{on\+Key} (sf\+::\+Keyboard\+::\+Key const \&key, sf\+::\+Render\+Window \&)
+\item 
+void \hyperlink{classMenu_a5b2f54c794ca701d433caf755b83765e}{add\+\_\+option} (std\+::string, float)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{classMenu_a8dd7434d066c508cb0bc6b7a16d3896c}{item\+\_\+width}
+\begin{DoxyCompactList}\small\item\em Variabel för fönstrets bredd. \end{DoxyCompactList}\item 
+float \hyperlink{classMenu_a715ee3491fe1a3f34061a5a17ef4871e}{item\+\_\+height}
+\begin{DoxyCompactList}\small\item\em Variabel för fönstrets höjd. \end{DoxyCompactList}\item 
+int \hyperlink{classMenu_a0b9b3614aefa98bd42a9c54984784f15}{menu\+\_\+depth}
+\item 
+int \hyperlink{classMenu_a464ef16fd28c0df35ee1d9f78c0ef895}{selected\+Item\+Index}
+\item 
+sf\+::\+Font \hyperlink{classMenu_a9446727ebf60c6063218b5d4bcae170a}{font}
+\item 
+std\+::vector$<$ sf\+::\+Text $>$ \hyperlink{classMenu_ae0638a87425d6d01ce8b5c3508e4a642}{menu}
+\item 
+\hyperlink{classGame}{Game} \hyperlink{classMenu_a600e0c5a79a2200f64d7c3d5626c026d}{game} \{\}
+\begin{DoxyCompactList}\small\item\em En instans av \hyperlink{classGame}{Game}. Sparas så att den inte går utanför scope. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classMenu_ae225c68be6780e064e5f1e6f57d68d5e}{ip}
+\begin{DoxyCompactList}\small\item\em Variabel som sparar din ip. Används för. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classMenu}{Menu} har hand om menyer innan man börjar spela spelet. 
+
+\hyperlink{classMenu}{Menu} skapar, ritar ut och hanterar input i de menyer spelet har innan spelet startar. Det använder sig av std\+::string och sf\+::\+Text för att skapa listor av val som användaren sedan kan välja med hjälp av piltangenterna och enter. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMenu_a8caa6100506d4b8e0d782e550dbc470e}{\index{Menu@{Menu}!Menu@{Menu}}
+\index{Menu@{Menu}!Menu@{Menu}}
+\subsubsection[{Menu}]{\setlength{\rightskip}{0pt plus 5cm}Menu\+::\+Menu (
+\begin{DoxyParamCaption}
+\item[{float}]{width, }
+\item[{float}]{height}
+\end{DoxyParamCaption}
+)}}\label{classMenu_a8caa6100506d4b8e0d782e550dbc470e}
+Konstruktor som tar in 2 floats. 1 för bredd och 1 för höjd på fönstret. \hypertarget{classMenu_a3c4832a05323c234e6bb9b949b768bcd}{\index{Menu@{Menu}!Menu@{Menu}}
+\index{Menu@{Menu}!Menu@{Menu}}
+\subsubsection[{Menu}]{\setlength{\rightskip}{0pt plus 5cm}Menu\+::\+Menu (
+\begin{DoxyParamCaption}
+\item[{{\bf Menu} const \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classMenu_a3c4832a05323c234e6bb9b949b768bcd}
+
+
+Copy konstruktor. 
+
+\hypertarget{classMenu_a31b3412d1fa95e0acb0dd931add9df44}{\index{Menu@{Menu}!Menu@{Menu}}
+\index{Menu@{Menu}!Menu@{Menu}}
+\subsubsection[{Menu}]{\setlength{\rightskip}{0pt plus 5cm}Menu\+::\+Menu (
+\begin{DoxyParamCaption}
+\item[{{\bf Menu} \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classMenu_a31b3412d1fa95e0acb0dd931add9df44}
+
+
+Move konstruktor. 
+
+\hypertarget{classMenu_aec66e8695cecd5e88732d20ffd027921}{\index{Menu@{Menu}!````~Menu@{$\sim$\+Menu}}
+\index{````~Menu@{$\sim$\+Menu}!Menu@{Menu}}
+\subsubsection[{$\sim$\+Menu}]{\setlength{\rightskip}{0pt plus 5cm}Menu\+::$\sim$\+Menu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}}\label{classMenu_aec66e8695cecd5e88732d20ffd027921}
+
+
+Default Destruktor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMenu_a5b2f54c794ca701d433caf755b83765e}{\index{Menu@{Menu}!add\+\_\+option@{add\+\_\+option}}
+\index{add\+\_\+option@{add\+\_\+option}!Menu@{Menu}}
+\subsubsection[{add\+\_\+option}]{\setlength{\rightskip}{0pt plus 5cm}void Menu\+::add\+\_\+option (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{s, }
+\item[{float}]{f}
+\end{DoxyParamCaption}
+)}}\label{classMenu_a5b2f54c794ca701d433caf755b83765e}
+Lägger till ett nytt meny val. Tar in en sträng och formaterar den till en sf\+::\+Text. \hypertarget{classMenu_a1443dcfd1c1c9844c40658d752c1fbab}{\index{Menu@{Menu}!draw@{draw}}
+\index{draw@{draw}!Menu@{Menu}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Menu\+::draw (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Render\+Window \&}]{window}
+\end{DoxyParamCaption}
+)}}\label{classMenu_a1443dcfd1c1c9844c40658d752c1fbab}
+
+
+Ritar ut alla meny objekt. 
+
+\hypertarget{classMenu_a81b2029bf7783f38be26000969e99e30}{\index{Menu@{Menu}!Get\+Pressed\+Item@{Get\+Pressed\+Item}}
+\index{Get\+Pressed\+Item@{Get\+Pressed\+Item}!Menu@{Menu}}
+\subsubsection[{Get\+Pressed\+Item}]{\setlength{\rightskip}{0pt plus 5cm}int Menu\+::\+Get\+Pressed\+Item (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classMenu_a81b2029bf7783f38be26000969e99e30}
+
+
+Tar fram vilken del av menyn som tryckts på. 
+
+\hypertarget{classMenu_a804da9a381bb6c633d5d2bc4f839ec62}{\index{Menu@{Menu}!Move\+Down@{Move\+Down}}
+\index{Move\+Down@{Move\+Down}!Menu@{Menu}}
+\subsubsection[{Move\+Down}]{\setlength{\rightskip}{0pt plus 5cm}void Menu\+::\+Move\+Down (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMenu_a804da9a381bb6c633d5d2bc4f839ec62}
+Flyttar ner ett meny val men flyttar också till första om selected index är det sista. \hypertarget{classMenu_acfb038bbd1050d6c55c86eec1f35dbdb}{\index{Menu@{Menu}!Move\+Up@{Move\+Up}}
+\index{Move\+Up@{Move\+Up}!Menu@{Menu}}
+\subsubsection[{Move\+Up}]{\setlength{\rightskip}{0pt plus 5cm}void Menu\+::\+Move\+Up (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMenu_acfb038bbd1050d6c55c86eec1f35dbdb}
+Flyttar upp ett meny val men flyttar också till sista om selected index är det första. \hypertarget{classMenu_a6cfb83fb8f947ab6e1b4c101a5326814}{\index{Menu@{Menu}!on\+Key@{on\+Key}}
+\index{on\+Key@{on\+Key}!Menu@{Menu}}
+\subsubsection[{on\+Key}]{\setlength{\rightskip}{0pt plus 5cm}void Menu\+::on\+Key (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Keyboard\+::\+Key const \&}]{key, }
+\item[{sf\+::\+Render\+Window \&}]{w}
+\end{DoxyParamCaption}
+)}}\label{classMenu_a6cfb83fb8f947ab6e1b4c101a5326814}
+Tar hand om knapptryckningar i menyn. Om man kommer till slutet av menyn och fortsätter så börjar man om i början av menyn. \hypertarget{classMenu_ac388d81e62249a18c2ba186a25c5f5b0}{\index{Menu@{Menu}!operator=@{operator=}}
+\index{operator=@{operator=}!Menu@{Menu}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Menu}\& Menu\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Menu} const \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classMenu_ac388d81e62249a18c2ba186a25c5f5b0}
+
+
+Copy operator. 
+
+\hypertarget{classMenu_aa14291c8988294534bae31188a0aa70b}{\index{Menu@{Menu}!operator=@{operator=}}
+\index{operator=@{operator=}!Menu@{Menu}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Menu}\& Menu\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Menu} \&\&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classMenu_aa14291c8988294534bae31188a0aa70b}
+
+
+Move operator. 
+
+\hypertarget{classMenu_acd0c45fbf5c84d5de059c8b1b2d33bfa}{\index{Menu@{Menu}!read\+\_\+score@{read\+\_\+score}}
+\index{read\+\_\+score@{read\+\_\+score}!Menu@{Menu}}
+\subsubsection[{read\+\_\+score}]{\setlength{\rightskip}{0pt plus 5cm}void Menu\+::read\+\_\+score (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Render\+Window \&}]{window}
+\end{DoxyParamCaption}
+)}}\label{classMenu_acd0c45fbf5c84d5de059c8b1b2d33bfa}
+Läser in high score från score filen. Formaterar sedan dessa som meny val och låter menyn skriva ut dem. 
+
+\subsection{Member Data Documentation}
+\hypertarget{classMenu_a9446727ebf60c6063218b5d4bcae170a}{\index{Menu@{Menu}!font@{font}}
+\index{font@{font}!Menu@{Menu}}
+\subsubsection[{font}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Font Menu\+::font\hspace{0.3cm}{\ttfamily [private]}}}\label{classMenu_a9446727ebf60c6063218b5d4bcae170a}
+Variabel för att spara vilken font menyn ska ha. Om man inte sparar den så försvinner den när den går ur scope. \hypertarget{classMenu_a600e0c5a79a2200f64d7c3d5626c026d}{\index{Menu@{Menu}!game@{game}}
+\index{game@{game}!Menu@{Menu}}
+\subsubsection[{game}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Game} Menu\+::game \{\}\hspace{0.3cm}{\ttfamily [private]}}}\label{classMenu_a600e0c5a79a2200f64d7c3d5626c026d}
+
+
+En instans av \hyperlink{classGame}{Game}. Sparas så att den inte går utanför scope. 
+
+\hypertarget{classMenu_ae225c68be6780e064e5f1e6f57d68d5e}{\index{Menu@{Menu}!ip@{ip}}
+\index{ip@{ip}!Menu@{Menu}}
+\subsubsection[{ip}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Menu\+::ip\hspace{0.3cm}{\ttfamily [private]}}}\label{classMenu_ae225c68be6780e064e5f1e6f57d68d5e}
+
+
+Variabel som sparar din ip. Används för. 
+
+\hypertarget{classMenu_a715ee3491fe1a3f34061a5a17ef4871e}{\index{Menu@{Menu}!item\+\_\+height@{item\+\_\+height}}
+\index{item\+\_\+height@{item\+\_\+height}!Menu@{Menu}}
+\subsubsection[{item\+\_\+height}]{\setlength{\rightskip}{0pt plus 5cm}float Menu\+::item\+\_\+height\hspace{0.3cm}{\ttfamily [private]}}}\label{classMenu_a715ee3491fe1a3f34061a5a17ef4871e}
+
+
+Variabel för fönstrets höjd. 
+
+\hypertarget{classMenu_a8dd7434d066c508cb0bc6b7a16d3896c}{\index{Menu@{Menu}!item\+\_\+width@{item\+\_\+width}}
+\index{item\+\_\+width@{item\+\_\+width}!Menu@{Menu}}
+\subsubsection[{item\+\_\+width}]{\setlength{\rightskip}{0pt plus 5cm}float Menu\+::item\+\_\+width\hspace{0.3cm}{\ttfamily [private]}}}\label{classMenu_a8dd7434d066c508cb0bc6b7a16d3896c}
+
+
+Variabel för fönstrets bredd. 
+
+\hypertarget{classMenu_ae0638a87425d6d01ce8b5c3508e4a642}{\index{Menu@{Menu}!menu@{menu}}
+\index{menu@{menu}!Menu@{Menu}}
+\subsubsection[{menu}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$sf\+::\+Text$>$ Menu\+::menu\hspace{0.3cm}{\ttfamily [private]}}}\label{classMenu_ae0638a87425d6d01ce8b5c3508e4a642}
+En std\+::vector som innehåller sf\+::\+Text objekt som representerar en del i menyn. \hypertarget{classMenu_a0b9b3614aefa98bd42a9c54984784f15}{\index{Menu@{Menu}!menu\+\_\+depth@{menu\+\_\+depth}}
+\index{menu\+\_\+depth@{menu\+\_\+depth}!Menu@{Menu}}
+\subsubsection[{menu\+\_\+depth}]{\setlength{\rightskip}{0pt plus 5cm}int Menu\+::menu\+\_\+depth\hspace{0.3cm}{\ttfamily [private]}}}\label{classMenu_a0b9b3614aefa98bd42a9c54984784f15}
+Variabel för meny djupet. Detta för att kunna ha mer än 1 meny med flera olika beteenden. \hypertarget{classMenu_a464ef16fd28c0df35ee1d9f78c0ef895}{\index{Menu@{Menu}!selected\+Item\+Index@{selected\+Item\+Index}}
+\index{selected\+Item\+Index@{selected\+Item\+Index}!Menu@{Menu}}
+\subsubsection[{selected\+Item\+Index}]{\setlength{\rightskip}{0pt plus 5cm}int Menu\+::selected\+Item\+Index\hspace{0.3cm}{\ttfamily [private]}}}\label{classMenu_a464ef16fd28c0df35ee1d9f78c0ef895}
+Variabel för vilken del av menyn som är vald. Den highlightas och är också den som beteendet baseras på. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/objects/headers/Menu.\+h\item 
+source/objects/imps/Menu.\+cpp\end{DoxyCompactItemize}

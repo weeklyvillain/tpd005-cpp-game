@@ -1,0 +1,189 @@
+\hypertarget{classProjectile__Behaviour}{\section{Projectile\+\_\+\+Behaviour Class Reference}
+\label{classProjectile__Behaviour}\index{Projectile\+\_\+\+Behaviour@{Projectile\+\_\+\+Behaviour}}
+}
+
+
+\hyperlink{classProjectile__Behaviour}{Projectile\+\_\+\+Behaviour} ärver från \hyperlink{classBehaviour}{Behaviour} och tillhandahåller beteendet för projektiler.  
+
+
+
+
+{\ttfamily \#include $<$Projectile\+\_\+\+Behaviour.\+h$>$}
+
+
+
+Inheritance diagram for Projectile\+\_\+\+Behaviour\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classProjectile__Behaviour__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Projectile\+\_\+\+Behaviour\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classProjectile__Behaviour__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classProjectile__Behaviour_a460172a4c8d52af1dc55f1eb7f624ef1}{Projectile\+\_\+\+Behaviour} (float, float)
+\item 
+\hyperlink{classProjectile__Behaviour_a0c1dc1a0ad304692db0c088e51b0f19c}{Projectile\+\_\+\+Behaviour} (\hyperlink{classProjectile__Behaviour}{Projectile\+\_\+\+Behaviour} const \&other)=delete
+\begin{DoxyCompactList}\small\item\em Copy konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classProjectile__Behaviour_aee521a8bd5d09005746ee0e9042137de}{Projectile\+\_\+\+Behaviour} (\hyperlink{classProjectile__Behaviour}{Projectile\+\_\+\+Behaviour} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Move konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classProjectile__Behaviour}{Projectile\+\_\+\+Behaviour} \& \hyperlink{classProjectile__Behaviour_ae45e301589b2c50eef8de0b9ea5e71b0}{operator=} (\hyperlink{classProjectile__Behaviour}{Projectile\+\_\+\+Behaviour} const \&rhs)\&=delete
+\begin{DoxyCompactList}\small\item\em Copy operator. \end{DoxyCompactList}\item 
+\hyperlink{classProjectile__Behaviour}{Projectile\+\_\+\+Behaviour} \& \hyperlink{classProjectile__Behaviour_a1e3c2f59645bec71a85d0d2689782006}{operator=} (\hyperlink{classProjectile__Behaviour}{Projectile\+\_\+\+Behaviour} \&\&rhs)=delete
+\begin{DoxyCompactList}\small\item\em Move operator. \end{DoxyCompactList}\item 
+\hyperlink{classProjectile__Behaviour_a162b3629a2d387c82f8f7365b0ee271e}{$\sim$\+Projectile\+\_\+\+Behaviour} ()=default
+\begin{DoxyCompactList}\small\item\em Default Destruktor. \end{DoxyCompactList}\item 
+void \hyperlink{classProjectile__Behaviour_aed04c8c1f5ae6aca08bdf05b6248d24a}{process} (\hyperlink{classWorld}{World} \&, \hyperlink{classEntity}{Entity} \&, sf\+::\+Time const \&) override
+\begin{DoxyCompactList}\small\item\em Process som låter projektilen flyga iväg, kollidera med fiender och väggar. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \hyperlink{classBehaviour_ac17cf81ceee6a44e8a8ec6ee810c9fd3}{acceleration} \{0.\+0f, 0.\+1f\}
+\begin{DoxyCompactList}\small\item\em Variabel för gravitation. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \hyperlink{classBehaviour_a1d52096cf20a59890f7705acbaccf88a}{velocity} \{0.\+0f,0.\+0f\}
+\begin{DoxyCompactList}\small\item\em Variabel for hastigheten för entiteten. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{classProjectile__Behaviour_a561a5badb72f1069375e4662baf8fd2d}{direction} \{\}
+\begin{DoxyCompactList}\small\item\em Variabel som håller koll på vilket håll projektilen ska flyga åt. \end{DoxyCompactList}\item 
+float \hyperlink{classProjectile__Behaviour_abf935a525d34c12810063c48a54d495e}{init\+\_\+pos} \{\}
+\begin{DoxyCompactList}\small\item\em Variabel som sparar undan var projektilen startade ifrån. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classProjectile__Behaviour}{Projectile\+\_\+\+Behaviour} ärver från \hyperlink{classBehaviour}{Behaviour} och tillhandahåller beteendet för projektiler. 
+
+\hyperlink{classProjectile__Behaviour}{Projectile\+\_\+\+Behaviour} ger projektiler deras beteende. Den gör så att projektilen åker ifrån spelaren i den riktining som spelaren tittar. Projektilen åker sedan tills den kolliderar med ett objekt som inte är en projektil eller en spelare. Den dödar objektet om det är en \hyperlink{classEnemy}{Enemy}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classProjectile__Behaviour_a460172a4c8d52af1dc55f1eb7f624ef1}{\index{Projectile\+\_\+\+Behaviour@{Projectile\+\_\+\+Behaviour}!Projectile\+\_\+\+Behaviour@{Projectile\+\_\+\+Behaviour}}
+\index{Projectile\+\_\+\+Behaviour@{Projectile\+\_\+\+Behaviour}!Projectile\+\_\+\+Behaviour@{Projectile\+\_\+\+Behaviour}}
+\subsubsection[{Projectile\+\_\+\+Behaviour}]{\setlength{\rightskip}{0pt plus 5cm}Projectile\+\_\+\+Behaviour\+::\+Projectile\+\_\+\+Behaviour (
+\begin{DoxyParamCaption}
+\item[{float}]{dir, }
+\item[{float}]{init\+\_\+pos}
+\end{DoxyParamCaption}
+)}}\label{classProjectile__Behaviour_a460172a4c8d52af1dc55f1eb7f624ef1}
+En konstruktor som tar emot vilket håll projektilen ska åka åt och var den startar. \hypertarget{classProjectile__Behaviour_a0c1dc1a0ad304692db0c088e51b0f19c}{\index{Projectile\+\_\+\+Behaviour@{Projectile\+\_\+\+Behaviour}!Projectile\+\_\+\+Behaviour@{Projectile\+\_\+\+Behaviour}}
+\index{Projectile\+\_\+\+Behaviour@{Projectile\+\_\+\+Behaviour}!Projectile\+\_\+\+Behaviour@{Projectile\+\_\+\+Behaviour}}
+\subsubsection[{Projectile\+\_\+\+Behaviour}]{\setlength{\rightskip}{0pt plus 5cm}Projectile\+\_\+\+Behaviour\+::\+Projectile\+\_\+\+Behaviour (
+\begin{DoxyParamCaption}
+\item[{{\bf Projectile\+\_\+\+Behaviour} const \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classProjectile__Behaviour_a0c1dc1a0ad304692db0c088e51b0f19c}
+
+
+Copy konstruktor. 
+
+\hypertarget{classProjectile__Behaviour_aee521a8bd5d09005746ee0e9042137de}{\index{Projectile\+\_\+\+Behaviour@{Projectile\+\_\+\+Behaviour}!Projectile\+\_\+\+Behaviour@{Projectile\+\_\+\+Behaviour}}
+\index{Projectile\+\_\+\+Behaviour@{Projectile\+\_\+\+Behaviour}!Projectile\+\_\+\+Behaviour@{Projectile\+\_\+\+Behaviour}}
+\subsubsection[{Projectile\+\_\+\+Behaviour}]{\setlength{\rightskip}{0pt plus 5cm}Projectile\+\_\+\+Behaviour\+::\+Projectile\+\_\+\+Behaviour (
+\begin{DoxyParamCaption}
+\item[{{\bf Projectile\+\_\+\+Behaviour} \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classProjectile__Behaviour_aee521a8bd5d09005746ee0e9042137de}
+
+
+Move konstruktor. 
+
+\hypertarget{classProjectile__Behaviour_a162b3629a2d387c82f8f7365b0ee271e}{\index{Projectile\+\_\+\+Behaviour@{Projectile\+\_\+\+Behaviour}!````~Projectile\+\_\+\+Behaviour@{$\sim$\+Projectile\+\_\+\+Behaviour}}
+\index{````~Projectile\+\_\+\+Behaviour@{$\sim$\+Projectile\+\_\+\+Behaviour}!Projectile\+\_\+\+Behaviour@{Projectile\+\_\+\+Behaviour}}
+\subsubsection[{$\sim$\+Projectile\+\_\+\+Behaviour}]{\setlength{\rightskip}{0pt plus 5cm}Projectile\+\_\+\+Behaviour\+::$\sim$\+Projectile\+\_\+\+Behaviour (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}}\label{classProjectile__Behaviour_a162b3629a2d387c82f8f7365b0ee271e}
+
+
+Default Destruktor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classProjectile__Behaviour_ae45e301589b2c50eef8de0b9ea5e71b0}{\index{Projectile\+\_\+\+Behaviour@{Projectile\+\_\+\+Behaviour}!operator=@{operator=}}
+\index{operator=@{operator=}!Projectile\+\_\+\+Behaviour@{Projectile\+\_\+\+Behaviour}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Projectile\+\_\+\+Behaviour}\& Projectile\+\_\+\+Behaviour\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Projectile\+\_\+\+Behaviour} const \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classProjectile__Behaviour_ae45e301589b2c50eef8de0b9ea5e71b0}
+
+
+Copy operator. 
+
+\hypertarget{classProjectile__Behaviour_a1e3c2f59645bec71a85d0d2689782006}{\index{Projectile\+\_\+\+Behaviour@{Projectile\+\_\+\+Behaviour}!operator=@{operator=}}
+\index{operator=@{operator=}!Projectile\+\_\+\+Behaviour@{Projectile\+\_\+\+Behaviour}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Projectile\+\_\+\+Behaviour}\& Projectile\+\_\+\+Behaviour\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Projectile\+\_\+\+Behaviour} \&\&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classProjectile__Behaviour_a1e3c2f59645bec71a85d0d2689782006}
+
+
+Move operator. 
+
+\hypertarget{classProjectile__Behaviour_aed04c8c1f5ae6aca08bdf05b6248d24a}{\index{Projectile\+\_\+\+Behaviour@{Projectile\+\_\+\+Behaviour}!process@{process}}
+\index{process@{process}!Projectile\+\_\+\+Behaviour@{Projectile\+\_\+\+Behaviour}}
+\subsubsection[{process}]{\setlength{\rightskip}{0pt plus 5cm}void Projectile\+\_\+\+Behaviour\+::process (
+\begin{DoxyParamCaption}
+\item[{{\bf World} \&}]{world, }
+\item[{{\bf Entity} \&}]{owner, }
+\item[{sf\+::\+Time const \&}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classProjectile__Behaviour_aed04c8c1f5ae6aca08bdf05b6248d24a}
+
+
+Process som låter projektilen flyga iväg, kollidera med fiender och väggar. 
+
+
+
+Implements \hyperlink{classBehaviour_aaa6b4ee24dc3cc546fa4dbb7ba4d20da}{Behaviour}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classBehaviour_ac17cf81ceee6a44e8a8ec6ee810c9fd3}{\index{Projectile\+\_\+\+Behaviour@{Projectile\+\_\+\+Behaviour}!acceleration@{acceleration}}
+\index{acceleration@{acceleration}!Projectile\+\_\+\+Behaviour@{Projectile\+\_\+\+Behaviour}}
+\subsubsection[{acceleration}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vector2f Behaviour\+::acceleration \{0.\+0f, 0.\+1f\}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classBehaviour_ac17cf81ceee6a44e8a8ec6ee810c9fd3}
+
+
+Variabel för gravitation. 
+
+\hypertarget{classProjectile__Behaviour_a561a5badb72f1069375e4662baf8fd2d}{\index{Projectile\+\_\+\+Behaviour@{Projectile\+\_\+\+Behaviour}!direction@{direction}}
+\index{direction@{direction}!Projectile\+\_\+\+Behaviour@{Projectile\+\_\+\+Behaviour}}
+\subsubsection[{direction}]{\setlength{\rightskip}{0pt plus 5cm}float Projectile\+\_\+\+Behaviour\+::direction \{\}\hspace{0.3cm}{\ttfamily [private]}}}\label{classProjectile__Behaviour_a561a5badb72f1069375e4662baf8fd2d}
+
+
+Variabel som håller koll på vilket håll projektilen ska flyga åt. 
+
+\hypertarget{classProjectile__Behaviour_abf935a525d34c12810063c48a54d495e}{\index{Projectile\+\_\+\+Behaviour@{Projectile\+\_\+\+Behaviour}!init\+\_\+pos@{init\+\_\+pos}}
+\index{init\+\_\+pos@{init\+\_\+pos}!Projectile\+\_\+\+Behaviour@{Projectile\+\_\+\+Behaviour}}
+\subsubsection[{init\+\_\+pos}]{\setlength{\rightskip}{0pt plus 5cm}float Projectile\+\_\+\+Behaviour\+::init\+\_\+pos \{\}\hspace{0.3cm}{\ttfamily [private]}}}\label{classProjectile__Behaviour_abf935a525d34c12810063c48a54d495e}
+
+
+Variabel som sparar undan var projektilen startade ifrån. 
+
+\hypertarget{classBehaviour_a1d52096cf20a59890f7705acbaccf88a}{\index{Projectile\+\_\+\+Behaviour@{Projectile\+\_\+\+Behaviour}!velocity@{velocity}}
+\index{velocity@{velocity}!Projectile\+\_\+\+Behaviour@{Projectile\+\_\+\+Behaviour}}
+\subsubsection[{velocity}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vector2f Behaviour\+::velocity \{0.\+0f,0.\+0f\}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classBehaviour_a1d52096cf20a59890f7705acbaccf88a}
+
+
+Variabel for hastigheten för entiteten. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/objects/headers/Projectile\+\_\+\+Behaviour.\+h\item 
+source/objects/imps/Projectile\+\_\+\+Behaviour.\+cpp\end{DoxyCompactItemize}

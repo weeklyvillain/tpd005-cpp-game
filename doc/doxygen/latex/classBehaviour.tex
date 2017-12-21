@@ -1,0 +1,166 @@
+\hypertarget{classBehaviour}{\section{Behaviour Class Reference}
+\label{classBehaviour}\index{Behaviour@{Behaviour}}
+}
+
+
+\hyperlink{classBehaviour}{Behaviour} ärver ej av någonting och används för att definiera hur ett objekt beter sig i spelvärlden.  
+
+
+
+
+{\ttfamily \#include $<$Behaviour.\+h$>$}
+
+
+
+Inheritance diagram for Behaviour\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBehaviour__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Behaviour\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classBehaviour__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBehaviour_a57e050961bc1305993adaeac62658657}{Behaviour} ()=default
+\begin{DoxyCompactList}\small\item\em Konstruktor som inte tar in något speciellt. \end{DoxyCompactList}\item 
+\hyperlink{classBehaviour_a0a4eeb61f67cc58c720a110ef9695a73}{Behaviour} (\hyperlink{classBehaviour}{Behaviour} const \&other)=delete
+\begin{DoxyCompactList}\small\item\em Copy konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classBehaviour_ae157e7d158e19b515eaac6ef3b37ef0a}{Behaviour} (\hyperlink{classBehaviour}{Behaviour} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Move konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classBehaviour}{Behaviour} \& \hyperlink{classBehaviour_a3c0ca3a4544e6c126ddaf662538b2e48}{operator=} (\hyperlink{classBehaviour}{Behaviour} const \&rhs)\&=delete
+\begin{DoxyCompactList}\small\item\em Copy operator. \end{DoxyCompactList}\item 
+\hyperlink{classBehaviour}{Behaviour} \& \hyperlink{classBehaviour_a1bfe3e24e2776f887cf67863630e4154}{operator=} (\hyperlink{classBehaviour}{Behaviour} \&\&rhs)=delete
+\begin{DoxyCompactList}\small\item\em Move operator. \end{DoxyCompactList}\item 
+virtual \hyperlink{classBehaviour_a3c695554c881998c9ef87cb407b4e451}{$\sim$\+Behaviour} ()=default
+\begin{DoxyCompactList}\small\item\em Virtuell destruktor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classBehaviour_aaa6b4ee24dc3cc546fa4dbb7ba4d20da}{process} (\hyperlink{classWorld}{World} \&, \hyperlink{classEntity}{Entity} \&, sf\+::\+Time const \&)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \hyperlink{classBehaviour_ac17cf81ceee6a44e8a8ec6ee810c9fd3}{acceleration} \{0.\+0f, 0.\+1f\}
+\begin{DoxyCompactList}\small\item\em Variabel för gravitation. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \hyperlink{classBehaviour_a1d52096cf20a59890f7705acbaccf88a}{velocity} \{0.\+0f,0.\+0f\}
+\begin{DoxyCompactList}\small\item\em Variabel for hastigheten för entiteten. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classBehaviour}{Behaviour} ärver ej av någonting och används för att definiera hur ett objekt beter sig i spelvärlden. 
+
+\hyperlink{classBehaviour}{Behaviour} är en abstrakt klass som innehåller grundfunktionerna för alla beteende klasser i projektet. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classBehaviour_a57e050961bc1305993adaeac62658657}{\index{Behaviour@{Behaviour}!Behaviour@{Behaviour}}
+\index{Behaviour@{Behaviour}!Behaviour@{Behaviour}}
+\subsubsection[{Behaviour}]{\setlength{\rightskip}{0pt plus 5cm}Behaviour\+::\+Behaviour (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}}\label{classBehaviour_a57e050961bc1305993adaeac62658657}
+
+
+Konstruktor som inte tar in något speciellt. 
+
+\hypertarget{classBehaviour_a0a4eeb61f67cc58c720a110ef9695a73}{\index{Behaviour@{Behaviour}!Behaviour@{Behaviour}}
+\index{Behaviour@{Behaviour}!Behaviour@{Behaviour}}
+\subsubsection[{Behaviour}]{\setlength{\rightskip}{0pt plus 5cm}Behaviour\+::\+Behaviour (
+\begin{DoxyParamCaption}
+\item[{{\bf Behaviour} const \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classBehaviour_a0a4eeb61f67cc58c720a110ef9695a73}
+
+
+Copy konstruktor. 
+
+\hypertarget{classBehaviour_ae157e7d158e19b515eaac6ef3b37ef0a}{\index{Behaviour@{Behaviour}!Behaviour@{Behaviour}}
+\index{Behaviour@{Behaviour}!Behaviour@{Behaviour}}
+\subsubsection[{Behaviour}]{\setlength{\rightskip}{0pt plus 5cm}Behaviour\+::\+Behaviour (
+\begin{DoxyParamCaption}
+\item[{{\bf Behaviour} \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classBehaviour_ae157e7d158e19b515eaac6ef3b37ef0a}
+
+
+Move konstruktor. 
+
+\hypertarget{classBehaviour_a3c695554c881998c9ef87cb407b4e451}{\index{Behaviour@{Behaviour}!````~Behaviour@{$\sim$\+Behaviour}}
+\index{````~Behaviour@{$\sim$\+Behaviour}!Behaviour@{Behaviour}}
+\subsubsection[{$\sim$\+Behaviour}]{\setlength{\rightskip}{0pt plus 5cm}virtual Behaviour\+::$\sim$\+Behaviour (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}}\label{classBehaviour_a3c695554c881998c9ef87cb407b4e451}
+
+
+Virtuell destruktor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classBehaviour_a3c0ca3a4544e6c126ddaf662538b2e48}{\index{Behaviour@{Behaviour}!operator=@{operator=}}
+\index{operator=@{operator=}!Behaviour@{Behaviour}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Behaviour}\& Behaviour\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Behaviour} const \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classBehaviour_a3c0ca3a4544e6c126ddaf662538b2e48}
+
+
+Copy operator. 
+
+\hypertarget{classBehaviour_a1bfe3e24e2776f887cf67863630e4154}{\index{Behaviour@{Behaviour}!operator=@{operator=}}
+\index{operator=@{operator=}!Behaviour@{Behaviour}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Behaviour}\& Behaviour\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Behaviour} \&\&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classBehaviour_a1bfe3e24e2776f887cf67863630e4154}
+
+
+Move operator. 
+
+\hypertarget{classBehaviour_aaa6b4ee24dc3cc546fa4dbb7ba4d20da}{\index{Behaviour@{Behaviour}!process@{process}}
+\index{process@{process}!Behaviour@{Behaviour}}
+\subsubsection[{process}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Behaviour\+::process (
+\begin{DoxyParamCaption}
+\item[{{\bf World} \&}]{, }
+\item[{{\bf Entity} \&}]{, }
+\item[{sf\+::\+Time const \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classBehaviour_aaa6b4ee24dc3cc546fa4dbb7ba4d20da}
+Virtuell funktion där själva beteendet händer. Tar in spelvärlden, ägaren till beteendet och tiden sen senaste uppdateringen. 
+
+Implemented in \hyperlink{classPlayer__Behaviour_aa88f449e71197691e1166e985f165fa6}{Player\+\_\+\+Behaviour}, \hyperlink{classEnemy2__Behaviour_a0979bade3f9b3ff9dca3c6b970a5ef63}{Enemy2\+\_\+\+Behaviour}, \hyperlink{classEnemy__Behaviour_a19097e215910b3fd8cf9e002a6f7f642}{Enemy\+\_\+\+Behaviour}, \hyperlink{classProjectile__Behaviour_aed04c8c1f5ae6aca08bdf05b6248d24a}{Projectile\+\_\+\+Behaviour}, \hyperlink{classDrop__Behaviour__heart_a38a5d26b313a84e4428093d537a446fb}{Drop\+\_\+\+Behaviour\+\_\+heart}, \hyperlink{classPlatform__Behaviour_a8a1b458d89bca1e1955aebc2fb44d052}{Platform\+\_\+\+Behaviour}, and \hyperlink{classDrop__Behaviour__points_a37b589ed4fe56c64b1c1b0bf3605e4ba}{Drop\+\_\+\+Behaviour\+\_\+points}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classBehaviour_ac17cf81ceee6a44e8a8ec6ee810c9fd3}{\index{Behaviour@{Behaviour}!acceleration@{acceleration}}
+\index{acceleration@{acceleration}!Behaviour@{Behaviour}}
+\subsubsection[{acceleration}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vector2f Behaviour\+::acceleration \{0.\+0f, 0.\+1f\}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classBehaviour_ac17cf81ceee6a44e8a8ec6ee810c9fd3}
+
+
+Variabel för gravitation. 
+
+\hypertarget{classBehaviour_a1d52096cf20a59890f7705acbaccf88a}{\index{Behaviour@{Behaviour}!velocity@{velocity}}
+\index{velocity@{velocity}!Behaviour@{Behaviour}}
+\subsubsection[{velocity}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vector2f Behaviour\+::velocity \{0.\+0f,0.\+0f\}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classBehaviour_a1d52096cf20a59890f7705acbaccf88a}
+
+
+Variabel for hastigheten för entiteten. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+source/objects/headers/Behaviour.\+h\end{DoxyCompactItemize}

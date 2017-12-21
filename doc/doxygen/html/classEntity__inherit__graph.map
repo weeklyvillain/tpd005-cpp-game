@@ -1,0 +1,7 @@
+<map id="Entity" name="Entity">
+<area shape="rect" id="node3" href="$classDrop.html" title="Drop ärver från Entity och innehåller all information för en entitet av droptyp. " alt="" coords="5,419,101,599"/>
+<area shape="rect" id="node4" href="$classEnemy.html" title="Enemy ärver från Entity och innehåller all information för en entitet av fiendetyp. " alt="" coords="126,419,223,599"/>
+<area shape="rect" id="node5" href="$classPlatform.html" title="Platform ärver från Entity och innehåller all information för en entitet av platformstyp. " alt="" coords="248,419,347,599"/>
+<area shape="rect" id="node6" href="$classPlayer.html" title="Player ärver från Entity och innehåller all information för en entitet av spelartyp. " alt="" coords="371,419,528,599"/>
+<area shape="rect" id="node7" href="$classProjectile.html" title="Projectile ärver från Entity och innehåller all information för en entitet av projektil typ..." alt="" coords="552,419,656,599"/>
+</map>

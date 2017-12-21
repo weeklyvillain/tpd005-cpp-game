@@ -1,0 +1,245 @@
+\hypertarget{classEnemy__Behaviour}{\section{Enemy\+\_\+\+Behaviour Class Reference}
+\label{classEnemy__Behaviour}\index{Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}}
+}
+
+
+\hyperlink{classEnemy__Behaviour}{Enemy\+\_\+\+Behaviour} ärver från \hyperlink{classBehaviour}{Behaviour} och tillhandahåller beteende för fiender.  
+
+
+
+
+{\ttfamily \#include $<$Enemy\+\_\+\+Behaviour.\+h$>$}
+
+
+
+Inheritance diagram for Enemy\+\_\+\+Behaviour\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classEnemy__Behaviour__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Enemy\+\_\+\+Behaviour\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classEnemy__Behaviour__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classEnemy__Behaviour_a7f9664c16fb8882fb8fde685a965252e}{Enemy\+\_\+\+Behaviour} ()
+\begin{DoxyCompactList}\small\item\em Vanlig \hyperlink{classBehaviour_a57e050961bc1305993adaeac62658657}{Behaviour\+::\+Behaviour} konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classEnemy__Behaviour_acdcb3d585dd17edc510f0c24f956b798}{Enemy\+\_\+\+Behaviour} (\hyperlink{classEnemy__Behaviour}{Enemy\+\_\+\+Behaviour} const \&other)=delete
+\begin{DoxyCompactList}\small\item\em Copy konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classEnemy__Behaviour_ac46de3386a52bc87075f46f0c8b5e60d}{Enemy\+\_\+\+Behaviour} (\hyperlink{classEnemy__Behaviour}{Enemy\+\_\+\+Behaviour} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Move konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classEnemy__Behaviour}{Enemy\+\_\+\+Behaviour} \& \hyperlink{classEnemy__Behaviour_a11392864d130739b2926f63c21d6fa77}{operator=} (\hyperlink{classEnemy__Behaviour}{Enemy\+\_\+\+Behaviour} const \&rhs)\&=delete
+\begin{DoxyCompactList}\small\item\em Copy operator. \end{DoxyCompactList}\item 
+\hyperlink{classEnemy__Behaviour}{Enemy\+\_\+\+Behaviour} \& \hyperlink{classEnemy__Behaviour_aae622d7ae52b4c03bdceec9f2081a34f}{operator=} (\hyperlink{classEnemy__Behaviour}{Enemy\+\_\+\+Behaviour} \&\&rhs)=delete
+\begin{DoxyCompactList}\small\item\em Move operator. \end{DoxyCompactList}\item 
+\hyperlink{classEnemy__Behaviour_ab04de6117d4cbb5fe310b022e9f2de96}{$\sim$\+Enemy\+\_\+\+Behaviour} ()=default
+\begin{DoxyCompactList}\small\item\em Default destruktor. \end{DoxyCompactList}\item 
+void \hyperlink{classEnemy__Behaviour_a19097e215910b3fd8cf9e002a6f7f642}{process} (\hyperlink{classWorld}{World} \&, \hyperlink{classEntity}{Entity} \&, sf\+::\+Time const \&) override
+\begin{DoxyCompactList}\small\item\em Funktionen som låter fienden göra allting. \end{DoxyCompactList}\item 
+void \hyperlink{classEnemy__Behaviour_a539ca31dbfab9b02933d6c8ad53b6899}{flip} (\hyperlink{classEntity}{Entity} \&, sf\+::\+Vector2f const \&)
+\begin{DoxyCompactList}\small\item\em Funktionen flipar spriten för enemy baserat på vilket håll den rör sig. \end{DoxyCompactList}\item 
+void \hyperlink{classEnemy__Behaviour_a4c16df5a815e62dcc41450a997d45cbb}{move\+\_\+x} (\hyperlink{classEntity}{Entity} \&, sf\+::\+Vector2f const \&, sf\+::\+Time)
+\begin{DoxyCompactList}\small\item\em Förflyttning i x-\/led. \end{DoxyCompactList}\item 
+void \hyperlink{classEnemy__Behaviour_a2793ee5dfc35eff84ba7894619dec0ef}{move\+\_\+y} (\hyperlink{classEntity}{Entity} \&, sf\+::\+Vector2f const \&, sf\+::\+Time)
+\begin{DoxyCompactList}\small\item\em Förflyttning i y-\/led. \end{DoxyCompactList}\item 
+void \hyperlink{classEnemy__Behaviour_a33b00ea5e572f8084f48891c0f951048}{collision\+\_\+x} (\hyperlink{classWorld}{World} \&, \hyperlink{classEntity}{Entity} \&)
+\begin{DoxyCompactList}\small\item\em Kollisionshantering i x-\/led. \end{DoxyCompactList}\item 
+void \hyperlink{classEnemy__Behaviour_a67c1e90d31e938cd6a064064a5f97fbc}{collision\+\_\+y} (\hyperlink{classWorld}{World} \&, \hyperlink{classEntity}{Entity} \&)
+\begin{DoxyCompactList}\small\item\em Kollisionshantering i y-\/led. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \hyperlink{classBehaviour_ac17cf81ceee6a44e8a8ec6ee810c9fd3}{acceleration} \{0.\+0f, 0.\+1f\}
+\begin{DoxyCompactList}\small\item\em Variabel för gravitation. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \hyperlink{classBehaviour_a1d52096cf20a59890f7705acbaccf88a}{velocity} \{0.\+0f,0.\+0f\}
+\begin{DoxyCompactList}\small\item\em Variabel for hastigheten för entiteten. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classEnemy__Behaviour}{Enemy\+\_\+\+Behaviour} ärver från \hyperlink{classBehaviour}{Behaviour} och tillhandahåller beteende för fiender. 
+
+\hyperlink{classEnemy__Behaviour}{Enemy\+\_\+\+Behaviour} definerar beteendet för ett \hyperlink{classEnemy}{Enemy} objekt i spelet. \hyperlink{classEnemy}{Enemy} rör sig som \hyperlink{classPlayer__Behaviour}{Player\+\_\+\+Behaviour} men följer spelaren istället för att följa vad användaren anger. Den flipar också \hyperlink{classEnemy}{Enemy} spriten om det behövs och har koll på kollisioner för enemy. \hyperlink{classEnemy}{Enemy} dödar spelaren om de kommer i kontakt med denne.
+
+\hyperlink{classEnemy}{Enemy} nummer 1 följer spelarens movement och försöker anfalla den. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classEnemy__Behaviour_a7f9664c16fb8882fb8fde685a965252e}{\index{Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}!Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}}
+\index{Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}!Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}}
+\subsubsection[{Enemy\+\_\+\+Behaviour}]{\setlength{\rightskip}{0pt plus 5cm}Enemy\+\_\+\+Behaviour\+::\+Enemy\+\_\+\+Behaviour (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classEnemy__Behaviour_a7f9664c16fb8882fb8fde685a965252e}
+
+
+Vanlig \hyperlink{classBehaviour_a57e050961bc1305993adaeac62658657}{Behaviour\+::\+Behaviour} konstruktor. 
+
+\hypertarget{classEnemy__Behaviour_acdcb3d585dd17edc510f0c24f956b798}{\index{Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}!Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}}
+\index{Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}!Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}}
+\subsubsection[{Enemy\+\_\+\+Behaviour}]{\setlength{\rightskip}{0pt plus 5cm}Enemy\+\_\+\+Behaviour\+::\+Enemy\+\_\+\+Behaviour (
+\begin{DoxyParamCaption}
+\item[{{\bf Enemy\+\_\+\+Behaviour} const \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classEnemy__Behaviour_acdcb3d585dd17edc510f0c24f956b798}
+
+
+Copy konstruktor. 
+
+\hypertarget{classEnemy__Behaviour_ac46de3386a52bc87075f46f0c8b5e60d}{\index{Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}!Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}}
+\index{Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}!Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}}
+\subsubsection[{Enemy\+\_\+\+Behaviour}]{\setlength{\rightskip}{0pt plus 5cm}Enemy\+\_\+\+Behaviour\+::\+Enemy\+\_\+\+Behaviour (
+\begin{DoxyParamCaption}
+\item[{{\bf Enemy\+\_\+\+Behaviour} \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classEnemy__Behaviour_ac46de3386a52bc87075f46f0c8b5e60d}
+
+
+Move konstruktor. 
+
+\hypertarget{classEnemy__Behaviour_ab04de6117d4cbb5fe310b022e9f2de96}{\index{Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}!````~Enemy\+\_\+\+Behaviour@{$\sim$\+Enemy\+\_\+\+Behaviour}}
+\index{````~Enemy\+\_\+\+Behaviour@{$\sim$\+Enemy\+\_\+\+Behaviour}!Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}}
+\subsubsection[{$\sim$\+Enemy\+\_\+\+Behaviour}]{\setlength{\rightskip}{0pt plus 5cm}Enemy\+\_\+\+Behaviour\+::$\sim$\+Enemy\+\_\+\+Behaviour (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}}\label{classEnemy__Behaviour_ab04de6117d4cbb5fe310b022e9f2de96}
+
+
+Default destruktor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classEnemy__Behaviour_a33b00ea5e572f8084f48891c0f951048}{\index{Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}!collision\+\_\+x@{collision\+\_\+x}}
+\index{collision\+\_\+x@{collision\+\_\+x}!Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}}
+\subsubsection[{collision\+\_\+x}]{\setlength{\rightskip}{0pt plus 5cm}void Enemy\+\_\+\+Behaviour\+::collision\+\_\+x (
+\begin{DoxyParamCaption}
+\item[{{\bf World} \&}]{world, }
+\item[{{\bf Entity} \&}]{owner}
+\end{DoxyParamCaption}
+)}}\label{classEnemy__Behaviour_a33b00ea5e572f8084f48891c0f951048}
+
+
+Kollisionshantering i x-\/led. 
+
+\hypertarget{classEnemy__Behaviour_a67c1e90d31e938cd6a064064a5f97fbc}{\index{Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}!collision\+\_\+y@{collision\+\_\+y}}
+\index{collision\+\_\+y@{collision\+\_\+y}!Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}}
+\subsubsection[{collision\+\_\+y}]{\setlength{\rightskip}{0pt plus 5cm}void Enemy\+\_\+\+Behaviour\+::collision\+\_\+y (
+\begin{DoxyParamCaption}
+\item[{{\bf World} \&}]{world, }
+\item[{{\bf Entity} \&}]{owner}
+\end{DoxyParamCaption}
+)}}\label{classEnemy__Behaviour_a67c1e90d31e938cd6a064064a5f97fbc}
+
+
+Kollisionshantering i y-\/led. 
+
+\hypertarget{classEnemy__Behaviour_a539ca31dbfab9b02933d6c8ad53b6899}{\index{Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}!flip@{flip}}
+\index{flip@{flip}!Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}}
+\subsubsection[{flip}]{\setlength{\rightskip}{0pt plus 5cm}void Enemy\+\_\+\+Behaviour\+::flip (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} \&}]{owner, }
+\item[{sf\+::\+Vector2f const \&}]{dir}
+\end{DoxyParamCaption}
+)}}\label{classEnemy__Behaviour_a539ca31dbfab9b02933d6c8ad53b6899}
+
+
+Funktionen flipar spriten för enemy baserat på vilket håll den rör sig. 
+
+\hypertarget{classEnemy__Behaviour_a4c16df5a815e62dcc41450a997d45cbb}{\index{Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}!move\+\_\+x@{move\+\_\+x}}
+\index{move\+\_\+x@{move\+\_\+x}!Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}}
+\subsubsection[{move\+\_\+x}]{\setlength{\rightskip}{0pt plus 5cm}void Enemy\+\_\+\+Behaviour\+::move\+\_\+x (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} \&}]{owner, }
+\item[{sf\+::\+Vector2f const \&}]{dir, }
+\item[{sf\+::\+Time}]{t}
+\end{DoxyParamCaption}
+)}}\label{classEnemy__Behaviour_a4c16df5a815e62dcc41450a997d45cbb}
+
+
+Förflyttning i x-\/led. 
+
+\hypertarget{classEnemy__Behaviour_a2793ee5dfc35eff84ba7894619dec0ef}{\index{Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}!move\+\_\+y@{move\+\_\+y}}
+\index{move\+\_\+y@{move\+\_\+y}!Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}}
+\subsubsection[{move\+\_\+y}]{\setlength{\rightskip}{0pt plus 5cm}void Enemy\+\_\+\+Behaviour\+::move\+\_\+y (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} \&}]{owner, }
+\item[{sf\+::\+Vector2f const \&}]{dir, }
+\item[{sf\+::\+Time}]{t}
+\end{DoxyParamCaption}
+)}}\label{classEnemy__Behaviour_a2793ee5dfc35eff84ba7894619dec0ef}
+
+
+Förflyttning i y-\/led. 
+
+\hypertarget{classEnemy__Behaviour_a11392864d130739b2926f63c21d6fa77}{\index{Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}!operator=@{operator=}}
+\index{operator=@{operator=}!Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enemy\+\_\+\+Behaviour}\& Enemy\+\_\+\+Behaviour\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Enemy\+\_\+\+Behaviour} const \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classEnemy__Behaviour_a11392864d130739b2926f63c21d6fa77}
+
+
+Copy operator. 
+
+\hypertarget{classEnemy__Behaviour_aae622d7ae52b4c03bdceec9f2081a34f}{\index{Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}!operator=@{operator=}}
+\index{operator=@{operator=}!Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enemy\+\_\+\+Behaviour}\& Enemy\+\_\+\+Behaviour\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Enemy\+\_\+\+Behaviour} \&\&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classEnemy__Behaviour_aae622d7ae52b4c03bdceec9f2081a34f}
+
+
+Move operator. 
+
+\hypertarget{classEnemy__Behaviour_a19097e215910b3fd8cf9e002a6f7f642}{\index{Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}!process@{process}}
+\index{process@{process}!Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}}
+\subsubsection[{process}]{\setlength{\rightskip}{0pt plus 5cm}void Enemy\+\_\+\+Behaviour\+::process (
+\begin{DoxyParamCaption}
+\item[{{\bf World} \&}]{world, }
+\item[{{\bf Entity} \&}]{owner, }
+\item[{sf\+::\+Time const \&}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classEnemy__Behaviour_a19097e215910b3fd8cf9e002a6f7f642}
+
+
+Funktionen som låter fienden göra allting. 
+
+
+
+Implements \hyperlink{classBehaviour_aaa6b4ee24dc3cc546fa4dbb7ba4d20da}{Behaviour}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classBehaviour_ac17cf81ceee6a44e8a8ec6ee810c9fd3}{\index{Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}!acceleration@{acceleration}}
+\index{acceleration@{acceleration}!Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}}
+\subsubsection[{acceleration}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vector2f Behaviour\+::acceleration \{0.\+0f, 0.\+1f\}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classBehaviour_ac17cf81ceee6a44e8a8ec6ee810c9fd3}
+
+
+Variabel för gravitation. 
+
+\hypertarget{classBehaviour_a1d52096cf20a59890f7705acbaccf88a}{\index{Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}!velocity@{velocity}}
+\index{velocity@{velocity}!Enemy\+\_\+\+Behaviour@{Enemy\+\_\+\+Behaviour}}
+\subsubsection[{velocity}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vector2f Behaviour\+::velocity \{0.\+0f,0.\+0f\}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classBehaviour_a1d52096cf20a59890f7705acbaccf88a}
+
+
+Variabel for hastigheten för entiteten. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/objects/headers/Enemy\+\_\+\+Behaviour.\+h\item 
+source/objects/imps/Enemy\+\_\+\+Behaviour.\+cpp\end{DoxyCompactItemize}

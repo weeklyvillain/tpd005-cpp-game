@@ -1,0 +1,171 @@
+\hypertarget{classDrop__Behaviour__heart}{\section{Drop\+\_\+\+Behaviour\+\_\+heart Class Reference}
+\label{classDrop__Behaviour__heart}\index{Drop\+\_\+\+Behaviour\+\_\+heart@{Drop\+\_\+\+Behaviour\+\_\+heart}}
+}
+
+
+\hyperlink{classDrop__Behaviour__heart}{Drop\+\_\+\+Behaviour\+\_\+heart} ärver från \hyperlink{classBehaviour}{Behaviour} och tillhandahåller beteendet för hjärt-\/drops.  
+
+
+
+
+{\ttfamily \#include $<$Drop\+\_\+\+Behaviour\+\_\+heart.\+h$>$}
+
+
+
+Inheritance diagram for Drop\+\_\+\+Behaviour\+\_\+heart\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classDrop__Behaviour__heart__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Drop\+\_\+\+Behaviour\+\_\+heart\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classDrop__Behaviour__heart__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDrop__Behaviour__heart_ab0778d4ffa9b938005d57f580c8aebf7}{Drop\+\_\+\+Behaviour\+\_\+heart} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor som bara använder Behaviours konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classDrop__Behaviour__heart_a8554c784f0215bad588437e37a5674a0}{Drop\+\_\+\+Behaviour\+\_\+heart} (\hyperlink{classDrop__Behaviour__heart}{Drop\+\_\+\+Behaviour\+\_\+heart} const \&other)=delete
+\begin{DoxyCompactList}\small\item\em Copy konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classDrop__Behaviour__heart_a782f27c01ccfffeca4e5ee1d793adec7}{Drop\+\_\+\+Behaviour\+\_\+heart} (\hyperlink{classDrop__Behaviour__heart}{Drop\+\_\+\+Behaviour\+\_\+heart} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Move konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classDrop__Behaviour__heart}{Drop\+\_\+\+Behaviour\+\_\+heart} \& \hyperlink{classDrop__Behaviour__heart_a9fda609e7c9ec29d050e7952e3600674}{operator=} (\hyperlink{classDrop__Behaviour__heart}{Drop\+\_\+\+Behaviour\+\_\+heart} const \&rhs)\&=delete
+\begin{DoxyCompactList}\small\item\em Copy operator. \end{DoxyCompactList}\item 
+\hyperlink{classDrop__Behaviour__heart}{Drop\+\_\+\+Behaviour\+\_\+heart} \& \hyperlink{classDrop__Behaviour__heart_a8b01d23278f6521ef9374208eda83972}{operator=} (\hyperlink{classDrop__Behaviour__heart}{Drop\+\_\+\+Behaviour\+\_\+heart} \&\&rhs)=delete
+\begin{DoxyCompactList}\small\item\em Move operator. \end{DoxyCompactList}\item 
+\hyperlink{classDrop__Behaviour__heart_a2f8021b6474c8c010969cc12cd2b8cc1}{$\sim$\+Drop\+\_\+\+Behaviour\+\_\+heart} ()=default
+\begin{DoxyCompactList}\small\item\em Default destruktor. \end{DoxyCompactList}\item 
+void \hyperlink{classDrop__Behaviour__heart_a38a5d26b313a84e4428093d537a446fb}{process} (\hyperlink{classWorld}{World} \&, \hyperlink{classEntity}{Entity} \&, sf\+::\+Time const \&) override
+\begin{DoxyCompactList}\small\item\em Process som låter hjärtat ramla ner, kollidera med platformar och sedan försvinna när det kolliderar med en spelare. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \hyperlink{classBehaviour_ac17cf81ceee6a44e8a8ec6ee810c9fd3}{acceleration} \{0.\+0f, 0.\+1f\}
+\begin{DoxyCompactList}\small\item\em Variabel för gravitation. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \hyperlink{classBehaviour_a1d52096cf20a59890f7705acbaccf88a}{velocity} \{0.\+0f,0.\+0f\}
+\begin{DoxyCompactList}\small\item\em Variabel for hastigheten för entiteten. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classDrop__Behaviour__heart}{Drop\+\_\+\+Behaviour\+\_\+heart} ärver från \hyperlink{classBehaviour}{Behaviour} och tillhandahåller beteendet för hjärt-\/drops. 
+
+\hyperlink{classDrop__Behaviour__heart}{Drop\+\_\+\+Behaviour\+\_\+heart} ärver från de abstrakta klassen \hyperlink{classBehaviour}{Behaviour} och däför behöver den köra override på \hyperlink{classDrop__Behaviour__heart_a38a5d26b313a84e4428093d537a446fb}{process()} 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDrop__Behaviour__heart_ab0778d4ffa9b938005d57f580c8aebf7}{\index{Drop\+\_\+\+Behaviour\+\_\+heart@{Drop\+\_\+\+Behaviour\+\_\+heart}!Drop\+\_\+\+Behaviour\+\_\+heart@{Drop\+\_\+\+Behaviour\+\_\+heart}}
+\index{Drop\+\_\+\+Behaviour\+\_\+heart@{Drop\+\_\+\+Behaviour\+\_\+heart}!Drop\+\_\+\+Behaviour\+\_\+heart@{Drop\+\_\+\+Behaviour\+\_\+heart}}
+\subsubsection[{Drop\+\_\+\+Behaviour\+\_\+heart}]{\setlength{\rightskip}{0pt plus 5cm}Drop\+\_\+\+Behaviour\+\_\+heart\+::\+Drop\+\_\+\+Behaviour\+\_\+heart (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classDrop__Behaviour__heart_ab0778d4ffa9b938005d57f580c8aebf7}
+
+
+Konstruktor som bara använder Behaviours konstruktor. 
+
+\hypertarget{classDrop__Behaviour__heart_a8554c784f0215bad588437e37a5674a0}{\index{Drop\+\_\+\+Behaviour\+\_\+heart@{Drop\+\_\+\+Behaviour\+\_\+heart}!Drop\+\_\+\+Behaviour\+\_\+heart@{Drop\+\_\+\+Behaviour\+\_\+heart}}
+\index{Drop\+\_\+\+Behaviour\+\_\+heart@{Drop\+\_\+\+Behaviour\+\_\+heart}!Drop\+\_\+\+Behaviour\+\_\+heart@{Drop\+\_\+\+Behaviour\+\_\+heart}}
+\subsubsection[{Drop\+\_\+\+Behaviour\+\_\+heart}]{\setlength{\rightskip}{0pt plus 5cm}Drop\+\_\+\+Behaviour\+\_\+heart\+::\+Drop\+\_\+\+Behaviour\+\_\+heart (
+\begin{DoxyParamCaption}
+\item[{{\bf Drop\+\_\+\+Behaviour\+\_\+heart} const \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classDrop__Behaviour__heart_a8554c784f0215bad588437e37a5674a0}
+
+
+Copy konstruktor. 
+
+\hypertarget{classDrop__Behaviour__heart_a782f27c01ccfffeca4e5ee1d793adec7}{\index{Drop\+\_\+\+Behaviour\+\_\+heart@{Drop\+\_\+\+Behaviour\+\_\+heart}!Drop\+\_\+\+Behaviour\+\_\+heart@{Drop\+\_\+\+Behaviour\+\_\+heart}}
+\index{Drop\+\_\+\+Behaviour\+\_\+heart@{Drop\+\_\+\+Behaviour\+\_\+heart}!Drop\+\_\+\+Behaviour\+\_\+heart@{Drop\+\_\+\+Behaviour\+\_\+heart}}
+\subsubsection[{Drop\+\_\+\+Behaviour\+\_\+heart}]{\setlength{\rightskip}{0pt plus 5cm}Drop\+\_\+\+Behaviour\+\_\+heart\+::\+Drop\+\_\+\+Behaviour\+\_\+heart (
+\begin{DoxyParamCaption}
+\item[{{\bf Drop\+\_\+\+Behaviour\+\_\+heart} \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classDrop__Behaviour__heart_a782f27c01ccfffeca4e5ee1d793adec7}
+
+
+Move konstruktor. 
+
+\hypertarget{classDrop__Behaviour__heart_a2f8021b6474c8c010969cc12cd2b8cc1}{\index{Drop\+\_\+\+Behaviour\+\_\+heart@{Drop\+\_\+\+Behaviour\+\_\+heart}!````~Drop\+\_\+\+Behaviour\+\_\+heart@{$\sim$\+Drop\+\_\+\+Behaviour\+\_\+heart}}
+\index{````~Drop\+\_\+\+Behaviour\+\_\+heart@{$\sim$\+Drop\+\_\+\+Behaviour\+\_\+heart}!Drop\+\_\+\+Behaviour\+\_\+heart@{Drop\+\_\+\+Behaviour\+\_\+heart}}
+\subsubsection[{$\sim$\+Drop\+\_\+\+Behaviour\+\_\+heart}]{\setlength{\rightskip}{0pt plus 5cm}Drop\+\_\+\+Behaviour\+\_\+heart\+::$\sim$\+Drop\+\_\+\+Behaviour\+\_\+heart (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}}\label{classDrop__Behaviour__heart_a2f8021b6474c8c010969cc12cd2b8cc1}
+
+
+Default destruktor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classDrop__Behaviour__heart_a9fda609e7c9ec29d050e7952e3600674}{\index{Drop\+\_\+\+Behaviour\+\_\+heart@{Drop\+\_\+\+Behaviour\+\_\+heart}!operator=@{operator=}}
+\index{operator=@{operator=}!Drop\+\_\+\+Behaviour\+\_\+heart@{Drop\+\_\+\+Behaviour\+\_\+heart}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Drop\+\_\+\+Behaviour\+\_\+heart}\& Drop\+\_\+\+Behaviour\+\_\+heart\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Drop\+\_\+\+Behaviour\+\_\+heart} const \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classDrop__Behaviour__heart_a9fda609e7c9ec29d050e7952e3600674}
+
+
+Copy operator. 
+
+\hypertarget{classDrop__Behaviour__heart_a8b01d23278f6521ef9374208eda83972}{\index{Drop\+\_\+\+Behaviour\+\_\+heart@{Drop\+\_\+\+Behaviour\+\_\+heart}!operator=@{operator=}}
+\index{operator=@{operator=}!Drop\+\_\+\+Behaviour\+\_\+heart@{Drop\+\_\+\+Behaviour\+\_\+heart}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Drop\+\_\+\+Behaviour\+\_\+heart}\& Drop\+\_\+\+Behaviour\+\_\+heart\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Drop\+\_\+\+Behaviour\+\_\+heart} \&\&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classDrop__Behaviour__heart_a8b01d23278f6521ef9374208eda83972}
+
+
+Move operator. 
+
+\hypertarget{classDrop__Behaviour__heart_a38a5d26b313a84e4428093d537a446fb}{\index{Drop\+\_\+\+Behaviour\+\_\+heart@{Drop\+\_\+\+Behaviour\+\_\+heart}!process@{process}}
+\index{process@{process}!Drop\+\_\+\+Behaviour\+\_\+heart@{Drop\+\_\+\+Behaviour\+\_\+heart}}
+\subsubsection[{process}]{\setlength{\rightskip}{0pt plus 5cm}void Drop\+\_\+\+Behaviour\+\_\+heart\+::process (
+\begin{DoxyParamCaption}
+\item[{{\bf World} \&}]{world, }
+\item[{{\bf Entity} \&}]{owner, }
+\item[{sf\+::\+Time const \&}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classDrop__Behaviour__heart_a38a5d26b313a84e4428093d537a446fb}
+
+
+Process som låter hjärtat ramla ner, kollidera med platformar och sedan försvinna när det kolliderar med en spelare. 
+
+
+
+Implements \hyperlink{classBehaviour_aaa6b4ee24dc3cc546fa4dbb7ba4d20da}{Behaviour}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classBehaviour_ac17cf81ceee6a44e8a8ec6ee810c9fd3}{\index{Drop\+\_\+\+Behaviour\+\_\+heart@{Drop\+\_\+\+Behaviour\+\_\+heart}!acceleration@{acceleration}}
+\index{acceleration@{acceleration}!Drop\+\_\+\+Behaviour\+\_\+heart@{Drop\+\_\+\+Behaviour\+\_\+heart}}
+\subsubsection[{acceleration}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vector2f Behaviour\+::acceleration \{0.\+0f, 0.\+1f\}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classBehaviour_ac17cf81ceee6a44e8a8ec6ee810c9fd3}
+
+
+Variabel för gravitation. 
+
+\hypertarget{classBehaviour_a1d52096cf20a59890f7705acbaccf88a}{\index{Drop\+\_\+\+Behaviour\+\_\+heart@{Drop\+\_\+\+Behaviour\+\_\+heart}!velocity@{velocity}}
+\index{velocity@{velocity}!Drop\+\_\+\+Behaviour\+\_\+heart@{Drop\+\_\+\+Behaviour\+\_\+heart}}
+\subsubsection[{velocity}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vector2f Behaviour\+::velocity \{0.\+0f,0.\+0f\}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classBehaviour_a1d52096cf20a59890f7705acbaccf88a}
+
+
+Variabel for hastigheten för entiteten. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/objects/headers/Drop\+\_\+\+Behaviour\+\_\+heart.\+h\item 
+source/objects/imps/Drop\+\_\+\+Behaviour\+\_\+heart.\+cpp\end{DoxyCompactItemize}

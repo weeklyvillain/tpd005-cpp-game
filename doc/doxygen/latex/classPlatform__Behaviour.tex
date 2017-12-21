@@ -1,0 +1,170 @@
+\hypertarget{classPlatform__Behaviour}{\section{Platform\+\_\+\+Behaviour Class Reference}
+\label{classPlatform__Behaviour}\index{Platform\+\_\+\+Behaviour@{Platform\+\_\+\+Behaviour}}
+}
+
+
+\hyperlink{classPlatform__Behaviour}{Platform\+\_\+\+Behaviour} ärver från \hyperlink{classBehaviour}{Behaviour} och tillhandahåller beteendet för platformar.  
+
+
+
+
+{\ttfamily \#include $<$Platform\+\_\+\+Behaviour.\+h$>$}
+
+
+
+Inheritance diagram for Platform\+\_\+\+Behaviour\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classPlatform__Behaviour__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Platform\+\_\+\+Behaviour\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classPlatform__Behaviour__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPlatform__Behaviour_ae8755b571a2ad73aebb183a6d9ba289b}{Platform\+\_\+\+Behaviour} ()
+\begin{DoxyCompactList}\small\item\em Använder \hyperlink{classBehaviour}{Behaviour} konstruktorn. \end{DoxyCompactList}\item 
+\hyperlink{classPlatform__Behaviour_aff1ef768551398b8fcae9b765a3b7f44}{Platform\+\_\+\+Behaviour} (\hyperlink{classPlatform__Behaviour}{Platform\+\_\+\+Behaviour} const \&other)=delete
+\begin{DoxyCompactList}\small\item\em Copy konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classPlatform__Behaviour_a2f02e74df71cf172120e89ea982ac953}{Platform\+\_\+\+Behaviour} (\hyperlink{classPlatform__Behaviour}{Platform\+\_\+\+Behaviour} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Move konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classPlatform__Behaviour}{Platform\+\_\+\+Behaviour} \& \hyperlink{classPlatform__Behaviour_aac686ac0c0e8a27ee34d943cf7cf8e99}{operator=} (\hyperlink{classPlatform__Behaviour}{Platform\+\_\+\+Behaviour} const \&rhs)\&=delete
+\begin{DoxyCompactList}\small\item\em Copy operator. \end{DoxyCompactList}\item 
+\hyperlink{classPlatform__Behaviour}{Platform\+\_\+\+Behaviour} \& \hyperlink{classPlatform__Behaviour_ae5152335d62d30ee7d10d6a7f30b874c}{operator=} (\hyperlink{classPlatform__Behaviour}{Platform\+\_\+\+Behaviour} \&\&rhs)=delete
+\begin{DoxyCompactList}\small\item\em Move operator. \end{DoxyCompactList}\item 
+\hyperlink{classPlatform__Behaviour_a118ac6c9bd79b02d19d2d8627bee5def}{$\sim$\+Platform\+\_\+\+Behaviour} ()=default
+\begin{DoxyCompactList}\small\item\em Default Destruktor. \end{DoxyCompactList}\item 
+void \hyperlink{classPlatform__Behaviour_a8a1b458d89bca1e1955aebc2fb44d052}{process} (\hyperlink{classWorld}{World} \&, \hyperlink{classEntity}{Entity} \&, sf\+::\+Time const \&) override
+\begin{DoxyCompactList}\small\item\em Funktionen som låter plaformen göra allting. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \hyperlink{classBehaviour_ac17cf81ceee6a44e8a8ec6ee810c9fd3}{acceleration} \{0.\+0f, 0.\+1f\}
+\begin{DoxyCompactList}\small\item\em Variabel för gravitation. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \hyperlink{classBehaviour_a1d52096cf20a59890f7705acbaccf88a}{velocity} \{0.\+0f,0.\+0f\}
+\begin{DoxyCompactList}\small\item\em Variabel for hastigheten för entiteten. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classPlatform__Behaviour}{Platform\+\_\+\+Behaviour} ärver från \hyperlink{classBehaviour}{Behaviour} och tillhandahåller beteendet för platformar. 
+
+Platformars behaviour, de gör ingenting i i dagsläget men måste ha ett behaviour. Detta öppnar också upp möjligheten att skapa mobila platformar om man skulle vilja det. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPlatform__Behaviour_ae8755b571a2ad73aebb183a6d9ba289b}{\index{Platform\+\_\+\+Behaviour@{Platform\+\_\+\+Behaviour}!Platform\+\_\+\+Behaviour@{Platform\+\_\+\+Behaviour}}
+\index{Platform\+\_\+\+Behaviour@{Platform\+\_\+\+Behaviour}!Platform\+\_\+\+Behaviour@{Platform\+\_\+\+Behaviour}}
+\subsubsection[{Platform\+\_\+\+Behaviour}]{\setlength{\rightskip}{0pt plus 5cm}Platform\+\_\+\+Behaviour\+::\+Platform\+\_\+\+Behaviour (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPlatform__Behaviour_ae8755b571a2ad73aebb183a6d9ba289b}
+
+
+Använder \hyperlink{classBehaviour}{Behaviour} konstruktorn. 
+
+\hypertarget{classPlatform__Behaviour_aff1ef768551398b8fcae9b765a3b7f44}{\index{Platform\+\_\+\+Behaviour@{Platform\+\_\+\+Behaviour}!Platform\+\_\+\+Behaviour@{Platform\+\_\+\+Behaviour}}
+\index{Platform\+\_\+\+Behaviour@{Platform\+\_\+\+Behaviour}!Platform\+\_\+\+Behaviour@{Platform\+\_\+\+Behaviour}}
+\subsubsection[{Platform\+\_\+\+Behaviour}]{\setlength{\rightskip}{0pt plus 5cm}Platform\+\_\+\+Behaviour\+::\+Platform\+\_\+\+Behaviour (
+\begin{DoxyParamCaption}
+\item[{{\bf Platform\+\_\+\+Behaviour} const \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classPlatform__Behaviour_aff1ef768551398b8fcae9b765a3b7f44}
+
+
+Copy konstruktor. 
+
+\hypertarget{classPlatform__Behaviour_a2f02e74df71cf172120e89ea982ac953}{\index{Platform\+\_\+\+Behaviour@{Platform\+\_\+\+Behaviour}!Platform\+\_\+\+Behaviour@{Platform\+\_\+\+Behaviour}}
+\index{Platform\+\_\+\+Behaviour@{Platform\+\_\+\+Behaviour}!Platform\+\_\+\+Behaviour@{Platform\+\_\+\+Behaviour}}
+\subsubsection[{Platform\+\_\+\+Behaviour}]{\setlength{\rightskip}{0pt plus 5cm}Platform\+\_\+\+Behaviour\+::\+Platform\+\_\+\+Behaviour (
+\begin{DoxyParamCaption}
+\item[{{\bf Platform\+\_\+\+Behaviour} \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classPlatform__Behaviour_a2f02e74df71cf172120e89ea982ac953}
+
+
+Move konstruktor. 
+
+\hypertarget{classPlatform__Behaviour_a118ac6c9bd79b02d19d2d8627bee5def}{\index{Platform\+\_\+\+Behaviour@{Platform\+\_\+\+Behaviour}!````~Platform\+\_\+\+Behaviour@{$\sim$\+Platform\+\_\+\+Behaviour}}
+\index{````~Platform\+\_\+\+Behaviour@{$\sim$\+Platform\+\_\+\+Behaviour}!Platform\+\_\+\+Behaviour@{Platform\+\_\+\+Behaviour}}
+\subsubsection[{$\sim$\+Platform\+\_\+\+Behaviour}]{\setlength{\rightskip}{0pt plus 5cm}Platform\+\_\+\+Behaviour\+::$\sim$\+Platform\+\_\+\+Behaviour (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}}\label{classPlatform__Behaviour_a118ac6c9bd79b02d19d2d8627bee5def}
+
+
+Default Destruktor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPlatform__Behaviour_aac686ac0c0e8a27ee34d943cf7cf8e99}{\index{Platform\+\_\+\+Behaviour@{Platform\+\_\+\+Behaviour}!operator=@{operator=}}
+\index{operator=@{operator=}!Platform\+\_\+\+Behaviour@{Platform\+\_\+\+Behaviour}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Platform\+\_\+\+Behaviour}\& Platform\+\_\+\+Behaviour\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Platform\+\_\+\+Behaviour} const \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classPlatform__Behaviour_aac686ac0c0e8a27ee34d943cf7cf8e99}
+
+
+Copy operator. 
+
+\hypertarget{classPlatform__Behaviour_ae5152335d62d30ee7d10d6a7f30b874c}{\index{Platform\+\_\+\+Behaviour@{Platform\+\_\+\+Behaviour}!operator=@{operator=}}
+\index{operator=@{operator=}!Platform\+\_\+\+Behaviour@{Platform\+\_\+\+Behaviour}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Platform\+\_\+\+Behaviour}\& Platform\+\_\+\+Behaviour\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Platform\+\_\+\+Behaviour} \&\&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classPlatform__Behaviour_ae5152335d62d30ee7d10d6a7f30b874c}
+
+
+Move operator. 
+
+\hypertarget{classPlatform__Behaviour_a8a1b458d89bca1e1955aebc2fb44d052}{\index{Platform\+\_\+\+Behaviour@{Platform\+\_\+\+Behaviour}!process@{process}}
+\index{process@{process}!Platform\+\_\+\+Behaviour@{Platform\+\_\+\+Behaviour}}
+\subsubsection[{process}]{\setlength{\rightskip}{0pt plus 5cm}void Platform\+\_\+\+Behaviour\+::process (
+\begin{DoxyParamCaption}
+\item[{{\bf World} \&}]{, }
+\item[{{\bf Entity} \&}]{, }
+\item[{sf\+::\+Time const \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classPlatform__Behaviour_a8a1b458d89bca1e1955aebc2fb44d052}
+
+
+Funktionen som låter plaformen göra allting. 
+
+
+
+Implements \hyperlink{classBehaviour_aaa6b4ee24dc3cc546fa4dbb7ba4d20da}{Behaviour}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classBehaviour_ac17cf81ceee6a44e8a8ec6ee810c9fd3}{\index{Platform\+\_\+\+Behaviour@{Platform\+\_\+\+Behaviour}!acceleration@{acceleration}}
+\index{acceleration@{acceleration}!Platform\+\_\+\+Behaviour@{Platform\+\_\+\+Behaviour}}
+\subsubsection[{acceleration}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vector2f Behaviour\+::acceleration \{0.\+0f, 0.\+1f\}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classBehaviour_ac17cf81ceee6a44e8a8ec6ee810c9fd3}
+
+
+Variabel för gravitation. 
+
+\hypertarget{classBehaviour_a1d52096cf20a59890f7705acbaccf88a}{\index{Platform\+\_\+\+Behaviour@{Platform\+\_\+\+Behaviour}!velocity@{velocity}}
+\index{velocity@{velocity}!Platform\+\_\+\+Behaviour@{Platform\+\_\+\+Behaviour}}
+\subsubsection[{velocity}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vector2f Behaviour\+::velocity \{0.\+0f,0.\+0f\}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classBehaviour_a1d52096cf20a59890f7705acbaccf88a}
+
+
+Variabel for hastigheten för entiteten. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+source/objects/headers/Platform\+\_\+\+Behaviour.\+h\end{DoxyCompactItemize}

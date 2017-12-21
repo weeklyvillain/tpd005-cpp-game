@@ -1,0 +1,294 @@
+\hypertarget{classPlayer__Behaviour}{\section{Player\+\_\+\+Behaviour Class Reference}
+\label{classPlayer__Behaviour}\index{Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}}
+}
+
+
+\hyperlink{classPlayer__Behaviour}{Player\+\_\+\+Behaviour} ärver från \hyperlink{classBehaviour}{Behaviour} och tillhandahåller beteendet för spelare.  
+
+
+
+
+{\ttfamily \#include $<$Player\+\_\+\+Behaviour.\+h$>$}
+
+
+
+Inheritance diagram for Player\+\_\+\+Behaviour\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{classPlayer__Behaviour__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Player\+\_\+\+Behaviour\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classPlayer__Behaviour__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPlayer__Behaviour_af2ac9398d19327733bfc83e672782580}{Player\+\_\+\+Behaviour} (\hyperlink{classKey__Handling}{Key\+\_\+\+Handling} \&)
+\begin{DoxyCompactList}\small\item\em En vanlig konstruktor som tar in ett referens till en \hyperlink{classKey__Handling}{Key\+\_\+\+Handling}. \end{DoxyCompactList}\item 
+\hyperlink{classPlayer__Behaviour_a4f7527788db7e0077f46a5c3f80639fa}{Player\+\_\+\+Behaviour} (\hyperlink{classPlayer__Behaviour}{Player\+\_\+\+Behaviour} const \&other)=delete
+\begin{DoxyCompactList}\small\item\em Copy konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classPlayer__Behaviour_a8060453cd5b18254154d986bd5c31a0b}{Player\+\_\+\+Behaviour} (\hyperlink{classPlayer__Behaviour}{Player\+\_\+\+Behaviour} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Move konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classPlayer__Behaviour}{Player\+\_\+\+Behaviour} \& \hyperlink{classPlayer__Behaviour_a313984f091f92701d0a890e8643398a8}{operator=} (\hyperlink{classPlayer__Behaviour}{Player\+\_\+\+Behaviour} const \&rhs)\&=delete
+\begin{DoxyCompactList}\small\item\em Copy operator. \end{DoxyCompactList}\item 
+\hyperlink{classPlayer__Behaviour}{Player\+\_\+\+Behaviour} \& \hyperlink{classPlayer__Behaviour_acccc40229c43598189255bac420e0f8f}{operator=} (\hyperlink{classPlayer__Behaviour}{Player\+\_\+\+Behaviour} \&\&rhs)=delete
+\begin{DoxyCompactList}\small\item\em Move operator. \end{DoxyCompactList}\item 
+\hyperlink{classPlayer__Behaviour_a776d896d15ebce163770778d192404c4}{$\sim$\+Player\+\_\+\+Behaviour} ()=default
+\begin{DoxyCompactList}\small\item\em Default Destruktor. \end{DoxyCompactList}\item 
+void \hyperlink{classPlayer__Behaviour_aa88f449e71197691e1166e985f165fa6}{process} (\hyperlink{classWorld}{World} \&, \hyperlink{classEntity}{Entity} \&, sf\+::\+Time const \&) override
+\begin{DoxyCompactList}\small\item\em Funktionen som låter player utföra sina actions. \end{DoxyCompactList}\item 
+void \hyperlink{classPlayer__Behaviour_a286c0e64639b320704e3c0ea6b7dafd9}{flip} (\hyperlink{classEntity}{Entity} \&, sf\+::\+Vector2f const \&)
+\begin{DoxyCompactList}\small\item\em Funktionen flipar spriten för enemy baserat på vilket håll den rör sig. \end{DoxyCompactList}\item 
+void \hyperlink{classPlayer__Behaviour_a0731770843676863bceed9b7fe1033c7}{animate} (\hyperlink{classWorld}{World} \&, \hyperlink{classEntity}{Entity} \&)
+\begin{DoxyCompactList}\small\item\em En animeringsklocka som ändrar på texturens visningskvadrat. \end{DoxyCompactList}\item 
+void \hyperlink{classPlayer__Behaviour_ab2f7b0265a09d1f645231990c3ac3a27}{shoot} (\hyperlink{classWorld}{World} \&, \hyperlink{classPlayer}{Player} \&, sf\+::\+Time)
+\item 
+void \hyperlink{classPlayer__Behaviour_a6a440d70c136fb818db8606230bdcf1b}{move\+\_\+x} (\hyperlink{classEntity}{Entity} \&, sf\+::\+Vector2f const \&, sf\+::\+Time)
+\begin{DoxyCompactList}\small\item\em Förflyttning i x-\/led. \end{DoxyCompactList}\item 
+void \hyperlink{classPlayer__Behaviour_aca6d6268d1c798e0af747ca708393a76}{move\+\_\+y} (\hyperlink{classEntity}{Entity} \&, sf\+::\+Vector2f const \&, sf\+::\+Time)
+\begin{DoxyCompactList}\small\item\em Förflyttning i y-\/led. \end{DoxyCompactList}\item 
+void \hyperlink{classPlayer__Behaviour_a9fe9aa64239db57c6eaeb17e91d750be}{collision\+\_\+x} (\hyperlink{classWorld}{World} \&, \hyperlink{classEntity}{Entity} \&)
+\begin{DoxyCompactList}\small\item\em Kollisionshantering i x-\/led. \end{DoxyCompactList}\item 
+void \hyperlink{classPlayer__Behaviour_a9cec7f10ae6eb9e64d346247e3b56638}{collision\+\_\+y} (\hyperlink{classWorld}{World} \&, \hyperlink{classEntity}{Entity} \&)
+\begin{DoxyCompactList}\small\item\em Kollisionshantering i y-\/led. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \hyperlink{classBehaviour_ac17cf81ceee6a44e8a8ec6ee810c9fd3}{acceleration} \{0.\+0f, 0.\+1f\}
+\begin{DoxyCompactList}\small\item\em Variabel för gravitation. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \hyperlink{classBehaviour_a1d52096cf20a59890f7705acbaccf88a}{velocity} \{0.\+0f,0.\+0f\}
+\begin{DoxyCompactList}\small\item\em Variabel for hastigheten för entiteten. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKey__Handling}{Key\+\_\+\+Handling} \& \hyperlink{classPlayer__Behaviour_a14e943931e401609e8182340b4a7273c}{handler}
+\item 
+int \hyperlink{classPlayer__Behaviour_a349e59d8a094c3f5b7263471135686bc}{i} \{0\}
+\begin{DoxyCompactList}\small\item\em Variabel för att simulera en klocka. \end{DoxyCompactList}\item 
+int \hyperlink{classPlayer__Behaviour_af51ca380d3847dfeee6636abf7f5a6a9}{frame} \{0\}
+\begin{DoxyCompactList}\small\item\em Vilken frame som ska ritas ut. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classPlayer__Behaviour}{Player\+\_\+\+Behaviour} ärver från \hyperlink{classBehaviour}{Behaviour} och tillhandahåller beteendet för spelare. 
+
+\hyperlink{classPlayer__Behaviour}{Player\+\_\+\+Behaviour} ärver allting från \hyperlink{classBehaviour}{Behaviour} och låter spelaren interagera med spelvärlden. Detta genom att flytta spelare, kollidera med objekt, skjuta projektiler, animera spelaren och flippa spelarens sprite baserat på var spelaren går. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPlayer__Behaviour_af2ac9398d19327733bfc83e672782580}{\index{Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}!Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}}
+\index{Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}!Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}}
+\subsubsection[{Player\+\_\+\+Behaviour}]{\setlength{\rightskip}{0pt plus 5cm}Player\+\_\+\+Behaviour\+::\+Player\+\_\+\+Behaviour (
+\begin{DoxyParamCaption}
+\item[{{\bf Key\+\_\+\+Handling} \&}]{key\+\_\+handler}
+\end{DoxyParamCaption}
+)}}\label{classPlayer__Behaviour_af2ac9398d19327733bfc83e672782580}
+
+
+En vanlig konstruktor som tar in ett referens till en \hyperlink{classKey__Handling}{Key\+\_\+\+Handling}. 
+
+\hypertarget{classPlayer__Behaviour_a4f7527788db7e0077f46a5c3f80639fa}{\index{Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}!Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}}
+\index{Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}!Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}}
+\subsubsection[{Player\+\_\+\+Behaviour}]{\setlength{\rightskip}{0pt plus 5cm}Player\+\_\+\+Behaviour\+::\+Player\+\_\+\+Behaviour (
+\begin{DoxyParamCaption}
+\item[{{\bf Player\+\_\+\+Behaviour} const \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classPlayer__Behaviour_a4f7527788db7e0077f46a5c3f80639fa}
+
+
+Copy konstruktor. 
+
+\hypertarget{classPlayer__Behaviour_a8060453cd5b18254154d986bd5c31a0b}{\index{Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}!Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}}
+\index{Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}!Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}}
+\subsubsection[{Player\+\_\+\+Behaviour}]{\setlength{\rightskip}{0pt plus 5cm}Player\+\_\+\+Behaviour\+::\+Player\+\_\+\+Behaviour (
+\begin{DoxyParamCaption}
+\item[{{\bf Player\+\_\+\+Behaviour} \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classPlayer__Behaviour_a8060453cd5b18254154d986bd5c31a0b}
+
+
+Move konstruktor. 
+
+\hypertarget{classPlayer__Behaviour_a776d896d15ebce163770778d192404c4}{\index{Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}!````~Player\+\_\+\+Behaviour@{$\sim$\+Player\+\_\+\+Behaviour}}
+\index{````~Player\+\_\+\+Behaviour@{$\sim$\+Player\+\_\+\+Behaviour}!Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}}
+\subsubsection[{$\sim$\+Player\+\_\+\+Behaviour}]{\setlength{\rightskip}{0pt plus 5cm}Player\+\_\+\+Behaviour\+::$\sim$\+Player\+\_\+\+Behaviour (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}}\label{classPlayer__Behaviour_a776d896d15ebce163770778d192404c4}
+
+
+Default Destruktor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPlayer__Behaviour_a0731770843676863bceed9b7fe1033c7}{\index{Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}!animate@{animate}}
+\index{animate@{animate}!Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}}
+\subsubsection[{animate}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+\_\+\+Behaviour\+::animate (
+\begin{DoxyParamCaption}
+\item[{{\bf World} \&}]{world, }
+\item[{{\bf Entity} \&}]{owner}
+\end{DoxyParamCaption}
+)}}\label{classPlayer__Behaviour_a0731770843676863bceed9b7fe1033c7}
+
+
+En animeringsklocka som ändrar på texturens visningskvadrat. 
+
+\hypertarget{classPlayer__Behaviour_a9fe9aa64239db57c6eaeb17e91d750be}{\index{Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}!collision\+\_\+x@{collision\+\_\+x}}
+\index{collision\+\_\+x@{collision\+\_\+x}!Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}}
+\subsubsection[{collision\+\_\+x}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+\_\+\+Behaviour\+::collision\+\_\+x (
+\begin{DoxyParamCaption}
+\item[{{\bf World} \&}]{world, }
+\item[{{\bf Entity} \&}]{owner}
+\end{DoxyParamCaption}
+)}}\label{classPlayer__Behaviour_a9fe9aa64239db57c6eaeb17e91d750be}
+
+
+Kollisionshantering i x-\/led. 
+
+\hypertarget{classPlayer__Behaviour_a9cec7f10ae6eb9e64d346247e3b56638}{\index{Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}!collision\+\_\+y@{collision\+\_\+y}}
+\index{collision\+\_\+y@{collision\+\_\+y}!Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}}
+\subsubsection[{collision\+\_\+y}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+\_\+\+Behaviour\+::collision\+\_\+y (
+\begin{DoxyParamCaption}
+\item[{{\bf World} \&}]{world, }
+\item[{{\bf Entity} \&}]{owner}
+\end{DoxyParamCaption}
+)}}\label{classPlayer__Behaviour_a9cec7f10ae6eb9e64d346247e3b56638}
+
+
+Kollisionshantering i y-\/led. 
+
+\hypertarget{classPlayer__Behaviour_a286c0e64639b320704e3c0ea6b7dafd9}{\index{Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}!flip@{flip}}
+\index{flip@{flip}!Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}}
+\subsubsection[{flip}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+\_\+\+Behaviour\+::flip (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} \&}]{owner, }
+\item[{sf\+::\+Vector2f const \&}]{dir}
+\end{DoxyParamCaption}
+)}}\label{classPlayer__Behaviour_a286c0e64639b320704e3c0ea6b7dafd9}
+
+
+Funktionen flipar spriten för enemy baserat på vilket håll den rör sig. 
+
+\hypertarget{classPlayer__Behaviour_a6a440d70c136fb818db8606230bdcf1b}{\index{Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}!move\+\_\+x@{move\+\_\+x}}
+\index{move\+\_\+x@{move\+\_\+x}!Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}}
+\subsubsection[{move\+\_\+x}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+\_\+\+Behaviour\+::move\+\_\+x (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} \&}]{owner, }
+\item[{sf\+::\+Vector2f const \&}]{dir, }
+\item[{sf\+::\+Time}]{t}
+\end{DoxyParamCaption}
+)}}\label{classPlayer__Behaviour_a6a440d70c136fb818db8606230bdcf1b}
+
+
+Förflyttning i x-\/led. 
+
+\hypertarget{classPlayer__Behaviour_aca6d6268d1c798e0af747ca708393a76}{\index{Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}!move\+\_\+y@{move\+\_\+y}}
+\index{move\+\_\+y@{move\+\_\+y}!Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}}
+\subsubsection[{move\+\_\+y}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+\_\+\+Behaviour\+::move\+\_\+y (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} \&}]{owner, }
+\item[{sf\+::\+Vector2f const \&}]{dir, }
+\item[{sf\+::\+Time}]{t}
+\end{DoxyParamCaption}
+)}}\label{classPlayer__Behaviour_aca6d6268d1c798e0af747ca708393a76}
+
+
+Förflyttning i y-\/led. 
+
+\hypertarget{classPlayer__Behaviour_a313984f091f92701d0a890e8643398a8}{\index{Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}!operator=@{operator=}}
+\index{operator=@{operator=}!Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Player\+\_\+\+Behaviour}\& Player\+\_\+\+Behaviour\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Player\+\_\+\+Behaviour} const \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classPlayer__Behaviour_a313984f091f92701d0a890e8643398a8}
+
+
+Copy operator. 
+
+\hypertarget{classPlayer__Behaviour_acccc40229c43598189255bac420e0f8f}{\index{Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}!operator=@{operator=}}
+\index{operator=@{operator=}!Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Player\+\_\+\+Behaviour}\& Player\+\_\+\+Behaviour\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Player\+\_\+\+Behaviour} \&\&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classPlayer__Behaviour_acccc40229c43598189255bac420e0f8f}
+
+
+Move operator. 
+
+\hypertarget{classPlayer__Behaviour_aa88f449e71197691e1166e985f165fa6}{\index{Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}!process@{process}}
+\index{process@{process}!Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}}
+\subsubsection[{process}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+\_\+\+Behaviour\+::process (
+\begin{DoxyParamCaption}
+\item[{{\bf World} \&}]{world, }
+\item[{{\bf Entity} \&}]{owner, }
+\item[{sf\+::\+Time const \&}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classPlayer__Behaviour_aa88f449e71197691e1166e985f165fa6}
+
+
+Funktionen som låter player utföra sina actions. 
+
+
+
+Implements \hyperlink{classBehaviour_aaa6b4ee24dc3cc546fa4dbb7ba4d20da}{Behaviour}.
+
+\hypertarget{classPlayer__Behaviour_ab2f7b0265a09d1f645231990c3ac3a27}{\index{Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}!shoot@{shoot}}
+\index{shoot@{shoot}!Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}}
+\subsubsection[{shoot}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+\_\+\+Behaviour\+::shoot (
+\begin{DoxyParamCaption}
+\item[{{\bf World} \&}]{world, }
+\item[{{\bf Player} \&}]{owner, }
+\item[{sf\+::\+Time}]{t}
+\end{DoxyParamCaption}
+)}}\label{classPlayer__Behaviour_ab2f7b0265a09d1f645231990c3ac3a27}
+Funktionen som låter spelare skjuta. Den ändrar på spelarens textur för att kunna animera skjutande. 
+
+\subsection{Member Data Documentation}
+\hypertarget{classBehaviour_ac17cf81ceee6a44e8a8ec6ee810c9fd3}{\index{Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}!acceleration@{acceleration}}
+\index{acceleration@{acceleration}!Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}}
+\subsubsection[{acceleration}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vector2f Behaviour\+::acceleration \{0.\+0f, 0.\+1f\}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classBehaviour_ac17cf81ceee6a44e8a8ec6ee810c9fd3}
+
+
+Variabel för gravitation. 
+
+\hypertarget{classPlayer__Behaviour_af51ca380d3847dfeee6636abf7f5a6a9}{\index{Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}!frame@{frame}}
+\index{frame@{frame}!Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}}
+\subsubsection[{frame}]{\setlength{\rightskip}{0pt plus 5cm}int Player\+\_\+\+Behaviour\+::frame \{0\}\hspace{0.3cm}{\ttfamily [private]}}}\label{classPlayer__Behaviour_af51ca380d3847dfeee6636abf7f5a6a9}
+
+
+Vilken frame som ska ritas ut. 
+
+\hypertarget{classPlayer__Behaviour_a14e943931e401609e8182340b4a7273c}{\index{Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}!handler@{handler}}
+\index{handler@{handler}!Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}}
+\subsubsection[{handler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Key\+\_\+\+Handling}\& Player\+\_\+\+Behaviour\+::handler\hspace{0.3cm}{\ttfamily [private]}}}\label{classPlayer__Behaviour_a14e943931e401609e8182340b4a7273c}
+En variabel som visar vilken \hyperlink{classKey__Handling}{Key\+\_\+\+Handling} \hyperlink{classPlayer__Behaviour}{Player\+\_\+\+Behaviour} objektet ska lyssna på. \hypertarget{classPlayer__Behaviour_a349e59d8a094c3f5b7263471135686bc}{\index{Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}!i@{i}}
+\index{i@{i}!Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}}
+\subsubsection[{i}]{\setlength{\rightskip}{0pt plus 5cm}int Player\+\_\+\+Behaviour\+::i \{0\}\hspace{0.3cm}{\ttfamily [private]}}}\label{classPlayer__Behaviour_a349e59d8a094c3f5b7263471135686bc}
+
+
+Variabel för att simulera en klocka. 
+
+\hypertarget{classBehaviour_a1d52096cf20a59890f7705acbaccf88a}{\index{Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}!velocity@{velocity}}
+\index{velocity@{velocity}!Player\+\_\+\+Behaviour@{Player\+\_\+\+Behaviour}}
+\subsubsection[{velocity}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vector2f Behaviour\+::velocity \{0.\+0f,0.\+0f\}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classBehaviour_a1d52096cf20a59890f7705acbaccf88a}
+
+
+Variabel for hastigheten för entiteten. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/objects/headers/Player\+\_\+\+Behaviour.\+h\item 
+source/objects/imps/Player\+\_\+\+Behaviour.\+cpp\end{DoxyCompactItemize}

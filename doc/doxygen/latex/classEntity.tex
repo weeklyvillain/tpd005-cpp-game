@@ -1,0 +1,215 @@
+\hypertarget{classEntity}{\section{Entity Class Reference}
+\label{classEntity}\index{Entity@{Entity}}
+}
+
+
+\hyperlink{classEntity}{Entity} ärver från sf\+::\+Sprite och är grundklassen för alla entiteter i spelvärlden.  
+
+
+
+
+{\ttfamily \#include $<$Entity.\+h$>$}
+
+
+
+Inheritance diagram for Entity\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEntity__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Entity\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{classEntity__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classEntity_a832613c9d80ae6ee8b05d659e0842fbb}{Entity} (std\+::string n, std\+::string t, \hyperlink{classBehaviour}{Behaviour} $\ast$b, sf\+::\+Texture const \&texture, sf\+::\+Int\+Rect size)
+\item 
+\hyperlink{classEntity_a6d2e6788f8c2be303ebc2d67764f4127}{Entity} (\hyperlink{classEntity}{Entity} const \&other)=delete
+\begin{DoxyCompactList}\small\item\em Copy konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classEntity_a30c067e1de9094763c219fcc14c8419a}{Entity} (\hyperlink{classEntity}{Entity} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Move konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classEntity}{Entity} \& \hyperlink{classEntity_a80dd8e5116a29007aef1039556d27d56}{operator=} (\hyperlink{classEntity}{Entity} const \&rhs)\&=delete
+\begin{DoxyCompactList}\small\item\em Copy operator. \end{DoxyCompactList}\item 
+\hyperlink{classEntity}{Entity} \& \hyperlink{classEntity_a0d03f941fda7705c726bf819d71faf6c}{operator=} (\hyperlink{classEntity}{Entity} \&\&rhs)=delete
+\begin{DoxyCompactList}\small\item\em Move operator. \end{DoxyCompactList}\item 
+virtual \hyperlink{classEntity_ac479d009ddde62dfb378ca0a70d81307}{$\sim$\+Entity} ()=default
+\begin{DoxyCompactList}\small\item\em Default destruktor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classEntity_a180102ac6695559b1f8fcf0aee747802}{update} (\hyperlink{classWorld}{World} \&, sf\+::\+Time const \&)=0
+\item 
+virtual void \hyperlink{classEntity_a3d585a30d7f07c50911485825f5496cd}{kill} (\hyperlink{classWorld}{World} \&)=0
+\begin{DoxyCompactList}\small\item\em Om entiteten ska dö så signalerar denna funktion det till world. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classEntity_a75c7e4aad3df2e053ee5b43169509534}{get\+\_\+name} () const 
+\begin{DoxyCompactList}\small\item\em Returnerar namnet på entititen. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classEntity_a0e9ef479c1147e21e5bcb338cb858df2}{get\+\_\+type} () const 
+\begin{DoxyCompactList}\small\item\em Returnerar typen på entititen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{classEntity_a931b21fbdebb1a5963b4bcab5df128f5}{name}
+\begin{DoxyCompactList}\small\item\em Namn. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classEntity_a298a9ebf2474bb00874b5ff6a0d637ef}{type}
+\begin{DoxyCompactList}\small\item\em Typ. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{classBehaviour}{Behaviour} $>$ \hyperlink{classEntity_adb6e36848db24e6d48e6d295e19d3972}{behaviour\+\_\+ptr}
+\begin{DoxyCompactList}\small\item\em Unik smart-\/pekare till ett objekt av \hyperlink{classBehaviour}{Behaviour} klassen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classEntity}{Entity} ärver från sf\+::\+Sprite och är grundklassen för alla entiteter i spelvärlden. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classEntity_a832613c9d80ae6ee8b05d659e0842fbb}{\index{Entity@{Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!Entity@{Entity}}
+\subsubsection[{Entity}]{\setlength{\rightskip}{0pt plus 5cm}Entity\+::\+Entity (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{n, }
+\item[{std\+::string}]{t, }
+\item[{{\bf Behaviour} $\ast$}]{b, }
+\item[{sf\+::\+Texture const \&}]{texture, }
+\item[{sf\+::\+Int\+Rect}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classEntity_a832613c9d80ae6ee8b05d659e0842fbb}
+Entitys konstruktor baseras på sf\+::\+Sprites men tar också in ett namn, en typ, en pekare till behaviour , en textur och en storlek på texturen. \hypertarget{classEntity_a6d2e6788f8c2be303ebc2d67764f4127}{\index{Entity@{Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!Entity@{Entity}}
+\subsubsection[{Entity}]{\setlength{\rightskip}{0pt plus 5cm}Entity\+::\+Entity (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} const \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classEntity_a6d2e6788f8c2be303ebc2d67764f4127}
+
+
+Copy konstruktor. 
+
+\hypertarget{classEntity_a30c067e1de9094763c219fcc14c8419a}{\index{Entity@{Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!Entity@{Entity}}
+\subsubsection[{Entity}]{\setlength{\rightskip}{0pt plus 5cm}Entity\+::\+Entity (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classEntity_a30c067e1de9094763c219fcc14c8419a}
+
+
+Move konstruktor. 
+
+\hypertarget{classEntity_ac479d009ddde62dfb378ca0a70d81307}{\index{Entity@{Entity}!````~Entity@{$\sim$\+Entity}}
+\index{````~Entity@{$\sim$\+Entity}!Entity@{Entity}}
+\subsubsection[{$\sim$\+Entity}]{\setlength{\rightskip}{0pt plus 5cm}virtual Entity\+::$\sim$\+Entity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}}\label{classEntity_ac479d009ddde62dfb378ca0a70d81307}
+
+
+Default destruktor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classEntity_a75c7e4aad3df2e053ee5b43169509534}{\index{Entity@{Entity}!get\+\_\+name@{get\+\_\+name}}
+\index{get\+\_\+name@{get\+\_\+name}!Entity@{Entity}}
+\subsubsection[{get\+\_\+name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Entity\+::get\+\_\+name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classEntity_a75c7e4aad3df2e053ee5b43169509534}
+
+
+Returnerar namnet på entititen. 
+
+\hypertarget{classEntity_a0e9ef479c1147e21e5bcb338cb858df2}{\index{Entity@{Entity}!get\+\_\+type@{get\+\_\+type}}
+\index{get\+\_\+type@{get\+\_\+type}!Entity@{Entity}}
+\subsubsection[{get\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Entity\+::get\+\_\+type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classEntity_a0e9ef479c1147e21e5bcb338cb858df2}
+
+
+Returnerar typen på entititen. 
+
+\hypertarget{classEntity_a3d585a30d7f07c50911485825f5496cd}{\index{Entity@{Entity}!kill@{kill}}
+\index{kill@{kill}!Entity@{Entity}}
+\subsubsection[{kill}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Entity\+::kill (
+\begin{DoxyParamCaption}
+\item[{{\bf World} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classEntity_a3d585a30d7f07c50911485825f5496cd}
+
+
+Om entiteten ska dö så signalerar denna funktion det till world. 
+
+
+
+Implemented in \hyperlink{classEnemy_aba8130fd5f8ede411cded7611254ab7a}{Enemy}, \hyperlink{classDrop_a8bbd94b3140a246297aaf4c984dad4ee}{Drop}, \hyperlink{classPlatform_a6dd2fe10f6de044db339c5050bdb7ef0}{Platform}, \hyperlink{classProjectile_a10d7ca9bb3d022246196572d008f1d59}{Projectile}, and \hyperlink{classPlayer_ab015823a5707509c3611ff93984100d9}{Player}.
+
+\hypertarget{classEntity_a80dd8e5116a29007aef1039556d27d56}{\index{Entity@{Entity}!operator=@{operator=}}
+\index{operator=@{operator=}!Entity@{Entity}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Entity}\& Entity\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} const \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classEntity_a80dd8e5116a29007aef1039556d27d56}
+
+
+Copy operator. 
+
+\hypertarget{classEntity_a0d03f941fda7705c726bf819d71faf6c}{\index{Entity@{Entity}!operator=@{operator=}}
+\index{operator=@{operator=}!Entity@{Entity}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Entity}\& Entity\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} \&\&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classEntity_a0d03f941fda7705c726bf819d71faf6c}
+
+
+Move operator. 
+
+\hypertarget{classEntity_a180102ac6695559b1f8fcf0aee747802}{\index{Entity@{Entity}!update@{update}}
+\index{update@{update}!Entity@{Entity}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Entity\+::update (
+\begin{DoxyParamCaption}
+\item[{{\bf World} \&}]{, }
+\item[{sf\+::\+Time const \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classEntity_a180102ac6695559b1f8fcf0aee747802}
+Funktionen som world kallar på för att få varje entitet att uppdatera sig. Den kallar i sin tur på Behaviour\+::\+Process() 
+
+Implemented in \hyperlink{classEnemy_a257cacd04930ccbfa9545bb5a8dc5be3}{Enemy}, \hyperlink{classDrop_aa899493774d2a66cbb51f3cd9a0cf80e}{Drop}, \hyperlink{classPlatform_ad756e0494312cdd8956af8bee6afbb0f}{Platform}, \hyperlink{classProjectile_a48d52d5d9db6e3af4aae8ded6afa6544}{Projectile}, and \hyperlink{classPlayer_ad0f6610ee4a9f6d179bf404d1812be54}{Player}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classEntity_adb6e36848db24e6d48e6d295e19d3972}{\index{Entity@{Entity}!behaviour\+\_\+ptr@{behaviour\+\_\+ptr}}
+\index{behaviour\+\_\+ptr@{behaviour\+\_\+ptr}!Entity@{Entity}}
+\subsubsection[{behaviour\+\_\+ptr}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<${\bf Behaviour}$>$ Entity\+::behaviour\+\_\+ptr\hspace{0.3cm}{\ttfamily [protected]}}}\label{classEntity_adb6e36848db24e6d48e6d295e19d3972}
+
+
+Unik smart-\/pekare till ett objekt av \hyperlink{classBehaviour}{Behaviour} klassen. 
+
+\hypertarget{classEntity_a931b21fbdebb1a5963b4bcab5df128f5}{\index{Entity@{Entity}!name@{name}}
+\index{name@{name}!Entity@{Entity}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Entity\+::name\hspace{0.3cm}{\ttfamily [protected]}}}\label{classEntity_a931b21fbdebb1a5963b4bcab5df128f5}
+
+
+Namn. 
+
+\hypertarget{classEntity_a298a9ebf2474bb00874b5ff6a0d637ef}{\index{Entity@{Entity}!type@{type}}
+\index{type@{type}!Entity@{Entity}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Entity\+::type\hspace{0.3cm}{\ttfamily [protected]}}}\label{classEntity_a298a9ebf2474bb00874b5ff6a0d637ef}
+
+
+Typ. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+source/objects/headers/Entity.\+h\end{DoxyCompactItemize}

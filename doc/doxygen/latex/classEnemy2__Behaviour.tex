@@ -1,0 +1,268 @@
+\hypertarget{classEnemy2__Behaviour}{\section{Enemy2\+\_\+\+Behaviour Class Reference}
+\label{classEnemy2__Behaviour}\index{Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}}
+}
+
+
+Enemy\+\_\+\+Behaviour2 ärver från \hyperlink{classBehaviour}{Behaviour} och tillhandahåller beteende för fiender.  
+
+
+
+
+{\ttfamily \#include $<$Enemy2\+\_\+\+Behaviour.\+h$>$}
+
+
+
+Inheritance diagram for Enemy2\+\_\+\+Behaviour\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classEnemy2__Behaviour__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Enemy2\+\_\+\+Behaviour\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{classEnemy2__Behaviour__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classEnemy2__Behaviour_a8a829457bf290b7419955fa8c7808b49}{Enemy2\+\_\+\+Behaviour} (sf\+::\+Vector2f v, float x, float y)
+\begin{DoxyCompactList}\small\item\em Vanlig \hyperlink{classBehaviour_a57e050961bc1305993adaeac62658657}{Behaviour\+::\+Behaviour} konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classEnemy2__Behaviour_a12df4777ecea49697eeb5e0185d542dd}{Enemy2\+\_\+\+Behaviour} (\hyperlink{classEnemy2__Behaviour}{Enemy2\+\_\+\+Behaviour} const \&other)=delete
+\begin{DoxyCompactList}\small\item\em Copy konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classEnemy2__Behaviour_a17391bee40ff82bd774d0d910048f111}{Enemy2\+\_\+\+Behaviour} (\hyperlink{classEnemy2__Behaviour}{Enemy2\+\_\+\+Behaviour} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Move konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classEnemy2__Behaviour}{Enemy2\+\_\+\+Behaviour} \& \hyperlink{classEnemy2__Behaviour_aefb93bb199ad534638ae950d6cdd3a24}{operator=} (\hyperlink{classEnemy2__Behaviour}{Enemy2\+\_\+\+Behaviour} const \&rhs)\&=delete
+\begin{DoxyCompactList}\small\item\em Copy operator. \end{DoxyCompactList}\item 
+\hyperlink{classEnemy2__Behaviour}{Enemy2\+\_\+\+Behaviour} \& \hyperlink{classEnemy2__Behaviour_a640e6d6829df6a9a5ddd14bad50d28a7}{operator=} (\hyperlink{classEnemy2__Behaviour}{Enemy2\+\_\+\+Behaviour} \&\&rhs)=delete
+\begin{DoxyCompactList}\small\item\em Move operator. \end{DoxyCompactList}\item 
+\hyperlink{classEnemy2__Behaviour_a42f92d6f39b1b14f758da506aaf4bc36}{$\sim$\+Enemy2\+\_\+\+Behaviour} ()=default
+\begin{DoxyCompactList}\small\item\em Default destruktor. \end{DoxyCompactList}\item 
+void \hyperlink{classEnemy2__Behaviour_a0979bade3f9b3ff9dca3c6b970a5ef63}{process} (\hyperlink{classWorld}{World} \&, \hyperlink{classEntity}{Entity} \&, sf\+::\+Time const \&) override
+\begin{DoxyCompactList}\small\item\em Funktionen som låter fienden göra allting. \end{DoxyCompactList}\item 
+void \hyperlink{classEnemy2__Behaviour_ad46bf8d3c702e70978b87b36190d2f88}{flip} (\hyperlink{classEntity}{Entity} \&, sf\+::\+Vector2f const \&)
+\begin{DoxyCompactList}\small\item\em Funktionen flipar spriten för enemy baserat på vilket håll den rör sig. \end{DoxyCompactList}\item 
+void \hyperlink{classEnemy2__Behaviour_a188c7941d10c527271c49ba0bc26baa9}{move\+\_\+x} (\hyperlink{classEntity}{Entity} \&, sf\+::\+Vector2f const \&, sf\+::\+Time)
+\begin{DoxyCompactList}\small\item\em Förflyttning i x-\/led. \end{DoxyCompactList}\item 
+void \hyperlink{classEnemy2__Behaviour_a535c14bb1fa65c443d35e4e55031418b}{move\+\_\+y} (\hyperlink{classEntity}{Entity} \&, sf\+::\+Vector2f const \&, sf\+::\+Time)
+\begin{DoxyCompactList}\small\item\em Förflyttning i y-\/led. \end{DoxyCompactList}\item 
+void \hyperlink{classEnemy2__Behaviour_a25d895919b81e15a7e4280d86ded650f}{collision\+\_\+x} (\hyperlink{classWorld}{World} \&, \hyperlink{classEntity}{Entity} \&)
+\begin{DoxyCompactList}\small\item\em Kollisionshantering i x-\/led. \end{DoxyCompactList}\item 
+void \hyperlink{classEnemy2__Behaviour_a5e89430e0189000bc295db5246c5d380}{collision\+\_\+y} (\hyperlink{classWorld}{World} \&, \hyperlink{classEntity}{Entity} \&)
+\begin{DoxyCompactList}\small\item\em Kollisionshantering i y-\/led. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \hyperlink{classBehaviour_ac17cf81ceee6a44e8a8ec6ee810c9fd3}{acceleration} \{0.\+0f, 0.\+1f\}
+\begin{DoxyCompactList}\small\item\em Variabel för gravitation. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \hyperlink{classBehaviour_a1d52096cf20a59890f7705acbaccf88a}{velocity} \{0.\+0f,0.\+0f\}
+\begin{DoxyCompactList}\small\item\em Variabel for hastigheten för entiteten. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \hyperlink{classEnemy2__Behaviour_a8adc028fa38366e2e7d204f7da84e34c}{start\+\_\+pos}
+\begin{DoxyCompactList}\small\item\em Start positionen. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \hyperlink{classEnemy2__Behaviour_ada807c200f4c5fc5a732d8ada274520a}{end\+\_\+pos}
+\begin{DoxyCompactList}\small\item\em Slut positionen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Enemy\+\_\+\+Behaviour2 ärver från \hyperlink{classBehaviour}{Behaviour} och tillhandahåller beteende för fiender. 
+
+Enemy\+\_\+\+Behaviour2 definerar beteendet för ett \hyperlink{classEnemy}{Enemy} objekt i spelet. \hyperlink{classEnemy}{Enemy} rör sig som \hyperlink{classPlayer__Behaviour}{Player\+\_\+\+Behaviour} men följer spelaren istället för att följa vad användaren anger. Den flipar också \hyperlink{classEnemy}{Enemy} spriten om det behövs och har koll på kollisioner för enemy. \hyperlink{classEnemy}{Enemy} dödar spelaren om de kommer i kontakt med denne.
+
+\hyperlink{classEnemy}{Enemy} nummer 2 rör sig från sin startplats till en ny plats och tillbaka. Detta är det enda den gör. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classEnemy2__Behaviour_a8a829457bf290b7419955fa8c7808b49}{\index{Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}!Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}}
+\index{Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}!Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}}
+\subsubsection[{Enemy2\+\_\+\+Behaviour}]{\setlength{\rightskip}{0pt plus 5cm}Enemy2\+\_\+\+Behaviour\+::\+Enemy2\+\_\+\+Behaviour (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Vector2f}]{v, }
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classEnemy2__Behaviour_a8a829457bf290b7419955fa8c7808b49}
+
+
+Vanlig \hyperlink{classBehaviour_a57e050961bc1305993adaeac62658657}{Behaviour\+::\+Behaviour} konstruktor. 
+
+\hypertarget{classEnemy2__Behaviour_a12df4777ecea49697eeb5e0185d542dd}{\index{Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}!Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}}
+\index{Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}!Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}}
+\subsubsection[{Enemy2\+\_\+\+Behaviour}]{\setlength{\rightskip}{0pt plus 5cm}Enemy2\+\_\+\+Behaviour\+::\+Enemy2\+\_\+\+Behaviour (
+\begin{DoxyParamCaption}
+\item[{{\bf Enemy2\+\_\+\+Behaviour} const \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classEnemy2__Behaviour_a12df4777ecea49697eeb5e0185d542dd}
+
+
+Copy konstruktor. 
+
+\hypertarget{classEnemy2__Behaviour_a17391bee40ff82bd774d0d910048f111}{\index{Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}!Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}}
+\index{Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}!Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}}
+\subsubsection[{Enemy2\+\_\+\+Behaviour}]{\setlength{\rightskip}{0pt plus 5cm}Enemy2\+\_\+\+Behaviour\+::\+Enemy2\+\_\+\+Behaviour (
+\begin{DoxyParamCaption}
+\item[{{\bf Enemy2\+\_\+\+Behaviour} \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classEnemy2__Behaviour_a17391bee40ff82bd774d0d910048f111}
+
+
+Move konstruktor. 
+
+\hypertarget{classEnemy2__Behaviour_a42f92d6f39b1b14f758da506aaf4bc36}{\index{Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}!````~Enemy2\+\_\+\+Behaviour@{$\sim$\+Enemy2\+\_\+\+Behaviour}}
+\index{````~Enemy2\+\_\+\+Behaviour@{$\sim$\+Enemy2\+\_\+\+Behaviour}!Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}}
+\subsubsection[{$\sim$\+Enemy2\+\_\+\+Behaviour}]{\setlength{\rightskip}{0pt plus 5cm}Enemy2\+\_\+\+Behaviour\+::$\sim$\+Enemy2\+\_\+\+Behaviour (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}}\label{classEnemy2__Behaviour_a42f92d6f39b1b14f758da506aaf4bc36}
+
+
+Default destruktor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classEnemy2__Behaviour_a25d895919b81e15a7e4280d86ded650f}{\index{Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}!collision\+\_\+x@{collision\+\_\+x}}
+\index{collision\+\_\+x@{collision\+\_\+x}!Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}}
+\subsubsection[{collision\+\_\+x}]{\setlength{\rightskip}{0pt plus 5cm}void Enemy2\+\_\+\+Behaviour\+::collision\+\_\+x (
+\begin{DoxyParamCaption}
+\item[{{\bf World} \&}]{world, }
+\item[{{\bf Entity} \&}]{owner}
+\end{DoxyParamCaption}
+)}}\label{classEnemy2__Behaviour_a25d895919b81e15a7e4280d86ded650f}
+
+
+Kollisionshantering i x-\/led. 
+
+\hypertarget{classEnemy2__Behaviour_a5e89430e0189000bc295db5246c5d380}{\index{Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}!collision\+\_\+y@{collision\+\_\+y}}
+\index{collision\+\_\+y@{collision\+\_\+y}!Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}}
+\subsubsection[{collision\+\_\+y}]{\setlength{\rightskip}{0pt plus 5cm}void Enemy2\+\_\+\+Behaviour\+::collision\+\_\+y (
+\begin{DoxyParamCaption}
+\item[{{\bf World} \&}]{world, }
+\item[{{\bf Entity} \&}]{owner}
+\end{DoxyParamCaption}
+)}}\label{classEnemy2__Behaviour_a5e89430e0189000bc295db5246c5d380}
+
+
+Kollisionshantering i y-\/led. 
+
+\hypertarget{classEnemy2__Behaviour_ad46bf8d3c702e70978b87b36190d2f88}{\index{Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}!flip@{flip}}
+\index{flip@{flip}!Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}}
+\subsubsection[{flip}]{\setlength{\rightskip}{0pt plus 5cm}void Enemy2\+\_\+\+Behaviour\+::flip (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} \&}]{owner, }
+\item[{sf\+::\+Vector2f const \&}]{dir}
+\end{DoxyParamCaption}
+)}}\label{classEnemy2__Behaviour_ad46bf8d3c702e70978b87b36190d2f88}
+
+
+Funktionen flipar spriten för enemy baserat på vilket håll den rör sig. 
+
+\hypertarget{classEnemy2__Behaviour_a188c7941d10c527271c49ba0bc26baa9}{\index{Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}!move\+\_\+x@{move\+\_\+x}}
+\index{move\+\_\+x@{move\+\_\+x}!Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}}
+\subsubsection[{move\+\_\+x}]{\setlength{\rightskip}{0pt plus 5cm}void Enemy2\+\_\+\+Behaviour\+::move\+\_\+x (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} \&}]{owner, }
+\item[{sf\+::\+Vector2f const \&}]{dir, }
+\item[{sf\+::\+Time}]{t}
+\end{DoxyParamCaption}
+)}}\label{classEnemy2__Behaviour_a188c7941d10c527271c49ba0bc26baa9}
+
+
+Förflyttning i x-\/led. 
+
+\hypertarget{classEnemy2__Behaviour_a535c14bb1fa65c443d35e4e55031418b}{\index{Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}!move\+\_\+y@{move\+\_\+y}}
+\index{move\+\_\+y@{move\+\_\+y}!Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}}
+\subsubsection[{move\+\_\+y}]{\setlength{\rightskip}{0pt plus 5cm}void Enemy2\+\_\+\+Behaviour\+::move\+\_\+y (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity} \&}]{owner, }
+\item[{sf\+::\+Vector2f const \&}]{dir, }
+\item[{sf\+::\+Time}]{t}
+\end{DoxyParamCaption}
+)}}\label{classEnemy2__Behaviour_a535c14bb1fa65c443d35e4e55031418b}
+
+
+Förflyttning i y-\/led. 
+
+\hypertarget{classEnemy2__Behaviour_aefb93bb199ad534638ae950d6cdd3a24}{\index{Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}!operator=@{operator=}}
+\index{operator=@{operator=}!Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enemy2\+\_\+\+Behaviour}\& Enemy2\+\_\+\+Behaviour\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Enemy2\+\_\+\+Behaviour} const \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classEnemy2__Behaviour_aefb93bb199ad534638ae950d6cdd3a24}
+
+
+Copy operator. 
+
+\hypertarget{classEnemy2__Behaviour_a640e6d6829df6a9a5ddd14bad50d28a7}{\index{Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}!operator=@{operator=}}
+\index{operator=@{operator=}!Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enemy2\+\_\+\+Behaviour}\& Enemy2\+\_\+\+Behaviour\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Enemy2\+\_\+\+Behaviour} \&\&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classEnemy2__Behaviour_a640e6d6829df6a9a5ddd14bad50d28a7}
+
+
+Move operator. 
+
+\hypertarget{classEnemy2__Behaviour_a0979bade3f9b3ff9dca3c6b970a5ef63}{\index{Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}!process@{process}}
+\index{process@{process}!Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}}
+\subsubsection[{process}]{\setlength{\rightskip}{0pt plus 5cm}void Enemy2\+\_\+\+Behaviour\+::process (
+\begin{DoxyParamCaption}
+\item[{{\bf World} \&}]{world, }
+\item[{{\bf Entity} \&}]{owner, }
+\item[{sf\+::\+Time const \&}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classEnemy2__Behaviour_a0979bade3f9b3ff9dca3c6b970a5ef63}
+
+
+Funktionen som låter fienden göra allting. 
+
+
+
+Implements \hyperlink{classBehaviour_aaa6b4ee24dc3cc546fa4dbb7ba4d20da}{Behaviour}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classBehaviour_ac17cf81ceee6a44e8a8ec6ee810c9fd3}{\index{Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}!acceleration@{acceleration}}
+\index{acceleration@{acceleration}!Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}}
+\subsubsection[{acceleration}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vector2f Behaviour\+::acceleration \{0.\+0f, 0.\+1f\}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classBehaviour_ac17cf81ceee6a44e8a8ec6ee810c9fd3}
+
+
+Variabel för gravitation. 
+
+\hypertarget{classEnemy2__Behaviour_ada807c200f4c5fc5a732d8ada274520a}{\index{Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}!end\+\_\+pos@{end\+\_\+pos}}
+\index{end\+\_\+pos@{end\+\_\+pos}!Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}}
+\subsubsection[{end\+\_\+pos}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vector2f Enemy2\+\_\+\+Behaviour\+::end\+\_\+pos\hspace{0.3cm}{\ttfamily [private]}}}\label{classEnemy2__Behaviour_ada807c200f4c5fc5a732d8ada274520a}
+
+
+Slut positionen. 
+
+\hypertarget{classEnemy2__Behaviour_a8adc028fa38366e2e7d204f7da84e34c}{\index{Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}!start\+\_\+pos@{start\+\_\+pos}}
+\index{start\+\_\+pos@{start\+\_\+pos}!Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}}
+\subsubsection[{start\+\_\+pos}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vector2f Enemy2\+\_\+\+Behaviour\+::start\+\_\+pos\hspace{0.3cm}{\ttfamily [private]}}}\label{classEnemy2__Behaviour_a8adc028fa38366e2e7d204f7da84e34c}
+
+
+Start positionen. 
+
+\hypertarget{classBehaviour_a1d52096cf20a59890f7705acbaccf88a}{\index{Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}!velocity@{velocity}}
+\index{velocity@{velocity}!Enemy2\+\_\+\+Behaviour@{Enemy2\+\_\+\+Behaviour}}
+\subsubsection[{velocity}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vector2f Behaviour\+::velocity \{0.\+0f,0.\+0f\}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classBehaviour_a1d52096cf20a59890f7705acbaccf88a}
+
+
+Variabel for hastigheten för entiteten. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/objects/headers/Enemy2\+\_\+\+Behaviour.\+h\item 
+source/objects/imps/Enemy2\+\_\+\+Behaviour.\+cpp\end{DoxyCompactItemize}

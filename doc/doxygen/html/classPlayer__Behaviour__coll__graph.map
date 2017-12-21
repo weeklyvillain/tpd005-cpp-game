@@ -1,0 +1,4 @@
+<map id="Player_Behaviour" name="Player_Behaviour">
+<area shape="rect" id="node2" href="$classBehaviour.html" title="Behaviour ärver ej av någonting och används för att definiera hur ett objekt beter sig i spelvärlden..." alt="" coords="5,233,112,399"/>
+<area shape="rect" id="node4" href="$classKey__Handling.html" title="Key_Handling har hand om input från spelaren. " alt="" coords="137,219,267,413"/>
+</map>

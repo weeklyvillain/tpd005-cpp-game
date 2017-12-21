@@ -1,0 +1,250 @@
+\hypertarget{classKey__Handling}{\section{Key\+\_\+\+Handling Class Reference}
+\label{classKey__Handling}\index{Key\+\_\+\+Handling@{Key\+\_\+\+Handling}}
+}
+
+
+\hyperlink{classKey__Handling}{Key\+\_\+\+Handling} har hand om input från spelaren.  
+
+
+
+
+{\ttfamily \#include $<$Key\+\_\+\+Handling.\+h$>$}
+
+
+
+Collaboration diagram for Key\+\_\+\+Handling\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classKey__Handling__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKey__Handling_ad39f9645a4c3b4a91c9116e96afd55d8}{Key\+\_\+\+Handling} ()
+\begin{DoxyCompactList}\small\item\em Default konstruktor som skapar \hyperlink{classKey__Handling}{Key\+\_\+\+Handling} med fördefinierade tangenter. \end{DoxyCompactList}\item 
+\hyperlink{classKey__Handling_a8fc595ca2ab4cf2c542ca36fd1d34b15}{Key\+\_\+\+Handling} (sf\+::\+Keyboard\+::\+Key, sf\+::\+Keyboard\+::\+Key, sf\+::\+Keyboard\+::\+Key, sf\+::\+Keyboard\+::\+Key)
+\begin{DoxyCompactList}\small\item\em Konstruktor som tar emot 4 tangenter. \end{DoxyCompactList}\item 
+\hyperlink{classKey__Handling_a77ab751460e13501b55aa602195fd164}{Key\+\_\+\+Handling} (\hyperlink{classKey__Handling}{Key\+\_\+\+Handling} const \&other)=delete
+\begin{DoxyCompactList}\small\item\em Copy konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classKey__Handling_afcba70ccd67070d27370c808bf14f26b}{Key\+\_\+\+Handling} (\hyperlink{classKey__Handling}{Key\+\_\+\+Handling} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Move konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classKey__Handling}{Key\+\_\+\+Handling} \& \hyperlink{classKey__Handling_aa8c89a0450a74fc1888089d568c2e87f}{operator=} (\hyperlink{classKey__Handling}{Key\+\_\+\+Handling} const \&rhs)\&=delete
+\begin{DoxyCompactList}\small\item\em Copy operator. \end{DoxyCompactList}\item 
+\hyperlink{classKey__Handling}{Key\+\_\+\+Handling} \& \hyperlink{classKey__Handling_a095581108c0abb43b0f6c9a67cc62f54}{operator=} (\hyperlink{classKey__Handling}{Key\+\_\+\+Handling} \&\&rhs)=delete
+\begin{DoxyCompactList}\small\item\em Move operator. \end{DoxyCompactList}\item 
+\hyperlink{classKey__Handling_abaeb9c9b746106e475c8d91743271cab}{$\sim$\+Key\+\_\+\+Handling} ()=default
+\begin{DoxyCompactList}\small\item\em Default destruktor. \end{DoxyCompactList}\item 
+void \hyperlink{classKey__Handling_a44d85d656914e718a9b155c41d687771}{on\+Key} (bool, sf\+::\+Keyboard\+::\+Key const \&)
+\item 
+sf\+::\+Vector2f \hyperlink{classKey__Handling_adaea1f1ba27262539509061cbc818361}{direction} () const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classKey__Handling_af7bf77c8b1d7ed6ea3282f45f76fcf61}{jump} \{false\}
+\begin{DoxyCompactList}\small\item\em Variabel för hopp knappen. \end{DoxyCompactList}\item 
+bool \hyperlink{classKey__Handling_ab72108363edad52be4d7c4d8a572f6ec}{left} \{false\}
+\begin{DoxyCompactList}\small\item\em Variabel för vänster movement. \end{DoxyCompactList}\item 
+bool \hyperlink{classKey__Handling_a494ba1ae43c55d5202f24e9bc78c5ed1}{right} \{false\}
+\begin{DoxyCompactList}\small\item\em Variabel för höger movement. \end{DoxyCompactList}\item 
+bool \hyperlink{classKey__Handling_ae9d219c1a9387620c14120d9a45d5db1}{shoot} \{false\}
+\begin{DoxyCompactList}\small\item\em Variabel för att skjuta. \end{DoxyCompactList}\item 
+bool \hyperlink{classKey__Handling_a73a615e629c4d3db0bbecb6fd35fe31b}{quit} \{false\}
+\begin{DoxyCompactList}\small\item\em Variabel för att avsluta spelet. \end{DoxyCompactList}\item 
+bool \hyperlink{classKey__Handling_ae297ccc0a53483abe41f2788ec7863d8}{pause} \{false\}
+\begin{DoxyCompactList}\small\item\em Variabel för att pausa spelet. \end{DoxyCompactList}\item 
+sf\+::\+Keyboard\+::\+Key \hyperlink{classKey__Handling_a6d7d9bb4dc72122fc257d0a98b8613d5}{jump\+\_\+key} \{\}
+\begin{DoxyCompactList}\small\item\em Variabel för vilken tangent som betyder hoppa. \end{DoxyCompactList}\item 
+sf\+::\+Keyboard\+::\+Key \hyperlink{classKey__Handling_a53493a34a4c7948354017b34fc9406fa}{left\+\_\+key} \{\}
+\begin{DoxyCompactList}\small\item\em Variabel för vilken tangent som betyder vänster. \end{DoxyCompactList}\item 
+sf\+::\+Keyboard\+::\+Key \hyperlink{classKey__Handling_a802f80c79ced68d848e1297438c1627e}{right\+\_\+key} \{\}
+\begin{DoxyCompactList}\small\item\em Variabel för vilken tangent som betyder höger. \end{DoxyCompactList}\item 
+sf\+::\+Keyboard\+::\+Key \hyperlink{classKey__Handling_a73d59e5daa95dc140adda8cfd677e189}{shoot\+\_\+key} \{\}
+\begin{DoxyCompactList}\small\item\em Variabel för vilken tangent som betyder skjut. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classKey__Handling}{Key\+\_\+\+Handling} har hand om input från spelaren. 
+
+\hyperlink{classKey__Handling}{Key\+\_\+\+Handling} är den klass som tar hand om tangenttryckningar. Den gör detta genom att ta emot S\+F\+M\+Ls Keyboard structs. Den kollar vilka tangenter som tryckts ner och ändrar sedan \hyperlink{classKey__Handling_adaea1f1ba27262539509061cbc818361}{Key\+\_\+\+Handling\+::direction()} för att visa vad som har tryckts ner. Det går också att kolla direkt mot denna då den är publik om det är en knapp som inte har med movement att göra t.\+ex. \hyperlink{classKey__Handling_ae9d219c1a9387620c14120d9a45d5db1}{Key\+\_\+\+Handling\+::shoot} eller \hyperlink{classKey__Handling_a73a615e629c4d3db0bbecb6fd35fe31b}{Key\+\_\+\+Handling\+::quit}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classKey__Handling_ad39f9645a4c3b4a91c9116e96afd55d8}{\index{Key\+\_\+\+Handling@{Key\+\_\+\+Handling}!Key\+\_\+\+Handling@{Key\+\_\+\+Handling}}
+\index{Key\+\_\+\+Handling@{Key\+\_\+\+Handling}!Key\+\_\+\+Handling@{Key\+\_\+\+Handling}}
+\subsubsection[{Key\+\_\+\+Handling}]{\setlength{\rightskip}{0pt plus 5cm}Key\+\_\+\+Handling\+::\+Key\+\_\+\+Handling (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classKey__Handling_ad39f9645a4c3b4a91c9116e96afd55d8}
+
+
+Default konstruktor som skapar \hyperlink{classKey__Handling}{Key\+\_\+\+Handling} med fördefinierade tangenter. 
+
+\hypertarget{classKey__Handling_a8fc595ca2ab4cf2c542ca36fd1d34b15}{\index{Key\+\_\+\+Handling@{Key\+\_\+\+Handling}!Key\+\_\+\+Handling@{Key\+\_\+\+Handling}}
+\index{Key\+\_\+\+Handling@{Key\+\_\+\+Handling}!Key\+\_\+\+Handling@{Key\+\_\+\+Handling}}
+\subsubsection[{Key\+\_\+\+Handling}]{\setlength{\rightskip}{0pt plus 5cm}Key\+\_\+\+Handling\+::\+Key\+\_\+\+Handling (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Keyboard\+::\+Key}]{j, }
+\item[{sf\+::\+Keyboard\+::\+Key}]{l, }
+\item[{sf\+::\+Keyboard\+::\+Key}]{r, }
+\item[{sf\+::\+Keyboard\+::\+Key}]{s}
+\end{DoxyParamCaption}
+)}}\label{classKey__Handling_a8fc595ca2ab4cf2c542ca36fd1d34b15}
+
+
+Konstruktor som tar emot 4 tangenter. 
+
+\hypertarget{classKey__Handling_a77ab751460e13501b55aa602195fd164}{\index{Key\+\_\+\+Handling@{Key\+\_\+\+Handling}!Key\+\_\+\+Handling@{Key\+\_\+\+Handling}}
+\index{Key\+\_\+\+Handling@{Key\+\_\+\+Handling}!Key\+\_\+\+Handling@{Key\+\_\+\+Handling}}
+\subsubsection[{Key\+\_\+\+Handling}]{\setlength{\rightskip}{0pt plus 5cm}Key\+\_\+\+Handling\+::\+Key\+\_\+\+Handling (
+\begin{DoxyParamCaption}
+\item[{{\bf Key\+\_\+\+Handling} const \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classKey__Handling_a77ab751460e13501b55aa602195fd164}
+
+
+Copy konstruktor. 
+
+\hypertarget{classKey__Handling_afcba70ccd67070d27370c808bf14f26b}{\index{Key\+\_\+\+Handling@{Key\+\_\+\+Handling}!Key\+\_\+\+Handling@{Key\+\_\+\+Handling}}
+\index{Key\+\_\+\+Handling@{Key\+\_\+\+Handling}!Key\+\_\+\+Handling@{Key\+\_\+\+Handling}}
+\subsubsection[{Key\+\_\+\+Handling}]{\setlength{\rightskip}{0pt plus 5cm}Key\+\_\+\+Handling\+::\+Key\+\_\+\+Handling (
+\begin{DoxyParamCaption}
+\item[{{\bf Key\+\_\+\+Handling} \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classKey__Handling_afcba70ccd67070d27370c808bf14f26b}
+
+
+Move konstruktor. 
+
+\hypertarget{classKey__Handling_abaeb9c9b746106e475c8d91743271cab}{\index{Key\+\_\+\+Handling@{Key\+\_\+\+Handling}!````~Key\+\_\+\+Handling@{$\sim$\+Key\+\_\+\+Handling}}
+\index{````~Key\+\_\+\+Handling@{$\sim$\+Key\+\_\+\+Handling}!Key\+\_\+\+Handling@{Key\+\_\+\+Handling}}
+\subsubsection[{$\sim$\+Key\+\_\+\+Handling}]{\setlength{\rightskip}{0pt plus 5cm}Key\+\_\+\+Handling\+::$\sim$\+Key\+\_\+\+Handling (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}}\label{classKey__Handling_abaeb9c9b746106e475c8d91743271cab}
+
+
+Default destruktor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classKey__Handling_adaea1f1ba27262539509061cbc818361}{\index{Key\+\_\+\+Handling@{Key\+\_\+\+Handling}!direction@{direction}}
+\index{direction@{direction}!Key\+\_\+\+Handling@{Key\+\_\+\+Handling}}
+\subsubsection[{direction}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vector2f Key\+\_\+\+Handling\+::direction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKey__Handling_adaea1f1ba27262539509061cbc818361}
+En funktion som tillhandahåller en sf\+::\+Vector2f baserat på vilka knappar som trycks ner när funktionen kallas på. \hypertarget{classKey__Handling_a44d85d656914e718a9b155c41d687771}{\index{Key\+\_\+\+Handling@{Key\+\_\+\+Handling}!on\+Key@{on\+Key}}
+\index{on\+Key@{on\+Key}!Key\+\_\+\+Handling@{Key\+\_\+\+Handling}}
+\subsubsection[{on\+Key}]{\setlength{\rightskip}{0pt plus 5cm}void Key\+\_\+\+Handling\+::on\+Key (
+\begin{DoxyParamCaption}
+\item[{bool}]{pressed, }
+\item[{sf\+::\+Keyboard\+::\+Key const \&}]{key}
+\end{DoxyParamCaption}
+)}}\label{classKey__Handling_a44d85d656914e718a9b155c41d687771}
+Funktion som körs från main-\/loopen. Den tar emot huruvida tangenten släpptes eller trycktes ner och vilken tangent det var som triggrade eventet. \hypertarget{classKey__Handling_aa8c89a0450a74fc1888089d568c2e87f}{\index{Key\+\_\+\+Handling@{Key\+\_\+\+Handling}!operator=@{operator=}}
+\index{operator=@{operator=}!Key\+\_\+\+Handling@{Key\+\_\+\+Handling}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Key\+\_\+\+Handling}\& Key\+\_\+\+Handling\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Key\+\_\+\+Handling} const \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classKey__Handling_aa8c89a0450a74fc1888089d568c2e87f}
+
+
+Copy operator. 
+
+\hypertarget{classKey__Handling_a095581108c0abb43b0f6c9a67cc62f54}{\index{Key\+\_\+\+Handling@{Key\+\_\+\+Handling}!operator=@{operator=}}
+\index{operator=@{operator=}!Key\+\_\+\+Handling@{Key\+\_\+\+Handling}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Key\+\_\+\+Handling}\& Key\+\_\+\+Handling\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Key\+\_\+\+Handling} \&\&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classKey__Handling_a095581108c0abb43b0f6c9a67cc62f54}
+
+
+Move operator. 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classKey__Handling_af7bf77c8b1d7ed6ea3282f45f76fcf61}{\index{Key\+\_\+\+Handling@{Key\+\_\+\+Handling}!jump@{jump}}
+\index{jump@{jump}!Key\+\_\+\+Handling@{Key\+\_\+\+Handling}}
+\subsubsection[{jump}]{\setlength{\rightskip}{0pt plus 5cm}bool Key\+\_\+\+Handling\+::jump \{false\}}}\label{classKey__Handling_af7bf77c8b1d7ed6ea3282f45f76fcf61}
+
+
+Variabel för hopp knappen. 
+
+\hypertarget{classKey__Handling_a6d7d9bb4dc72122fc257d0a98b8613d5}{\index{Key\+\_\+\+Handling@{Key\+\_\+\+Handling}!jump\+\_\+key@{jump\+\_\+key}}
+\index{jump\+\_\+key@{jump\+\_\+key}!Key\+\_\+\+Handling@{Key\+\_\+\+Handling}}
+\subsubsection[{jump\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Keyboard\+::\+Key Key\+\_\+\+Handling\+::jump\+\_\+key \{\}}}\label{classKey__Handling_a6d7d9bb4dc72122fc257d0a98b8613d5}
+
+
+Variabel för vilken tangent som betyder hoppa. 
+
+\hypertarget{classKey__Handling_ab72108363edad52be4d7c4d8a572f6ec}{\index{Key\+\_\+\+Handling@{Key\+\_\+\+Handling}!left@{left}}
+\index{left@{left}!Key\+\_\+\+Handling@{Key\+\_\+\+Handling}}
+\subsubsection[{left}]{\setlength{\rightskip}{0pt plus 5cm}bool Key\+\_\+\+Handling\+::left \{false\}}}\label{classKey__Handling_ab72108363edad52be4d7c4d8a572f6ec}
+
+
+Variabel för vänster movement. 
+
+\hypertarget{classKey__Handling_a53493a34a4c7948354017b34fc9406fa}{\index{Key\+\_\+\+Handling@{Key\+\_\+\+Handling}!left\+\_\+key@{left\+\_\+key}}
+\index{left\+\_\+key@{left\+\_\+key}!Key\+\_\+\+Handling@{Key\+\_\+\+Handling}}
+\subsubsection[{left\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Keyboard\+::\+Key Key\+\_\+\+Handling\+::left\+\_\+key \{\}}}\label{classKey__Handling_a53493a34a4c7948354017b34fc9406fa}
+
+
+Variabel för vilken tangent som betyder vänster. 
+
+\hypertarget{classKey__Handling_ae297ccc0a53483abe41f2788ec7863d8}{\index{Key\+\_\+\+Handling@{Key\+\_\+\+Handling}!pause@{pause}}
+\index{pause@{pause}!Key\+\_\+\+Handling@{Key\+\_\+\+Handling}}
+\subsubsection[{pause}]{\setlength{\rightskip}{0pt plus 5cm}bool Key\+\_\+\+Handling\+::pause \{false\}}}\label{classKey__Handling_ae297ccc0a53483abe41f2788ec7863d8}
+
+
+Variabel för att pausa spelet. 
+
+\hypertarget{classKey__Handling_a73a615e629c4d3db0bbecb6fd35fe31b}{\index{Key\+\_\+\+Handling@{Key\+\_\+\+Handling}!quit@{quit}}
+\index{quit@{quit}!Key\+\_\+\+Handling@{Key\+\_\+\+Handling}}
+\subsubsection[{quit}]{\setlength{\rightskip}{0pt plus 5cm}bool Key\+\_\+\+Handling\+::quit \{false\}}}\label{classKey__Handling_a73a615e629c4d3db0bbecb6fd35fe31b}
+
+
+Variabel för att avsluta spelet. 
+
+\hypertarget{classKey__Handling_a494ba1ae43c55d5202f24e9bc78c5ed1}{\index{Key\+\_\+\+Handling@{Key\+\_\+\+Handling}!right@{right}}
+\index{right@{right}!Key\+\_\+\+Handling@{Key\+\_\+\+Handling}}
+\subsubsection[{right}]{\setlength{\rightskip}{0pt plus 5cm}bool Key\+\_\+\+Handling\+::right \{false\}}}\label{classKey__Handling_a494ba1ae43c55d5202f24e9bc78c5ed1}
+
+
+Variabel för höger movement. 
+
+\hypertarget{classKey__Handling_a802f80c79ced68d848e1297438c1627e}{\index{Key\+\_\+\+Handling@{Key\+\_\+\+Handling}!right\+\_\+key@{right\+\_\+key}}
+\index{right\+\_\+key@{right\+\_\+key}!Key\+\_\+\+Handling@{Key\+\_\+\+Handling}}
+\subsubsection[{right\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Keyboard\+::\+Key Key\+\_\+\+Handling\+::right\+\_\+key \{\}}}\label{classKey__Handling_a802f80c79ced68d848e1297438c1627e}
+
+
+Variabel för vilken tangent som betyder höger. 
+
+\hypertarget{classKey__Handling_ae9d219c1a9387620c14120d9a45d5db1}{\index{Key\+\_\+\+Handling@{Key\+\_\+\+Handling}!shoot@{shoot}}
+\index{shoot@{shoot}!Key\+\_\+\+Handling@{Key\+\_\+\+Handling}}
+\subsubsection[{shoot}]{\setlength{\rightskip}{0pt plus 5cm}bool Key\+\_\+\+Handling\+::shoot \{false\}}}\label{classKey__Handling_ae9d219c1a9387620c14120d9a45d5db1}
+
+
+Variabel för att skjuta. 
+
+\hypertarget{classKey__Handling_a73d59e5daa95dc140adda8cfd677e189}{\index{Key\+\_\+\+Handling@{Key\+\_\+\+Handling}!shoot\+\_\+key@{shoot\+\_\+key}}
+\index{shoot\+\_\+key@{shoot\+\_\+key}!Key\+\_\+\+Handling@{Key\+\_\+\+Handling}}
+\subsubsection[{shoot\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Keyboard\+::\+Key Key\+\_\+\+Handling\+::shoot\+\_\+key \{\}}}\label{classKey__Handling_a73d59e5daa95dc140adda8cfd677e189}
+
+
+Variabel för vilken tangent som betyder skjut. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/objects/headers/Key\+\_\+\+Handling.\+h\item 
+source/objects/imps/Key\+\_\+\+Handling.\+cpp\end{DoxyCompactItemize}

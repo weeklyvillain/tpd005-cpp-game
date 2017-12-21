@@ -1,0 +1,231 @@
+\hypertarget{classPlayer}{\section{Player Class Reference}
+\label{classPlayer}\index{Player@{Player}}
+}
+
+
+\hyperlink{classPlayer}{Player} ärver från \hyperlink{classEntity}{Entity} och innehåller all information för en entitet av spelartyp.  
+
+
+
+
+{\ttfamily \#include $<$Player.\+h$>$}
+
+
+
+Inheritance diagram for Player\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{classPlayer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Player\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{classPlayer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPlayer_a2a58e9556edd3dcbedd075055a715948}{Player} (std\+::string, std\+::string, \hyperlink{classBehaviour}{Behaviour} $\ast$, float, float, sf\+::\+Texture const \&, sf\+::\+Int\+Rect, sf\+::\+Color)
+\item 
+\hyperlink{classPlayer_adde042950f2b58b8f3a3268d1548abd4}{Player} (\hyperlink{classPlayer}{Player} const \&other)=delete
+\begin{DoxyCompactList}\small\item\em Copy konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classPlayer_a6beeb56865b114413e5d6a75a9c1e289}{Player} (\hyperlink{classPlayer}{Player} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Move konstruktor. \end{DoxyCompactList}\item 
+\hyperlink{classPlayer}{Player} \& \hyperlink{classPlayer_a1e016eea05266424161f681fe5efca53}{operator=} (\hyperlink{classPlayer}{Player} const \&rhs)\&=delete
+\begin{DoxyCompactList}\small\item\em Copy operator. \end{DoxyCompactList}\item 
+\hyperlink{classPlayer}{Player} \& \hyperlink{classPlayer_a318b29ff03cd1f7e983a534c5f7f1c37}{operator=} (\hyperlink{classPlayer}{Player} \&\&rhs)=delete
+\begin{DoxyCompactList}\small\item\em Move operator. \end{DoxyCompactList}\item 
+\hyperlink{classPlayer_a40d3c47b65e9652c363a8fde41f7bbf5}{$\sim$\+Player} ()=default
+\begin{DoxyCompactList}\small\item\em Default Destruktor. \end{DoxyCompactList}\item 
+void \hyperlink{classPlayer_ad0f6610ee4a9f6d179bf404d1812be54}{update} (\hyperlink{classWorld}{World} \&, sf\+::\+Time const \&) override
+\item 
+void \hyperlink{classPlayer_ab015823a5707509c3611ff93984100d9}{kill} (\hyperlink{classWorld}{World} \&) override
+\begin{DoxyCompactList}\small\item\em Om det här objektet har dödats så kommer kill att göra det genom att informera \hyperlink{classWorld}{World} om det. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classEntity_a75c7e4aad3df2e053ee5b43169509534}{get\+\_\+name} () const 
+\begin{DoxyCompactList}\small\item\em Returnerar namnet på entititen. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classEntity_a0e9ef479c1147e21e5bcb338cb858df2}{get\+\_\+type} () const 
+\begin{DoxyCompactList}\small\item\em Returnerar typen på entititen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{classPlayer_a75e887d14a0eafeeba86bec0e9a8d086}{time\+\_\+since\+\_\+last\+\_\+shot} \{0\}
+\begin{DoxyCompactList}\small\item\em En float för att se hur lång tid det var sen spelare senast sköt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{classEntity_a931b21fbdebb1a5963b4bcab5df128f5}{name}
+\begin{DoxyCompactList}\small\item\em Namn. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classEntity_a298a9ebf2474bb00874b5ff6a0d637ef}{type}
+\begin{DoxyCompactList}\small\item\em Typ. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{classBehaviour}{Behaviour} $>$ \hyperlink{classEntity_adb6e36848db24e6d48e6d295e19d3972}{behaviour\+\_\+ptr}
+\begin{DoxyCompactList}\small\item\em Unik smart-\/pekare till ett objekt av \hyperlink{classBehaviour}{Behaviour} klassen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classPlayer}{Player} ärver från \hyperlink{classEntity}{Entity} och innehåller all information för en entitet av spelartyp. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPlayer_a2a58e9556edd3dcbedd075055a715948}{\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\subsubsection[{Player}]{\setlength{\rightskip}{0pt plus 5cm}Player\+::\+Player (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{n, }
+\item[{std\+::string}]{t, }
+\item[{{\bf Behaviour} $\ast$}]{b, }
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{sf\+::\+Texture const \&}]{texture, }
+\item[{sf\+::\+Int\+Rect}]{size, }
+\item[{sf\+::\+Color}]{c}
+\end{DoxyParamCaption}
+)}}\label{classPlayer_a2a58e9556edd3dcbedd075055a715948}
+\hyperlink{classPlayer}{Player} konstruktor som tar in ett namn, en typ, en \hyperlink{classBehaviour}{Behaviour} pekare, en texture, vilken kvadrat som ska ritas ut och vilken färg den ska ha. \hypertarget{classPlayer_adde042950f2b58b8f3a3268d1548abd4}{\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\subsubsection[{Player}]{\setlength{\rightskip}{0pt plus 5cm}Player\+::\+Player (
+\begin{DoxyParamCaption}
+\item[{{\bf Player} const \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classPlayer_adde042950f2b58b8f3a3268d1548abd4}
+
+
+Copy konstruktor. 
+
+\hypertarget{classPlayer_a6beeb56865b114413e5d6a75a9c1e289}{\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\subsubsection[{Player}]{\setlength{\rightskip}{0pt plus 5cm}Player\+::\+Player (
+\begin{DoxyParamCaption}
+\item[{{\bf Player} \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classPlayer_a6beeb56865b114413e5d6a75a9c1e289}
+
+
+Move konstruktor. 
+
+\hypertarget{classPlayer_a40d3c47b65e9652c363a8fde41f7bbf5}{\index{Player@{Player}!````~Player@{$\sim$\+Player}}
+\index{````~Player@{$\sim$\+Player}!Player@{Player}}
+\subsubsection[{$\sim$\+Player}]{\setlength{\rightskip}{0pt plus 5cm}Player\+::$\sim$\+Player (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}}\label{classPlayer_a40d3c47b65e9652c363a8fde41f7bbf5}
+
+
+Default Destruktor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classEntity_a75c7e4aad3df2e053ee5b43169509534}{\index{Player@{Player}!get\+\_\+name@{get\+\_\+name}}
+\index{get\+\_\+name@{get\+\_\+name}!Player@{Player}}
+\subsubsection[{get\+\_\+name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Entity\+::get\+\_\+name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}}\label{classEntity_a75c7e4aad3df2e053ee5b43169509534}
+
+
+Returnerar namnet på entititen. 
+
+\hypertarget{classEntity_a0e9ef479c1147e21e5bcb338cb858df2}{\index{Player@{Player}!get\+\_\+type@{get\+\_\+type}}
+\index{get\+\_\+type@{get\+\_\+type}!Player@{Player}}
+\subsubsection[{get\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Entity\+::get\+\_\+type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}}\label{classEntity_a0e9ef479c1147e21e5bcb338cb858df2}
+
+
+Returnerar typen på entititen. 
+
+\hypertarget{classPlayer_ab015823a5707509c3611ff93984100d9}{\index{Player@{Player}!kill@{kill}}
+\index{kill@{kill}!Player@{Player}}
+\subsubsection[{kill}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+::kill (
+\begin{DoxyParamCaption}
+\item[{{\bf World} \&}]{w}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classPlayer_ab015823a5707509c3611ff93984100d9}
+
+
+Om det här objektet har dödats så kommer kill att göra det genom att informera \hyperlink{classWorld}{World} om det. 
+
+
+
+Implements \hyperlink{classEntity_a3d585a30d7f07c50911485825f5496cd}{Entity}.
+
+\hypertarget{classPlayer_a1e016eea05266424161f681fe5efca53}{\index{Player@{Player}!operator=@{operator=}}
+\index{operator=@{operator=}!Player@{Player}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Player}\& Player\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Player} const \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classPlayer_a1e016eea05266424161f681fe5efca53}
+
+
+Copy operator. 
+
+\hypertarget{classPlayer_a318b29ff03cd1f7e983a534c5f7f1c37}{\index{Player@{Player}!operator=@{operator=}}
+\index{operator=@{operator=}!Player@{Player}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Player}\& Player\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Player} \&\&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classPlayer_a318b29ff03cd1f7e983a534c5f7f1c37}
+
+
+Move operator. 
+
+\hypertarget{classPlayer_ad0f6610ee4a9f6d179bf404d1812be54}{\index{Player@{Player}!update@{update}}
+\index{update@{update}!Player@{Player}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+::update (
+\begin{DoxyParamCaption}
+\item[{{\bf World} \&}]{world, }
+\item[{sf\+::\+Time const \&}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classPlayer_ad0f6610ee4a9f6d179bf404d1812be54}
+\hyperlink{classEntity_a180102ac6695559b1f8fcf0aee747802}{Entity\+::update()} override Funktion som kallas av world när det här specifika objektet ska uppdatera sig. Det gör sedan detta genom att t.\+ex. flytta på sig och kolla kollisioner. 
+
+Implements \hyperlink{classEntity_a180102ac6695559b1f8fcf0aee747802}{Entity}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classEntity_adb6e36848db24e6d48e6d295e19d3972}{\index{Player@{Player}!behaviour\+\_\+ptr@{behaviour\+\_\+ptr}}
+\index{behaviour\+\_\+ptr@{behaviour\+\_\+ptr}!Player@{Player}}
+\subsubsection[{behaviour\+\_\+ptr}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<${\bf Behaviour}$>$ Entity\+::behaviour\+\_\+ptr\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classEntity_adb6e36848db24e6d48e6d295e19d3972}
+
+
+Unik smart-\/pekare till ett objekt av \hyperlink{classBehaviour}{Behaviour} klassen. 
+
+\hypertarget{classEntity_a931b21fbdebb1a5963b4bcab5df128f5}{\index{Player@{Player}!name@{name}}
+\index{name@{name}!Player@{Player}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Entity\+::name\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classEntity_a931b21fbdebb1a5963b4bcab5df128f5}
+
+
+Namn. 
+
+\hypertarget{classPlayer_a75e887d14a0eafeeba86bec0e9a8d086}{\index{Player@{Player}!time\+\_\+since\+\_\+last\+\_\+shot@{time\+\_\+since\+\_\+last\+\_\+shot}}
+\index{time\+\_\+since\+\_\+last\+\_\+shot@{time\+\_\+since\+\_\+last\+\_\+shot}!Player@{Player}}
+\subsubsection[{time\+\_\+since\+\_\+last\+\_\+shot}]{\setlength{\rightskip}{0pt plus 5cm}float Player\+::time\+\_\+since\+\_\+last\+\_\+shot \{0\}}}\label{classPlayer_a75e887d14a0eafeeba86bec0e9a8d086}
+
+
+En float för att se hur lång tid det var sen spelare senast sköt. 
+
+\hypertarget{classEntity_a298a9ebf2474bb00874b5ff6a0d637ef}{\index{Player@{Player}!type@{type}}
+\index{type@{type}!Player@{Player}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Entity\+::type\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classEntity_a298a9ebf2474bb00874b5ff6a0d637ef}
+
+
+Typ. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/objects/headers/Player.\+h\item 
+source/objects/imps/Player.\+cpp\end{DoxyCompactItemize}

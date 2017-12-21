@@ -1,0 +1,9 @@
+<map id="Behaviour" name="Behaviour">
+<area shape="rect" id="node2" href="$classDrop__Behaviour__heart.html" title="Drop_Behaviour_heart ärver från Behaviour och tillhandahåller beteendet för hjärt&#45;drops. " alt="" coords="5,301,184,467"/>
+<area shape="rect" id="node3" href="$classDrop__Behaviour__points.html" title="Drop_Behaviour_points ärver från Behaviour och tillhandahåller beteendet för poäng&#45;drops. " alt="" coords="209,301,393,467"/>
+<area shape="rect" id="node4" href="$classEnemy2__Behaviour.html" title="Enemy_Behaviour2 ärver från Behaviour och tillhandahåller beteende för fiender. " alt="" coords="419,257,581,511"/>
+<area shape="rect" id="node5" href="$classEnemy__Behaviour.html" title="Enemy_Behaviour ärver från Behaviour och tillhandahåller beteende för fiender. " alt="" coords="606,265,761,503"/>
+<area shape="rect" id="node6" href="$classPlatform__Behaviour.html" title="Platform_Behaviour ärver från Behaviour och tillhandahåller beteendet för platformar. " alt="" coords="786,301,949,467"/>
+<area shape="rect" id="node7" href="$classPlayer__Behaviour.html" title="Player_Behaviour ärver från Behaviour och tillhandahåller beteendet för spelare. " alt="" coords="975,235,1127,533"/>
+<area shape="rect" id="node8" href="$classProjectile__Behaviour.html" title="Projectile_Behaviour ärver från Behaviour och tillhandahåller beteendet för projektiler. " alt="" coords="1151,294,1320,474"/>
+</map>

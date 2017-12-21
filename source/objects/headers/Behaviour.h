@@ -11,7 +11,7 @@ class World;
  * \brief Behaviour ärver ej av någonting och används för att definiera hur ett objekt beter sig i spelvärlden.
  *
  * Behaviour är en abstrakt klass som innehåller grundfunktionerna för alla beteende klasser i projektet.
- * 
+ *
  */
 
 class Behaviour {

@@ -1,7 +1,7 @@
 #include "../headers/Player_Behaviour.h"
-#include <iostream>
 
-Player_Behaviour::Player_Behaviour(Key_Handling& key_handler):Behaviour(), handler{key_handler}{}
+Player_Behaviour::Player_Behaviour(Key_Handling& key_handler):Behaviour(),
+    handler{key_handler}{}
 
 void Player_Behaviour::process(World &world, Entity& owner, sf::Time const& t){
     Player& o = dynamic_cast<Player&>(owner);
@@ -60,8 +60,10 @@ void Player_Behaviour::shoot(World& world, Player& owner, sf::Time t){
         frame = 6;
         world.add_entity(
             new Projectile("proj", "Projectile",
-                new Projectile_Behaviour(owner.getScale().x, owner.getPosition().x),
-                owner.getPosition().x+(-50.0f*owner.getScale().x), owner.getPosition().y,
+                new Projectile_Behaviour(owner.getScale().x,
+                owner.getPosition().x),
+                owner.getPosition().x+(-50.0f*owner.getScale().x),
+                owner.getPosition().y,
                 world.get_texture("projectile"),
                 sf::IntRect(0, 0, 16, 16)
             )
@@ -72,7 +74,8 @@ void Player_Behaviour::shoot(World& world, Player& owner, sf::Time t){
     }
 }
 
-void Player_Behaviour::move_y(Entity& owner, sf::Vector2f const& dir, sf::Time t){
+void Player_Behaviour::move_y(Entity& owner, sf::Vector2f const& dir,
+    sf::Time t){
     if (velocity.y == 0.0f){
         velocity.y = dir.y * 7;
     }
@@ -81,13 +84,13 @@ void Player_Behaviour::move_y(Entity& owner, sf::Vector2f const& dir, sf::Time t
     //Applying gravity
     velocity.y += acceleration.y;
 }
-void Player_Behaviour::move_x(Entity& owner, sf::Vector2f const& dir, sf::Time t){
+
+void Player_Behaviour::move_x(Entity& owner, sf::Vector2f const& dir,
+    sf::Time t){
     velocity.x = dir.x * 160 * t.asSeconds();
-
     owner.setPosition(owner.getPosition().x + velocity.x, owner.getPosition().y);
-
-
 }
+
 void Player_Behaviour::collision_y(World& world, Entity& owner){
 
     Entity* now = world.am_I_Colliding(owner);
@@ -113,6 +116,7 @@ void Player_Behaviour::collision_y(World& world, Entity& owner){
         velocity.y = acceleration.y;
     }
 }
+
 void Player_Behaviour::collision_x(World& world, Entity& owner){
 
     Entity* now = world.am_I_Colliding(owner);

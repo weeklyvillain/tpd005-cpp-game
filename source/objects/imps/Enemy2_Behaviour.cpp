@@ -4,7 +4,6 @@
 void Enemy2_Behaviour::process(World& world, Entity& owner, sf::Time const& t){
 
     sf::Vector2f dir{0.0f, 0.0f};
-
     float direction = start_pos.x - end_pos.x;
     if (direction < 0){
         dir.x = 1.0f;
@@ -56,17 +55,15 @@ void Enemy2_Behaviour::move_y(Entity& owner, sf::Vector2f const& dir, sf::Time t
     //Applying gravity
     velocity.y += acceleration.y;
 }
+
 void Enemy2_Behaviour::move_x(Entity& owner, sf::Vector2f const& dir, sf::Time t){
     velocity.x = dir.x * 100 * t.asSeconds();
 
     owner.setPosition(owner.getPosition().x + velocity.x, owner.getPosition().y);
-
-
 }
+
 void Enemy2_Behaviour::collision_y(World& world, Entity& owner){
-
     Entity* now = world.am_I_Colliding(owner);
-
     if (now && now->get_type() == "Enemy" && velocity.y > 0){
         owner.setPosition(owner.getPosition().x, now->getPosition().y - 81);
     }else if(now && now->get_type() == "Enemy" && velocity.y <= 0){
@@ -101,9 +98,7 @@ void Enemy2_Behaviour::collision_y(World& world, Entity& owner){
     }
 }
 void Enemy2_Behaviour::collision_x(World& world, Entity& owner){
-
     Entity* now = world.am_I_Colliding(owner);
-
     if (now && now->get_type() == "Enemy" && velocity.x > 0){
         owner.setPosition(now->getPosition().x - 81, owner.getPosition().y);
     }else if(now && now->get_type() == "Enemy" && velocity.x <= 0){
@@ -116,6 +111,5 @@ void Enemy2_Behaviour::collision_x(World& world, Entity& owner){
     } else if(now && now->get_type() == "Wall" && velocity.x > 0) {
         velocity.x = -velocity.x;
         owner.setPosition(now->getPosition().x - 81, owner.getPosition().y);
-
     }
 }

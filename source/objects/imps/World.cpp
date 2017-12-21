@@ -1,5 +1,4 @@
 #include "../headers/World.h"
-#include <iostream>
 
 World::World(sf::RenderWindow &w)
     :window(w), entities{}{}

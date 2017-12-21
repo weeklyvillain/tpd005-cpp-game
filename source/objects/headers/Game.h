@@ -1,8 +1,9 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include <SFML/Network.hpp>
 #include <string>
+#include <fstream>
+#include <utility>
 #include "World.h"
 #include "Player.h"
 #include "Player_Behaviour.h"
@@ -10,9 +11,7 @@
 #include "Platform_Behaviour.h"
 #include "Level.h"
 #include "Projectile.h"
-#include <iostream>
-#include <fstream>
-#include <utility>
+
 
 /**
  * \brief Game som kör spelvärlden och har hand om main loopen.

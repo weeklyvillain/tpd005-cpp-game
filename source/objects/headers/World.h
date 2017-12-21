@@ -1,7 +1,6 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include <SFML/Network.hpp>
 #include <vector>
 #include "Key_Handling.h"
 #include "Entity.h"
@@ -10,7 +9,7 @@
 /**
  * \brief World simulerar spelvärlden.
  *
- * World utför simulation av spelvärlden. 
+ * World utför simulation av spelvärlden.
  * Den baserar sig på SFMLs inbyggda positions system och uppdaterar entiteter varje gång
  * update_all() kallas på. Klassen håller också koll på input från användaren,
  * hur många extraliv en spelare har och hur många poäng denne har.
@@ -31,7 +30,7 @@ public:
 	World& operator=(World && rhs) = delete;
     ///Default destruktor.
     ~World() = default;
-    ///Lägger till en Entity objekt pekare i World#Entities. 
+    ///Lägger till en Entity objekt pekare i World#Entities.
     /// Använder unika smart pekare för att undvika memory leaks.
     void add_entity(Entity*);
     ///Går igenom World#Entities och kör deras Entity#Update().
@@ -42,16 +41,16 @@ public:
     void on_Key_Press(sf::Keyboard::Key);
     ///Tar hand om tangenttryckningar genom att skicka false när den släpps upp.
     void on_Key_Release(sf::Keyboard::Key);
-    ///En funktion som returnerar ett referens 
+    ///En funktion som returnerar ett referens
     /// till ett Entity objekt om det kolliderar med det objekt som tillhandahålls.
     /// Den kollar detta med hjälp av SFMLs egna intersect().
     /// Dock returnerar den bara det första objektet som kolliderar.
     /// Detta kan skapa problem.
     Entity* am_I_Colliding(Entity const&) const;
     ///Tar bort det objekt som tillhandahålls från World#Entities.
-    /// Detta genom att gå igenom och hitta den pekare i World#Entities 
+    /// Detta genom att gå igenom och hitta den pekare i World#Entities
     /// som pekar på samma minnesaddress som objektet som tillhandahålls.
-    /// Sedan tas den bort. 
+    /// Sedan tas den bort.
     void kill_me_now(Entity&);
     ///Returnerar den första spelaren i World#Entities.
     /// Används för att avgöra huruvida alla spelare har dött.

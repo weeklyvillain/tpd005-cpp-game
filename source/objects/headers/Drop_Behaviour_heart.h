@@ -1,15 +1,14 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-
 #include "Behaviour.h"
-#include <iostream>
+
 
 /**
  * \brief Drop_Behaviour_heart ärver från Behaviour och tillhandahåller beteendet för hjärt-drops.
  *
  * Drop_Behaviour_heart ärver från de abstrakta klassen Behaviour och däför behöver den köra override på process()
- * 
+ *
  */
 
 class Drop_Behaviour_heart : public Behaviour {

@@ -1,4 +1,5 @@
 #include "../headers/Game.h"
+
 int Game::run(int player_amount){
 
     sf::RenderWindow window{sf::VideoMode(1900, 900), "Bubble Bobble", sf::Style::Titlebar | sf::Style::Close};
@@ -49,9 +50,8 @@ int Game::run(int player_amount){
                         world.run = false;
                     }
                     break;
-			}
-        }
-
+			               }
+                   }
         //Vänta tills nästa bildruta innan du ritar
         auto frameDelay = clock.restart();
         window.clear(sf::Color::White);
@@ -72,6 +72,7 @@ int Game::run(int player_amount){
             draw_new_item("Paused",
                 sf::Vector2f(1600/2, 900/2), font ,window);
         }
+
         world.render_all();
         if(!world.get_player()) {
             sf::Texture t{};
@@ -94,6 +95,7 @@ int Game::run(int player_amount){
             level_index++;
             Level(lvls.at(level_index), 80, 80, world, player_amount);
         }
+
         window.display();
         if(!world.get_player()){
             sf::sleep(sf::seconds(4));

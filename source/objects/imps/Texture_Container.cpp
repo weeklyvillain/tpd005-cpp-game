@@ -1,5 +1,4 @@
 #include "../headers/Texture_Container.h"
-#include <iostream>
 
 Texture_Container::Texture_Container():textures{}{
     sf::Texture t1;

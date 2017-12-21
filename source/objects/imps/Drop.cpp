@@ -5,7 +5,6 @@ Drop::Drop(std::string n, std::string t,
     :Entity(n, t, b, texture, size){
         setOrigin(getLocalBounds().width/2, getLocalBounds().height/2);
         setPosition(x, y);
-
     }
 void Drop::update(World& world, sf::Time const& t){
     behaviour_ptr->process(world, *this, t);

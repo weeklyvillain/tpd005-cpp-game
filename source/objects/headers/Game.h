@@ -21,7 +21,7 @@
  * Sedan håller den koll på när Key_Handling ska få knapptryckningar, när allt ska uppdateras genom
  * World#update_all() och när allt ska ritas ut med World#render_all() och sfml sf::RenderWindow.display().
  * Den skapar också dödsskärmen och skriver in high score efter att spelaren har dött.
- * 
+ *
  */
 
 class Game{
@@ -49,5 +49,5 @@ public:
     void draw_new_item(std::string const&, sf::Vector2f const&, sf::Font const&, sf::RenderWindow&);
 private:
     ///Variabel för spelarens namn.
-    std::string name{"   "};
+    std::string name{"Player"};
 };

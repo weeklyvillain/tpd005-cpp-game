@@ -137,8 +137,12 @@ void Game::set_score(World& w) {
                return right.second < left.second;
            });
     std::ofstream ofs{"assets/score", std::ofstream::out};
+    int counter{0};
     for(auto item : score_list) {
-        ofs << item.first << " " << item.second << '\n';
+        if(counter < 10){
+            ofs << item.first << " " << item.second << '\n';
+        }
+        counter++;
     }
     ofs.close();
 };

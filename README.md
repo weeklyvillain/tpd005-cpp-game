@@ -1,6 +1,6 @@
-\section title Welcome to Bubble!
+Welcome to Bubble!
 
-\section intro_sec Introduction
+Introduction
 
 Det här är ett projekt där vi ville skapa en
 Bubble Bobble klon med networking som fokus.
@@ -12,20 +12,18 @@ Spelet går ut på att skjuta ner fiender och ta sig så långt som det går gen
 de nivåer som finns fördefinierade. Om man vill kan man skapa egna
 nivåer genom att skapa nya .lvl filer i level mappen.
 
-\section dokument_sec Dokumentation
+Dokumentation
 
-\subsection step11 Steg 1: Kör "doxygen Doxygen-config" i ./
-\subsection step12 Steg 2: Dokumentation skapas i ./doc/doxygen
+Steg 1: Kör "doxygen Doxygen-config" i ./
+Steg 2: Dokumentation skapas i ./doc/doxygen
 
-\section install_sec Installation
+Installation
+Steg 1: Kör "cmake ." i ./
+Steg 2: Kör "make bubble"
+Steg 3: Kör "./bubble"
 
-\subsection step21 Steg 1: Kör "cmake ." i ./
-\subsection step22 Steg 2: Kör "make bubble"
-\subsection step23 Steg 3: Kör "./bubble"
-
-\section creator_sec Team members
-
-\subsection jimmy Jimmy Björnholm
+Team members
+Jimmy Björnholm
 Kontakt: jimbj685@student.liu.se
-\subsection filip Filip Eriksson
+Filip Eriksson
 Kontakt: filer358@student.liu.se
